@@ -31,7 +31,7 @@
 					"pnum":"1"
         		},{
         			"pname":"测试管理工具TC",
-					"ptype":"产品规格sssss信息",
+					"ptype":"产品规格sss信息",
 					"pprice":"￥188.00",
 					"pnum":"1"
         		},{
