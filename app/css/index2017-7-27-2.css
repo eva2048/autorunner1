@@ -649,18 +649,21 @@ table a.f_red:hover {
 .tree-node-content:hover .treeIcon {
     display: inline-block;
 }
-.useCaseListTitle .searchBox{
-	height: 38px;
-	line-height: 38px;
+.useCaseListTop{
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.useCaseListTop .searchBox{
 	margin: 6px 15px;
 }
-.useCaseListTitle {    
-	height: 50px;
+.useCaseListTitle {
+    
     line-height: 50px;
     font-size: 14px;
     color: #212121;
     padding: 0px 15px;
-   	border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+   
 }
 
 .userCaseListFunction {
@@ -1437,7 +1440,12 @@ table tr td a:last-child {
 }
 
 /*提需求弹框*/
+.newDemand{
+	height: 430px;
+	padding: 20px;
+}
 .newDemand ul li{
+	margin-top: 10px;
 	line-height: 40px;
 }
 .newDemand ul li .popLeft{
@@ -1454,7 +1462,7 @@ table tr td a:last-child {
 	color: #313131;
 }
 .newDemand ul li .popRight input{
-	width: 350px;
+	width: 300px;
 	height: 30px;
 	padding: 0 10px;
 	border: 1px solid #E5E5E5;
@@ -1482,6 +1490,10 @@ table tr td a:last-child {
 	margin-left:240px ;
 }
 /*新增场景*/
+.addNewScene{
+	height: 330px;
+	padding: 20px;
+}
 .addNewScene ul li{
 	margin-top: 10px;
 	line-height: 40px;
@@ -1500,7 +1512,7 @@ table tr td a:last-child {
 	color: #313131;
 }
 .addNewScene ul li .popRight input{
-	width: 350px;
+	width: 300px;
 	height: 30px;
 	padding: 0 10px;
 	border: 1px solid #E5E5E5;

@@ -3,12 +3,13 @@ define(['app'], function(app) {
     app.register
         .controller('modalCtrl', ['$rootScope', '$scope', '$modal', '$log',
             function($rootScope, $scope, $modal, $log) {
-                $scope.open = function(modalname) {
+                $scope.open = function(modalname,modalsize) {
                     var templateUrl='tpls/modal/'+modalname+'.html';
                     var controller='modalInstanceCtrl';
                     var modalInstance = $modal.open({
                         templateUrl: templateUrl,
                         controller: controller,
+                        size:modalsize,
                         resolve: {
                             items: function() {
                                

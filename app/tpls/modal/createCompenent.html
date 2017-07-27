@@ -1,0 +1,57 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <h3>添加组件</h3>
+</div>
+<div class="modal-body modalBody">
+    <ul class="titleUl">
+        <li>
+            <h1>组件名称：</h1>
+            <input type="text" class="inputText">
+            <span class="error">邀请码格式错误</span>
+        </li>
+        <li>
+            <h1>组件版本：</h1>
+            <input type="text" class="inputText">
+            <span class="error">邀请码格式错误</span>
+        </li>
+        <div class="clear"></div>
+        <li class="floatleft">
+            <h1>运行环境：</h1>
+            <select class="selectNormal">
+                <option>项目经理</option>
+                <option>测试</option>
+                <option>开发</option>
+            </select>
+        </li>
+        <li class="floatleft">
+            <h1>是否继承：</h1>
+            <select class="selectNormal">
+                <option>项目经理</option>
+                <option>测试</option>
+                <option>开发</option>
+            </select>
+        </li>
+        <div class="clear"></div>
+        <li>
+            <h1>继承组件：</h1>
+            <input type="text" class="inputText">
+            <span class="error">邀请码格式错误</span>
+        </li>
+        <li>
+            <h1>详细描述：</h1>
+            <input type="text" class="inputText">
+            <span class="error">邀请码格式错误</span>
+        </li>
+        <li>
+            <h1>脚本名：</h1>
+            <input type="text" class="inputText">
+            <span class="error">邀请码格式错误</span>
+        </li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <div class="floatleft"><input class="floatleft" type="checkbox" name=""><em class="marginl_10">是否连续添加</em></div>
+    <button class="btn_blue" ng-click="ok()">确认</button>
+    <button class="btn_gray" ng-click="cancel()">取消</button>
+</div>
