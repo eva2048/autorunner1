@@ -1,0 +1,26 @@
+<style type="text/css">
+.modal-dialog{
+    width: 800px;
+}
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">加入项目组</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody joinProjectGroup">
+    <div class="modalsearchBox">
+        <div class="modalsearch fix">
+            <input type="" name="">
+            <a class="searchBtn floatright" href="">搜索</a>
+        </div>
+    </div>
+    <div style="max-height: 400px;overflow: auto;">
+    <div class="modalsearchList">
+        <div class="searchItem">
+            <div class="groupname floatleft">群组：上海泽众软件（<span class="c-blue">1115303</span>）</div>
+            <div class="createname floatleft">创建人：张三（15161351333）</div>
+            <div ng-controller="modalCtrl" ng-click="cancel();open('joinProjectGroup1')" class="borderbtn borderbtn-blue joinbtn clear">加入</div>
+        </div>
+    </div>
+    </div>
+</div>

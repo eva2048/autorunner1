@@ -1,0 +1,35 @@
+<style type="text/css">
+.modal-dialog{
+    width: 1000px;
+}
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">流程人员配置</span><span class="modaltitle1 floatleft">（流程名称：立项申请提交立项申请提交立项申请提交立项申请提交立项申请提交立项申请提交立项申请提交）</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody" style="height: 400px;">
+    <table class="defaultTable1">
+        <tr>
+            <th></th>
+            <th>任务ID</th>
+            <th>节点名称</th>
+            <th>类型</th>
+            <th>处理人</th>
+            <th>处理角色范围</th>
+            <th>必须包含角色</th>
+            <th>上传附件</th>
+            <th>选择处理人</th>
+        </tr>
+        <tr ng-repeat="v in [1,2,3,4]">
+            <td>1</td>
+            <td>rect1</td>
+            <td>开始1</td>
+            <td>开始1</td>
+            <td>当前节点</td>
+            <td><span class="ellipsis_160">项目经理，测试负责人,项目经理，测试负责人项目经理，测试负责人项目经理，测试负责人项目经理，测试负责人</span></td>
+            <td>项目经理</td>
+            <td>是</td>
+            <td>人员名称</td>
+        </tr>
+    </table>
+</div>

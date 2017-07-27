@@ -1,0 +1,22 @@
+<style type="text/css">
+.modal-dialog {
+    width: 800px;
+}
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">确认合同</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody modalBody1">
+    <div class="c-blue marginl-20 f-14 marginb-10">如对合同有异议，请填写备注、或拨打客服电话：029-1234566进行沟通</div>
+    <div class="modalinputBox">
+        <div class="title floatleft"><em class="c-red">*</em>备注：</div>
+        <textarea class="floatleft textareanormall textareatext"></textarea>
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="modal-footer" ng-controller="modalCtrl">
+    <a ng-click="cancel();open('createProjectGroup1')" href="" class="floatright btn-modal btn-modal-blue marginl-10">确定</a>
+    <a href="" class="floatright btn-modal btn-modal-gray">取消</a>
+</div>

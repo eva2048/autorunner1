@@ -1,0 +1,27 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">更改绑定手机</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody" style="padding:20px 0px;">
+    <div class="modalinputBox">
+        <div class="title floatleft">新的手机号：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox modalinputBox1">
+        <div class="title floatleft">验证码：</div>
+        <div class="getcodeBox floatleft">
+            <input class="inputtext inputnormall" type="text" name="">
+            <a class="getcodeBtn getcodeBtn1" href="">获取验证码</a>
+        </div>
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="modal-footer" ng-controller="modalCtrl">
+    <a ng-click="cancel();open('createProjectGroup1')" href="" class="floatright btn-modal btn-modal-blue marginl-10">确定</a>
+    <a href="" class="floatright btn-modal btn-modal-gray">取消</a>
+</div>

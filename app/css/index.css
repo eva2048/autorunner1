@@ -1,0 +1,1546 @@
+.topbar {
+    width: 100%;
+    height: 60px;
+    background: #262d3f;
+    box-shadow: 0px 0px 5px #000;
+}
+
+.userInfoBox {
+    position: relative;
+    width: 195px;
+    padding: 0px 15px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 14px;
+    border-left: 1px solid #364059;
+    background: url(../images/userInfo_icon1.png)no-repeat 170px 28px;
+}
+
+.userInfo {
+    width: 145px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    cursor: pointer;
+}
+
+.topbar_versionBox {
+    line-height: 60px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.topbar_versionBox img {
+    margin: 0px 8px 0px 20px;
+}
+
+.topbar_versionBox input {
+    height: 30px;
+    padding: 0px 10px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.help {
+    height: 60px;
+    line-height: 60px;
+    padding: 0px 30px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.help img {
+    vertical-align: sub;
+}
+
+.userDetail {
+    width: 190px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0px 0px 8px #e5e5e5;
+    position: absolute;
+    left: 0px;
+    top: 60px;
+    z-index: 99;
+}
+
+.userDetail li {
+    width: 190px;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #212121;
+    cursor: pointer;
+}
+
+.userDetail li:hover {
+    background: #edf1f9;
+}
+
+.userDetail li img {
+    float: left;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.exit {
+    border-top: 1px solid #e5e5e5;
+}
+
+.projectTip {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #6e6e6e;
+    background: #fcf8e2;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+.projectTip .helpicon {
+    margin-left: 5px;
+}
+
+.projectNav {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #f2f2f2;
+    box-shadow: 3px 0px 3px #ebf4fb;
+}
+
+.projectNav .searchBox {
+    width: 248px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 15px 0px 40px;
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin: 15px;
+    outline: none;
+}
+
+.searchPanel {
+    position: relative;
+}
+
+.searchPanel img {
+    position: absolute;
+    top: 26px;
+    left: 28px;
+}
+
+.projectSetPanel {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.projectSetBox {
+    display: inline-block;
+}
+
+.projectSetPanel a {
+    float: left;
+    margin: 0px 25px;
+    cursor: pointer;
+}
+
+.projectNavList {
+	width: 280px;
+	
+    border-top: 1px solid #f2f2f2;
+}
+
+.projectNavList li {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #000000;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.projectNavList li.active {
+    background: #bbdefb;
+}
+
+.projectNavList li:hover {
+    background: #bbdefb;
+}
+
+.projectNavList li img {
+    float: left;
+    margin: 10px 15px;
+}
+
+.projectNavList li span {
+    float: right;
+    margin-right: 15px;
+}
+
+
+/*projectBody*/
+
+.projectBodyBox {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.personalInnerTitle {
+    font-size: 14px;
+    color: #343434;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0px 25px;
+}
+
+.projectBodyTitle {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0px 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 18px;
+    color: #212121;
+}
+.projectBodyTitleName{
+	width: 280px;
+}
+.projectSelect {
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 36px;
+    line-height: 36px;
+    color: #707070;
+    border: 1px solid #e5e5e5;
+    font-family: "微软雅黑";
+}
+
+.showMyself {
+    line-height: 36px;
+}
+
+.showMyself input {
+    float: left;
+    margin-top: 12px;
+    margin-right: 5px;
+}
+
+.projectBodyFunction {
+    padding: 20px 25px;
+}
+
+.projectBodyFunction .fbtn {
+    margin-top: 4px;
+    margin-right: 8px;
+}
+
+.table-border {
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+}
+
+.table-border tr {
+    height: 54px;
+    line-height: 54px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.table-border tr th {
+    padding-left: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.table-border tr td {
+    padding-left: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.projectBodyList {
+    padding: 0px 25px;
+}
+
+.projectBodyList .table-border .typeImg img {
+    display: block;
+    float: left;
+}
+
+.projectBodyList .table-border .typeImg {
+    width: 47px;
+}
+
+.projectBodyList .table-border .stateImg img {
+    display: block;
+    float: left;
+    margin-top: 18px;
+    margin-right: 6px;
+}
+
+table a {
+    color: #008bff;
+    font-size: 14px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+table a:hover {
+    color: #008bff;
+}
+
+table a.f_red:hover {
+    color: #ff0000;
+}
+
+.createProjectBox li h1 {
+    width: 160px;
+    text-align: right;
+    font-size: 14px;
+    color: #6c7786;
+    float: left;
+    line-height: 34px;
+    margin-right: 20px;
+}
+
+.createProjectBox {
+    padding: 30px 25px;
+}
+
+.createProjectBox li {
+    margin-bottom: 30px;
+    /* overflow: hidden; */
+}
+
+.createProjectBox .detailLink {
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: 14px;
+    background: url(../images/createProjectBox_detailLink.png)no-repeat left center;
+    line-height: 34px;
+    color: #0293f9;
+}
+
+.createProjectBox .promptBox {
+    margin-top: 15px;
+    background: #fcf8e2;
+    width: 478px;
+    border-left: 3px solid #edd28a;
+    font-size: 14px;
+    padding: 15px;
+    color: #92631d;
+    line-height: 28px;
+}
+
+.createProjectBox .promptBox h2 {
+    font-weight: bold;
+    color: #92631d;
+}
+
+.createProjectBox .promptBox p {
+    color: #92631d;
+}
+
+.buttonBox {
+    margin-left: 180px;
+}
+
+.bugListFunction {
+    padding: 20px 0px 0px;
+}
+
+.bugListFunction input {
+    margin-right: 8px;
+}
+.advancedFilterBox {
+    border: 1px solid #eeeeee;
+    padding: 0px 23px;
+    margin-top: 5px;
+}
+
+.advancedFilterBox li {
+    overflow: hidden;
+    padding: 15px 0px;
+    border-bottom: 1px dashed #eee;
+}
+.advancedFilterBox .paddingb_0{
+    padding-bottom: 0px;
+}
+.advancedFilterBox li h1 {
+    float: left;
+    font-size: 14px;
+    margin-right: 36px;
+}
+
+.advancedFilterBox li a {
+    font-size: 14px;
+    float: left;
+    display: block;
+    padding: 0px 8px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    height: 20px;
+    color: #6e6e6e;
+    margin-right: 53px;
+    cursor: pointer;
+}
+
+.advancedFilterBox li h2 {
+    font-size: 14px;
+    float: left;
+    display: block;
+    color: #6e6e6e;
+    margin-right: 53px;
+}
+
+.advancedFilterBox li .checkbox{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #999;
+    margin-top: 3px;
+    cursor: pointer;
+}
+.advancedFilterBox .advancedFilterBtn{
+    padding: 15px 0px;
+}
+.advancedFilterBox .advancedFilterPack{
+    line-height: 66px;
+    font-size: 14px;
+}
+.advancedFilterBox .current {
+    background: #008bff;
+    color: #fff;
+}
+.advancedFilterBox .modalFilterBox{
+    margin-bottom: 15px;
+    float: left;
+}
+.tabBox span {
+    padding: 0px 25px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    background: #d9dee4;
+    font-size: 14px;
+    color: #6e6e6e;
+    cursor: pointer;
+}
+
+.tabBox span.current {
+    background: #262d3f;
+    color: #fff;
+}
+
+.modelBox {
+    width: 500px;
+}
+
+.modelBox span {
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    color: #fff;
+    padding: 5px 0px 5px 10px;
+    font-size: 13px;
+    background: #7b87a8;
+    margin-top: 15px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.modelBox span img {
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
+.projectDetail {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: -3px -3px 3px #ebf4fb;
+}
+
+.createBugBox {
+    margin-left: 40px;
+}
+
+.createBugBox li h1 {
+    width: auto;
+    min-width: 100px;
+}
+
+.definedAttribute li h1 {
+    width: auto;
+    min-width: 60px;
+}
+
+.definedAttribute li {
+    float: left;
+    margin-left: 32px;
+}
+
+.definedAttribute {
+    max-width: 700px;
+    font-size: 14px;
+}
+
+.definedAttribute .title {
+    font-size: 14px;
+    color: #717d99;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e5e5e5;
+    margin-bottom: 30px;
+}
+
+.definedAttribute {
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.createProjectBox .fileUpload div {
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.createProjectBox .fileUpload div input {
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    color: #6c7786;
+}
+
+.createProjectBox .fileUpload li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #3b3b3b;
+}
+
+.createProjectBox .fileUpload li img {
+    margin-right: 10px;
+}
+
+.createProjectBox .fileUpload li a {
+    margin-left: 10px;
+}
+
+.createProjectBox .buttonBox .isContinue {
+    line-height: 34px;
+    font-size: 12px;
+    color: #6c7786;
+    margin-right: 20px;
+}
+
+.createProjectBox .buttonBox .isContinue input {
+    margin-right: 5px;
+}
+
+.createBugBox .buttonBox {
+    margin-left: 120px;
+}
+
+.useCaseTree {
+    position: absolute;
+    width: 330px;
+    left: 0px;
+    top: 66px;
+    bottom: 0px;
+    background: #FFFFFF;
+}
+.useHide{
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	cursor: pointer;
+	z-index: 99;
+}
+.useCaseList {
+    position: absolute;
+    width: auto;
+    right: 0px;
+    left: 330px;
+    top: 66px;
+}
+
+.useCaseTree .title {
+    background: #f5f6fa;
+    height: 50px;
+    font-size: 16px;
+    color: #6e6e6e;
+    line-height: 50px;
+    padding: 0px 15px;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+.useCaseTree .moreFuc .dropdown-menu{
+    left:-120px;
+    top: 24px;
+} 
+.treeBody {
+    width: 100%;
+    padding: 15px 15px;
+    border-right: 1px solid #e5e5e5;
+    position: absolute;
+    top: 50px;
+    bottom: 0px;
+    left: 0px;
+    overflow: auto;
+}
+
+.treeBody .treeToggle {
+    margin-right: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.treeBody .treeToggle img {
+    width: 10px;
+    vertical-align: baseline;
+}
+
+.treeBody .treeInput {
+    border: 1px solid #c3c4c9;
+    height: 32px;
+    padding: 0px 3px;
+}
+
+.treeBody .treeText {
+    font-size: 14px;
+    color: #3b3b3b;
+    margin: 5px 0px;
+    line-height: 32px;
+    display: inline-block;
+    font-family: "微软雅黑";
+    font-weight: normal;
+}
+
+.treeBody .treeIcon {
+    margin-top: 7px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.treeBody .treeIcon {
+    display: none;
+}
+.treeBody .treeIcon:hover .dropdown-menu{
+    display: block;
+}
+.treeBody .angular-ui-tree-nodes{
+    width: 240px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.treeBody .tree-node-content{
+    width: 240px;
+    cursor: pointer;
+}
+.tree-node-content:hover .treeIcon {
+    display: inline-block;
+}
+.useCaseListTop{
+	height: 50px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.useCaseListTop .searchBox{
+	margin: 6px 15px;
+}
+.useCaseListTitle {
+    
+    line-height: 50px;
+    font-size: 14px;
+    color: #212121;
+    padding: 0px 15px;
+   
+}
+
+.userCaseListFunction {
+    padding: 22px 15px 15px;
+}
+
+.userCaseListFunction input {
+    margin-right: 8px;
+}
+
+.userCaseListTable {
+    padding: 15px;
+}
+
+.projectTabPanel {
+    width: 100%;
+    padding: 26px 20px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.projectTabPanel span {
+    font-size: 16px;
+    color: #212121;
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.projectTabPanel img {
+    vertical-align: baseline;
+}
+
+.projectTabPanel input {
+    display: block;
+    font-size: 13px;
+    padding: 0px 20px;
+    height: 34px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.projectInfoList {
+    width: 100%;
+    padding:  20px;
+    font-size: 18px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.projectInfoList li {
+    margin-bottom: 26px;
+    font-size: 14px;
+}
+
+.projectInfoList li img {
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
+/*detail*/
+.projectDetailBox {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    box-shadow: -3px -3px 3px #ebf4fb;
+}
+
+.projectDetailBox .detailTitle {
+    font-size: 16px;
+    color: #545454;
+    line-height: 52px;
+    height: 52px;
+    padding: 0px 25px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.projectDetailBox .bugName {
+    padding: 20px 25px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #212121;
+    background: #f1f4f7;
+}
+
+.projectDetailBox .bugName .bugId {
+    height: 30px;
+    background: #ffa929;
+    color: #fff;
+    display: inline-block;
+    line-height: 30px;
+    padding: 0px 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    margin-right: 10px;
+}
+
+.projectDetailBox .bugChangeBox {
+    padding: 25px;
+}
+
+.projectDetailBox .bugChangeBox li {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.projectDetailBox .bugChangeBox li span {
+    font-size: 14px;
+    color: #6c7786;
+    margin-right: 10px;
+}
+.projectDetailBox .bugChangeBox .multiSelectBox{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.projectDetailBox .bugChangeBox .multiSelect{
+    font-size: 14px;
+    color: #6c7786;
+    max-width: 750px;
+}
+.projectDetailBox .bugChangeBox .multiSelect input{
+    margin: 4px 10px 10px;
+    float: left;
+}
+.projectDetailBox .bugChangeBox .multiSelect h6{
+    float: left;
+    margin: 2px 10px 10px 0px;
+}
+.projectDetailBox .selectNormal {
+    margin-right: 20px;
+}
+
+.projectDetailBox .projectTextarea {
+    width: 704px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.bugDetailBox .tab {
+    width: 100%;
+    padding-left: 60px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.bugDetailBox .tab span {
+    font-size: 14px;
+    cursor: pointer;
+    color: #6e6e6e;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-right: 15px;
+}
+
+.bugDetailBox .tab .current {
+    color: #009dff;
+    border-bottom: 2px solid #009dff;
+}
+.bugDetailBox .attribute{
+    padding:30px;
+}
+.bugDetailBox .demandContent{
+	width: 65%;
+}
+.bugDetailBox .demandAttribute ul{
+	width: 100%;
+}
+.bugDetailBox .demandAttribute{
+	width: 30%;
+}
+
+.bugDetailBox .attributeNormal li{
+    float:left;
+    font-size: 14px;
+    color: #6c7786;
+    margin-bottom: 40px;
+    width: 330px;
+}
+.bugDetailBox .attributeNormal li h1{
+    float:left;
+    margin-right: 40px;
+}
+.bugDetailBox .attributeNormal li h2{
+    float:left;
+    color: #000;
+}
+.bugDetailBox .attributeTitle{
+    font-size: 14px;
+    color: #0293f9;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e5e5e5;
+    margin-bottom: 24px;
+}
+.bugDetailBox .attributeP{
+    font-size: 14px;
+    color: #212121;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+.bugDetailBox .attributeFile{
+    margin-bottom: 20px;
+}
+.bugDetailBox .attributeFile li{
+    font-size: 14px;
+    color: #3b3b3b;
+    margin-bottom: 15px;
+}
+.bugDetailBox .attributeFile li span{
+    margin:0px 20px 0px 10px;
+}
+.bugDetailBox .attributeFile li em{
+    cursor: pointer;
+}
+
+.bugDetailBox .history{
+    width: 100%;
+    padding:25px;
+}
+
+.bugChangeBox .inputText {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.bugChangeBox li em {
+    width: 300px;
+    font-size: 14px;
+    color: #000;
+    margin-right: 20px;
+    display: inline-block;
+}
+.bugChangeBox .bugChangeBoxDate em{
+    width:auto;
+}
+.bugChangeBox .dateBoxClear li{
+    float:none;
+}
+.dateBoxClear tr{
+    height:40px;
+    line-height:40px;
+}
+.bugDetailBox .detailInputList li{
+    margin-bottom: 20px;
+}
+.bugDetailBox .detailInputList input{
+    width: 704px;
+}
+.bugDetailBox .detailInputList span {
+    font-size: 14px;
+    margin-right: 10px;
+    color: #6c7786;
+}
+.bugDetailBox .process{
+    width: 100%;
+    padding: 25px;
+}
+.bugDetailBox .process li{
+    font-size: 14px;
+    padding: 20px 0px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.bugDetailBox .process li div img{
+    margin-right: 15px;
+}
+.bugDetailBox .process li table{
+    margin-top: 15px;
+}
+/*personal*/
+
+.accessConf {
+    padding: 30px 25px;
+    margin-left: 40px;
+}
+
+.accessConf h1 {
+    float: left;
+    width: 100px;
+    text-align: right;
+    font-size: 14px;
+    color: #6c7786;
+    line-height: 34px;
+    margin-right: 20px;
+}
+
+.tabSelectBox {
+    border: 1px solid #c3c4c9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    overflow: hidden;
+}
+
+.tabSelectBox span {
+    padding: 0px 15px;
+    height: 34px;
+    font-size: 14px;
+    color: #6c7786;
+    line-height: 34px;
+    display: block;
+    border-left: 1px solid #c3c4c9;
+    float: left;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+.tabSelectBox span.activity {
+    background: #576075;
+    color: #fff;
+}
+
+.accessConfAssembly {
+    font-size: 14px;
+    color: #3b3b3b;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.accessConfAssembly .borderBox {
+    border: 1px solid #c3c4c9;
+    padding: 20px;
+}
+
+.accessConfAssembly .ulLevel1 .ulLevel2 {
+    margin-left: 30px;
+}
+
+.accessConfAssembly .ulLevel1 span {
+    line-height: 36px;
+    display: block;
+    overflow: hidden;
+}
+
+.accessConfAssembly .ulLevel1 {
+    margin-right: 60px;
+}
+
+.accessConfAssembly .ulLevel1 span input {
+    float: left;
+    margin: 12px 5px;
+}
+
+.tableList {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableList tr {
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    height: 54px;
+    line-height: 54px;
+    width: 100%;
+}
+
+.tableList tr th {
+    width: 15%;
+    font-size: 14px;
+    color: #000000;
+    padding-left: 55px;
+}
+
+.tableList tr th:last-child {
+    width: 30%;
+}
+
+.tableList tr td {
+    font-size: 14px;
+    color: #484d66;
+}
+
+.tableList2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+}
+
+.zhankai {
+    color: #008bff;
+    cursor: pointer;
+    padding-left: 55px;
+    background: url(../images/zhankai.png) no-repeat 20px center;
+}
+
+.tableDetail {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.tableDetail tr {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+
+.tableDetail tr td {
+    width: 15%;
+    padding-left: 55px;
+}
+
+.tableDetail tr td:last-child {
+    width: 30%;
+}
+
+table tr td a {
+    padding-left: 15px;
+    border-right: 1px solid #bdc4d7;
+}
+
+table tr td a:first-child {
+    padding-left: 0;
+}
+
+table tr td a:last-child {
+    border-right: none;
+}
+.personalNav{
+    border-bottom: 1px solid #e5e5e5;
+    height: 90px;
+}
+.personalNav h3 {
+    font-size: 16px;
+    color: #343434;
+    margin-left: 20px;
+    padding-top: 50px;
+    float: left;
+}
+
+.personalNav ul {
+    float: right;
+    margin-top: 50px;
+    margin-right: 100px;
+}
+
+.personalNav ul li {
+    float: left;
+}
+
+.personalNav ul li a {
+    font-size: 14px;
+    color: #6e6e6e;
+    text-align: center;
+    padding: 0px 30px 18px;
+    display: block;
+    margin-right: 15px;
+}
+
+.personalNav ul li a:hover {
+    color: #008BFF;
+    border-bottom: 2px solid #008BFF;
+}
+
+.personalNav ul li.current a {
+    color: #008BFF;
+    border-bottom: 2px solid #008BFF;
+}
+/*modal*/
+.defaultModal{
+    text-align: center;
+    padding: 45px 0px;
+}
+.defaultModal img{
+    margin-bottom: 25px;
+}
+.defaultModal p{
+    font-size: 18px;
+    color: #797979;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+.modal-header{
+    font-size: 16px;
+}
+.modalBody .selectColumn li input{
+    float: left;
+    margin:13px 5px;
+} 
+.tableListBox{
+    border: 1px solid #e1e6eb;
+    font-size: 14px;
+    color: #3b3b3b;
+}
+.tableListBox .listTitle{
+    padding: 0px 10px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #f5f6fa;
+    border-bottom: 1px solid #e1e6eb;
+}
+.tableListBox .listBody{
+    height: 350px;
+    overflow-y: auto;
+    padding: 10px 0px;
+}
+.tableListBox .listBody .selectUl li{
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.tableListBox .listBody .selectUl li .function{
+    display: none;
+}
+.tableListBox .listBody .selectUl li .function a{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.tableListBox .listBody .selectUl .current{
+    background: #e4e6f1;
+}
+.tableListBox .listBody .selectUl li:hover{
+    background: #e4e6f1;
+}
+.tableListBox .listBody .selectUl li:hover .function{
+    display: inline-block;
+}
+.titleUl li h1 {
+    float: left;
+    width: 105px;
+    text-align: right;
+    font-size: 14px;
+    color: #6c7786;
+    line-height: 34px;
+    margin-right: 10px;
+}
+.titleUl li h2 {
+    float: left;
+    font-size: 14px;
+    color: #000;
+    line-height: 34px;
+    margin-right: 10px;
+}
+.titleUl {
+    margin: 10px 10px 0px;
+}
+.titleUl li {
+    margin-bottom: 15px;
+}
+
+.titleUl .borderUl {
+    border: 1px solid #c3c4c9;
+    width: 330px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.titleUl .borderUl li {
+    margin-bottom: 0px;
+}
+.titleUl .multselectUl li {
+    line-height: 34px;
+    font-size: 14px;
+}
+.titleUl .multselectUl li input{
+    margin: 0px 5px 0px 10px;
+    vertical-align: middle;
+}
+.modalBody .modalSetting{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.modalBody .modalSetting .selectNormal{
+    margin-right: 10px;
+}
+.modalBody .modalSetting .inputText{
+    width: 50px;
+    margin-right: 10px;
+}
+.tableListBox .treeText{
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #3b3b3b;
+}
+.tableListBox .treeLine .treeNodeCheckbox{
+    margin-top: 10px;
+    margin-right: 5px;
+    float: left;
+}
+.tableListBox .treeLine{
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.tableListBox .treeLine:hover{
+    background: #e4e6f1;
+}
+/*添加成员*/
+.searchPanelBig .searchBox {
+    width: 100%;
+    border:none;
+    height: 44px;
+    line-height: 44px;
+    padding: 0px 100px 0px 40px;
+    outline:none;
+}
+.searchPanelBig {
+    width:100%;
+    position: relative;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.searchPanelBig img {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.searchPanelBig .btn_search{
+    position:absolute;
+    padding:0px 20px;
+    right:0px;
+    top:0px;
+    height:44px;
+}
+.searchResultPanel{
+    margin-bottom:30px;
+}
+.searchResultPanel li{
+    padding:20px 10px;
+}
+.searchResultLi {
+    line-height:44px;
+    font-size:14px;
+    color:#212121;
+}
+.searchResultLi span{
+    margin-right:5px;
+}
+.searchResultLi h1{
+    color:#6e6e6e;
+}
+.searchPanelTitle{
+    font-size:14px;
+    line-height:44px;
+    color:#000;
+}
+.searchPanelTitle .line{
+    display:inline-block;
+    width:1px;
+    height:14px;
+    background-color:#bdc4d7;
+    vertical-align:middle;
+    margin:0px 5px;
+}
+/*upgradeModal*/
+.qyb{
+    font-size: 16px;
+    color: #008bff;
+    line-height: 34px;
+    letter-spacing: 2px;
+}
+.zfb h1{
+    margin-top: 10px;
+}
+.zfb img{
+    width: 54px;
+    float: left;
+}
+.zfb p{
+    margin-left: 55px;
+    line-height: 20px;
+    color: #6c7786;
+}
+.addpay{
+    font-size: 14px;
+    color: #3B3B3B;
+}
+.addpay span{
+    font-size: 16px;
+    color: #eb3a32;
+    
+}
+.bug_num .button{
+    float: left;
+    width: 34px;
+    line-height: 32px;
+    background: #FFFFFF;
+    color: #3B3B3B;
+    font-size: 26px;
+    border: 1px solid #E5E5E5;
+}
+.bug_num .button:hover{
+    background: #008bff;
+    color: #fff;
+}
+.bug_num span{
+    display: inline-block;
+    float: left;
+    width: 80px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5 ;
+}
+.bug_num select{
+    width: 260px;
+}
+.deblock span{
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    border: none;
+    color: #008bff;
+    font-family: "微软雅黑";
+}
+
+/*报表中心样式*/
+.chartFilter{
+    padding: 10px 20px;
+    border-bottom: 1px solid #E5E5E5;
+    box-shadow: 0px 3px 3px #ebf4fb;
+    margin-bottom: 20px;
+}
+.chartFilter .dropdownBox{
+    float: left;
+    margin: 10px 20px;
+    font-size: 14px;
+    color: #888;
+}
+.reportPanel{
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+.reportPanelBox{
+    padding: 20px;
+}
+.reportTable{
+    border-right: none;
+}
+.reportTable tr th{
+    border-right: 1px solid #e1e6eb;
+    color: #000;
+}
+.reportTable1 tr th:first-child{
+    font-weight: bold;
+}
+.reportTable tr td{
+    border-right: 1px solid #e1e6eb;
+}
+.reportTable1 tr td:first-child{
+    background: #f5f6fa;
+    color: #000;
+}
+.saveReport{
+    padding: 0px 20px 10px;
+    font-size: 14px;
+}
+.saveReport a{
+    cursor: pointer;
+}
+.saveReport img{
+    margin-right: 10px;
+}
+/*时间选择器*/
+.datetimepickerNormal{
+    float: left;
+}
+.datetimepickerNormal .form-control{
+    width: 300px;
+}
+.marginb_10{
+    margin-bottom: 10px;
+}
+
+/*提需求弹框*/
+.newDemand{
+	height: 430px;
+	padding: 20px;
+}
+.newDemand ul li{
+	margin-top: 10px;
+	line-height: 40px;
+}
+.newDemand ul li .popLeft{
+	width: 100px;
+	float: left;
+	text-align: right;
+	font-size: 14px;
+	color: #313131;
+}
+.newDemand ul li .popRight{	
+	margin-left: 10px;
+	float: left;
+	font-size: 14px;
+	color: #313131;
+}
+.newDemand ul li .popRight input{
+	width: 300px;
+	height: 30px;
+	padding: 0 10px;
+	border: 1px solid #E5E5E5;
+}
+.newDemand ul li .popRight select{
+	width: 200px;
+	height: 30px;
+	border: 1px solid #E5E5E5;
+}
+.newDemand ul li .popRight textarea{
+	width: 350px;
+	height: 100px;
+	resize: none;
+	border: 1px solid #E5E5E5;
+	line-height: 25px;
+	font-size: 14px;
+}
+.newDemand .submitBtn{
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	background: #008BFF;
+	margin-left:240px ;
+}
+/*新增场景*/
+.addNewScene{
+	height: 330px;
+	padding: 20px;
+}
+.addNewScene ul li{
+	margin-top: 10px;
+	line-height: 40px;
+}
+.addNewScene ul li .popLeft{
+	width: 100px;
+	float: left;
+	text-align: right;
+	font-size: 14px;
+	color: #313131;
+}
+.addNewScene ul li .popRight{	
+	margin-left: 10px;
+	float: left;
+	font-size: 14px;
+	color: #313131;
+}
+.addNewScene ul li .popRight input{
+	width: 300px;
+	height: 30px;
+	padding: 0 10px;
+	border: 1px solid #E5E5E5;
+}
+.addNewScene ul li .popRight .fileInput{
+	opacity: 0;
+	width: 100px;
+}
+.addNewScene ul li .popRight .fileUpload{
+	display: inline-block;
+	float: left;
+	margin-top: -30px;
+	margin-left: 0;
+	line-height: 36px;
+}
+.addNewScene ul li .popRight textarea{
+	width: 350px;
+	height: 100px;
+	resize: none;
+	border: 1px solid #E5E5E5;
+	line-height: 25px;
+	font-size: 14px;
+}
+.addNewScene .submitBtn{
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	background: #008BFF;
+	margin-left:240px ;
+}

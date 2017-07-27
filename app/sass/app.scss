@@ -1,0 +1,760 @@
+@import "common.scss";
+.top {
+    min-width: 1200px;
+}
+
+.main {
+    min-width: 1200px;
+    overflow: auto;
+}
+
+
+/*基础样式*/
+
+.tipsColor {
+    color: #ef2a21;
+}
+
+.c-blue {
+    color: $b-color;
+}
+
+.c-graylight {
+    color: #bfbfbf;
+}
+
+.c-red {
+    color: $r-color;
+}
+
+.f-bold {
+    font-weight: bold;
+}
+
+.icon-blue1 {
+    color: #8ab9ff;
+}
+
+.icon-gray1 {
+    color: #878787;
+}
+
+.icon-gray1:hover {
+    color: $b-color;
+}
+
+.a-blue {
+    color: $b-color;
+    cursor: pointer;
+}
+
+.a-blue:hover {
+    color: $b-color1;
+}
+
+.a-red {
+    color: $r-color;
+    &:hover {
+        color: $r-color;
+    }
+}
+
+.ellipsis_160 {
+    max-width: 160px;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.f-14{
+    font-size:14px; 
+}
+.f-16{
+    font-size: 16px;
+}
+.f-18{
+    font-size: 18px;
+}
+.f-20{
+    font-size: 20px;
+}
+.marginl-5 {
+    margin-left: 5px;
+}
+.marginl-20 {
+    margin-left: 20px;
+}
+.marginr-5 {
+    margin-right: 5px;
+}
+
+.marginl-10 {
+    margin-left: 10px;
+}
+
+.margint-20 {
+    margin-top: 20px;
+}
+.marginb-10 {
+    margin-bottom: 10px;
+}
+.marginb-20 {
+    margin-bottom: 20px;
+}
+.margint-14 {
+    margin-top: 14px;
+}
+
+.ellipsis {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-blue {
+    padding: 0px 15px;
+    height: 30px;
+    line-height: 30px;
+    background: $b-color;
+    display: inline-block;
+    color: #fff;
+}
+
+.btn-blue:hover {
+    color: #fff;
+    background: $b-color1;
+}
+
+.btn-modal {
+    height: 40px;
+    padding: 0px 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+}
+
+.btn-modal1 {
+    height: 40px;
+    width: 120px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-modal-blue {
+    background: $b-color;
+    color: #fff;
+    &:hover {
+        background: $b-color1;
+        color: #fff;
+    }
+}
+
+.btn-modal-gray {
+    background: $g-color;
+    color: #707070;
+    &:hover {
+        background: $g-color1;
+        color: #707070;
+    }
+}
+
+.btn-blue2 {
+    padding: 0px 30px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    background: $b-color;
+    display: inline-block;
+    color: #fff;
+    &:hover {
+        color: #fff;
+        background: $b-color1;
+    }
+}
+.borderbtn{
+    padding: 0px 20px;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    display: inline-block;
+    cursor: pointer;
+}
+.borderbtn-blue {    
+    border: 1px solid $b-color;
+    color: $b-color;
+    &:hover {
+        color: #fff;
+        background: $b-color;
+    }
+}
+.borderbtn-red {
+    border: 1px solid $r-color;
+    color:  $r-color;
+    &:hover {
+        color: #fff;
+        background: $r-color;
+    }
+}
+
+
+/* 基础输入框 */
+
+.inputnormall {
+    border: 1px solid $border-color;
+    padding: 0px 15px;
+    line-height: 40px;
+    &:focus {
+        border-color: $b-color;
+    }
+}
+.textareanormall{
+    border: 1px solid $border-color;
+    padding: 0px 15px;
+    line-height: 40px;
+    resize:none;
+    &:focus {
+        border-color: $b-color;
+    }
+}
+
+
+/*无边框下拉框*/
+
+.dropdownBox {
+    position: relative;
+    .tableDropdownToggle {
+        cursor: pointer;
+        .glyphicon-menu-down {
+            font-size: 12px;
+            color: #3c3c3c;
+        }
+    }
+    .dropdown-menu>li {
+        cursor: pointer;
+    }
+}
+
+
+/*基础表格样式*/
+
+.defaultTable1 {
+    width: 100%;
+    border-left: 1px solid $border-color;
+    tr {
+        height: 40px;
+        font-size: 14px;
+    }
+    tr th {
+        background: #eee;
+        color: #707070;
+        padding-left: 15px;
+    }
+    tr td {
+        padding-left: 15px;
+        padding-right: 15px;
+        border-right: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
+.defaultTable2 {
+    tr td {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+
+/*数量选择*/
+
+.selectSpan {
+    a {
+        width: 32px;
+        text-align: center;
+        line-height: 32px;
+        display: inline-block;
+        border: 1px solid $border-color;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        float: left;
+        &:hover {
+            border-color: $b-color;
+            color: $b-color;
+        }
+    }
+    .disabledSpan {
+        color: $border-color;
+        &:hover {
+            border-color: $border-color;
+            color: $border-color;
+        }
+    }
+    input {
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        line-height: 32px;
+        padding: 0px 10px;
+        width: 60px;
+        text-align: center;
+        float: left;
+    }
+}
+/*页码信息*/
+.pageinfoBox{
+    margin: 20px 0px;
+    span{
+        font-size: 12px;
+        color: #888; 
+        line-height: 30px;
+    }
+}
+/*基础输入样式*/
+.defaultinputBox {
+        padding: 10px 20px;
+        .title {
+            font-size: 14px;
+            color: #707070;
+            text-align: left;
+            line-height: 40px;
+            margin-right: 10px;
+        }
+        .inputtext {
+            width: 50%;
+            margin-right: 20px;
+        }
+        .textareatext{
+            width: 50%;
+            margin-right: 20px;
+            height: 160px;
+        }
+        .inputradioBox {
+            line-height: 40px;
+            margin-right: 10px;
+            .inputradio {
+                margin-right: 5px;
+            }
+        }
+        .error {
+            line-height: 40px;
+        }
+    }
+
+/*顶部导航样式*/
+
+.topnavBox {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.topnavBox {
+    .navBar {
+        background: #fff;
+        border: none;
+        margin-bottom: 0px;
+    }
+    .navBar-nav>li {
+        display: block;
+        float: left;
+    }
+    .navBar-nav>li>a {
+        display: block;
+        padding: 0px 30px;
+        font-size: 16px;
+        height: 60px;
+        line-height: 60px;
+        color: #313131;
+    }
+    .navBar-nav>li>a:hover {
+        .navicon {
+            color: #fff;
+        }
+        background: $b-color;
+        color: #fff;
+    }
+    .navdropdown {
+        position: relative;
+        .navdropdowna {
+            float: left;
+        }
+        .glyphicon {
+            font-size: 12px;
+            margin-left: 5px;
+            transition: transform 0.6s;
+            -moz-transition: transform 0.6s;
+            /* Firefox 4 */
+            -webkit-transition: transform 0.6s;
+            /* Safari 和 Chrome */
+            -o-transition: transform 0.6s;
+            /* Opera */
+        }
+        .navdropdownmenu {
+            position: absolute;
+            z-index: 10000;
+            top: 60px;
+            display: none;
+            padding: 0px;
+            border-radius: 0px;
+            background: #fff;
+            box-shadow: 1px 1px 4px rgba(153, 153, 153, 0.3);
+            .line {
+                width: calc(100%-30px);
+                margin-left: 15px;
+                margin-right: 15px;
+                height: 1px;
+                background: $border-color;
+            }
+        }
+        .navdropdownmenu>li>a {
+            width: 160px;
+            line-height: 50px;
+            padding: 0px 15px;
+            display: block;
+            background: #fff;
+            font-size: 16px;
+            color: #313131;
+            &:hover {
+                background: #1674ff;
+                color: #fff;
+            }
+        }
+    }
+    .navdropdown:hover {
+        .glyphicon {
+            transform: rotateX(180deg);
+            -ms-transform: rotateX(180deg);
+            /* IE 9 */
+            -moz-transform: rotateX(180deg);
+            /* Firefox */
+            -webkit-transform: rotateX(180deg);
+            /* Safari 和 Chrome */
+            -o-transform: rotateX(180deg);
+        }
+        .navdropdowna {
+            background: $b-color;
+            color: #fff;
+            a {
+                color: #fff;
+            }
+        }
+        .navdropdownmenu {
+            display: block;
+        }
+    }
+    .nav-right>li>a {
+        padding: 0px 20px;
+        font-size: 14px;
+        .navicon {
+            margin-right: 10px;
+        }
+    }
+    .nav-right>li>a:hover {
+        background: #fff;
+        color: $b-color;
+        .navicon {
+            color: $b-color;
+        }
+    }
+    .nav-right {
+        .registerbtn {
+            background: $b-color;
+            color: #fff;
+            padding: 0px 25px;
+            &:hover {
+                background: $b-color;
+                color: #fff;
+            }
+        }
+        .navdropdown {
+            position: relative;
+            .navdropdowna {
+                float: left;
+            }
+            .glyphicon {
+                font-size: 12px;
+                margin-left: 5px;
+                transition: transform 0.6s;
+                -moz-transition: transform 0.6s;
+                /* Firefox 4 */
+                -webkit-transition: transform 0.6s;
+                /* Safari 和 Chrome */
+                -o-transition: transform 0.6s;
+                /* Opera */
+            }
+            .navdropdownmenu {
+                position: absolute;
+                z-index: 10000;
+                top: 60px;
+                display: none;
+                padding: 0px;
+                border-radius: 0px;
+                border: 1px solid $border-color;
+                box-shadow: 1px 1px 4px rgba(153, 153, 153, 0.3);
+            }
+            .navdropdownmenu>li>a {
+                width: 120px;
+                line-height: 40px;
+                padding: 0px 15px;
+                display: block;
+                background: #fff;
+                font-size: 14px;
+                color: #313131;
+                &:hover {
+                    background: #1674ff;
+                    color: #fff;
+                }
+            }
+        }
+        .navdropdown:hover {
+            .glyphicon {
+                transform: rotateX(180deg);
+                -ms-transform: rotateX(180deg);
+                /* IE 9 */
+                -moz-transform: rotateX(180deg);
+                /* Firefox */
+                -webkit-transform: rotateX(180deg);
+                /* Safari 和 Chrome */
+                -o-transform: rotateX(180deg);
+            }
+            .navdropdowna {
+                background: #fff;
+                color: $b-color;
+                a {
+                    color: #fff;
+                }
+            }
+            .navdropdownmenu {
+                display: block;
+            }
+        }
+        .consolebtn {
+            border: 1px solid $b-color;
+            height: 34px;
+            line-height: 34px;
+            margin-top: 13px;
+            color: $b-color;
+            margin-right: 20px;
+            &:hover {
+                background: $b-color;
+                color: #fff;
+            }
+        }
+        .splitline {
+            display: block;
+            float: left;
+            width: 1px;
+            height: 16px;
+            margin-top: 22px;
+            background: #dcdcdc;
+        }
+    }
+    /*购物车下拉*/
+    .navshopcartBox {
+        position: relative;
+        &:hover {
+            .shopcartDrop {
+                display: block;
+            }
+        }
+        .shopcartDrop {
+            display: none;
+            z-index: 1000;
+            position: absolute;
+            top: 60px;
+            width: 290px;
+            min-height: 120px;
+            font-size: 12px;
+            border: 1px solid $border-color;
+            box-shadow: 1px 1px 4px rgba(153, 153, 153, 0.3);
+            background: #fff;
+            .shopcartdropTitle {
+                font-size: 12px;
+                margin: 6px 0px 6px 10px;
+                color: #999;
+            }
+            .shopcartdropItem {
+                padding: 8px 5px 0px;
+                width: 100%;
+                &:hover {
+                    background: #fafafc;
+                }
+                .shopcartdropleft1 {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 48px;
+                    height: 48px;
+                    margin-right: 6px;
+                    &:hover {
+                        .shopcartdropPic {
+                            border-color: $b-color;
+                        }
+                    }
+                    .shopcartdropPic {
+                        width: 48px;
+                        border: 1px solid $border-color;
+                    }
+                }
+                .shopcartdropleft2 {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 130px;
+                    color: #666;
+                    &:hover {
+                        p {
+                            color: $b-color;
+                        }
+                    }
+                    p {
+                        width: 130px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+                .shopcartdropRight {
+                    width: 85px;
+                    text-align: right;
+                    display: inline-block;
+                    vertical-align: middle;
+                    .shopcartdropDel {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .line {
+                width: 280px;
+                margin: 0 auto;
+                background: $border-color;
+                height: 1px;
+                margin-top: 8px;
+            }
+            .shopcartdropFooter {
+                margin-top: -1px;
+                display: table;
+                border-top: 1px solid $border-color;
+                background: #fafafc;
+                padding: 0px 8px;
+                height: 60px;
+                width: 100%;
+                span {
+                    display: table-cell;
+                    vertical-align: middle;
+                    color: #666;
+                    width: 175px;
+                    word-break: break-all;
+                    word-wrap: break-word;
+                }
+                a {
+                    margin-top: 12px;
+                }
+            }
+            /*购物车为空*/
+            .shopcartDropNone {
+                padding: 30px;
+                display: table;
+                img {
+                    float: left;
+                    margin-right: 10px;
+                }
+                .tip {
+                    display: table-cell;
+                    vertical-align: middle;
+                    color: #999;
+                    max-width: 150px;
+                }
+            }
+        }
+    }
+}
+
+
+/*控制台框架样式*/
+
+.consoleBox {
+    .top {
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        z-index: 200;
+    }
+    .main {
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        bottom: 0px;
+        overflow: hidden;
+        background: #eee;
+        .left {
+            width: 200px;
+            display: block;
+            position: absolute;
+            top: 20px;
+            bottom: 0px;
+            z-index: 102;
+            overflow-y: auto;
+        }
+        .right {
+            position: absolute;
+            width: auto;
+            top: 20px;
+            bottom: 0px;
+            right: 0px;
+            overflow-y: auto;
+            left: 220px;
+            background: #fff;
+        }
+    }
+}
+
+
+/*控制台顶部导航*/
+
+.ctopnavBox {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* 控制台左导航 */
+
+.cleftnavBox {
+    background: #fff;
+    .title {
+        width: 100%;
+        padding: 20px;
+        font-size: 20px;
+        color: #a0a0a0;
+        font-weight: bold;
+        background: #fff;
+    }
+    .line {
+        width: calc(100%-40px);
+        height: 1px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background: #e5e5e5;
+    }
+    .link>ul>li>a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 14px;
+        color: #313131;
+        background: #fff;
+        &:hover {
+            background: #edf4ff;
+            color: $b-color;
+        }
+    }
+    .link>ul>li .current {
+        color: $b-color;
+    }
+}
+
+
+/*底部导航样式*/

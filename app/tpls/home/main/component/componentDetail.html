@@ -1,0 +1,75 @@
+<style type="text/css">
+
+</style>
+<div class="projectDetailBox">
+    <h1 class="detailTitle">组件详情</h1>
+    <div class="bugName">
+        <span class="bugId">233</span> 组件名称
+        <input class="floatright btn_blue" type="button" value="提交">
+    </div>
+    <div class="bugChangeBox">
+        <ul>
+            <li>
+                <span>组件名称：</span>
+                <input type="text" class="inputText" name="">
+            </li>
+            <li>
+                <span>继承组件：</span>
+                <input type="text" class="inputText" name="">
+            </li>
+            <li>
+                <span>运行环境：</span>
+                <input type="text" class="inputText" name="">
+            </li>
+            <div class="clear"></div>
+            <li>
+                <span class="floatleft">详细描述：</span>
+                <textarea class="floatleft projectTextarea"></textarea>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="bugDetailBox">
+        <div class="tab">
+            <span ng-class="{current:isAttribute}" ng-click="isAttribute=true">脚本</span>
+            <span ng-class="{current:!isAttribute}" ng-click="isAttribute=false">数据维护</span>
+        </div>
+        <div class="history" ng-show="isAttribute">
+            <div class="detailInputList">
+                <ul>
+                    <li>
+                        <span>脚本名称：</span>
+                        <input type="text" class="inputText" name="">
+                    </li>
+                    <li class="fix">
+                        <span class="floatleft">脚本内容：</span>
+                        <textarea class="floatleft projectTextarea" style="height: 300px;"></textarea>
+                    </li>
+                </ul>
+            </div>
+            <div class="marginb_20 marginl_120">
+                <input type="button" name="" class="btn_blue" value="保存">
+            </div>           
+        </div>
+        <div class="history" ng-hide="isAttribute">
+            <table class="table-fullborder">
+                <tr>
+                    <th>参数名称</th>
+                    <th>值</th>
+                    <th>是否只读</th>
+                    <th>描述</th>
+                    <th>复制数据字典项</th>
+                    <th>字典项值</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>错误提示</td>
+                    <td>root</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

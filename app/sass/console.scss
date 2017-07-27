@@ -1,0 +1,688 @@
+@import "common.scss";
+
+/*控制台样式*/
+/*默认ul样式*/
+.defaultulBox {
+    .ultitleBox {
+        width: 100%;
+        background: #eeeeee;
+        height: 40px;
+        line-height: 40px;
+        padding: 0px 10px 0px 20px;
+        .searchBox1 {
+            height: 30px;
+            border: 1px solid $border-color;
+            margin-top: 5px;
+            background: #fff;
+            line-height: 28px;
+            input {
+                height: 28px;
+                float: left;
+                padding: 0px 10px;
+            }
+            a {
+                float: right;
+                margin-right: 5px;
+                color: #707070;
+                &:hover {
+                    color: $b-color;
+                }
+            }
+        }
+    }
+    .ulcontentBox {
+        border: 1px solid $border-color;
+        height: 480px;
+        overflow-y: auto;
+        ul>li {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #313131;
+            padding: 0px 10px 0px 20px;
+            cursor: pointer;
+            &:hover {
+                background: $lihover-color;
+            }
+        }
+        .current{
+            background: $lihover-color;
+        }
+    }
+}
+
+.cmainBox {
+    .titleBox {
+        padding: 10px 20px;
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #a0a0a0;
+            line-height: 40px;
+        }
+        .searchBox {
+            width: 400px;
+            height: 40px;
+            border: 1px solid $border-color;
+            input {
+                height: 38px;
+                width: 320px;
+                outline: none;
+                padding: 0px 10px;
+            }
+            a {
+                width: 78px;
+                height: 38px;
+                line-height: 38px;
+                text-align: center;
+                display: inline-block;
+                float: right;
+                border-left: 1px solid $border-color;
+                font-size: 14px;
+            }
+        }
+    }
+    .line {
+        width: calc(100%-40px);
+        height: 1px;
+        background-color: #e5e5e5;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .contentBox {
+        padding: 0px 20px 30px;
+        font-size: 14px;
+        .tableTitle {
+            width: 100%;
+            tr th {
+                height: 40px;
+                color: #313131;
+                background: #eee;
+                padding-left: 15px;
+            }
+        }
+        .defaultTable1 {
+            width: 100%;
+            border-left: 1px solid $border-color;
+            tr {
+                height: 40px;
+                font-size: 14px;
+            }
+            tr th {
+                background: #eee;
+                color: #707070;
+                padding-left: 15px;
+            }
+            tr td {
+                padding-left: 15px;
+                padding-right: 15px;
+                border-right: 1px solid $border-color;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+        .buttonBox {
+            padding: 10px 0px;
+        }
+        .tableulBox {
+            width: 100%;
+            position: relative;
+            .defaultulBox-right {
+                position: absolute;
+                left: 425px;
+                right: 0px;
+            }
+        }
+    }
+    /*订单详情样式*/
+    .orderDetailBox{
+        .orderDetailTitle{
+            font-size: 14px;
+            font-weight: bold;
+            color:#313131;
+            margin-top: 30px;
+        }
+        .orderfileList{
+            &>li{
+                overflow: hidden;
+                line-height: 24px;
+            }
+            .fileName{
+                display: block;
+                float: left;
+                margin-right: 20px;
+                width: 300px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                color: #707070;
+            }
+        }
+    }
+    /*发票申请成功*/
+    .applySuccessBox{
+        text-align: center;
+        font-size: 14px;
+        color: #313131;
+    }
+}
+
+
+/*cnas模块样式*/
+
+.mainListBox {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mainListBox ul li {
+    float: left;
+    width: 33%;
+    height: 50px;
+    line-height: 50px;
+}
+
+.mainListBox ul li:hover {
+    background: #edf4ff;
+}
+
+.mainListBox ul li a {
+    display: inline-block;
+    width: 55%;
+    margin-left: 22px;
+    color: #313131;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mainListBox .rightIcon span {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+/*已发起流程样式*/
+
+.launchedListBox {
+    border-collapse: collapse;
+}
+
+.launchedListBox tr {
+    border: 1px solid #E5E5E5;
+    border-collapse: collapse;
+}
+
+.launchedListBox tr th {
+    border: 1px solid #E5E5E5;
+    border-collapse: collapse;
+}
+
+.launchedListBox tr td {
+    font-size: 14px;
+    color: #313131;
+}
+
+.launchedListBox tr .glyBtn span {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+/*测试报告提交*/
+
+.reportSubmit {
+    font-size: 14px;
+    color: #1b1b1b;
+    margin-left: 12px;
+    margin-top: 14px;
+}
+
+.currentNodeBox {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #E5E5E5;
+}
+
+.currentNodeTitle {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #1674FF;
+    margin: 0 20px;
+}
+
+.operatingBtn {
+    margin: 10px 20px;
+}
+
+.operatingBtn input {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    color: #3884fe;
+    border: 1px solid #1674ff;
+    background: #FFFFFF;
+    margin-right: 18px;
+}
+
+.operatingBtn input:hover {
+    color: #FFFFFF;
+    background: #1674ff;
+}
+
+.basicInfo {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #E5E5E5;
+}
+
+.basicInfoTitle {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #3884FE;
+    margin: 0 20px;
+}
+
+.basicInfoTitle img {
+    cursor: pointer;
+}
+
+.basicInfoCont ol {
+    margin: 20px;
+}
+
+.basicInfoCont ol>li {
+    width: 100%;
+    margin-top: 14px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.basicInfoCont ol>li .listLeft {
+    width: 110px;
+    font-size: 12px;
+    color: #626262;
+    text-align: right;
+}
+
+.basicInfoCont ol>li .listRight {
+    margin-left: 10px;
+}
+
+.basicInfoCont ol>li .listRight input {
+    font-size: 12px;
+    color: #1B1B1B;
+    height: 25px;
+    padding-left: 10px;
+    border: 1px solid #E5E5E5;
+}
+
+.basicInfoCont ol>li .listRight textarea {
+    float: left;
+    width: 440px;
+    height: 70px;
+    padding: 5px 10px;
+    border: 1px solid #E5E5E5;
+    resize: none;
+    font-size: 12px;
+    color: #1B1B1B;
+    line-height: 20px;
+}
+
+.basicInfoCont ol>li .listRight .filter {
+    width: 19px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.basicInfoCont ol>li .listRight .tips {
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.testReportTable {
+    margin: 20px;
+}
+
+.testReportTable table {
+    border-collapse: collapse;
+}
+
+.testReportTable table tr {
+    border: 1px solid #E5E5E5;
+}
+
+.testReportTable table th {
+    font-size: 12px;
+    color: #1B1B1B;
+    text-align: center;
+    border: 1px solid #E5E5E5;
+}
+
+.testReportTable table td {
+    font-size: 12px;
+    color: #1B1B1B;
+    text-align: center;
+    padding: 5px;
+}
+
+.testReportSelect {
+    height: 25px;
+    width: 200px;
+    padding-left: 5px;
+    border: 1px solid #E5E5E5;
+}
+
+.attachmentInfo {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #E5E5E5;
+}
+
+.attachmentTable {
+    margin: 0 20px 70px;
+}
+
+.attachmentTable table {
+    border-collapse: collapse;
+}
+
+.attachmentTable table th {
+    border: 1px solid #E5E5E5;
+}
+.history{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #E5E5E5;
+}
+.historyCont ol{
+    margin:10px 20px;
+}
+.history ol li{
+    margin-bottom: 10px;
+}
+/*个人中心样式*/
+
+.editInfo {
+    font-size: 14px;
+    color: #1674FF;
+    margin-top: 10px;
+}
+
+.personalInfo {
+    margin: 20px 3px;
+}
+
+.personalInfo ul li {
+    line-height: 40px;
+}
+
+.personalInfoLeft {
+    width: 70px;
+    font-size: 14px;
+    color: #707070;
+    text-align: right;
+}
+
+.personalInfoRight {
+    font-size: 14px;
+    color: #313131;
+    margin-left: 10px;
+}
+
+.personalInfoRight span {
+    margin-right: 35px;
+}
+
+.personalInfoRight .changeBind,
+.personalInfoRight .changePassword {
+    font-size: 14px;
+    color: #1674FF;
+    margin-right: 35px;
+}
+
+.personalInfo .infoTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #313131;
+}
+
+.personalInfoRight input,
+.personalInfoRight select {
+    width: 400px;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px solid #E5E5E5;
+}
+.personalInfoRight .tips{
+    margin-left: 35px;
+}
+
+/*控制台样式*/
+.notice{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: #d0e3ff;
+    font-size: 14px;
+    color: #313131;
+    padding: 0 20px;
+    z-index: 102;
+}
+.closeNotice{
+    font-size: 26px;
+    color: #1674ff;
+    cursor: pointer;
+}
+.messageBox{
+    width: 100%;
+    border: 20px solid #eee;    
+}
+.messageBox .welcome,
+.messageBox .backlog
+{
+    width: 33.33%;
+    height: 250px;
+    background: #FFFFFF;
+    border-right:20px solid #eee ;
+}
+.messageBox .evaluationSservice{
+    width: 33.33%;
+    height: 250px;
+    background: #FFFFFF;
+}
+.welcome .userName{
+    font-size: 20px;
+    color: #313131;
+    margin-top:35px ;
+    margin-left: 20px;
+}
+.welcome .message{
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.welcome .message a{
+    margin-right: 20px;
+}
+.welcome ul {
+    width: 100%;
+    margin-top: 50px;   
+    margin-left: 20px;
+}
+.welcome ul li{
+    width: 50%;
+    height:20px ;
+    line-height: 20px;
+    float: left;
+    margin-bottom: 25px;
+}
+.welcome ul li a{
+    font-size: 14px;
+    color: #313131;
+}
+.welcome ul li a img{
+    float: left;
+    margin-top: 2px;
+    margin-right: 10px;
+}
+.messageBox .title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #A0A0A0;
+    margin: 20px;   
+}
+.backlog .unfinished{
+    height: 160px;
+    width: 44%;
+    background: #f3f8ff;
+}
+.backlog .unfinished a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.backlog .unfinished a p{
+    font-size: 14px;
+    color: #707070;
+    margin:10px ;
+}
+.backlog .unfinished a h1{
+    font-size: 40px;
+    color: #313131;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+.evaluationSservice ul{
+    margin: 20px;
+    border-top: 1px solid #E5E5E5;
+}
+.evaluationSservice ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #E5E5E5;
+}
+.evaluationSservice ul li:hover{
+    background: #edf4ff;
+}
+.evaluationSservice ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.evaluationSservice ul li a h5{
+    width: 130px;
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #313131;
+    margin-top: 18px;
+}
+.evaluationSservice ul li a h3{
+    float: left;
+    font-size: 20px;
+    color: #313131;
+    margin-top: 15px;
+}
+.myCloudProduct{
+    width: 100%;
+    min-height:450px ;
+    border: 20px solid #EEEEEE;
+    border-top:none ;
+    background: #fff;
+}
+.myCloudProduct .title{
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #A0A0A0;
+    margin-left: 20px;  
+}
+.myCloudProduct ul{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.myCloudProduct ul li{
+    float: left;
+    width:25%;
+    min-width: 460px;
+    height: 340px;
+    margin-bottom: 20px;
+    border-right:20px solid #FFFFFF;
+    background: #edf4ff;
+}
+.myCloudProduct ul li .productName{
+    width: 100%;
+    line-height: 70px;
+    height: 70px;
+}
+.myCloudProduct ul li .productName img{
+    float: left;
+    margin-left:20px ;
+    margin-top: 20px;
+}
+.myCloudProduct ul li .productName span {
+    display: block;
+    float: left;
+    width: 165px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    color: #313131;
+    margin-left: 10px;
+}
+.myCloudProduct ul li .toggleBtn{
+    display: block;
+    width: 60px;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    font-size: 14px;
+    color: #1674FF;
+    border: 1px solid #1674ff;
+}
+.myCloudProduct ul li .line{
+    width: calc(100%-40px);
+    height: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #e5e5e5;
+}
+.myCloudProduct ul li .licence{
+    text-align: center;
+    font-size: 14px;
+    color: #707070;
+    margin: 17px 0;
+}
+.myCloudProduct ul li .licenceLeft{
+    width: 70px;
+    text-align: right;
+    float: left;
+    font-size: 14px;
+    color: #707070;
+    margin-left: 20px;
+}
+.myCloudProduct ul li .licenceRight{
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #313131;
+}
+
+.myCloudProduct ul li .renew{
+    display: block;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px auto;
+    background: #1674ff;
+    color: #FFFFFF;
+    font-size: 14px;
+}

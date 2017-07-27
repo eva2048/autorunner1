@@ -1,0 +1,173 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="projectBugManageCtrl">
+    <div class="projectBodyTitle">
+        缺陷列表
+        <div class="floatright dropdownBox" dropdown>
+            <input dropdown-toggle type="button" class="btn_gray dropdownToggle" value="更多操作">
+            <ul class="dropdown-menu" dropdown-menu role="menu">
+                <li><a ng-click="open()">缺陷导出</a></li>
+                <li><a>缺陷导入</a></li>
+                <li ng-controller="defectExportSetModalCtrl"><a ng-click="open()">导入导出配置</a></li>
+                <li ng-controller="customColumnModalCtrl"><a ng-click="open()">自定义列</a></li>
+            </ul>
+        </div>
+        <input ui-sref="projectInner.createBug" type="button" class="floatright btn_blue" value="新建缺陷">
+    </div>
+    <div class="projectBodyFunction">
+        <div class="tabBox floatleft">
+            <span class="{{index==1?'current':''}}" ng-click="index=1">全部</span>
+            <span class="{{index==2?'current':''}}" ng-click="index=2">我提交的</span>
+            <span class="{{index==3?'current':''}}" ng-click="index=3">待我处理的</span>
+        </div>
+        <div class="clear"></div>
+        <div class="bugListFunction floatleft">
+            <div class="floatleft" ng-controller="connectUsecaseModalCtrl">
+                <input class="floatleft fbtn_red" type="button" value="关联用例" ng-click="open()">
+            </div>
+            <div class="floatleft" ng-controller="chooseHandlerModalCtrl">
+                <input class="floatleft fbtn_blue" type="button" value="修改处理人" ng-click="open()">
+            </div>
+            <input ng-click="isShowAdvancedFilterPack=true" class="floatleft fbtn_blue" type="button" value="高级筛选&nbsp;▼">
+            <div class="clear"></div>
+        </div>
+        <div class="searchBox floatright margint_10">
+            <input class="floatleft inputSearch" type="text" placeholder="请输入缺陷名称或ID" name="">
+            <img class="btnSearch" src="images/searchBox_btnSearch.png">
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="advancedFilterBox" ng-show="isShowAdvancedFilterPack">
+            <ul>
+                <li>
+                    <h1>排序方式：</h1>
+                    <a class="current">最新创建</a>
+                    <a>最近操作</a>
+                </li>
+                <li>
+                    <h1>缺陷状态：</h1>
+                    <a class="current">不限</a>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>新建</h2>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>新建</h2>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>新建</h2>
+                </li>
+                <li>
+                    <h1>缺陷等级：</h1>
+                    <a class="current">不限</a>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>高</h2>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>中</h2>
+                    <input class="checkbox" type="checkbox" name="">
+                    <h2>低</h2>
+                </li>
+                <li class="paddingb_0">
+                    <h1>项目模块：</h1>
+                    <div style="width: 80%" class="floatleft">
+                        <a class="current">不限</a>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>登录模块</h2>
+                        </div>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>注册模块</h2>
+                        </div>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>开发者项目管理模块</h2>
+                        </div>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>登录模块</h2>
+                        </div>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>注册模块</h2>
+                        </div>
+                        <div class="modalFilterBox">
+                            <input class="checkbox" type="checkbox" name="">
+                            <h2>开发者项目管理模块</h2>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <h1 class="margint_10">创建时间：</h1>
+                    <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" alt-input-formats="altInputFormats" min-date="dat0" max-date="dat1" ng-click="open1()" close-text="关闭" clear-text="清空" current-text="今天" />&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                </li>
+                <div class="floatleft f_blue cursor_p advancedFilterPack" ng-click="isShowAdvancedFilterPack=false">收起高级筛选</div>
+                <div class="advancedFilterBtn floatright">
+                    <input type="button" name="" class="btn_blue" value="确认">
+                    <input type="button" name="" class="btn_gray" value="重置">
+                </div>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="projectBodyList">
+        <table class="table-fullborder">
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>
+                    ID
+                </th>
+                <th>BUG名称</th>
+                <th>
+                    状态
+                </th>
+                <th>
+                    缺陷等级
+                </th>
+                <th>
+                    项目模块
+                </th>
+                <th>创建时间</th>
+                <th>最后更新时间</th>
+                <th>提交者</th>
+                <th>处理者</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td class="typeImg">2</td>
+                <td ng-click="fadeIn();$event.stopPropagation();"><span title="<i style='max-width:120px;break-word:break-all;'>项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</i>" class="text_ellipsis10 f_blue cursor_p">项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</span></td>
+                <td>新建</td>
+                <td class="stateImg">中</td>
+                <td>登录模块</td>
+                <td>2016-07-08 11：20：58</td>
+                <td>2016-07-08 11：20：58</td>
+                <td>humq</td>
+                <td>humq</td>
+                <td><a class="f_graya">编辑</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td class="typeImg">2</td>
+                <td ng-click="fadeIn();$event.stopPropagation();"><span class="text_ellipsis10 f_blue cursor_p">项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</span></td>
+                <td>新建</td>
+                <td class="stateImg">中</td>
+                <td>登录模块</td>
+                <td>2016-07-08 11：20：58</td>
+                <td>2016-07-08 11：20：58</td>
+                <td>humq</td>
+                <td>humq</td>
+                <td><a class="f_blue">编辑</a></td>
+            </tr>
+        </table>
+        <div class="floatright">
+            <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
+            </pagination>
+        </div>
+    </div>
+</div>

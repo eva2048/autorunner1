@@ -1,0 +1,40 @@
+<style type="text/css">
+.modal-dialog {
+    width: 800px;
+}
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">确认合同</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody modalBody1">
+    <div class="c-blue marginl-20 f-14 marginb-10">确认合同代表您同意合同条款，我们会将合同快递给贵公司，请如实填写邮寄地址信息.</div>
+    <div class="modalinputBox">
+        <div class="title floatleft"><em class="c-red">*</em>收件人：</div>
+        <input class="inputtext inputnormall" type="text" name="" placeholder="请填写收件人信息">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft"><em class="c-red">*</em>所在地区：</div>
+        <input class="inputtext inputnormall" type="text" name="" placeholder="请填写省、市、区信息">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft"><em class="c-red">*</em>详细地址：</div>
+        <input class="inputtext inputnormall" type="text" name="" placeholder="请填写详细收货地址，如街道名称，门牌号码等">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft"><em class="c-red">*</em>联系电话：</div>
+        <input class="inputtext inputnormall" type="text" name="" placeholder="请填写联系电话">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="modal-footer" ng-controller="modalCtrl">
+    <a ng-click="cancel();open('createProjectGroup1')" href="" class="floatright btn-modal btn-modal-blue marginl-10">确定</a>
+    <a href="" class="floatright btn-modal btn-modal-gray">取消</a>
+</div>

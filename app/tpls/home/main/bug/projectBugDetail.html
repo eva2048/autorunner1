@@ -1,0 +1,242 @@
+<style type="text/css">
+.mask {
+    display: none;
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.preFun {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: 10px;
+    margin-top: -28px;
+}
+
+.preFun {
+    cursor: pointer;
+}
+
+.mask-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: url(images/op_bg.png) repeat;
+}
+
+.big-pic-wrap {
+    position: absolute;
+    left: 50%;
+    background: none;
+    max-width: 90%;
+    max-height: 80%;
+    top: 50%;
+    overflow: auto;
+}
+
+
+.wrapper {margin: 0 auto; width: 960px; }
+.pdf-controls { width: 100%; display: block; background: #eee; padding: 1em;}
+.rotate0 {-webkit-transform: rotate(0deg); transform: rotate(0deg); }
+.rotate90 {-webkit-transform: rotate(90deg); transform: rotate(90deg); }
+.rotate180 {-webkit-transform: rotate(180deg); transform: rotate(180deg); }
+.rotate270 {-webkit-transform: rotate(270deg); transform: rotate(270deg); }
+.fixed { position: fixed; top: 0; left: calc(50% - 480px); z-index: 100; width: 100%; padding: 1em; background: rgba(238, 238, 238,.9); width: 960px; }
+
+/*关闭大图按钮*/
+</style>
+<div class="projectDetailBox" ng-controller="projectBugDetailCtrl">
+    <h1 class="detailTitle">缺陷详情</h1>
+    <div class="bugName">
+        <span class="bugId">233</span> 缺陷名称
+    </div>
+    <div class="bugChangeBox" ng-init="defectState='1'">
+        <ul>
+            <li>
+                <span>缺陷状态：</span>
+                <select class="selectNormal" ng-model="defectState">
+                    <option value="1">待审</option>
+                    <option value="2">驳回</option>
+                </select>
+            </li>
+            <li>
+                <span>角色：</span>
+                <select class="selectNormal">
+                    <option>已处理</option>
+                    <option>未处理</option>
+                </select>
+            </li>
+            <li>
+                <span>处理人：</span>
+                <select class="selectNormal">
+                    <option>已处理</option>
+                    <option>未处理</option>
+                </select>
+            </li>
+            <li>
+                <span>驳回类型：</span>
+                <select class="selectNormal">
+                    <option>已处理</option>
+                    <option>未处理</option>
+                </select>
+            </li>
+            <li>
+                <span class="floatleft">驳回理由：</span>
+                <textarea class="floatleft projectTextarea"></textarea>
+            </li>
+            <li>
+                <input class="btn_blue" type="button" value="提交">
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+    <div class="bugDetailBox">
+        <div class="tab">
+            <span ng-class="{current:isAttribute==0}" ng-click="isAttribute=0">缺陷描述</span>
+            <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">缺陷属性</span>
+            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">操作历史</span>
+        </div>
+        <div class="attribute" ng-show="isAttribute==0">
+            <div>
+                <div class="attributeTitle">
+                    缺陷描述
+                </div>
+                <div class="attributeP">从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头。随着2016年初阿里巴巴近8亿美元投资Magic Leap，中国的“VR创业潮”正式拉开了帷幕，2016年也被称为中国虚拟现实的元年，这期间涌现了大量的创业公司，其中不乏佼佼者，逐渐走上了引领世界VR发展的道路。
+                <p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头,从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+                <p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+                </div>
+            </div>
+            <div>
+                <div class="attributeTitle">
+                    缺陷附件
+                </div>
+                <ul class="attributeFile">
+                    <li>
+                        <img src="images/file_word.png">
+                        <span>测试需求文档.doc</span>
+                        <em class="f_blue2">预览</em>
+                    </li>
+                    <li>
+                        <img src="images/file_pic.png">
+                        <span>图片1.png</span>
+                        <em class="f_blue2" enlarge-pic>预览</em>
+                    </li>
+                    <div class="mask">
+                        <div class="mask-box" close-Pic>
+                        </div>
+                        <div class="big-pic-wrap">
+                            <img src="{{src}}" class="bigPic floatleft">
+                            <div class="clear"></div>
+                        </div>
+                        <div class="preFun" ng-hide="data.imgs.length==1">
+                            <img ng-click="preImg()" class="floatleft" src="images/imgShow_left1.png">
+                            <img ng-click="nextImg()" class="floatright" src="images/imgShow_right1.png">
+                        </div>
+                        <!-- <span class="noneImg">没有其他图片</span> -->
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="attribute" ng-show="isAttribute==1">
+            <div>
+                <ul class="attributeNormal">
+                    <li>
+                        <h1>提交者：</h1>
+                        <h2>evalbert</h2>
+                    </li>
+                    <li>
+                        <h1>缺陷类别：</h1>
+                        <h2>一般</h2>
+                    </li>
+                    <li>
+                        <h1>关联用例ID：</h1>
+                        <h2>222222</h2>
+                    </li>
+                    <li>
+                        <h1>提交时间：</h1>
+                        <h2>2016-10-12 19：00</h2>
+                    </li>
+                    <li>
+                        <h1>缺陷等级：</h1>
+                        <h2>高</h2>
+                    </li>
+                    <li>
+                        <h1>最后期限：</h1>
+                        <h2>登录</h2>
+                    </li>
+                    <li>
+                        <h1>项目模块：</h1>
+                        <h2>登录</h2>
+                    </li>
+                    <li>
+                        <h1>出现频率：</h1>
+                        <h2>频繁</h2>
+                    </li>
+                    <li>
+                        <h1>当前状态：</h1>
+                        <h2>进行中</h2>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div>
+                <div class="attributeTitle">
+                    自定义属性
+                </div>
+                <ul class="attributeNormal">
+                    <li>
+                        <h1>提交者：</h1>
+                        <h2>evalbert</h2>
+                    </li>
+                    <li>
+                        <h1>缺陷类别：</h1>
+                        <h2>一般</h2>
+                    </li>
+                    <li>
+                        <h1>关联用例ID：</h1>
+                        <h2>222222</h2>
+                    </li>
+                    <li>
+                        <h1>提交时间：</h1>
+                        <h2>2016-10-12 19：00</h2>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="history" ng-show="isAttribute==2">
+            <div class="bugChangeBox" style="padding: 0px;">
+                <ul>
+                    <li>
+                        <span class="floatleft">追加描述：</span>
+                        <textarea class="floatleft projectTextarea"></textarea>
+                        <input class="btn_blue" type="button" value="提交">
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <table class="table-fullborder">
+                <tr>
+                    <th>操作人</th>
+                    <th>操作类别</th>
+                    <th>操作时间</th>
+                    <th>备注</th>
+                </tr>
+                <tr>
+                    <td>humq</td>
+                    <td>修改完成</td>
+                    <td>2016-03-04 19：00</td>
+                    <td>未评审</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

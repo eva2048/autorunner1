@@ -1,0 +1,30 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">修改密码</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody" style="padding:20px 0px;">
+    <div class="modalinputBox">
+        <div class="title floatleft">当前密码：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft">新密码：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft">确认新密码：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="modal-footer" ng-controller="modalCtrl">
+    <a ng-click="cancel()" href="" class="floatright btn-modal btn-modal-blue marginl-10">确定</a>
+    <a href="" class="floatright btn-modal btn-modal-gray">取消</a>
+</div>

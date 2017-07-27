@@ -1,0 +1,52 @@
+<style type="text/css">
+
+
+</style>
+<div class="projectNav">
+    <div class="projectTabPanel">
+        <img src="images/projectTabPanel_at.png">
+        <span>aaaaaaaaa</span>
+        <div class="clear"></div>
+        <input ui-sref="index({num:1})" class="btn_cblue floatleft" type="button" name="" value="切换项目">
+        <div class="clear"></div>
+    </div>
+    <div class="projectInfoList">
+        <ul>
+            <li>
+                <img ng-src="{{getSrc(projectstate)}}">
+                <span>进行中</span>
+            </li>
+            <li>
+                <img src="images/projectInfoList_manager.png">
+                <span>张小凡</span>
+            </li>
+            <li>
+                <img src="images/projectInfoList_type.png">
+                <span>众测同步</span>
+            </li>
+            <li>
+                <img src="images/projectInfoList_createtime.png">
+                <span>2016-12-2 16：09</span>
+            </li>
+        </ul>
+    </div>
+    <div class="projectNavList">
+        <ul>
+            <li ui-sref="projectInner({num2:1})" class="{{projectInnerNavNow==1?'active':''}}" ng-click="projectInnerNavNow=1">
+                <img src="images/projectNav_defect.png"> 缺陷管理
+            </li>
+            <li ui-sref="projectInner.usecaseManage({num2:2})" class="{{projectInnerNavNow==2?'active':''}}" ng-click="projectInnerNavNow=2">
+                <img src="images/projectNav_usecase.png"> 用例管理
+            </li>
+            <li ui-sref="projectInner.groupManage({num2:3})" class="{{projectInnerNavNow==3?'active':''}}" ng-click="projectInnerNavNow=3">
+                <img src="images/projectNav_groupmanage.png"> 团队管理
+            </li>
+            <li ui-sref="projectInner.projectDocument({num2:4})" class="{{projectInnerNavNow==4?'active':''}}" ng-click="projectInnerNavNow=4">
+                <img src="images/projectNav_document.png"> 文档管理
+            </li>
+            <li ui-sref="projectInner.projectReport({num2:5})" class="{{projectInnerNavNow==5?'active':''}}" ng-click="projectInnerNavNow=5">
+                <img src="images/projectNav_statement.png"> 报表中心
+            </li>
+        </ul>
+    </div>
+</div>

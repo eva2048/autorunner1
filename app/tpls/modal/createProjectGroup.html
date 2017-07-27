@@ -1,0 +1,39 @@
+<style type="text/css">
+.modal-dialog {
+    width: 800px;
+}
+</style>
+<div class="modal-header">
+    <div class="modaltitle"><span class="floatleft">创建项目组</span></div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+</div>
+<div class="modal-body modalBody modalBody1">
+    <div class="modalinputBox">
+        <div class="title floatleft">项目组名称：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox">
+        <div class="title floatleft">项目组类型：</div>
+        <div class="floatleft inputradioBox">
+            <input class="inputradio" ng-click="isprivate=false" checked="checked" type="radio" name="groupType">
+            <span>公开</span>
+        </div>
+        <div class="floatleft inputradioBox">
+            <input class="inputradio" ng-click="isprivate=true" type="radio" name="groupType">
+            <span>私密</span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="modalinputBox" ng-show="isprivate">
+        <div class="title floatleft">项目组密码：</div>
+        <input class="inputtext inputnormall" type="text" name="">
+        <span class="c-red error">长度不能超过15字符！</span>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="modal-footer" ng-controller="modalCtrl">
+    <a ng-click="cancel();open('createProjectGroup1')" href="" class="floatright btn-modal btn-modal-blue marginl-10">确定</a>
+    <a href="" class="floatright btn-modal btn-modal-gray">取消</a>
+</div>

@@ -1,0 +1,43 @@
+<style type="text/css">
+.modal-dialog{
+    width: 500px;
+}
+</style>
+<div class="loginBox">
+    <div class="loginTitle">用户登录</div>
+    <a class="closemodal" href="" ng-click="cancel()"></a>
+    <div class="loginContent">
+        <div class="inputBox">
+            <input type="" name="" placeholder="输入手机号码">
+            <div class="error fix"><em class="triangle"></em><span>用户名错误</span></div>
+        </div>
+        <div class="inputBox">
+            <input type="" name="" placeholder="输入手机号码">
+            <div class="error fix"><em class="triangle"></em><span>用户名错误</span></div>
+        </div>
+        <div class="checkBox fix">
+            <input class="floatleft" type="checkBox" name="" placeholder="输入密码"><span class="marginl-5">记住密码</span>
+        </div>
+        <div class="btnlogin">登录</div>
+        <div class="linkBox fix">
+            <a ng-controller="modalCtrl" class="floatleft a-blue" href="" ng-click="cancel();open('findpwd')">忘记密码</a>
+            <a ng-controller="modalCtrl" ng-click="cancel();open('register')" class="floatright a-blue" href="">免费注册</a>
+        </div>
+    </div>
+</div>
+<!-- <div class="modal-header">
+    <h3>用户登录</h3>
+</div>
+<div class="modal-body modalBody">
+    <ul class="titleUl">
+        <li>
+            <h1>角色名称：</h1>
+            <input type="text" class="inputText" style="width:400px;">
+            <span class="error marginl_120">邀请码格式错误</span>
+        </li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button class="btn_blue" ng-click="ok()">确认</button>
+    <button class="btn_gray" ng-click="cancel()">返回</button>
+</div> -->

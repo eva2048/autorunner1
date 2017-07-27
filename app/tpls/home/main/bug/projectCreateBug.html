@@ -1,0 +1,168 @@
+<style type="text/css">
+
+</style>
+<div class="projectBodyBox" ng-controller="createBugCtrl">
+    <div class="projectBodyTitle">
+        新建缺陷
+        <input ui-sref="projectInner({num2:1})" type="button" class="floatright btn_gray" value="返回">
+        <input type="button" class="floatright btn_blue" value="保存">
+    </div>
+    <div class="createProjectBox createBugBox">
+        <ng-form name="myForm" novalidate>
+            <ul>
+                <li>
+                    <h1>缺陷名称<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <input class="inputText" type="text" ng-model="pName">
+                        <span class="error" ng-show="pCheck(pName)">该项为必填项</span>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="floatleft">
+                    <h1>角色选择<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="floatleft">
+                    <h1>处理人<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <div class="clear"></div>
+                <li class="floatleft">
+                    <h1>缺陷模块<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="floatleft">
+                    <h1>缺陷类别<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <div class="clear"></div>
+                <li class="floatleft">
+                    <h1>缺陷等级<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="floatleft">
+                    <h1>出现频率<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <div class="clear"></div>
+                <li>
+                    <h1>测试设备：</h1>
+                    <div class="floatleft">
+                        <select class="selectBox selectNormal_480">
+                            <option>默认流程</option>
+                            <option>项目1流程</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li ng-controller="connectUsecaseModalCtrl">
+                    <h1>关联用例：</h1>
+                    <div class="floatleft">
+                        <input type="text" class="inputText" ng-click="open()">
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <ul class="definedAttribute">
+                        <div class="title"><span class="f_blue">自定义属性</span>（自定义属性在个人中心属性中添加）</div>
+                        <div class="f_blue" style="margin-bottom:30px;margin-left: 30px;">暂无自定义属性</div>
+                        <!-- <li>
+                            <h1>缺陷等级<em class="f_red">*</em>：</h1>
+                            <div class="floatleft">
+                                <select class="selectBox">
+                                    <option>默认流程</option>
+                                    <option>项目1流程</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>出现频率<em class="f_red">*</em>：</h1>
+                            <div class="floatleft">
+                                <select class="selectBox">
+                                    <option>默认流程</option>
+                                    <option>项目1流程</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>出现频率<em class="f_red">*</em>：</h1>
+                            <div class="floatleft">
+                                <select class="selectBox">
+                                    <option>默认流程</option>
+                                    <option>项目1流程</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                        </li> -->
+                        <div class="clear"></div>
+                    </ul>
+                </li>
+                <li>
+                    <h1>缺陷描述<em class="f_red">*</em>：</h1>
+                    <div class="floatleft">
+                        <textarea class="floatleft projectTextarea"></textarea>
+                        <span class="error">该项为必填项</span>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="fileUpload">
+                    <h1>附件上传：</h1>
+                    <div class="floatleft">
+                        <div>
+                            <input class="floatleft" type="file" value="选择文件"><span class="error">该项为必填项</span>
+                        </div>
+                        <ul>
+                            <li><img src="images/file_word.png">测试需求文档.doc<a class="f_red cursor_p">删除</a></li>
+                            <li><img src="images/file_pic.png">测试需求文档.doc<a class="f_blue cursor_p">预览</a><a class="f_red cursor_p">删除</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li class="buttonBox">
+                    <div class="floatleft isContinue"><input type="checkbox" name="">是否连续提交</div>
+                    <input class="floatleft btn_blue" type="button" name="" value="保存">
+                    <input ui-sref="{{backUrlClick()}}" class="floatleft btn_gray" type="button" name="" value="返回">
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </ng-form>
+    </div>
+</div>
