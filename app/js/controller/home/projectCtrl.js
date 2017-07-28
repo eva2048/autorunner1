@@ -25,10 +25,8 @@ define(['app'], function(app) {
                         };                      
                         $scope.projectBodyStyle={
                             "transition": "all 0.3s",
-                            "left":"70px",
-                            
-                        }
-                        
+                            "left":"70px",                            
+                        }                       
                     }else{
                         $scope.projectNavStyle={
                             "width":"280px",
