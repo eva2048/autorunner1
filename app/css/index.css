@@ -571,6 +571,7 @@ table a.f_red:hover {
     right: 0px;
     left: 330px;
     top: 66px;
+    min-width: 1000px;
 }
 
 .useCaseTree .title {

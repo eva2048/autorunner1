@@ -2,10 +2,11 @@ define(['app'], function(app) {
     app.register
         .controller('projectCtrl',
             function($scope, $stateParams) {
+                $scope.isAttribute = 0;
                 $scope.isFadeIn = false;
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
-                    var width=$(".useCaseList ").width();                    
+                    var width=$(".useCaseList ").width()-200;
                     $(".projectDetailStyle").css("width",width)
                 };
                 $scope.fadeOut = function() {
