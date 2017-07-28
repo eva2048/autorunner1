@@ -2,6 +2,7 @@ define(['app'], function(app) {
     app.register
         .controller('projectCtrl',
             function($scope, $stateParams) {
+            	$scope.isAttribute = 0;
                 $scope.isFadeIn = false;
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
@@ -21,10 +22,8 @@ define(['app'], function(app) {
                         };                      
                         $scope.projectBodyStyle={
                             "transition": "all 0.3s",
-                            "left":"70px",
-                            
-                        }
-                        
+                            "left":"70px",                            
+                        }                       
                     }else{
                         $scope.projectNavStyle={
                             "width":"280px",

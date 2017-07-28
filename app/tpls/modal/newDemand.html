@@ -4,60 +4,43 @@
 	</div>
 	<div class="modal-body">
 		<ul class="titleUl">
-			<li class="clearfix">
-				<div class="popLeft">
-					需求名称：
-				</div>
-				<div class="popRight">
-					<input type="text" name="" id="" value="" />
-				</div>
+			<li>
+				<h1>需求名称：</h1>
+				<input type="text" name="" id="" value="" class="inputText" required="required" />
+				<span class="error">错误提示错误提示错误提示</span>
 			</li>
-			<li class="clearfix">
-				<div class="popLeft">
-					需求状态：
-				</div>
-				<div class="popRight">
-					<select name="">
-						<option value="">状态1</option>
-						<option value="">状态2</option>
-						<option value="">状态3</option>
-						<option value="">状态4</option>
-					</select>
-				</div>
+			<div class="clear"></div>
+			<li class="floatleft">
+				<h1>需求状态：</h1>
+				<select class="selectNormal">
+					<option>状态1</option>
+					<option>状态2</option>
+					<option>状态3</option>
+				</select>
 			</li>
-			<li class="clearfix">
-				<div class="popLeft">
-					优先级：
-				</div>
-				<div class="popRight">
-					<select name="">
-						<option value="">高</option>
-						<option value="">中</option>
-						<option value="">低</option>
-						<option value="">非常低</option>
-					</select>
-				</div>
+			<li class="floatleft">
+				<h1>优先级：</h1>
+				<select class="selectNormal">
+					<option>高</option>
+					<option>中</option>
+					<option>低</option>
+				</select>
 			</li>
-			<li class="clearfix">
-				<div class="popLeft">
-					需求来源：
-				</div>
-				<div class="popRight">
-					<select name="">
-						<option value="">来源1</option>
-						<option value="">状态2</option>
-						<option value="">状态3</option>
-						<option value="">状态4</option>
-					</select>
-				</div>
+			<div class="clear"></div>
+			<li>
+				<h1>需求来源：</h1>
+				<select name="" class="selectNormal">
+					<option value="">来源1</option>
+					<option value="">状态2</option>
+					<option value="">状态3</option>
+					<option value="">状态4</option>
+				</select>
+
 			</li>
-			<li class="clearfix">
-				<div class="popLeft">
-					需求描述：
-				</div>
-				<div class="popRight">
-					<textarea name="" rows="" cols=""></textarea>
-				</div>
+			<li>
+				<h1>需求描述：</h1>
+				<textarea name="" rows="" cols="" class="projectTextarea floatleft"></textarea>
+				<span class="error">错误提示错误提示错误提示</span>
 			</li>
 		</ul>
 	</div>
@@ -68,5 +51,5 @@
 		</div>
 		<button class="btn_blue" ng-click="ok()">确认</button>
 		<button class="btn_gray" ng-click="cancel()">返回</button>
-	</div>	
+	</div>
 </div>
