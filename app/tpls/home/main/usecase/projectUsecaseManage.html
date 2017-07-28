@@ -1,113 +1,125 @@
 <style type="text/css">
+	.treeBody {
+		border-right: 1px solid #e5e5e5;
+		position: absolute;
+		top: 50px;
+		bottom: 0px;
+		left: 0px;
+		overflow: auto;
+	}
 </style>
 <div class="projectBodyBox">
-    <div class="projectBodyTitle">
-        用例管理
-        <div class="floatright dropdownBox" dropdown>
-            <input dropdown-toggle type="button" class="btn_gray dropdownToggle" value="更多操作">
-            <ul class="dropdown-menu" dropdown-menu role="menu">
-                <li><a ng-click="open()">导出用例</a></li>
-                <li><a>导入用例</a></li>
-                <li><a ng-click="open()">导入导出配置</a></li>
-                <li><a ng-click="open()">用例统计</a></li>
-            </ul>
-        </div>
-    </div>
-    <div>
-        <div class="useCaseTree" style="">
-            <div class="title">用例组</div>
-            <div class="treeBody">
-                <div>
-                    <script type="text/ng-template" id="nodes_renderer.html">
-                        <div class="tree-node tree-node-content">
-                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><img ng-src="{{collapsed?'images/treeBody_close.png':'images/treeBody_open.png'}}"></a>
-                            <span ng-show="!this.isEdit" class="treeText">
+	<div class="projectBodyTitle">
+		项目模块
+		<div class="floatright dropdownBox" dropdown>
+			<input dropdown-toggle type="button" class="btn_gray dropdownToggle" value="更多操作">
+			<ul class="dropdown-menu" dropdown-menu role="menu">
+				<li>
+					<a>导出用例</a>
+				</li>
+				<li>
+					<a>导入用例</a>
+				</li>
+			</ul>
+		</div>
+		<div class="floatright" ng-controller="modalCtrl">
+			<input class="btn_gray " type="button" name="" id="" value="提需求" ng-click="open('newDemand')" />
+		</div>
+	</div>
+	<div>		
+		<div class="useCaseTree" ng-style="useCaseTreeStyle">	
+			<i class="useHide glyphicon glyphicon-header" ng-click="treeHide()"></i>
+			<div class="title">用例组</div>			
+			<div class="treeBody">
+				<div>
+					<script type="text/ng-template" id="nodes_renderer.html">
+						<div class="tree-node tree-node-content">
+							<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><img ng-src="{{collapsed?'images/treeBody_close.png':'images/treeBody_open.png'}}"></a>
+							<span ng-show="!this.isEdit" class="treeText">
                                 {{node.title | limitTo:10}}{{node.title.length>5?'...':''}}
                             </span>
-                            <div class="pull-right dropdownBox moreFuc treeIcon" dropdown>
-                                <span dropdown-toggle type="button" class="glyphicon glyphicon-cog"></span>
-                                <ul class="dropdown-menu" dropdown-menu role="menu">
-                                    <li><a ng-click="open()">上移</a></li>
-                                    <li><a>下移</a></li>
-                                    <li><a ng-click="open()">新建子模块</a></li>
-                                    <li><a ng-click="open()">删除</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-                            <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
-                            </li>
-                        </ol>
-                    </script>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
-                                <ol ui-tree-nodes ng-model="data">
-                                    <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="useCaseList" style="bottom:0px;overflow-y: auto;">
-            <div class="useCaseListTitle">轮次1用例组</div>
-            <div class="userCaseListFunction">
-                <div class="floatleft">
-                    <input class="floatleft fbtn_blue" type="button" value="新增用例">
-                </div>
-                <input class="floatleft fbtn_red" type="button" value="批量删除" ng-right-click="fadeIn()">
-                <input class="floatleft fbtn_lblue" type="button" value="复制">
-                <input class="floatleft fbtn_lblue" type="button" value="剪切">
-                <input class="floatleft fbtn_lblue" type="button" value="粘贴">
-                <div class="clear"></div>
-            </div>
-            <div class="userCaseListTable">
-                <table class="table-fullborder">
-                    <tr>
-                        <th>
-                            <input type="checkbox" name="">
-                        </th>
-                        <th>用例ID</th>
-                        <th>用例名称</th>
-                        <th>创建人</th>
-                        <th>创建时间</th>
-                        <th>关联缺陷数</th>
-                        <th>操作</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="">
-                        </td>
-                        <td>1</td>
-                        <td ng-click="fadeIn();$event.stopPropagation();"><img class="floatleft" style="margin-top:15px;margin-right:8px;" src="images/userCaseListTable_file.png"><span class="text_ellipsis10 f_blue cursor_p">test08</span></td>
-                        <td>humq</td>
-                        <td>2016-12-2 19：00</td>
-                        <td>10</td>
-                        <td><a class="f_blue" ng-click="open()">添加附件</a><a class="f_red">删除</a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="">
-                        </td>
-                        <td>1</td>
-                        <td ng-click="fadeIn();$event.stopPropagation();"><img class="floatleft" style="margin-top:15px;margin-right:8px;" src="images/userCaseListTable_file.png"><span class="text_ellipsis10 f_blue cursor_p">test08</span></td>
-                        <td>humq</td>
-                        <td>2016-12-2 19：00</td>
-                        <td>10</td>
-                        <td><a class="f_blue" ng-click="open()">添加附件</a><a class="f_red">删除</a></td>
-                    </tr>
-                </table>
-                <div class="floatright">
-                    <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
-                    </pagination>
-                </div>
-            </div>
-            <!-- <div ng-controller="editorCtrl" style="width:100%;margin-top:100px;">
+							<div class="floatright dropdownBox moreFuc treeIcon" dropdown>
+								<span dropdown-toggle type="button" class="glyphicon glyphicon-cog"></span>
+								<ul class="dropdown-menu" dropdown-menu role="menu">
+									<li>
+										<a ng-click="open()">上移</a>
+									</li>
+									<li>
+										<a>下移</a>
+									</li>
+									<li>
+										<a ng-click="open()">新建子模块</a>
+									</li>
+									<li>
+										<a ng-click="open()">删除</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+							<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+							</li>
+						</ol>
+					</script>
+					<div class="row">
+						<div class="col-sm-12">
+							<div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+								<ol ui-tree-nodes ng-model="data">
+									<li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+			<div class="useCaseListTitle clearfix">
+				<div class="floatleft">需求的名称</div>
+				<div class="searchBox floatright">
+					<input class="floatleft inputSearch ng-pristine ng-valid" type="text" ng-model="searchDate.bugName" placeholder="请输入需求名称或ID">
+					<img class="btnSearch" src="/images/searchBox_btnSearch.png" ng-click="searchBug()">
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="userCaseListTable">
+				<table class="table-fullborder">
+					<tr>
+						<th>标识</th>
+						<th>需求名称</th>
+						<th>创建人</th>
+						<th>创建时间</th>
+						<th>需求状态</th>
+						<th>优先级</th>
+						<th>指派</th>
+						<th>关联用例数</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>1.0-1</td>
+						<td ng-click="fadeIn();$event.stopPropagation()"><span class="text_ellipsis10 f_blue cursor_p ">用户注册</span></td>
+						<td>humq</td>
+						<td>2016-12-2 19：00</td>
+						<td>已建议</td>
+						<td>中</td>
+						<td>wxw</td>
+						<td>2</td>
+						<td>
+							<a class="f_blue" ng-click="open()">指派</a>
+							<a class="f_blue">创建用例</a>
+						</td>
+					</tr>
+
+				</table>
+				<div class="floatright">
+					<pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
+					</pagination>
+				</div>
+			</div>
+			<!-- <div ng-controller="editorCtrl" style="width:100%;margin-top:100px;">
                 <p>wangEditor 集成到 angular 的示例</p>
                 <div ng-model="text" contenteditable="true"></div>
             </div> -->
-        </div>
-    </div>
+		</div>
+	</div>
 </div>

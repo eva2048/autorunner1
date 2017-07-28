@@ -3,32 +3,8 @@
 
 </style>
 <div class="projectNav">
-    <div class="projectTabPanel">
-        <img src="images/projectTabPanel_at.png">
-        <span>aaaaaaaaa</span>
-        <div class="clear"></div>
-        <input ui-sref="index({num:1})" class="btn_cblue floatleft" type="button" name="" value="切换项目">
-        <div class="clear"></div>
-    </div>
     <div class="projectInfoList">
-        <ul>
-            <li>
-                <img ng-src="{{getSrc(projectstate)}}">
-                <span>进行中</span>
-            </li>
-            <li>
-                <img src="images/projectInfoList_manager.png">
-                <span>张小凡</span>
-            </li>
-            <li>
-                <img src="images/projectInfoList_type.png">
-                <span>众测同步</span>
-            </li>
-            <li>
-                <img src="images/projectInfoList_createtime.png">
-                <span>2016-12-2 16：09</span>
-            </li>
-        </ul>
+        <i class="glyphicon  glyphicon-th-list" ng-click="slideLeft()"></i>
     </div>
     <div class="projectNavList">
         <ul>
