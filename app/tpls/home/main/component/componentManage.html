@@ -15,7 +15,8 @@
         </div>
     </div>
     <div>
-        <div class="useCaseTree" style="">
+        <div class="useCaseTree"  ng-style="useCaseTreeStyle">
+            <i class="useHide glyphicon glyphicon-header" ng-click="treeHide()"></i>
             <div class="title">组件组</div>
             <div class="treeBody">
                 <div>
@@ -52,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="useCaseList" style="bottom: 0px; overflow: auto;">
+        <div class="useCaseList" style="bottom: 0px; overflow: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListTitle">组一</div>
             <div class="userCaseListFunction">
                 <input class="floatleft fbtn_blue" type="button" value="新增组件" ng-click="open('createCompenent','lg')">

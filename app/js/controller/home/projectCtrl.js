@@ -7,6 +7,9 @@ define(['app'], function(app) {
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
                     var width=$(".useCaseList ").width()-200;
+                    if(width>1000){
+                        width=1000;
+                    }
                     $(".projectDetailStyle").css("width",width)
                 };
                 $scope.fadeOut = function() {
