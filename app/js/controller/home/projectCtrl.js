@@ -5,10 +5,63 @@ define(['app'], function(app) {
                 $scope.isFadeIn = false;
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
+                    var width=$(".useCaseList ").width();                    
+                    $(".projectDetailStyle").css("width",width)
                 };
                 $scope.fadeOut = function() {
                     $scope.isFadeIn = false;
+                    $(".projectDetailStyle").css("width","0")
                 };
+                $scope.slideLeft=function(){
+                    var w=$(".projectNav").width();
+                    if(w>70){
+                        $scope.projectNavStyle={
+                            "width":"70px" ,
+                            "transition": "all 0.3s"
+                        };                      
+                        $scope.projectBodyStyle={
+                            "transition": "all 0.3s",
+                            "left":"70px",
+                            
+                        }
+                        
+                    }else{
+                        $scope.projectNavStyle={
+                            "width":"280px",
+                            "transition": "all 0.3s"
+                        };                      
+                        $scope.projectBodyStyle={
+                            "transition": "all 0.3s",
+                            "left":"280px"
+                        }
+                    }                   
+                }
+                $scope.treeHide=function(){
+                    var wid=$('.useCaseTree').width();
+                    if(wid>5){
+                        $scope.useCaseTreeStyle={
+                            "width":"0px" ,                         
+                            "transition": "all 0.3s"
+                        };
+                        $scope.useCaseListStyle={
+                            "transition": "all 0.3s",
+                            "left":"0px"
+                        }
+                        $(".treeBody").css("padding","0");
+                        $(".useCaseTree .title").css({"padding":"0","overflow":"hidden"})
+                    }else{
+                        $scope.useCaseTreeStyle={
+                            "width":"330px" ,                           
+                            "transition": "all 0.3s"
+                        };
+                        $scope.useCaseListStyle={
+                            "transition": "all 0.3s",
+                            "left":"330px"
+                        }
+                        $(".treeBody").css("padding","15px");
+                        $(".useCaseTree .title").css({"padding":"0 15px","overflow":"hidden"})
+                    }
+                }
                 $scope.data = [{
                     'id': 1,
                     'level': -1,

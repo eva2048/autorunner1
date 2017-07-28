@@ -2,90 +2,93 @@
 
 </style>
 <div class="projectDetailBox">
-    <h1 class="detailTitle">测试用例详情</h1>
-    <div class="bugName">
-        <span class="bugId">233</span> 测试用例名称
-        <input class="floatright btn_blue" type="button" value="提交">
-    </div>
-    <div class="bugChangeBox">
-        <ul>
-            <li>
-                <span>创建人：</span>
-                <em>humq</em>
-            </li>
-            <li>
-                <span>创建时间：</span>
-                <em>humq</em>
-            </li>
-            <li>
-                <span>用例名称：</span>
-                <input type="text" class="inputText" name="">
-            </li>
-            <li>
-                <span>关联缺陷ID：</span>
-                <input type="text" class="inputText" name="">
-            </li>
-            <div class="clear"></div>
-            <li>
-                <span class="floatleft">用例描述：</span>
-                <textarea class="floatleft projectTextarea"></textarea>
-            </li>
-            <div class="clear"></div>
-        </ul>
-    </div>
-    <div class="bugDetailBox">
-        <div class="tab">
-            <span ng-class="{current:isAttribute}" ng-click="isAttribute=true">用例步骤</span>
-            <span ng-class="{current:!isAttribute}" ng-click="isAttribute=false">自定义属性</span>
-        </div>
-        <div class="history" ng-show="isAttribute">
-            <div class="detailInputList">
-                <ul>
-                    <li>
-                        <span>操作前提：</span>
-                        <input type="text" class="inputText" name="">
-                    </li>
-                </ul>
-            </div>
-            <div class="marginb_20">
-                <input type="button" name="" class="fbtn_blue" value="添加步骤">
-            </div>
-            <table class="table-fullborder">
-                <tr>
-                    <th>序号</th>
-                    <th>步骤</th>
-                    <th>数据</th>
-                    <th>预期结果</th>
-                    <th>操作</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><input class="inputText"><div style="" class="f_red">错误提示</div></td>
-                    <td>root</td>
-                    <td></td>
-                    <td><a class="f_blue">上移</a><a class="f_blue">下移</a><a class="f_red">删除</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="history" ng-hide="isAttribute">
-            <div class="detailInputList">
-                <ul>
-                    <li>
-                        <span>操作前提：</span>
-                        <input type="text" class="inputText" name="">
-                    </li>
-                    <li>
-                        <span>操作前提：</span>
-                        <input type="text" class="inputText" name="">
-                    </li>
-                    <li>
-                        <span>操作前提：</span>
-                        <input type="text" class="inputText" name="">
-                    </li>
-                </ul>
-            </div>
-            <div>
-            </div>
-        </div>
-    </div>
+	<h1 class="detailTitle">需求详情</h1>
+	<div class="bugDetailBox">
+		<div class="tab">
+			<span ng-class="{current:isAttribute==0}" ng-click="isAttribute=0">需求内容</span>
+			<span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">用例场景</span>
+			<span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">需求链接</span>
+		</div>
+		<div class="attribute" ng-show="isAttribute==0">
+			<div class="demandContent floatleft">
+				<div class="attributeTitle">
+					需求描述
+				</div>
+				<div class="attributeP">从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头。随着2016年初阿里巴巴近8亿美元投资Magic Leap，中国的“VR创业潮”正式拉开了帷幕，2016年也被称为中国虚拟现实的元年，这期间涌现了大量的创业公司，其中不乏佼佼者，逐渐走上了引领世界VR发展的道路。
+					<p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头,从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+					<p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+				</div>
+
+				<div class="attributeTitle">
+					功能点 ：
+					<a href=""> ㊉ </a>
+				</div>
+				<table class="table-fullborder">
+					<tr>
+						<th>序号</th>
+						<th>功能名称</th>
+						<th>功能描述</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><span class="text_ellipsis10 ">功能名称名称</span></td>
+						<td><span class="text_ellipsis10 ">功能描述描述</span></td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td><span class="text_ellipsis10 ">功能名称名称</span></td>
+						<td><span class="text_ellipsis10 ">功能描述描述</span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="demandAttribute floatright">
+				<div class="attributeTitle">
+					属性
+				</div>
+				<ul class="attributeP">
+					<li>需求名称：名称名称名称名称</li>
+					<li>创建人：hmq</li>
+					<li>创建时间：2016-12-2 19：00</li>
+					<li>最后修改人：hmq1</li>
+					<li>最后修改时间：2016-12-12 19：00：00</li>
+					<li>需求负责人：hmq2</li>
+					<li>需求编号：00016</li>
+					<li>需求来源：自创建</li>
+					<li>需求状态：已建议</li>
+					<li>需求类型：普通需求</li>
+				</ul>
+			</div>
+		</div>
+		<div class="attribute" ng-show="isAttribute==1">
+			<div class="attributeTitle" ng-controller="modalCtrl">
+				<input class="btn_gray " type="button" name="" id="" value="新增场景" ng-click="open('addNewScene','')" />
+			</div>
+			<table class="table-fullborder">
+				<tr>
+					<th>场景名称</th>
+					<th>创建人</th>
+					<th>创建时间</th>
+					<th>关联用例</th>
+					<th>关联缺陷</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td title="财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理"><span class="text_ellipsis8">财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理</span></td>
+					<td>hmq</td>
+					<td>2017-06-08 19:00</td>
+					<td>5</td>
+					<td>2</td>
+					<td>
+						<a href="" class="f_blue" ng-click="testScene()">测试场景</a>
+						<a href="" class="f_blue" ng-click="testCase()">测试用例</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="attribute" ng-show="isAttribute==2">
+
+			333333333333333333333333
+		</div>
+	</div>
+
 </div>
