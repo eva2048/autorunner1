@@ -161,11 +161,10 @@
 }
 
 .projectNavList li {
-    height: 60px;
-    line-height: 60px;
-    font-size: 16px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 14px;
     color: #000000;
-    font-weight: lighter;
     cursor: pointer;
 }
 
@@ -180,6 +179,7 @@
 .projectNavList li img {
     float: left;
     margin: 10px 15px;
+    width: 36px;
 }
 
 .projectNavList li span {
@@ -191,6 +191,7 @@
 /*projectBody*/
 
 .projectBodyBox {
+    overflow-y: auto;
     height: 100%;
 }
 

@@ -1,14 +1,29 @@
 <style type="text/css">
 
 </style>
-<div class="projectDetailBox">
-	<h1 class="detailTitle">需求详情</h1>
-	<div class="bugDetailBox">
-		<div class="tab">
-			<span ng-class="{current:isAttribute==0}" ng-click="isAttribute=0">需求内容</span>
-			<span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">用例场景</span>
-			<span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">需求链接</span>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle">
+		需求名字
+		<div class="floatright">
+			<input type="button" class="floatright btn_gray" name="" id="" value="返回" onclick="history.go(-1)" />
 		</div>
+	</div>
+	<div class="personalNav" style="height: 60px;">
+		<ul style="margin-top: 20px;margin-right: 0;">
+			<li ng-class="{current:isAttribute==0}">
+				<a href="" class="cursor_p" ng-click="isAttribute=0">需求内容</a>
+			</li>
+			<li ng-class="{current:isAttribute==1}">
+				<a href="" class="cursor_p" ng-click="isAttribute=1">用例场景</a>
+			</li>
+			<li ng-class="{current:isAttribute==2}">
+				<a href="" class="cursor_p" ng-click="isAttribute=2">需求链接</a>
+			</li>
+			<div class="clear"></div>
+		</ul>
+		<div class="clear"></div>
+	</div>	
+	<div class="bugDetailBox">		
 		<div class="attribute" ng-show="isAttribute==0">
 			<div class="demandContent floatleft">
 				<div class="attributeTitle">
@@ -61,7 +76,7 @@
 		</div>
 		<div class="attribute" ng-show="isAttribute==1">
 			<div class="attributeTitle" ng-controller="modalCtrl">
-				<input class="btn_gray " type="button" name="" id="" value="新增场景" ng-click="open('addNewScene','lg')" />
+				<input class="fbtn_blue" type="button" name="" id="" value="新增场景" ng-click="open('addNewScene','lg')" />
 			</div>
 			<table class="table-fullborder">
 				<tr>
@@ -78,9 +93,9 @@
 					<td>2017-06-08 19:00</td>
 					<td>5</td>
 					<td>2</td>
-					<td>
-						<a href="" class="f_blue" ng-click="testScene()">测试场景</a>
-						<a href="" class="f_blue" ng-click="testCase()">测试用例</a>
+					<td ng-controller="modalCtrl">
+						<a href="" class="f_blue" ng-click="">场景设计</a>
+						<a href="" class="f_blue" ng-click="">用例设计</a>
 					</td>
 				</tr>
 			</table>
