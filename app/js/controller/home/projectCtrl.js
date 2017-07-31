@@ -1,7 +1,7 @@
 define(['app'], function(app) {
     app.register
         .controller('projectCtrl',
-            function($scope, $stateParams) {
+            function($scope, $stateParams) {            	
                 $scope.isAttribute = 0;
                 $scope.isFadeIn = false;
                 $scope.fadeIn = function() {
@@ -63,6 +63,10 @@ define(['app'], function(app) {
                         $(".treeBody").css("padding","15px");
                         $(".useCaseTree .title").css({"padding":"0 15px","overflow":"hidden"})
                     }
+                }
+                $scope.back=function(){
+                	history.go(-1);
+                	$scope.treeHide();
                 }
                 $scope.data = [{
                     'id': 1,
