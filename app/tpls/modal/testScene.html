@@ -1,0 +1,42 @@
+<style type="text/css">
+	.modal-dialog {
+		width: 100%;
+	}
+</style>
+<div class="modal-content">
+	<div class="modal-header">
+		<h3>场景设计</h3>
+	</div>
+	<div class="modal-body">
+		<div class="bugDetailBox">
+			<div class="tab">
+				<span ng-class="{current:isTab==0}" ng-click="isTab=0">步骤设计</span>
+				<span ng-class="{current:isTab==1}" ng-click="isTab=1">组建配置</span>
+				<span ng-class="{current:isTab==2}" ng-click="isTab=2">关联缺陷</span>
+				<span ng-class="{current:isTab==3}" ng-click="isTab=3">关联测试项</span>				
+			</div>
+			<div class="attribute" ng-show="isTab==0">
+
+				1111
+			</div>
+			<div class="attribute" ng-show="isTab==1">
+
+				22222
+			</div>
+			<div class="attribute" ng-show="isTab==2">
+
+				33333
+			</div>
+			<div class="attribute" ng-show="isTab==3">
+
+				44444
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn_blue" ng-click="ok()">确认</button>
+		<button class="btn_gray" ng-click="cancel()">返回</button>
+	</div>
+
+</div>

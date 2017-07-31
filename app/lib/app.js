@@ -69,7 +69,26 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
-                })  
+                })
+                .state("index.demandDetails",{
+                    url:"/demandDetails",
+                    views:{
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/usecase/projectUsecaseDetail.html'
+                        }                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })          
                 .state("index.testset",{
                     url:"/testset",
                     views:{
