@@ -13,9 +13,11 @@
             </ul>
         </div>
     </div>
-    <div>
+    <div class="projectBodyContent">
         <div class="useCaseTree"  ng-style="useCaseTreeStyle">
-            <i class="useHide glyphicon glyphicon-header" ng-click="treeHide()"></i>
+            <div class="aricon_treenav" ng-click="treeHide()" ng-class="treeOut?'aricon_treenav1':'aricon_treenav2'">
+                <i class="aricon_treenav_a"></i>
+            </div>
             <div class="title">组件组</div>
             <div class="treeBody">
                 <div>
@@ -61,12 +63,12 @@
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">
-                <table class="table-fullborder">
+                <table class="table-fullborder table-resize" id="resizeTable">
                     <tr>
-                        <th>
+                        <th style="width: 40px">
                             <input type="checkbox" name="">
                         </th>
-                        <th>组件名</th>
+                        <th style="max-width: 80%" resizable r-directions="['right']" m-width="80">组件名称</th>
                         <th>组件版本</th>
                         <th>运行环境</th>
                         <th>脚本名</th>
@@ -77,11 +79,11 @@
                             <input type="checkbox" name="">
                         </td>
                         <td ng-click="fadeIn();$event.stopPropagation();">
-                            <span class="text_ellipsis10 f_blue cursor_p">test08</span>
+                            <span class="f_blue">test08</span>
                         </td>
                         <td>版本一</td>
                         <td>window10</td>
-                        <td>脚本1</td>
+                        <td><span>脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1脚本1</span></td>
                         <td><a class="f_blue">下载脚本</a><a class="f_blue">编辑</a><a class="f_red">删除</a></td>
                     </tr>
                 </table>

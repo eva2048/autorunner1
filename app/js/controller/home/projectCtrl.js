@@ -4,6 +4,8 @@ define(['app'], function(app) {
             function($scope, $stateParams) {
                 $scope.isAttribute = 0;
                 $scope.isFadeIn = false;
+                $scope.leftOut=true;
+                $scope.treeOut=true;
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
                     var width=$(".useCaseList ").width()-200;
@@ -18,6 +20,7 @@ define(['app'], function(app) {
                 };
                 $scope.slideLeft=function(){
                     var w=$(".projectNav").width();
+                    $scope.leftOut=!$scope.leftOut;
                     if(w>70){
                         $scope.projectNavStyle={
                             "width":"66px" ,
@@ -40,6 +43,7 @@ define(['app'], function(app) {
                 }
                 $scope.treeHide=function(){
                     var wid=$('.useCaseTree').width();
+                    $scope.treeOut=!$scope.treeOut;
                     if(wid>5){
                         $scope.useCaseTreeStyle={
                             "width":"0px" ,                         

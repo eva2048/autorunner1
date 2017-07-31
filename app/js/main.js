@@ -8,7 +8,8 @@ require.config({
 		'bootstrap':'bootstrap.min',
 		'router': 'angular-ui-router.min',
 		'ui-bootstrap-tpls':'ui-bootstrap-tpls.min',
-		'angular-ui-tree':'angular-ui-tree.min'
+		'angular-ui-tree':'angular-ui-tree.min',
+		'angular-resizable':'angular-resizable'
 	},
 	shim: {
 		'angular': {
@@ -18,6 +19,9 @@ require.config({
 			deps: ['angular']
 		},
 		'angular-animate':{
+			deps: ['angular']
+		},
+		'angular-resizable':{
 			deps: ['angular']
 		},
 		'angular-ui-tree':{
@@ -37,6 +41,6 @@ require.config({
 	}
 })
 // 初始化myModule模块
-require(['angular','app','jquery','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree'],function(){
+require(['angular','app','jquery','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable'],function(){
 	angular.bootstrap(document, ['myModule']);
 })

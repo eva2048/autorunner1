@@ -1,5 +1,5 @@
 define(['angular', 'router'], function() {
-    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree'])
+    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree','angularResizable'])
     app.config(function($controllerProvider, $compileProvider, $filterProvider, $provide) {
             app.register = {
                 //得到$controllerProvider的引用
@@ -13,7 +13,7 @@ define(['angular', 'router'], function() {
         .config(['$stateProvider', '$urlRouterProvider','$controllerProvider', function($stateProvider, $urlRouterProvider,$controllerProvider) {
             $urlRouterProvider.otherwise('index');
             $stateProvider
-                /*首页*/
+                /*首页用例管理*/
                 .state("index", {
                     url: "/index",
                     views:{
@@ -48,6 +48,7 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 }) 
+                /*组件管理*/
                 .state("index.component",{
                     url:"/component",
                     views:{
@@ -70,6 +71,7 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })
+                /*需求详情*/
                 .state("index.demandDetails",{
                     url:"/demandDetails",
                     views:{
@@ -89,6 +91,7 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })          
+                /*测试集*/
                 .state("index.testset",{
                     url:"/testset",
                     views:{

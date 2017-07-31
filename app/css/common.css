@@ -109,10 +109,70 @@ a.f_red:hover {
     white-space: nowrap;
     max-width: 120px;
 }
-
-
+/*aricon*/
+.aricon_leftnav{
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+.aricon_leftnav1{
+    background: url(../images/icon.png) no-repeat 0px 0px;
+}
+.aricon_leftnav1:hover{
+    background-position: 0px -24px;
+}
+.aricon_leftnav2{
+    background: url(../images/icon.png) no-repeat -24px 0px;
+}
+.aricon_leftnav2:hover{
+    background-position: -24px -24px;
+}
+.aricon_treenav{
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 99;
+    display: block;
+    width: 25px;
+    height: 60px;
+    transition: all 0.3s;
+    -moz-transition: all 0.3s;  /* Firefox 4 */
+    -webkit-transition: all 0.3s;   /* Safari 和 Chrome */
+    -o-transition: all 0.3s;
+}
+.aricon_treenav1{
+    right: 0px;
+    border-bottom: 9px solid transparent;
+    border-left: none;
+    border-right: 25px solid #e4e7f3;
+    border-top: 9px solid transparent;
+}
+.aricon_treenav2{
+    right: -25px;
+    border-bottom: 9px solid transparent;
+    border-right: none;
+    border-left: 25px solid #e4e7f3;
+    border-top: 9px solid transparent;
+}
+.aricon_treenav_a{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+}
+.aricon_treenav1 i{
+    background: url(../images/icon.png) no-repeat -48px -24px;
+    margin-left: 5px;
+}
+.aricon_treenav2 i{
+    background: url(../images/icon.png) no-repeat -48px 0px;
+    right: 0px;
+}
 /* button */
-
 .btn_blue {
     padding:0px 25px;
     text-align: center;
@@ -417,7 +477,23 @@ a.f_red:hover {
     border-bottom: 1px solid #e1e6eb;
 }
 
+/*重置表格大小*/
+.table-resize{
+    table-layout:fixed;
+}
+.table-resize tr th{
+    white-space: nowrap;
+    overflow: hidden;
+}
 
+.table-resize tr th .rg-right{
+    margin-right: 0px;
+}
+
+.table-resize tr td{
+    white-space: nowrap;
+    overflow: hidden;
+}
 /*全框表格2*/
 
 .table-fullborder2 {
