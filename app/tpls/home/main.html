@@ -1,5 +1,5 @@
 <div ng-controller="modalCtrl">
-    <div ng-click="fadeOut()" ui-view="projectNav" class="floatleft" style="width:280px; display: block;position: fixed; top: 60px; bottom:0px;z-index: 102;overflow: hidden;" ng-style="projectNavStyle"></div>
+    <div ng-click="fadeOut()" ui-view="projectNav" class="floatleft" style="width:250px; display: block;position: fixed; top: 60px; bottom:0px;z-index: 102;" ng-style="projectNavStyle"></div>
     <div ng-click="fadeOut()" ui-view="projectBody" class="floatleft" style="position: absolute;width:auto; top: 0px; bottom:0px; right:0px; overflow-y:auto;left: 280px;" ng-style="projectBodyStyle"></div>
     <div ui-view="projectDetail" style="position: absolute;width: 1000px;top:85px; bottom:0px; background:#fff;z-index: 102;" ng-class="{true:'fadeIn',false:'fadeOut'}[isFadeIn]" class="projectDetailStyle"></div>
     <div class="loading modal"">      

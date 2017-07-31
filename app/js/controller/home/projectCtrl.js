@@ -20,21 +20,21 @@ define(['app'], function(app) {
                     var w=$(".projectNav").width();
                     if(w>70){
                         $scope.projectNavStyle={
-                            "width":"70px" ,
+                            "width":"66px" ,
                             "transition": "all 0.3s"
                         };                      
                         $scope.projectBodyStyle={
                             "transition": "all 0.3s",
-                            "left":"70px",                            
+                            "left":"66px",                            
                         }                       
                     }else{
                         $scope.projectNavStyle={
-                            "width":"280px",
+                            "width":"250px",
                             "transition": "all 0.3s"
                         };                      
                         $scope.projectBodyStyle={
                             "transition": "all 0.3s",
-                            "left":"280px"
+                            "left":"250px"
                         }
                     }                   
                 }
