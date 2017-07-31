@@ -1438,9 +1438,6 @@ table tr td a:last-child {
 }
 
 /*提需求弹框*/
-.newDemand ul li{
-	line-height: 40px;
-}
 .newDemand ul li .popLeft{
 	width: 100px;
 	float: left;
@@ -1484,7 +1481,6 @@ table tr td a:last-child {
 /*新增场景*/
 .addNewScene ul li{
 	margin-top: 10px;
-	line-height: 40px;
 }
 .addNewScene ul li .popLeft{
 	width: 100px;
@@ -1507,6 +1503,7 @@ table tr td a:last-child {
 .addNewScene ul li .popRight .fileInput{
 	opacity: 0;
 	width: 100px;
+	filter: alpha(opacity=0);
 }
 .addNewScene ul li .popRight .fileUpload{
 	display: inline-block;
