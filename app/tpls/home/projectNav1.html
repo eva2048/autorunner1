@@ -1,0 +1,79 @@
+<style type="text/css">
+</style>
+<div class="projectNav" style="overflow: hidden;">
+    <div class="searchPanel">
+        <img src="images/projectNav_search.png">
+        <input class="searchBox" name="" placeholder="请输入项目名称">
+    </div>
+    <div class="projectNavList">
+        <ul>
+            <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
+                <img src="images/projectNav_total.png"> 所有项目
+                <span>10</span>
+            </li>
+            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+                <img src="images/projectNav_at.png">我的项目
+                <span>2</span>
+            </li>
+        </ul>
+    </div>
+    <div class="useCaseTree">
+        <div class="title">
+            组件组
+            <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
+                <i class="iconfont icon-empty"></i>
+            </span>
+            <span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
+                <i class="iconfont icon-editor"></i>
+            </span>
+            <div class="dropdownDefault floatright treefunicon" dropdown>
+                <span class="chatIconButton floatright" data-tip="编辑节点" dropdown-toggle>
+                    <i class="iconfont icon-add"></i>
+                </span>
+                <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                    <span class="triangle"></span>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
+                </ul>               
+            </div>
+            <div class="dropdownDefault floatright treefunicon" dropdown>
+                <span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
+                    <i class="iconfont icon-send"></i>
+                </span>
+                <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                    <span class="triangle"></span>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>下移</span></li>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>左移</span></li>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>右移</span></li>
+                </ul>               
+            </div>
+                     
+        </div>
+        <div class="treeBody">
+            <div>
+                <script type="text/ng-template" id="nodes_renderer.html">
+                    <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
+                        <!-- <em class="space floatleft" ng-repeat="i in range(node.level) track by $index">&nbsp;&nbsp;</em> -->
+                        <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                        <span ng-show="!this.isEdit" class="treeText">
+                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                        </span>
+                    </div>
+                    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+                        </li>
+                    </ol>
+                </script>
+                <div>
+                    <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+                        <ol ui-tree-nodes ng-model="data">
+                            <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

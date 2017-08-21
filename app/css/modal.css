@@ -1,0 +1,59 @@
+/*属性列表*/
+.modal-header {
+    font-size: 16px;
+}
+
+.modal-footer .defaultcheckBox {
+    margin-top: 8px;
+}
+
+.modalBody .selectColumn li input {
+    float: left;
+    margin: 13px 5px;
+}
+.titleUl li h1 {
+    float: left;
+    width: 105px;
+    text-align: right;
+    font-size: 14px;
+    color: #6c7786;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.titleUl li h2 {
+    float: left;
+    font-size: 14px;
+    color: #000;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.titleUl {
+    margin: 10px 10px 0px;
+}
+
+.titleUl li {
+    margin-bottom: 15px;
+}
+
+.titleUl .borderUl {
+    border: 1px solid #c3c4c9;
+    width: 330px;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.titleUl .borderUl li {
+    margin-bottom: 0px;
+}
+
+.titleUl .multselectUl li {
+    line-height: 34px;
+    font-size: 14px;
+}
+
+.titleUl .multselectUl li input {
+    margin: 0px 5px 0px 10px;
+    vertical-align: middle;
+}

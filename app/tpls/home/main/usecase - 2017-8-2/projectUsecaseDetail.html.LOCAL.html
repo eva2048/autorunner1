@@ -1,0 +1,111 @@
+<style type="text/css">
+
+</style>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle">
+		需求名字
+		<div class="floatright">
+			<input type="button" class="floatright btn_gray" name="" id="" value="返回" onclick="history.go(-1)" />
+		</div>
+	</div>
+	<div class="projectBodyContent">
+		<div class="personalNav" style="height: 60px;">
+			<ul style="margin-top: 20px;margin-right: 0;">
+				<li ng-class="{current:isAttribute==0}">
+					<a href="" class="cursor_p" ng-click="isAttribute=0">需求内容</a>
+				</li>
+				<li ng-class="{current:isAttribute==1}">
+					<a href="" class="cursor_p" ng-click="isAttribute=1">用例场景</a>
+				</li>
+				<li ng-class="{current:isAttribute==2}">
+					<a href="" class="cursor_p" ng-click="isAttribute=2">需求链接</a>
+				</li>
+				<div class="clear"></div>
+			</ul>
+			<div class="clear"></div>
+		</div>	
+		<div class="bugDetailBox">		
+			<div class="attribute" ng-show="isAttribute==0">
+				<div class="demandContent floatleft">
+					<div class="attributeTitle">
+						需求描述
+					</div>
+					<div class="attributeP">从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头。随着2016年初阿里巴巴近8亿美元投资Magic Leap，中国的“VR创业潮”正式拉开了帷幕，2016年也被称为中国虚拟现实的元年，这期间涌现了大量的创业公司，其中不乏佼佼者，逐渐走上了引领世界VR发展的道路。
+						<p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头,从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+						<p>从1962年诞生的第一台虚拟现实设备Sensorama开始算，虚拟现实已经走过了54个年头</p>
+					</div>
+
+					<div class="attributeTitle">
+						功能点 ：
+						<a href=""> ㊉ </a>
+					</div>
+					<table class="table-fullborder">
+						<tr>
+							<th>序号</th>
+							<th>功能名称</th>
+							<th>功能描述</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><span class="text_ellipsis10 ">功能名称名称</span></td>
+							<td><span class="text_ellipsis10 ">功能描述描述</span></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><span class="text_ellipsis10 ">功能名称名称</span></td>
+							<td><span class="text_ellipsis10 ">功能描述描述</span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="demandAttribute floatright">
+					<div class="attributeTitle">
+						属性
+					</div>
+					<ul class="attributeP">
+						<li>需求名称：名称名称名称名称</li>
+						<li>创建人：hmq</li>
+						<li>创建时间：2016-12-2 19：00</li>
+						<li>最后修改人：hmq1</li>
+						<li>最后修改时间：2016-12-12 19：00：00</li>
+						<li>需求负责人：hmq2</li>
+						<li>需求编号：00016</li>
+						<li>需求来源：自创建</li>
+						<li>需求状态：已建议</li>
+						<li>需求类型：普通需求</li>
+					</ul>
+				</div>
+			</div>
+			<div class="attribute" ng-show="isAttribute==1">
+				<div class="attributeTitle" ng-controller="modalCtrl">
+					<input class="fbtn_blue" type="button" name="" id="" value="新增场景" ng-click="open('addNewScene','lg')" />
+				</div>
+				<table class="table-fullborder">
+					<tr>
+						<th>场景名称</th>
+						<th>创建人</th>
+						<th>创建时间</th>
+						<th>关联用例</th>
+						<th>关联缺陷</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td title="财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理"><span class="text_ellipsis8">财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理</span></td>
+						<td>hmq</td>
+						<td>2017-06-08 19:00</td>
+						<td>5</td>
+						<td>2</td>
+						<td ng-controller="modalCtrl">
+							<a href="" class="f_blue" ng-click="">场景设计</a>
+							<a href="" class="f_blue" ng-click="">用例设计</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="attribute" ng-show="isAttribute==2">
+
+				333333333333333333333333
+			</div>
+		</div>
+	</div>
+
+</div>

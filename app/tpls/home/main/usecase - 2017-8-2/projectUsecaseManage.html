@@ -1,0 +1,71 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle">
+		项目模块
+		<div class="floatright dropdownBox" dropdown>
+			<input dropdown-toggle type="button" class="btn_gray dropdownToggle" value="更多操作">
+			<ul class="dropdown-menu" dropdown-menu role="menu">
+				<li>
+					<a>导出用例</a>
+				</li>
+				<li>
+					<a>导入用例</a>
+				</li>
+			</ul>
+		</div>
+		<div class="floatright" ng-controller="modalCtrl">
+			<input class="btn_gray " type="button" name="" id="" value="提需求" ng-click="open('newDemand','lg')" />
+		</div>
+	</div>
+	<div class="projectBodyContent">		
+		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+			<div class="useCaseListTitle clearfix">
+				<div class="floatleft">需求的名称</div>
+				<div class="searchBox floatright">
+					<input class="floatleft inputSearch ng-pristine ng-valid" type="text" ng-model="searchDate.bugName" placeholder="请输入需求名称或ID">
+					<img class="btnSearch" src="/images/searchBox_btnSearch.png" ng-click="searchBug()">
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="userCaseListTable">
+				<table class="table-fullborder">
+					<tr>
+						<th>标识</th>
+						<th>需求名称</th>
+						<th>创建人</th>
+						<th>创建时间</th>
+						<th>需求状态</th>
+						<th>优先级</th>
+						<th>指派</th>
+						<th>关联用例数</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td>1.0-1</td>
+						<td ui-sref="index.demandDetails"><span class="text_ellipsis10 f_blue cursor_p ">用户注册</span></td>
+						<td>humq</td>
+						<td>2016-12-2 19：00</td>
+						<td>已建议</td>
+						<td>中</td>
+						<td>wxw</td>
+						<td>2</td>
+						<td>
+							<a class="f_blue" ng-click="open()">指派</a>
+							<a class="f_blue">创建用例</a>
+						</td>
+					</tr>
+
+				</table>
+				<div class="floatright">
+					<pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
+					</pagination>
+				</div>
+			</div>
+			<!-- <div ng-controller="editorCtrl" style="width:100%;margin-top:100px;">
+                <p>wangEditor 集成到 angular 的示例</p>
+                <div ng-model="text" contenteditable="true"></div>
+            </div> -->
+		</div>
+	</div>
+</div>

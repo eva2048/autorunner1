@@ -1,0 +1,26 @@
+<style type="text/css">
+</style>
+<div class="projectNav" style="overflow: hidden;">
+    <div class="projectNavTab">
+        <i class="aricon_leftnav" ng-class="leftOut?'aricon_leftnav1':'aricon_leftnav2'" ng-click="slideLeft()"></i>
+    </div>
+    <div class="projectNavList">
+        <ul>
+            <li ui-sref="index" class="{{projectInnerNavNow==1?'active':''}}" ng-click="projectInnerNavNow=1">
+                <img src="images/projectNav_defect.png"> 用例管理
+            </li>
+            <li ui-sref="index.component" class="{{projectInnerNavNow==2?'active':''}}" ng-click="projectInnerNavNow=2">
+                <img src="images/projectNav_usecase.png"> 组件管理
+            </li>
+            <li ui-sref="index.testset" class="{{projectInnerNavNow==3?'active':''}}" ng-click="projectInnerNavNow=3">
+                <img src="images/projectNav_groupmanage.png"> 测试集
+            </li>
+            <li  class="{{projectInnerNavNow==4?'active':''}}" ng-click="projectInnerNavNow=4">
+                <img src="images/projectNav_document.png"> 文档管理
+            </li>
+            <li  class="{{projectInnerNavNow==5?'active':''}}" ng-click="projectInnerNavNow=5">
+                <img src="images/projectNav_statement.png"> 报表中心
+            </li>
+        </ul>
+    </div>
+</div>

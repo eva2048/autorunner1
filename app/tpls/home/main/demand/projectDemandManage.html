@@ -1,0 +1,59 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="demandCtrl">
+    <div class="projectBodyTitle">
+        需求管理
+    </div>
+    <div class="useCaseListfunc clearfix">
+        <div class="dropdownDefault floatleft" dropdown>
+            <div dropdown-toggle class="dropdowntoggle">
+                <span class="dropdowntoggletext">需求状态</span>
+                <i class="iconfont icon-unfold"></i>
+            </div>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                <span class="triangle"></span>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>待处理</span></li>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>已处理</span></li>
+            </ul>
+        </div>
+        <div class="dropdownDefault floatleft" dropdown>
+            <div dropdown-toggle class="dropdowntoggle">
+                <span class="dropdowntoggletext">优先级</span>
+                <i class="iconfont icon-unfold"></i>
+            </div>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                <span class="triangle"></span>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>中</span></li>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>高</span></li>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>低</span></li>
+            </ul>
+        </div>
+        <div class="floatright btn_add" ng-click="open('newDemand','lg')">
+            <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
+        </div>
+    </div>
+    <div class="projectBodyContent" style="top: 100px;">
+        <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+            <div class="useCaseListfunction">
+                <span class="floatleft selectNum">已选中2项：</span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-guanlian"></i>关联用例
+                </span>                
+                <span class="chatIconButton">
+                    <i class="iconfont icon-brush_fill"></i>修改处理人
+                </span>
+                <span class="chatIconButton floatright">
+                    <i class="iconfont icon-import"></i>导入
+                </span>
+                <span class="chatIconButton floatright">
+                    <i class="iconfont icon-daochu2"></i>导出
+                </span>
+                <div class="clear"></div>
+            </div>
+            <div class="userCaseListTable">
+                <div ui-grid="gridOptionsDemand"  ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>

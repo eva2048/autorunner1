@@ -1,0 +1,29 @@
+<div class="projectDetailBox" ng-controller="statementCtrl">
+    <div class="detailTitle">
+        <span class="floatleft bugId">233</span>
+        <span class="bugName text_ellipsis">测试集名称</span>
+        <input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
+    </div>
+    <div class="bugDetailBox" ng-init="isAttribute=1">
+        <div class="tab">
+            <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">属性</span>
+            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">脚本</span>
+            <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">关联用例表</span>
+        </div>
+        <div id="statementDetail" class="detailAttribute detailAttribute1" ng-show="isAttribute==1">
+            <div class="detailAttributeTop">
+                <div ui-grid="gridOptions" ui-grid-tree-view ui-grid-resize-columns class="gridTableBox gridTableBox1"></div>
+            </div>
+            <div class="detailAttributeBottom" resizable r-directions="['top']">
+                <div class="title">数据字典(单击用例名称查看)
+                    <i class="floatright iconfont icon-close tooltipdefaulticon cursor_p" ng-click="hideBottom()"></i>
+                </div>
+                <div class="content">                               
+                    <div style="background: #fff" ui-grid="gridOptions1" ui-grid-resize-columns class="gridTableBox gridTableBox1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="detailAttribute" ng-show="isAttribute==2">
+        </div>
+    </div>
+</div>

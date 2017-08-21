@@ -1,0 +1,153 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="modalCtrl">
+    <div class="projectBodyTitle flexRow">
+        <div class="floatleft flexRow flex">用户注册报表</div>
+        <div class="floatleft pageTab">
+            <span class="pageTabItem">首条</span>
+            <span class="pageTabItem">上一条</span>
+            <span class="pageTabItem pageTabItemGray">下一条</span>
+            <span class="pageTabItem">末条</span>
+        </div>
+        <div class="floatright flex rightBox">           
+            <input type="button" class="floatright btndefault btndefault_blue" name="" id="" value="返回" ng-click="back()" />
+            <span class="chatIconButton floatright" data-tip="导出PDF">
+                <i class="iconfont iconfont-24 icon-daochu"></i>
+            </span>
+            <span class="chatIconButton floatright" data-tip="导出WORD">
+                <i class="iconfont iconfont-24 icon-daochu1"></i>
+            </span>
+        </div>
+    </div>
+    <div class="projectBodyContent projectBodyContent1" ng-controller="statementCtrl">
+        <div class="createBugContentBox" style="width: 100%">
+            <div class="createBugContent">
+                <div class="describeBox">
+                    <div class="describeTitle">
+                        基本信息
+                    </div>
+                    <div class="statementContent padding_20">
+                        <ul class="statementList">
+                            <li>
+                                <h1 class="statementListLeft">运行名称：</h1>
+                                <h2 class="statementListRight">20170324_1</h2>
+                            </li>
+                            <li>
+                                <h1 class="statementListLeft">运行人：</h1>
+                                <h2 class="statementListRight">luort</h2>
+                            </li>
+                            <li>
+                                <h1 class="statementListLeft">运行时间：</h1>
+                                <h2 class="statementListRight">2017-03-24 16:58:34</h2>
+                            </li>
+                            <li>
+                                <h1 class="statementListLeft">运行时间：</h1>
+                                <h2 class="statementListRight">2017-03-24 16:58:34</h2>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="createBugContent">
+                <div class="describeBox">
+                    <div class="describeTitle">
+                        自动运行状态
+                    </div>
+                    <div class="describeContent padding_20">
+                        <table class="table-fullborder">
+                            <tr>
+                                <th></th>
+                                <th>运行总数</th>
+                                <th>成功数</th>
+                                <th>失败数</th>
+                                <th>未执行数</th>
+                                <th>成功率</th>
+                            </tr>
+                            <tr>
+                                <td>组件</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>用例</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td>需求</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td></td>
+                                <td>100%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="createBugContent">
+                <div class="describeBox">
+                    <div class="describeTitle">
+                        需求运行明细
+                    </div>
+                    <div class="describeContent padding_20">
+                        <div class="statementContent padding_20" style="padding-top: 0px;">
+                            <ul class="statementList statementList1">
+                                <li>
+                                    <h1 class="statementListLeft">需求运行总数：</h1>
+                                    <h2 class="statementListRight">1</h2>
+                                </li>
+                                <li>
+                                    <h1 class="statementListLeft">项目需求总数：</h1>
+                                    <h2 class="statementListRight">240</h2>
+                                </li>
+                                <li>
+                                    <h1 class="statementListLeft">需求覆盖率</h1>
+                                    <h2 class="statementListRight">0%</h2>
+                                </li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                        <table class="table-fullborder">
+                            <tr>
+                                <th>需求名称</th>
+                                <th>需求ID</th>
+                                <th>失败用例数</th>
+                                <th>成功用例数</th>
+                                <th>未执行用例数</th>
+                            </tr>
+                            <tr>
+                                <td>数据准备脚本</td>
+                                <td>264</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                        <div class="chartBox">
+                            <div class="chartContent">
+                                <highchart class="reportPanel" id="chart1" series="chart.series" title="chart.title" options="chart.options">
+                                </highchart>
+                            </div>
+                            <div class="chartContent">
+                                <highchart class="reportPanel" id="chart1" series="chart.series" title="chart.title" options="chart.options">
+                                </highchart>
+                            </div>
+                            <div class="chartContent">
+                                <highchart class="reportPanel" id="chart1" series="chart.series" title="chart.title" options="chart.options">
+                                </highchart>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
