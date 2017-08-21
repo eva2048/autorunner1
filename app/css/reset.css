@@ -162,5 +162,16 @@ select::-ms-expand { display: none; }
 .p_center {
     text-align: center;
 }
+.flexColumn, .flexRow {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+}
+.flex {
+    -webkit-box-flex: 1;
+    flex: 1;
+    -ms-flex: 1;
+}
 
 

@@ -25,7 +25,6 @@ angular.module('angularResizable', [])
                 rDisabled: '@',
                 rNoThrottle: '=',
                 resizable: '@',
-                mWidth:'='
             },
             link: function(scope, element, attr) {
                 if (scope.resizable === 'false') return;
@@ -36,7 +35,7 @@ angular.module('angularResizable', [])
 
                 // register watchers on width and height attributes if they are set
                 scope.$watch('rWidth', function(value){
-                    element[0].style[scope.rFlex ? flexBasis : 'width'] = scope.rWidth + 'px';              
+                    element[0].style[scope.rFlex ? flexBasis : 'width'] = scope.rWidth + 'px';
                 });
                 scope.$watch('rHeight', function(value){
                     element[0].style[scope.rFlex ? flexBasis : 'height'] = scope.rHeight + 'px';
@@ -55,9 +54,9 @@ angular.module('angularResizable', [])
                     dragDir,
                     axis,
                     info = {};
+
                 var updateInfo = function(e) {
-                    info.width = false; 
-                    info.height = false;
+                    info.width = false; info.height = false;
                     if(axis === 'x')
                         info.width = parseInt(element[0].style[scope.rFlex ? flexBasis : 'width']);
                     else
@@ -76,10 +75,6 @@ angular.module('angularResizable', [])
 
                 var dragging = function(e) {
                     var prop, offset = axis === 'x' ? start - getClientX(e) : start - getClientY(e);
-                    var table=document.getElementById("resizeTable");
-                    var tableS = window.getComputedStyle(table, null);
-                    tableW=tableS.getPropertyValue("width");
-                    tableW=parseInt(tableW)*0.8;
                     switch(dragDir) {
                         case 'top':
                             prop = scope.rFlex ? flexBasis : 'height';
@@ -91,15 +86,7 @@ angular.module('angularResizable', [])
                             break;
                         case 'right':
                             prop = scope.rFlex ? flexBasis : 'width';
-                            if((offset*vx+scope.mWidth)>w){
-                                element[0].style[prop] = scope.mWidth + 'px';
-                            }else{
-                                if((w - (offset * vx))>tableW){
-                                    element[0].style[prop] = tableW + 'px';
-                                }else{
-                                    element[0].style[prop] = w - (offset * vx) + 'px';
-                                }                            
-                            }                           
+                            element[0].style[prop] = w - (offset * vx) + 'px';
                             break;
                         case 'left':
                             prop = scope.rFlex ? flexBasis : 'width';

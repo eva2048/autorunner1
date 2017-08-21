@@ -9,7 +9,13 @@ require.config({
 		'router': 'angular-ui-router.min',
 		'ui-bootstrap-tpls':'ui-bootstrap-tpls.min',
 		'angular-ui-tree':'angular-ui-tree.min',
-		'angular-resizable':'angular-resizable'
+		'angular-resizable':'angular-resizable',
+		'bootstrap-datetimepicker':'bootstrap-datetimepicker',
+		'time-ng':'time-ng',
+		'ui-grid':'ui-grid',
+		'highstock':'highstock.src',
+		'exporting':'exporting.src',
+		'highcharts-ng':'highcharts-ng'
 	},
 	shim: {
 		'angular': {
@@ -27,6 +33,9 @@ require.config({
 		'angular-ui-tree':{
 			deps: ['angular']
 		},
+		'ui-grid':{
+			deps: ['angular']
+		},
 		'router': {
 			deps: ['angular']
 		},
@@ -36,11 +45,14 @@ require.config({
 		'bootstrap':{
 			deps:['jquery']
 		},
+		'exporting':{
+			deps:['highstock']
+		},
 		deps:['angular'],
 		urlArgs: "bust=" + (new Date()).getTime()  //防止读取缓存，调试用
 	}
 })
 // 初始化myModule模块
-require(['angular','app','jquery','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable'],function(){
+require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','exporting','highcharts-ng'],function(){
 	angular.bootstrap(document, ['myModule']);
 })

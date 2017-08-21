@@ -1,49 +1,60 @@
-<style type="text/css">
-
-</style>
 <div class="projectDetailBox">
-    <h1 class="detailTitle">用例集详情</h1>
-    <div class="bugName">
-        <span class="bugId">233</span> 用例集名称
-        <input class="floatright btn_blue" type="button" value="提交">
+    <div class="detailTitle">
+        <span class="floatleft bugId">233</span>
+        <span class="bugName text_ellipsis">测试集名称</span>
+        <input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
     </div>
-    <div class="bugChangeBox">
-        <ul>
-            <li>
-                <span>测试集名称：</span>
-                <input type="text" class="inputText" name="">
-            </li>
-            <div class="clear"></div>
-            <li>
-                <span class="floatleft">&nbsp;&nbsp;&nbsp;详细描述：</span>
-                <textarea class="floatleft projectTextarea"></textarea>
-            </li>
-            <div class="clear"></div>
-        </ul>
-    </div>
-    <div class="bugDetailBox">
+    <div class="bugDetailBox" ng-init="isAttribute=1">
         <div class="tab">
-            <span ng-class="{current:isAttribute}" ng-click="isAttribute=true">脚本</span>
-            <span ng-class="{current:!isAttribute}" ng-click="isAttribute=false">关联用例表</span>
+            <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">属性</span>
+            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">脚本</span>
+            <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">关联用例表</span>
         </div>
-        <div class="history" ng-show="isAttribute">
-            <div class="detailInputList">
-                <ul>
-                    <li>
-                        <span>脚本名称：</span>
-                        <input type="text" class="inputText" name="">
-                    </li>
-                    <li class="fix">
-                        <span class="floatleft">脚本内容：</span>
-                        <textarea class="floatleft projectTextarea" style="height: 300px;"></textarea>
-                    </li>
-                </ul>
+        <div class="detailAttribute" ng-show="isAttribute==1">
+            <ul class="attributeList attributeList1">
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('测,试,集,名,称')">{{n}}</span>
+                    </span>
+                    <input type="text" class="inputText" name="">
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('详,细,描,述')">{{n}}</span>
+                    </span>
+                    <input type="text" class="inputText" name="">
+                </li>
+            </ul>
+            <div class="btnBox">
+                <input type="button" name="" class="btndefault btndefault_blue" value="保存">
             </div>
-            <div class="marginb_20 marginl_120">
-                <input type="button" name="" class="btn_blue" value="保存">
-            </div>           
         </div>
-        <div class="history" ng-hide="isAttribute">
+        <div class="detailAttribute" ng-show="isAttribute==2">
+            <ul class="attributeList attributeList1">
+                <li>
+                    <span class="attributeLeft">
+                        <span>脚</span>
+                        <span>本</span>
+                        <span>名</span>
+                        <span>称</span>
+                    </span>
+                    <input type="text" class="inputText" name="">
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span>脚</span>
+                        <span>本</span>
+                        <span>内</span>
+                        <span>容</span>
+                    </span>
+                    <textarea class="projectTextarea" style="height: 300px;"></textarea>
+                </li>
+            </ul>
+            <div class="btnBox">
+                <input type="button" name="" class="btndefault btndefault_blue" value="保存">
+            </div>
+        </div>
+        <div class="detailAttribute" ng-show="isAttribute==3">
             <div class="marginb_20">
                 <input type="button" value="修改关联用例" name="" class="fbtn_blue">
             </div>

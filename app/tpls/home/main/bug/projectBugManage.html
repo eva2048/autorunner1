@@ -1,173 +1,189 @@
 <style type="text/css">
+
 </style>
-<div class="projectBodyBox" ng-controller="projectBugManageCtrl">
-    <div class="projectBodyTitle">
+<div class="projectBodyBox" ng-controller="bugCtrl">
+    <div class="projectBodyTitle projectBodyTitle1">
         缺陷列表
-        <div class="floatright dropdownBox" dropdown>
-            <input dropdown-toggle type="button" class="btn_gray dropdownToggle" value="更多操作">
-            <ul class="dropdown-menu" dropdown-menu role="menu">
-                <li><a ng-click="open()">缺陷导出</a></li>
-                <li><a>缺陷导入</a></li>
-                <li ng-controller="defectExportSetModalCtrl"><a ng-click="open()">导入导出配置</a></li>
-                <li ng-controller="customColumnModalCtrl"><a ng-click="open()">自定义列</a></li>
+    </div>
+    <div class="useCaseListfunc clearfix">
+        <div class="dropdownDefault floatleft" dropdown>
+            <div dropdown-toggle class="dropdowntoggle">
+                <span class="dropdowntoggletext">排序方式</span>
+                <i class="iconfont icon-unfold"></i>
+            </div>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                <span class="triangle"></span>
+                <li class="current"><i class="iconfont icon-clock"></i><span>默认</span></li>
+                <li><i class="iconfont icon-editor"></i><span>最新创建</span></li>
+                <li><i class="iconfont icon-activity"></i><span>最近操作</span></li>
             </ul>
         </div>
-        <input ui-sref="projectInner.createBug" type="button" class="floatright btn_blue" value="新建缺陷">
-    </div>
-    <div class="projectBodyFunction">
-        <div class="tabBox floatleft">
-            <span class="{{index==1?'current':''}}" ng-click="index=1">全部</span>
-            <span class="{{index==2?'current':''}}" ng-click="index=2">我提交的</span>
-            <span class="{{index==3?'current':''}}" ng-click="index=3">待我处理的</span>
-        </div>
-        <div class="clear"></div>
-        <div class="bugListFunction floatleft">
-            <div class="floatleft" ng-controller="connectUsecaseModalCtrl">
-                <input class="floatleft fbtn_red" type="button" value="关联用例" ng-click="open()">
+        <div class="dropdownDefault floatleft" dropdown>
+            <div dropdown-toggle class="dropdowntoggle">
+                <span class="dropdowntoggletext">筛选</span>
+                <i class="iconfont icon-unfold"></i>
             </div>
-            <div class="floatleft" ng-controller="chooseHandlerModalCtrl">
-                <input class="floatleft fbtn_blue" type="button" value="修改处理人" ng-click="open()">
-            </div>
-            <input ng-click="isShowAdvancedFilterPack=true" class="floatleft fbtn_blue" type="button" value="高级筛选&nbsp;▼">
-            <div class="clear"></div>
-        </div>
-        <div class="searchBox floatright margint_10">
-            <input class="floatleft inputSearch" type="text" placeholder="请输入缺陷名称或ID" name="">
-            <img class="btnSearch" src="images/searchBox_btnSearch.png">
-            <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="advancedFilterBox" ng-show="isShowAdvancedFilterPack">
-            <ul>
-                <li>
-                    <h1>排序方式：</h1>
-                    <a class="current">最新创建</a>
-                    <a>最近操作</a>
-                </li>
-                <li>
-                    <h1>缺陷状态：</h1>
-                    <a class="current">不限</a>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>新建</h2>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>新建</h2>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>新建</h2>
-                </li>
-                <li>
-                    <h1>缺陷等级：</h1>
-                    <a class="current">不限</a>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>高</h2>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>中</h2>
-                    <input class="checkbox" type="checkbox" name="">
-                    <h2>低</h2>
-                </li>
-                <li class="paddingb_0">
-                    <h1>项目模块：</h1>
-                    <div style="width: 80%" class="floatleft">
-                        <a class="current">不限</a>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>登录模块</h2>
-                        </div>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>注册模块</h2>
-                        </div>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>开发者项目管理模块</h2>
-                        </div>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>登录模块</h2>
-                        </div>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>注册模块</h2>
-                        </div>
-                        <div class="modalFilterBox">
-                            <input class="checkbox" type="checkbox" name="">
-                            <h2>开发者项目管理模块</h2>
-                        </div>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                <span class="triangle"></span>
+                <li class="dropdown-menu-child">
+                    <div class="dropdown-menu-link">
+                        <i class="iconfont icon-collection"></i><span>缺陷等级</span>
+                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
                     </div>
-                    <div class="clear"></div>
+                    <ul class="dropdown-menu dropdown-menu-child-menu">
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <h1 class="margint_10">创建时间：</h1>
-                    <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" alt-input-formats="altInputFormats" min-date="dat0" max-date="dat1" ng-click="open1()" close-text="关闭" clear-text="清空" current-text="今天" />&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;
-                    <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                <li class="dropdown-menu-child">
+                    <div class="dropdown-menu-link">
+                        <i class="iconfont icon-flip"></i><span>缺陷状态</span>
+                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-child-menu">
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
+                        </li>
+                    </ul>
                 </li>
-                <div class="floatleft f_blue cursor_p advancedFilterPack" ng-click="isShowAdvancedFilterPack=false">收起高级筛选</div>
-                <div class="advancedFilterBtn floatright">
-                    <input type="button" name="" class="btn_blue" value="确认">
-                    <input type="button" name="" class="btn_gray" value="重置">
-                </div>
-                <div class="clear"></div>
+                <li class="dropdown-menu-child">
+                    <div class="dropdown-menu-link">
+                        <i class="iconfont icon-createtask"></i><span>项目模块</span>
+                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
+                    </div>
+                    <ul class="dropdown-menu dropdown-menu-child-menu">
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
+                        </li>
+                        <li ng-click="$event.stopPropagation()">
+                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
+        <div class="dropdownBox floatleft dateBoxClear" dropdown>
+            <div dropdown-toggle class="dropdowntoggle">
+                <span class="dropdowntoggletext">时间范围</span>
+                <i class="iconfont icon-unfold"></i>
+            </div>
+            <ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+                <li>
+                    <a>开始时间：
+                                <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                                <div class="clear"></div>
+                            </a>
+                </li>
+                <li>
+                    <a>结束时间：
+                                <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                                <div class="clear"></div>
+                            </a>
+                </li>
+                <li class="marginb_10">
+                    <a>
+                        <input type="button" class="btn btn-sm btn-success" value="确认">
+                        <input type="button" class="btn btn-sm btn-info" value="清空">、
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="floatright btn_add" ui-sref="index.createbug">
+            <span class="cicleicon"><i class="iconfont icon-add"></i></span> 新建缺陷
+        </div>
     </div>
-    <div class="projectBodyList">
-        <table class="table-fullborder">
-            <tr>
-                <th>
-                    <input type="checkbox">
-                </th>
-                <th>
-                    ID
-                </th>
-                <th>BUG名称</th>
-                <th>
-                    状态
-                </th>
-                <th>
-                    缺陷等级
-                </th>
-                <th>
-                    项目模块
-                </th>
-                <th>创建时间</th>
-                <th>最后更新时间</th>
-                <th>提交者</th>
-                <th>处理者</th>
-                <th>操作</th>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox">
-                </td>
-                <td class="typeImg">2</td>
-                <td ng-click="fadeIn();$event.stopPropagation();"><span title="<i style='max-width:120px;break-word:break-all;'>项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</i>" class="text_ellipsis10 f_blue cursor_p">项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</span></td>
-                <td>新建</td>
-                <td class="stateImg">中</td>
-                <td>登录模块</td>
-                <td>2016-07-08 11：20：58</td>
-                <td>2016-07-08 11：20：58</td>
-                <td>humq</td>
-                <td>humq</td>
-                <td><a class="f_graya">编辑</a></td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox">
-                </td>
-                <td class="typeImg">2</td>
-                <td ng-click="fadeIn();$event.stopPropagation();"><span class="text_ellipsis10 f_blue cursor_p">项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一项目一缺陷一</span></td>
-                <td>新建</td>
-                <td class="stateImg">中</td>
-                <td>登录模块</td>
-                <td>2016-07-08 11：20：58</td>
-                <td>2016-07-08 11：20：58</td>
-                <td>humq</td>
-                <td>humq</td>
-                <td><a class="f_blue">编辑</a></td>
-            </tr>
-        </table>
-        <div class="floatright">
-            <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
-            </pagination>
+    <div class="projectBodyContent" style="top: 100px;">
+        <div class="useCaseList" style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+            <div class="useCaseListfilter">
+                <div class="useCaseListfilterli flexRow">
+                    <span class="title flex">已选条件</span>
+                    <a href="" class="f_blue">清除筛选条件</a>
+                </div>
+                <div class="useCaseListfilterli flexRow">
+                    <span class="title1">缺陷等级：</span>
+                    <div class="flex">
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color1"></i>中
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color2"></i>高
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color3"></i>低
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="useCaseListfilterli flexRow">
+                    <span class="title1">缺陷状态：</span>
+                    <div class="flex">
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color4"></i>新建
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color5"></i>驳回
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        <span class="filterspan"><i class="iconfont icon-huiyuan i_color0"></i>待审
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="useCaseListfilterli flexRow">
+                    <span class="title1">项目模块：</span>
+                    <div class="flex">
+                        <span class="filterspan">
+                            <i class="iconfont icon-huiyuan i_color1"></i>
+                            登录模块登录模块登录模块登录模块登录模块登录模块登录模块登录模块
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        </span>
+                        <span class="filterspan">
+                            <i class="iconfont icon-huiyuan i_color1"></i>
+                            注册模块
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                        <span class="filterspan">
+                            <i class="iconfont icon-huiyuan i_color1"></i>
+                            模块
+                            <i class="iconfont icon-delete_fill"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="useCaseListfunction">
+                <span class="floatleft selectNum">已选中2项：</span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-guanlian"></i>关联用例
+                </span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-import"></i>导入
+                </span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-daochu2"></i>导出
+                </span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-brush_fill"></i>修改处理人
+                </span>
+                <div class="clear"></div>
+            </div>
+            <div class="userCaseListTable">
+                <div ui-grid="gridOptionsBug" ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+            </div>
         </div>
     </div>
 </div>

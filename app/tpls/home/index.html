@@ -1,4 +1,6 @@
+<style type="text/css">
+</style>
 <div ng-controller="projectCtrl">
-	<div style="position:relative;z-index: 103" ng-include="'../tpls/home/topbar.html'"></div>
-	<div ui-view="main" style="position:absolute; width: 100%; top:60px; bottom: 0px;overflow: hidden "></div>
+    <div ng-click="fadeOut()" style="position:relative;z-index: 104" ng-include="'../tpls/home/topbar.html'"></div>
+    <div ui-view="main" style="position:absolute; width: 100%; top:50px; bottom: 0px;overflow: hidden "></div>    
 </div>

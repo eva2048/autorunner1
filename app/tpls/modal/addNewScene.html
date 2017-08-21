@@ -11,9 +11,43 @@
 			</li>
 			<li class="clearfix">				
 				<h1>附件：</h1>				
-				<div class="popRight">
-					<input type="file" name="" id="" value="上传" class="fileInput" />
-					<span class="fileUpload btn_gray">上传</span>
+				<div class="floatleft" style="width: 480px;">
+					<div class="describeList fileuploadBox">
+                    <div class="fileselectBox">
+                        <div class="floatleft btn_add btn_addfile"><span class="cicleicon"><i class="iconfont icon-createtask"></i></span>选择文件
+                            <input class="inputfile" type="file" value="选择文件">
+                        </div>
+                        <span class="floatright">文件最大不超过30M</span>
+                    </div>
+                    <ul class="fileList">
+                        <li>
+                            <span class="fileIcon fileIcon-doc"></span>
+                            <div class="fileName">
+                                测试需求文档.doc
+                                <i class="iconfont icon-close"></i>
+                            </div>
+                            <div class="fileFooter">
+                                <div class="fileSize">
+                                    <div class="progress progressDefault" ng-hide="fileuploadSize==-1;">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{fileuploadSize+'%'}}">
+                                            {{fileuploadSize+'%'}}
+                                        </div>
+                                    </div>
+                                    <div class="size" ng-show="fileuploadSize==-1;">180kb
+                                        <div class="filemoreFunc dropdownDefault floatright treefunicon" dropdown>
+                                            <i class="iconfont icon-gengduo floatright tooltipdefaulticon" dropdown-toggle></i>
+                                            <ul class="dropdown-menu dropdown-menu-right transition" dropdown-menu role="menu">
+                                                <span class="triangle"></span>
+                                                <li><i class="iconfont icon-addpeople_fill"></i><span>下载</span></li>
+                                                <li><i class="iconfont icon-addpeople_fill"></i><span>删除</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 				</div>
 			</li>
 			<li>
@@ -24,8 +58,8 @@
 		</ul>
 	</div>
 	<div class="modal-footer">
-		<div class="floatleft"><input class="floatleft" type="checkbox" name=""><em class="marginl_10">是否连续添加</em></div>
-		<button class="btn_blue" ng-click="ok()">确认</button>
-		<button class="btn_gray" ng-click="cancel()">返回</button>
+		<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+		<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+		<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
 	</div>
 </div>

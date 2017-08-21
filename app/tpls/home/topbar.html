@@ -1,27 +1,28 @@
 <style type="text/css">
 </style>
 <div class="topbar">
-	<div class="floatleft">
-		<img ui-sref="index({num:1})" class="floatleft" src="images/logo.png">
-		<div ui-sref="upgrade" class="floatleft topbar_versionBox"><img src="images/topbar_version.png">免费版<input type="button" class="btn_cblue" value="升级"></div>
+	<div class="floatleft leftMenu">
+        <a class="topbarLink" href="" ui-sref="index">用例</a>
+        <a class="topbarLink" href="" ui-sref="index.demand">需求</a>        
+		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>
+		<a class="topbarLink" ng-class="{'current':isAttribute==0}" href="" ui-sref="index.component">组件</a>
+        <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>
+		<a class="topbarLink" href="" ui-sref="index.statement">报表</a>
 	</div>
-	<div class="floatright">
-		<div class="userInfoBox floatright" ng-mouseenter="userDetail=true" ng-mouseleave="userDetail=false">
-			<div class="userInfo">
-				{{userInfo.userName}}
-			</div>
-			<div class="userDetail" ng-show="userDetail">
-				<ul>
-					<li ui-sref="upgrade"><img src="images/userInfo_icon6.png">账号升级</li>
-					<li ui-sref="myOrder"><img src="images/userInfo_icon7.png">我的订单</li>
-					<li class="exit"><img src="images/userInfo_icon5.png">退出登录</li>
-				</ul>
-			</div>
-		</div>
-		<div class="help floatright" ui-sref="helpCenter({hnum1:1,hnum2:1})">
-			<img src="images/topbar_help.png">
-			帮助中心
-		</div>
+	<div class="floatright rightMenu">
+		<div class="dropdownDefault floatleft" dropdown>
+            <a href="" class="topbarLink" dropdown-toggle>更多</a>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+            	<span class="triangle"></span>
+                <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
+                <li><span>上移</span></li>
+                <li><span>上移</span></li>
+                <li class="line"></li>
+                <li><span>上移</span></li>
+            </ul>
+        </div>
+        <a href="" class="topbarLink">更多</a>
+        <a href="" class="topbarLink">更多</a>
 	</div>
 	<div class="clear"></div>
 </div>

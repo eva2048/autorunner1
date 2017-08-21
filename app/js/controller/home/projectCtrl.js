@@ -1,109 +1,103 @@
 define(['app'], function(app) {
     app.register
         .controller('projectCtrl',
-            function($scope, $stateParams) {            	
+            function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService) {
+                /*提示弹窗*/
+                /*关闭错误提示*/
+                var tiptimer = function() {
+                    $('#mdAlertDialog').remove();
+                };               
+                $scope.alertTip = function($event, type, content) {
+                    var alertTiptimer = $timeout(tiptimer, 2000);
+                    var alert = "<div class='mdAlertDialog' id='mdAlertDialog'><i class='iconfont icon-feedback_fill'></i><span id='alertContent'>" + content + "</span><i id='mdAlertDialogClose' class='iconfont icon-close'></i></div>";
+                    $($event.target).after(alert);
+                    $('#mdAlertDialog').css('display', 'block');
+                    var mdAlertDialogWidth = $('#mdAlertDialog').width();
+                    $('#mdAlertDialog').css('margin-left', -mdAlertDialogWidth / 2);
+                    $('#mdAlertDialogClose').click(function() {
+                        $('#mdAlertDialog').remove();
+                    })
+                };
+
+                
                 $scope.isAttribute = 0;
                 $scope.isFadeIn = false;
-                $scope.leftOut=true;
-                $scope.treeOut=true;
+                $scope.leftOut = true;
+                $scope.treeOut = true;
+                //日期控件1
+                $scope.dat = new Date();
+                $scope.dat0 = new Date();
+                $scope.format = "yyyy/MM/dd";
+                $scope.altInputFormats = ['yyyy/M!/d!'];
+                $scope.popup1 = {
+                    opened: false
+                };
+                $scope.open1 = function() {
+                    $scope.popup1.opened = true;
+                };
+                //日期控件2
+                $scope.dat1 = ''
+                $scope.format1 = "yyyy/MM/dd";
+                $scope.altInputFormats1 = ['yyyy/M!/d!'];
+                $scope.popup2 = {
+                    opened: false
+                };
+                $scope.open2 = function() {
+                    $scope.popup2.opened = true;
+                };
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
-                    var width=$(".useCaseList ").width()-200;
-                    if(width>1000){
-                        width=1000;
+                    /*var width = $(".useCaseList ").width() - 200;
+                    if (width > 1000) {
+                        width = 1000;
                     }
-                    $(".projectDetailStyle").css("width",width)
+                    $(".projectDetailStyle").css("width", width)*/
+                    $(".projectBodyContent").css("border-width", "0");
                 };
                 $scope.fadeOut = function() {
                     $scope.isFadeIn = false;
-                    $(".projectDetailStyle").css("width","0")
+                    /*$(".projectDetailStyle").css("width", "0")*/
+                    $(".projectBodyContent").css("border-width", "0");
                 };
-                $scope.slideLeft=function(){
-                    var w=$(".projectNav").width();
-                    $scope.leftOut=!$scope.leftOut;
-                    if(w>70){
-                        $scope.projectNavStyle={
-                            "width":"66px" ,
-                            "transition": "all 0.3s"
-                        };                      
-                        $scope.projectBodyStyle={
-                            "transition": "all 0.3s",
-                            "left":"66px",                            
-                        }                       
-                    }else{
-                        $scope.projectNavStyle={
-                            "width":"250px",
-                            "transition": "all 0.3s"
-                        };                      
-                        $scope.projectBodyStyle={
-                            "transition": "all 0.3s",
-                            "left":"250px"
-                        }
-                    }                   
+                $scope.back = function() {
+                    history.go(-1);
                 }
-                $scope.treeHide=function(){
-                    var wid=$('.useCaseTree').width();
-                    $scope.treeOut=!$scope.treeOut;
-                    if(wid>5){
-                        $scope.useCaseTreeStyle={
-                            "width":"0px" ,                         
-                            "transition": "all 0.3s"
-                        };
-                        $scope.useCaseListStyle={
-                            "transition": "all 0.3s",
-                            "left":"0px"
-                        }
-                        $(".treeBody").css("padding","0");
-                        $(".useCaseTree .title").css({"padding":"0","overflow":"hidden"})
-                    }else{
-                        $scope.useCaseTreeStyle={
-                            "width":"330px" ,                           
-                            "transition": "all 0.3s"
-                        };
-                        $scope.useCaseListStyle={
-                            "transition": "all 0.3s",
-                            "left":"330px"
-                        }
-                        $(".treeBody").css("padding","15px");
-                        $(".useCaseTree .title").css({"padding":"0 15px","overflow":"hidden"})
+                //左侧导航树数据
+                $http.get('./data/treenav.php')
+                    .success(function(data) {
+                        $scope.data = data.lists;
+                    });
+                /*创建自定义长度数组*/
+                $scope.range = function(n) {
+                    return new Array(n);
+                };
+                /*字符串转数组*/
+                $scope.turnArray = function(n) {
+                    return n.split(",");
+                };
+                /*文件上传*/
+                /*定时器*/
+                //定时器方法
+                $scope.fileuploadSize = 0;
+                var timer = function() {
+                    if ($scope.fileuploadSize <= 100) {
+                        $scope.fileuploadSize++;
+                    } else {
+                        $interval.cancel(fileupload);
+                        $scope.fileuploadSize = -1;
                     }
-                }
-                $scope.back=function(){
-                	history.go(-1);
-                	$scope.treeHide();
-                }
-                $scope.data = [{
-                    'id': 1,
-                    'level': -1,
-                    'title': '用例1',
-                    'nodes': [{
-                        'id': 11,
-                        'level': 0,
-                        'title': '用例1.1',
-                        'nodes': [{
-                            'id': 111,
-                            'level': 1,
-                            'title': '用例1.1.1',
-                            'nodes': [{
-                                'id': 1111,
-                                'level': 2,
-                                'title': '用例1.1.1',
-                                'nodes':[]
-                            }]
-                        }]
-                    }, {
-                        'id': 12,
-                        'level': 0,
-                        'title': '用例1.2',
-                        'nodes': []
-                    }]
-                }];
+                };
+                //启用定时器
+                var fileupload = $interval(timer, 100); //间隔2秒定时执行
+
                 $scope.projectNavNow = $stateParams.num;
                 //分页
                 $scope.maxSize = 3;
                 $scope.totalItems = 200;
                 $scope.currentPage = 1;
                 $scope.numPages = 3;
+                $scope.addDescribe = false;
+                    
             });
     app.register.directive('ngRightClick', function($parse) {
         return function(scope, element, attrs) {
@@ -116,5 +110,36 @@ define(['app'], function(app) {
             });
         };
     });
+    app.register.directive(
+            "bnDocumentClick",
+            function($document, $parse) {
+                //将Angular的上下文链接到DOM事件
+                var linkFunction = function($scope, $element, $attributes) {
+                        //获得表达式
+                        var scopeExpression = $attributes.bnDocumentClick;
+                        //使用$parse来编译表达式
+                        var invoker = $parse(scopeExpression);
+                        //绑定click事件
+                        $document.on(
+                                "click",
+                                function(event) {
+                                    //当点击事件被触发时，我们需要再次调用AngularJS的上下文。再次，我们使用$apply()来确保$digest()方法在幕后被调用
+                                    $scope.$apply(
+                                            function() {
+                                                //在scope中调用处理函数，将jQuery时间映射到$event对象上
+                                                invoker(
+                                                        $scope, {
+                                                            $event: event
+                                                        }                        );
 
-})
+                            }
+                        );
+
+                    }
+                );
+                //当父控制器被从渲染文档中移除时监听"$destory"事件
+            };
+            //返回linking函数
+            return (linkFunction);
+        }
+    );})
