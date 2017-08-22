@@ -5,11 +5,11 @@ define(['app'], function(app) {
                 //表格初始化
                 $http.get('./data/task.php')
                     .success(function(data) {                       
-                        $scope.gridOptionsTestset.data = data.lists;
+                        $scope.gridOptionsTask.data = data.lists;
                     });
                 //表格初始化
                 i18nService.setCurrentLang("zh-cn");
-                $scope.gridOptionsTestset = {
+                $scope.gridOptionsTask = {
                     enableColumnResizing: true,
                     rowHeight: 40,
                     enableCellEdit:false,
