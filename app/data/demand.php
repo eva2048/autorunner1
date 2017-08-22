@@ -7,6 +7,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         },
@@ -17,6 +18,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         },
@@ -27,6 +29,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         },
@@ -37,6 +40,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         },
@@ -47,6 +51,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         },
@@ -57,6 +62,7 @@
                 "createTime": "2017-06-05 14:00",
                 "demandState": "待处理",
                 "priority":"中",
+                "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
                 "connectCaseNum":"2"
         }

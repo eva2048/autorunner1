@@ -12,8 +12,8 @@
             </div>
             <ul class="dropdown-menu transition" dropdown-menu role="menu">
                 <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>待处理</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>已处理</span></li>
+                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>待处理</span></li>
+                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>已处理</span></li>
             </ul>
         </div>
         <div class="dropdownDefault floatleft" dropdown>
@@ -23,9 +23,9 @@
             </div>
             <ul class="dropdown-menu transition" dropdown-menu role="menu">
                 <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>中</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>高</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>低</span></li>
+                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>中</span></li>
+                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>高</span></li>
+                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>低</span></li>
             </ul>
         </div>
         <div class="floatright btn_add" ng-click="open('newDemand','lg')">
@@ -37,17 +37,20 @@
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
                 <span class="chatIconButton">
-                    <i class="iconfont icon-guanlian"></i>关联用例
+                    <i class="iconfont icon-zhipaidan"></i>指派
                 </span>                
                 <span class="chatIconButton">
-                    <i class="iconfont icon-brush_fill"></i>修改处理人
+                    <i class="iconfont icon-empty_fill"></i>删除
                 </span>
-                <span class="chatIconButton floatright">
+                <span class="chatIconButton floatright" ng-click="open('customRow','')">
+                    <i class="iconfont icon-zidingyilie"></i>自定义列
+                </span>
+                <span class="chatIconButton floatright" ng-click="open('import','')">
                     <i class="iconfont icon-import"></i>导入
                 </span>
                 <span class="chatIconButton floatright">
                     <i class="iconfont icon-daochu2"></i>导出
-                </span>
+                </span>               
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

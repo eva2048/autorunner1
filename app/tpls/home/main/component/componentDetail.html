@@ -8,11 +8,11 @@
     </div>
     <div class="bugDetailBox" ng-init="isAttribute=1">
         <div class="tab">
-            <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">属性</span>
-            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">脚本</span>
+        	<span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">脚本</span>
+            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">属性</span>           
             <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">数据维护</span>
         </div>
-        <div class="detailAttribute" ng-show="isAttribute==1">
+        <div class="detailAttribute" ng-show="isAttribute==2">
             <ul class="attributeList attributeList1">
                 <li>
                     <span class="attributeLeft">
@@ -55,7 +55,7 @@
                 <input type="button" name="" class="btndefault btndefault_blue" value="保存">
             </div>
         </div>
-        <div class="detailAttribute" ng-show="isAttribute==2">
+        <div class="detailAttribute" ng-show="isAttribute==1">
             <ul class="attributeList attributeList1">
                 <li>
                     <span class="attributeLeft">

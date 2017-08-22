@@ -2,27 +2,35 @@
 </style>
 <div class="topbar">
 	<div class="floatleft leftMenu">
-        <a class="topbarLink" href="" ui-sref="index">用例</a>
-        <a class="topbarLink" href="" ui-sref="index.demand">需求</a>        
-		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>
+		<a class="topbarLink" href="" ui-sref="index.task">任务</a>
 		<a class="topbarLink" ng-class="{'current':isAttribute==0}" href="" ui-sref="index.component">组件</a>
-        <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>
-		<a class="topbarLink" href="" ui-sref="index.statement">报表</a>
+		 <a class="topbarLink" href="" ui-sref="index.demand">需求</a>
+        <a class="topbarLink" href="" ui-sref="index">用例</a>
+        <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>       
+		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>		        
+		<a class="topbarLink" href="" ui-sref="index.statement">统计</a>
 	</div>
-	<div class="floatright rightMenu">
-		<div class="dropdownDefault floatleft" dropdown>
-            <a href="" class="topbarLink" dropdown-toggle>更多</a>
+	<div class="floatright rightMenu">		
+        <div class="dropdownDefault floatleft" dropdown>
+            <a href="" class="topbarLink" dropdown-toggle>项目名称</a>
             <ul class="dropdown-menu transition" dropdown-menu role="menu">
-            	<span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
-                <li><span>上移</span></li>
-                <li><span>上移</span></li>
-                <li class="line"></li>
-                <li><span>上移</span></li>
+            	<span class="triangle"></span>               
+                <li><span>项目1</span></li>
+                <li><span>项目2</span></li>
+                <li><span>项目3</span></li>
             </ul>
         </div>
-        <a href="" class="topbarLink">更多</a>
-        <a href="" class="topbarLink">更多</a>
+        <div class="dropdownDefault floatleft" dropdown>
+            <a href="" class="topbarLink" dropdown-toggle>账户昵称</a>
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+            	<span class="triangle"></span>               
+                <li><span>切换项目</span></li>
+                <li><span>个人信息</span></li>
+                <li><span>修改密码</span></li>
+                <li class="line"></li>
+                <li><span>退出</span></li>
+            </ul>
+        </div>
 	</div>
 	<div class="clear"></div>
 </div>
