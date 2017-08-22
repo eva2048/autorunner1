@@ -38,6 +38,52 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 }) 
+                .state("index.manual", {
+                    url: "/manual",
+                    views: {                        
+                        'projectBody@index': {
+                            templateUrl: '../tpls/home/main/usecase/manual.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/demand/demandCtrl.js',
+                                '../js/controller/home/projectNav1.js'
+
+                            ], function(controller) {
+                                deferred.resolve();
+                            });
+                            return deferred.promise;
+                        }]
+                    }
+                })
+                /*任务*/
+                .state("index.task", {
+                    url: "/task",
+                    views: {
+                        'projectNav@index': {
+                            templateUrl: '../tpls/home/projectNav.html'
+                        },
+                        'projectBody@index': {
+                            templateUrl: '../tpls/home/main/task/task.html'
+                        }                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/task/task.js'
+                            ], function(controller) {
+                                deferred.resolve();
+                            });
+                            return deferred.promise;
+                        }]
+                    }
+                })
                 .state("index.product",{
                     url:"/product",
                     views:{

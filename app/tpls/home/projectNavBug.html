@@ -1,0 +1,24 @@
+<style type="text/css">
+</style>
+<div class="projectNav" style="overflow: hidden;">
+    <div class="searchPanel">
+        <img src="images/projectNav_search.png">
+        <input class="searchBox" name="" placeholder="请输入项目名称">
+    </div>
+    <div class="projectNavList">
+        <ul>
+            <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
+                <i class="iconfont icon-quanbu_s" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #f4ea29;"></i>全部缺陷
+                <span>10</span>
+            </li>
+            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+                <i class="iconfont icon-wode-BUGtijiao" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #cb169e;"></i>我提交的缺陷
+                <span>2</span>
+            </li>
+            <li class="{{projectNavNow==3?'active':''}}" ng-click="projectNavNow=3">
+                <i class="iconfont icon-daiwochuli" style="width: 32px;font-size:28px;float: left;margin: 0px 10px 0px 15px;color: #df9e0f;"></i>待我处理的缺陷
+                <span>2</span>
+            </li>
+        </ul>
+    </div>
+</div>   

@@ -7,26 +7,18 @@
     </div>
     <div class="projectNavList">
         <ul>
-            <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
-                <i class="iconfont icon-quanbu_s" style="width: 32px;font-size: 32px;float: left;margin: 0px 10px 0px 15px;color: #48a1ff;"></i> 全部需求
-                <span>10</span>
+            <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1" ui-sref="index">
+                <i class="iconfont icon-zidong05" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #48a1ff;"></i> 自动设计用例              
             </li>
-            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
-                 <i class="iconfont icon-wode-BUGtijiao" style="width: 32px;font-size: 32px;float: left;margin: 0px 10px 0px 15px;color: #FF4400;"></i>我提交的需求
-                <span>2</span>
+            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2" ui-sref="index.manual">
+                 <i class="iconfont icon-shoudong" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #FF4400;"></i> 手动设计用例            
             </li>
-            <li class="{{projectNavNow==3?'active':''}}" ng-click="projectNavNow=3">
-                 <i class="iconfont icon-wode-copy" style="width: 32px;font-size: 32px;float: left;margin: 0px 10px 0px 15px;color:#1296db"></i>我的需求任务
-                <span>2</span>
-            </li>
+            
         </ul>
     </div>
-    <div class="useCaseTree" style="top: 233px;">
+    <div class="useCaseTree">
         <div class="title">
-            	需求树
-            <span class="chatIconButton floatright treefunicon" data-tip="同步生成用例目录">
-                <i class="iconfont icon-tongbusynchronize4"></i>
-            </span>	
+           	 用例组
             <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
                 <i class="iconfont icon-empty"></i>
             </span>
@@ -60,8 +52,8 @@
         <div class="treeBody">
             <div>
                 <script type="text/ng-template" id="nodes_renderer.html">
-                    <span ui-tree-handle></span>
                     <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
+                        <!-- <em class="space floatleft" ng-repeat="i in range(node.level) track by $index">&nbsp;&nbsp;</em> -->
                         <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
                         <span ng-show="!this.isEdit" class="treeText">
                             {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}

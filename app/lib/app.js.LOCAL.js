@@ -91,8 +91,7 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
-                                '../js/controller/home/task/task.js',
-                                '../js/controller/home/usecase/usecaseCtrl.js'
+                                '../js/controller/home/task/task.js'
                             ], function(controller) {
                                 deferred.resolve();
                             });

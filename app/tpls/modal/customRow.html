@@ -1,0 +1,35 @@
+
+<style type="text/css" class="ng-scope">
+</style>
+<div class="modal-header ng-scope">
+    <h3>自定义列</h3>
+</div>
+<div class="modal-body modalBody">
+    <table class="table-fullborder">
+        <tbody><tr>
+            <th>属性列表</th>
+        </tr>
+        <tr>
+            <td>
+                <ul class="selectColumn">
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(0)" ng-click="titleCK(0)">序号</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(1)" ng-click="titleCK(1)" checked="checked">缺陷ID</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(2)" ng-click="titleCK(2)" checked="checked">缺陷名称</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(3)" ng-click="titleCK(3)" checked="checked">状态</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(4)" ng-click="titleCK(4)" checked="checked">缺陷等级</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(5)" ng-click="titleCK(5)" checked="checked">项目模块</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(6)" ng-click="titleCK(6)" checked="checked">创建时间</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(7)" ng-click="titleCK(7)" checked="checked">最后更新时间</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(8)" ng-click="titleCK(8)" checked="checked">提交者</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(9)" ng-click="titleCK(9)">处理人角色</li>
+                    <li><input type="checkBox" name="title" ng-checked="isTitChecked(10)" ng-click="titleCK(10)" checked="checked">处理者</li>
+                    <!-- ngRepeat: title in dynamicField -->
+                </ul>
+            </td>
+        </tr>
+    </tbody></table>
+</div>
+<div class="modal-footer">
+    <button class="btndefault btn_blue" ng-click="ok()">关闭</button>
+    <!-- <button class="btn_gray" ng-click="cancel()">取消</button> -->
+</div></div>
