@@ -1,0 +1,173 @@
+<style type="text/css">
+</style>
+<div class="projectDetailBox" ng-controller="projectListCtrl">
+    <div class="detailTitle">
+        <span class="floatleft bugId">233</span>
+        <span class="bugName text_ellipsis">项目名称</span>
+        <input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
+    </div>
+    <div class="bugDetailBox" ng-init="isAttribute=1">
+        <div class="tab">
+            <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">项目属性</span>
+            <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">成员管理</span>
+            <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">扩展属性</span>
+        </div>
+        <!-- 项目属性 -->
+        <div class="detailAttribute" ng-show="isAttribute==1">
+            <ul class="attributeList attributeList1 attributeList4">
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('项,目,状,态')">{{n}}</span>
+                    </span>
+                    <span class="attributeRight">进行中</span>
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('创,建,人')">{{n}}</span>
+                    </span>
+                    <span class="attributeRight">thn</span>
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('起,止,时,间')">{{n}}</span>
+                    </span>
+                    <span class="attributeRight">2017-06-05 14:00~2017-06-05 14:00</span>
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('加,入,时,间')">{{n}}</span>
+                    </span>
+                    <span class="attributeRight">2017-06-05 14:00</span>
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('项,目,流,程')">{{n}}</span>
+                    </span>
+                    <select class="selectBox">
+                        <option>功能性缺陷</option>
+                        <option>设计性缺陷</option>
+                    </select>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="describeBox">
+                <div class="describeTitle" style="margin-top: 0px;">
+                    详细属性
+                </div>
+                <div class="describeList" bn-document-click="addDescribe=false">
+                    <div class="addDescribe" ng-class="{addDescribeopen1:addDescribe}" ng-click="$event.stopPropagation();addDescribe=true">
+                        <textarea placeholder="填写项目描述"></textarea>
+                        <i class="iconfont icon-bianji"></i>
+                    </div>
+                </div>
+                <div class="describeList" bn-document-click="addDescribe=false">
+                    <div class="addProjectModel">
+                        <i class="iconfont icon-biaoqian"></i>
+                        <input placeholder="添加项目模块,点击回车添加" ng-keyup="addModel($event)" ng-model="modelItem"></input>
+                        <span ng-repeat="(v,model) in pModel" class="filterspan"><i class="iconfont icon-huiyuan i_color1"></i>{{model}}
+                            <i class="iconfont icon-delete_fill" ng-click="sModelDel(v)"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="describeBox">
+                <div class="describeTitle">
+                    项目附件
+                </div>
+                <div class="describeList fileuploadBox">
+                    <div class="fileselectBox">
+                        <div class="floatleft btn_add btn_addfile"><span class="cicleicon"><i class="iconfont icon-createtask"></i></span>选择文件
+                            <input class="inputfile" type="file" value="选择文件">
+                        </div>
+                        <span class="floatright">文件最大不超过30M</span>
+                    </div>
+                    <ul class="fileList">
+                        <li ng-repeat="v in range(2) track by $index">
+                            <span class="fileIcon fileIcon-doc"></span>
+                            <div class="fileName">
+                                测试需求文档.doc
+                                <i class="iconfont icon-close"></i>
+                            </div>
+                            <div class="fileFooter">
+                                <div class="fileSize">
+                                    <div class="progress progressDefault" ng-hide="fileuploadSize==-1;">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{fileuploadSize+'%'}}">
+                                            {{fileuploadSize+'%'}}
+                                        </div>
+                                    </div>
+                                    <div class="size" ng-show="fileuploadSize==-1;">180kb
+                                        <div class="filemoreFunc dropdownDefault floatright treefunicon" dropdown>
+                                            <i class="iconfont icon-gengduo floatright tooltipdefaulticon" dropdown-toggle></i>
+                                            <ul class="dropdown-menu dropdown-menu-right transition" dropdown-menu role="menu">
+                                                <span class="triangle"></span>
+                                                <li><i class="iconfont icon-addpeople_fill"></i><span>下载</span></li>
+                                                <li><i class="iconfont icon-addpeople_fill"></i><span>删除</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="detailAttribute" ng-show="isAttribute==2" style="margin-top: 0px;">
+            <ul class="openTableList">
+                <div class="openTableListToptitle">
+                    <span class="chatIconButton floatleft">
+                        <i class="iconfont icon-addpeople_fill"></i>添加成员
+                    </span>
+                    <div class="clear"></div>
+                </div>
+                <table class="openTableListTable">
+                    <tr>
+                        <th style="width: 560px;">成员姓名</th>
+                        <th style="width: 40px;">操作<th>
+                    </tr>
+                </table>
+                <li ng-repeat="members in projectmember">
+                    <div class="openTableListTitle"><i class="iconfont icon-zhankai-copy icon-shouqi" ng-click="openTableList($event)"></i>{{members.role}}（{{members.members.length}}）</div>
+                    <ol class="openTableListOl">
+                        <li ng-repeat="member in members.members">
+                            {{member.name}}
+                            <a class="floatright f_red" href="">删除</a>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="detailAttribute" ng-show="isAttribute==3" style="margin-top: 0px;">
+            <ul class="openTableList">
+                <div class="openTableListToptitle">
+                    <span class="chatIconButton floatleft">
+                        <i class="iconfont icon-addpeople_fill"></i>添加属性
+                    </span>
+                    <div class="clear"></div>
+                </div>
+                <table class="openTableListTable">
+                    <tr>
+                        <th width="40%">属性名称</th>
+                        <th width="15%">显示类型</th>
+                        <th width="10%">是否显示</th>
+                        <th width="20%">默认值</th>
+                        <th width="15%">操作<th>
+                    </tr>
+                </table>
+                <li ng-repeat="members in projectAttribute">
+                    <div class="openTableListTitle"><i class="iconfont icon-zhankai-copy icon-shouqi" ng-click="openTableList($event)"></i>{{members.role}}（{{members.members.length}}）</div>
+                    <table class="openTableListOl openTableListTable">
+                        <tr ng-repeat="member in members.members">
+                            <td width="40%">{{member.name}}</td>
+                            <td width="15%">{{member.showType}}</td>
+                            <td width="10%">{{member.show?'显示':'隐藏'}}</td>
+                            <td width="20%">默认值</td>
+                            <td width="15%"><a class="floatleft f_blue" href="">编辑</a><a class="floatleft marginl_10 f_red" href="">删除</a>
+                            <td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -136,7 +136,9 @@ a.f_red:hover {
 .marginb_15 {
     margin-bottom: 15px;
 }
-
+.marginl_5 {
+    margin-left: 5px;
+}
 .marginl_10 {
     margin-left: 10px;
 }
@@ -152,7 +154,9 @@ a.f_red:hover {
 .margint_20 {
     margin-top: 20px;
 }
-
+.margint_0 {
+    margin-top: 0px;
+}
 .margint_10 {
     margin-top: 10px;
 }
@@ -1000,6 +1004,7 @@ a.f_red:hover {
 .gridTableBox .tablecellfunc>a{
     padding:0px 15px;
     border-right: 1px solid #bdc4d7;
+    cursor: pointer;
 }
 .gridTableBox .tablecellfunc>a:first-child{
     padding-left: 0px;
@@ -1096,7 +1101,18 @@ a.f_red:hover {
     border-bottom: 2px solid #009dff;
 }
 
-
+/*自定义勾选框样式*/
+.checkOperation{
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    color: #333;
+    cursor: pointer;
+}
+.checkOperation .operationCheckBox{
+    border-color: #ccc!important;
+    background: #fff!important;
+}
 /*弹窗*/
 
 .modal-body {

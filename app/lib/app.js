@@ -11,7 +11,7 @@ define(['angular', 'router'], function() {
             };
         })
         .config(['$stateProvider', '$urlRouterProvider','$controllerProvider', function($stateProvider, $urlRouterProvider,$controllerProvider) {
-            $urlRouterProvider.otherwise('index');
+            $urlRouterProvider.otherwise('index/project');
             $stateProvider
                 /*首页用例管理*/
                 .state("index", {
@@ -20,14 +20,17 @@ define(['angular', 'router'], function() {
                         '':{
                             templateUrl:'../tpls/home/index.html'
                         },
+                        'topbar@index':{
+                            templateUrl:'../tpls/home/topbar.html'
+                        },
                         'main@index':{
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav.html'
+                            templateUrl:'../tpls/home/projectNav2.html'
                         },
                         'projectBody@index':{
-                            templateUrl:'../tpls/home/main/usecase/projectUsecaseManage.html'
+                            templateUrl:'../tpls/home/main/projectlist/projectManage.html'
                         },
                         'projectDetail@index':{
                             templateUrl:'../tpls/home/main/usecase/projectUsecaseDetail.html'
@@ -43,6 +46,58 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+                .state("index.project", {
+                    url: "/project",
+                    views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNav.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/projectlist/projectManage.html'
+                        },
+                        'projectDetail@index':{
+                            templateUrl:'../tpls/home/main/projectlist/projectDetail.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/projectlist/projectListCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+                /*首页用例管理*/
+                .state("index.usecase", {
+                    url: "/usecase",
+                    views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNav1.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/usecase/projectUsecaseManage.html'
+                        },
+                        'projectDetail@index':{
+                            templateUrl:'../tpls/home/main/usecase/projectUsecaseDetail.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
                                '../js/controller/home/usecase/usecaseCtrl.js'
 
                                 ], function(controller) { 
@@ -141,6 +196,9 @@ define(['angular', 'router'], function() {
                 .state("index.component",{
                     url:"/component",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNav.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/component/componentManage.html'
                         },

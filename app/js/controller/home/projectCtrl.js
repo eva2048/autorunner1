@@ -47,17 +47,9 @@ define(['app'], function(app) {
                 };
                 $scope.fadeIn = function() {
                     $scope.isFadeIn = true;
-                    /*var width = $(".useCaseList ").width() - 200;
-                    if (width > 1000) {
-                        width = 1000;
-                    }
-                    $(".projectDetailStyle").css("width", width)*/
-                    $(".projectBodyContent").css("border-width", "0");
                 };
                 $scope.fadeOut = function() {
                     $scope.isFadeIn = false;
-                    /*$(".projectDetailStyle").css("width", "0")*/
-                    $(".projectBodyContent").css("border-width", "0");
                 };
                 $scope.back = function() {
                     history.go(-1);

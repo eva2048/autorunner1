@@ -1,0 +1,62 @@
+<style type="text/css">
+.modal-content {
+    width: 1000px;
+}
+
+.modal-body {
+    padding: 0px;
+}
+</style>
+<div class="modal-content addNewScene">
+    <div class="modal-header">
+        <h3>TestCenter 运行器</h3>
+    </div>
+    <div class="modal-body">
+        <div class="runningDeviceBox">
+            <div class="leftPanel">
+                <div class="leftTopPanel">
+                    <ul class="attributeList attributeList1 attributeList3">
+                        <li>
+                            <span class="attributeLeft">
+                        		运行名称：
+                            </span>
+                            <input type="text" name="" class="inputText">
+                        </li>
+                        <li>
+                            <span class="attributeLeft">
+                        		测试集名称：
+                            </span>
+                            <input type="text" name="" class="inputText">
+                        </li>
+                        <li>
+                            <span class="attributeLeft">
+                        		关联轮次：
+                            </span>
+                            <select class="selectBox">
+                                <option>登录模块</option>
+                                <option>注册模块</option>
+                            </select>
+                        </li>
+                        <li>
+                            <div class="defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>组件运行失败，关联数据池数据恢复</em></div>
+                        </li>
+                        <li>
+                            <span class="attributeLeft">
+                        		描述：
+                            </span>
+                            <input type="text" name="" class="inputTetx">
+                        </li>
+                    </ul>
+                </div>
+                <div class="leftBottomPanel">
+                    <div class="tab"></div>
+                </div>
+            </div>
+            <div class="rightPanel"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+        <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+    </div>
+</div>

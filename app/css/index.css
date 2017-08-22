@@ -411,7 +411,7 @@
     font-size: 13px;
 }
 
-.useCaseListfilterli .filterspan {
+.filterspan {
     display: inline-block;
     margin: 0px 10px 0px 5px;
     height: 24px;
@@ -423,22 +423,22 @@
     color: #666;
 }
 
-.useCaseListfilterli .filterspan:hover {
+.filterspan:hover {
     background: #eee;
 }
 
-.useCaseListfilterli .filterspan .icon-huiyuan {
+.filterspan .icon-huiyuan {
     font-size: 15px;
     margin-right: 3px;
     line-height: 24px;
     background: none;
 }
 
-.useCaseListfilterli .filterspan:hover .icon-delete_fill {
+.filterspan:hover .icon-delete_fill {
     display: block;
 }
 
-.useCaseListfilterli .filterspan .icon-delete_fill {
+.filterspan .icon-delete_fill {
     position: absolute;
     top: -9px;
     right: -6px;
@@ -724,7 +724,11 @@
     box-shadow: 0 0 8px #90caf9;
     height: 159px;
 }
-
+.addDescribeopen1{
+    border-color: #008bff;
+    box-shadow: 0 0 8px #90caf9;
+    height: 106px;
+}
 .addDescribe .icon-bianji {
     position: absolute;
     top: 7px;
@@ -743,8 +747,42 @@
     border-top: 1px solid #ccc;
 }
 
+/*项目模块输入框*/
+.addProjectModel {
+    width: 100%;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    position: relative;
+    padding-left: 30px;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.4s;
+    /* Safari 和 Chrome */
+    -o-transition: all 0.4s;
+}
+.addProjectModel .icon-biaoqian{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    color: #8f9093;
+    font-size: 15px;
+}
+.addProjectModel input {
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 3px 10px 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+}
+.addProjectModel .filterspan{
+    background: #eee;
+    margin-bottom: 5px;
+    margin-left: 0px;
 
-
+}
 /*文件上传*/
 
 .fileuploadBox {
@@ -899,6 +937,75 @@
     font-size: 12px;
     padding-left: 5px;
     border: 1px solid #e1e6eb;
+}
+/*成员管理列表样式*/
+.openTableList{
+}
+.openTableList>li>ol>li{
+    position: relative;
+    word-break: break-all;
+    line-height: 24px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 40px 10px 30px;
+}
+.openTableList>li>ol>li a{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    line-height: 24px;
+}
+.openTableListTitle{
+    border-bottom: 1px solid #ddd;
+    color: #348cf1;
+}
+.openTableListToptitle{
+    line-height: 40px;
+    font-size: 14px;
+}
+.openTableListToptitle .chatIconButton{
+    cursor: pointer;
+    color: #008bff;
+    border: 1px solid #008bff;
+    line-height: 30px;
+    margin-top: 15px;
+    padding:0px 5px; 
+}
+.openTableListToptitle .chatIconButton:hover{
+    color: #fff;
+    background: #008bff;
+}
+.openTableListToptitle .chatIconButton .iconfont{
+    margin-right: 3px;
+}
+.openTableListTitle .iconfont{
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+.openTableListTable{
+    width: 100%;
+    line-height: 24px;  
+}
+.openTableListTable tr>td{
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0px;
+    padding-left: 10px;
+}
+.openTableListTable tr>td:first-child{
+    padding-left: 15px;
+    word-break: break-all;
+}
+.openTableListTable th{
+    color: #000;
+    font-size: 12px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
 }
 /*右侧详情页终*/
 
