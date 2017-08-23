@@ -115,6 +115,7 @@ define(['angular', 'router'], function() {
                             //异步加载controller／directive/filter/service
                             require([
                                 '../js/controller/home/demand/demandCtrl.js',
+                                '../js/controller/home/demand/xheditorController.js',
                                 '../js/controller/home/projectNav1.js'
 
                             ], function(controller) {
