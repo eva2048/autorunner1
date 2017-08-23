@@ -6,6 +6,8 @@
 .modal-body {
     padding: 0px;
 }
+
+
 </style>
 <div class="modal-content addNewScene">
     <div class="modal-header">
@@ -24,7 +26,6 @@
                             <h1>测试集名称：</h1>
                             <input type="text" name="" id="" value="" class="inputText" required="required" />
                         </li>
-                        <div class="clear"></div>
                         <li class="">
                             <h1>关联轮次：</h1>
                             <select class="selectNormal">
@@ -34,23 +35,77 @@
                             </select>
                         </li>
                         <li>
-                            <div class="defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+                            <div class="defaultcheckBox">
+                                <input class="floatleft" type="checkbox" name=""><em>组件运行失败，关联数据池数据恢复</em></div>
                         </li>
-                        <li>
+                        <li style="width: 100%">
                             <h1>需求描述：</h1>
-                            <input type="text" name="" id="" value="" class="inputText" required="required" />
+                            <input type="text" name="" id="" value="" class="inputText" required="required" style="width: 82.5%;" />
                         </li>
+                        <div class="clear"></div>
                     </ul>
                 </div>
-                <div class="leftBottomPanel">
-                    <div class="tab"></div>
+                <div class="leftBottomPanel" ng-init="isAttribute=1">
+                    <div class="tab">
+                        <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">总运行情况</span>
+                        <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">测试器情况</span>
+                    </div>
+                    <div class="leftBottomPanelChild" ng-show="isAttribute==1">
+                        <div class="leftBottomPanelChildFunc">
+                            <span class="chartIconButton borderbtndefault">
+                                <!-- <i class="iconfont icon-addpeople_fill"></i> -->刷新活动机器
+                            </span>
+                            <select class="selectNormal">
+                                <option>状态1</option>
+                                <option>状态2</option>
+                                <option>状态3</option>
+                            </select>
+                            <span class="chartIconButton borderbtndefault">
+                                <!-- <i class="iconfont icon-addpeople_fill"></i> -->加载
+                            </span>
+                        </div>
+                        <table class="table-fullborder floatleft" style="width: 30%">
+                            <tr>
+                                <th>
+                                    <input type="checkbox" name="">
+                                </th>
+                                <th>可执行的</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="">
+                                </td>
+                                <td>192.168.1.1</td>
+                            </tr>
+                        </table>
+                        <table class="table-fullborder floatright" style="width: 68%">
+                            <tr>
+                                <th>
+                                    <input type="checkbox" name="">
+                                </th>
+                                <th>IP地址</th>
+                                <th>用户</th>
+                                <th>执行器类型</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="">
+                                </td>
+                                <td>192.168.1.1</td>
+                                <td>spasvo</td>
+                                <td>2</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="rightPanel"></div>
         </div>
     </div>
     <div class="modal-footer">
-        <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-        <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+        <input type="button" name="" value="开始" class="btndefault btndefault_blue" ng-click="ok()">
+        <input type="button" name="" value="暂停" class="btndefault btndefault_gray" ng-click="ok()">
+        <input type="button" name="" value="停止" class="btndefault btndefault_gray" ng-click="ok()">
+        <input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="ok()">
     </div>
 </div>

@@ -13,7 +13,7 @@ define(['angular', 'router'], function() {
         .config(['$stateProvider', '$urlRouterProvider','$controllerProvider', function($stateProvider, $urlRouterProvider,$controllerProvider) {
             $urlRouterProvider.otherwise('index/project');
             $stateProvider
-                /*首页用例管理*/
+                /*首页模板*/
                 .state("index", {
                     url: "/index",
                     views:{
@@ -53,9 +53,58 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 }) 
+                /*项目列表*/
+                .state("index.project", {
+                    url: "/project",
+                    views:{
+                        'topbar@index':{
+                            templateUrl:'../tpls/home/topbarProject.html'
+                        },
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavProject.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/projectlist/projectManage.html'
+                        },
+                        'projectDetail@index':{
+                            templateUrl:'../tpls/home/main/projectlist/projectDetail.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/projectlist/projectListCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+                .state("index.project.create", {
+                    url: "/create",
+                    views:{
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/projectlist/projectCreateProject.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
                 .state("index.manual", {
                     url: "/manual",
-                    views: {                        
+                    views: {                      
                         'projectBody@index': {
                             templateUrl: '../tpls/home/main/usecase/manual.html'
                         }
@@ -80,7 +129,7 @@ define(['angular', 'router'], function() {
                     url: "/task",
                     views: {
                         'projectNav@index': {
-                            templateUrl: '../tpls/home/projectNav.html'
+                            templateUrl: '../tpls/home/projectNav2.html'
                         },
                         'projectBody@index': {
                             templateUrl: '../tpls/home/main/task/task.html'
@@ -100,38 +149,13 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })
-                .state("index.project", {
-                    url: "/project",
-                    views:{
-                        'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav.html'
-                        },
-                        'projectBody@index':{
-                            templateUrl:'../tpls/home/main/projectlist/projectManage.html'
-                        },
-                        'projectDetail@index':{
-                            templateUrl:'../tpls/home/main/projectlist/projectDetail.html'
-                        }
-                    },
-                    resolve: {
-                        loadCtrl: ["$q", function($q) {
-                            var deferred = $q.defer();
-                            //异步加载controller／directive/filter/service
-                            require([
-                                '../js/controller/home/projectlist/projectListCtrl.js'
-                                ], function(controller) { 
-                                    deferred.resolve(); 
-                                });
-                            return deferred.promise;
-                        }]
-                    }
-                }) 
+
                 /*首页用例管理*/
                 .state("index.usecase", {
                     url: "/usecase",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav1.html'
+                            templateUrl:'../tpls/home/projectNavCase.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/usecase/projectUsecaseManage.html'
@@ -158,6 +182,9 @@ define(['angular', 'router'], function() {
                 .state("index.demand", {
                     url: "/demand",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavDemand.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/demand/projectDemandManage.html'
                         }
@@ -180,6 +207,9 @@ define(['angular', 'router'], function() {
                 .state("index.demand.demandDetails",{
                     url:"/demandDetails",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavDemand.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/demand/projectDemandDetail.html'
                         }                       
@@ -200,6 +230,9 @@ define(['angular', 'router'], function() {
                 .state("index.bug",{
                     url:"/bug",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavBug.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/bug/projectBugManage.html'
                         },
@@ -223,6 +256,9 @@ define(['angular', 'router'], function() {
                 .state("index.createbug",{
                     url:"/createbug",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavBug.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/bug/projectCreateBug.html'
                         }
@@ -244,7 +280,7 @@ define(['angular', 'router'], function() {
                     url:"/component",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav.html'
+                            templateUrl:'../tpls/home/projectNav2.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/component/componentManage.html'

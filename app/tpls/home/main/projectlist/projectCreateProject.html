@@ -2,7 +2,7 @@
 </style>
 <div class="projectBodyBox">
     <div class="projectBodyTitle">
-        新建缺陷
+        新建项目
         <input ng-click="back()" type="button" class="floatright btndefault btndefault_gray" value="返回">
         <input type="button" class="floatright btndefault btndefault_blue" value="保存">
     </div>
@@ -17,84 +17,34 @@
                         <ul class="attributeList attributeList1 attributeList3">
                             <li>
                                 <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,名,称')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('项,目,名,称')">{{n}}</span>
                                 <em class="f_red">*</em>
                                 </span>
                                 <input type="text" class="inputText" name="">
                             </li>
-                            <li class="attributeListLeft">
+                            <li class="">
                                 <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('角,色,选,择')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('处,理,人')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,模,块')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,类,别')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,等,级')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('出,现,频,率')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li>
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('测,试,设,备')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('开,始,时,间')">{{n}}</span>
                                 <em class="f_red">*</em>
                                 </span>
                                 <input type="text" class="inputText" name="">
                             </li>
-                            <li>
+                            <li class="">
                                 <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('关,联,用,例')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('结,束,时,间')">{{n}}</span>
                                 <em class="f_red">*</em>
                                 </span>
                                 <input type="text" class="inputText" name="">
+                            </li>
+                            <li class="">
+                                <span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('缺,陷,流,程')">{{n}}</span>
+                                <em class="f_red">*</em>
+                                </span>
+                                <select class="selectBox" style="width: 480px">
+                                    <option>默认流程</option>
+                                    <option>项目1流程</option>
+                                </select>
                             </li>
                             <div class="clear"></div>
                         </ul>
@@ -104,148 +54,21 @@
             <div class="createBugContent">
                 <div class="describeBox">
                     <div class="describeTitle">
-                        缺陷描述
+                        项目模块
                     </div>
                     <div class="describeContent">
-                        <textarea placeholder="请输入缺陷的描述"></textarea>
+                        <textarea placeholder="请输入项目的描述"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="createBugContent" ng-init="isAttribute=1">
-                <div class="tab">
-                    <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">缺陷文件</span>
-                    <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">自定义属性</span>
-                </div>
-                <div class="createBugContentTabchild">
-                    <div class="fileUpload" ng-show="isAttribute==1">
-                        <div class="describeList fileuploadBox">
-                            <div class="fileselectBox">
-                                <div class="floatleft btn_add btn_addfile"><span class="cicleicon"><i class="iconfont icon-createtask"></i></span>选择文件
-                                    <input class="inputfile" type="file" value="选择文件">
-                                </div>
-                                <span class="floatright">文件最大不超过30M</span>
-                            </div>
-                            <ul class="fileList">
-                                <li ng-repeat="v in range(2) track by $index">
-                                    <span class="fileIcon fileIcon-doc"></span>
-                                    <div class="fileName">
-                                        测试需求文档.doc
-                                        <i class="iconfont icon-close"></i>
-                                    </div>
-                                    <div class="fileFooter">
-                                        <div class="fileSize">
-                                            <div class="progress progressDefault" ng-hide="fileuploadSize==-1;">
-                                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{fileuploadSize+'%'}}">
-                                                    {{fileuploadSize+'%'}}
-                                                </div>
-                                            </div>
-                                            <div class="size" ng-show="fileuploadSize==-1;">180kb
-                                                <div class="filemoreFunc dropdownDefault floatright treefunicon" dropdown>
-                                                    <i class="iconfont icon-gengduo floatright tooltipdefaulticon" dropdown-toggle></i>
-                                                    <ul class="dropdown-menu dropdown-menu-right transition" dropdown-menu role="menu">
-                                                        <span class="triangle"></span>
-                                                        <li><i class="iconfont icon-addpeople_fill"></i><span>下载</span></li>
-                                                        <li><i class="iconfont icon-addpeople_fill"></i><span>删除</span></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
+            <div class="createBugContent">
+                <div class="describeBox">
+                    <div class="describeTitle">
+                        项目描述
                     </div>
-                    <div ng-show="isAttribute==2">
-                        <ul class="attributeList attributeList1 attributeList3">
-                            <li>
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,名,称')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <input type="text" class="inputText" name="">
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('角,色,选,择')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('处,理,人')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,模,块')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,类,别')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('缺,陷,等,级')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li class="attributeListLeft">
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('出,现,频,率')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <select class="selectBox">
-                                    <option>默认流程</option>
-                                    <option>项目1流程</option>
-                                </select>
-                            </li>
-                            <li>
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('测,试,设,备')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <input type="text" class="inputText" name="">
-                            </li>
-                            <li>
-                                <span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('关,联,用,例')">{{n}}</span>
-                                <em class="f_red">*</em>
-                                </span>
-                                <input type="text" class="inputText" name="">
-                            </li>
-                            <div class="clear"></div>
-                        </ul>
+                    <div class="describeContent">
+                        <textarea placeholder="请输入项目的描述"></textarea>
                     </div>
-                </div>
-                <div class="createBugBtnBox fix">
-                    <input type="button" name="" value="返回" class="floatright btndefault btndefault_gray">
-                    <input type="button" name="" value="提交" class="floatright btndefault btndefault_blue">        
                 </div>
             </div>
         </div>

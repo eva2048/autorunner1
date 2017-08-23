@@ -44,6 +44,7 @@ define(['app'], function(app) {
                         {
                             field: "action",
                             displayName: '操作处理',
+                            enableColumnResizing: false,
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">下载脚本</a><a class="f_blue">编辑</a><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }

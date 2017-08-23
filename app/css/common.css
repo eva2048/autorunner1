@@ -269,7 +269,18 @@ a.f_red:hover {
 .btndefault_gray:hover {
     background: #cfd7ed;
 }
-
+.borderbtndefault{
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #008bff;
+    background: #008bff;
+    line-height: 30px;
+    padding: 0px 5px;
+    display: inline-block;
+}
+.borderbtndefault .iconfont{
+    color: #fff;
+}
 .btn_cblue {
     background: #3462fe;
     color: #fff;

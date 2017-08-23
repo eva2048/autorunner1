@@ -27,7 +27,7 @@
                 <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
             </ul>
         </div>
-        <div class="floatright btn_add" ng-click="open('newDemand','lg')">
+        <div class="floatright btn_add" ui-sref="index.project.create">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span>新建项目
         </div>
     </div>
@@ -41,7 +41,7 @@
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">
-                <div style="" ui-grid="gridOptionsUsecase" ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                <div style="" ui-grid="gridOptionsUsecase"  ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
             </div>
             
         </div>
