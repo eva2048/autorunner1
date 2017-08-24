@@ -1,0 +1,123 @@
+<style type="text/css" class="ng-scope">
+	.btn_blue {
+		padding: 0px 25px;
+		text-align: center;
+		background: #3462fe;
+		color: #fff;
+		font-size: 14px;
+		height: 36px;
+		border: 1px solid #1f4ce5;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		cursor: pointer;
+	}
+</style>
+<div class="modal-header ng-scope">
+	<h3>查看缺陷流程</h3>
+</div>
+<div class="modal-body modalBody ng-scope">
+	<ul class="titleUl">
+		<li class="floatleft">
+
+			<h1 style="width: auto">缺陷流程名称：
+            <select class="selectNormal" style="width:150px;">
+               <option>
+                	TCE默认流程
+                </option>
+            </select>
+            </h1>
+
+		</li>
+
+		<li class="floatleft">
+			<h1 style="width: auto" class="ng-binding">第一步处理人：项目经理</h1>
+
+		</li>
+
+		<div class="clear"></div>
+		<table class="table-fullborder">
+			<tbody>
+				<tr>
+					<th>起始状态</th>
+					<th>目标状态处理角色</th>
+					<th>目标状态</th>
+					<th>默认开始</th>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">新建</span></td>
+					<td class="ng-binding">项目经理,开发工程师</td>
+					<td><span class="f_blue">分配</span></td>
+					<td class="f_red">默认开始</td>
+					<td class="f_red ng-hide"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">分配</span></td>
+					<td class="ng-binding">项目经理,开发工程师</td>
+					<td><span class="f_blue">确认</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">分配</span></td>
+					<td class="ng-binding">项目经理,提交者</td>
+					<td><span class="f_blue">驳回</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">确认</span></td>
+					<td class="ng-binding">项目经理,测试工程师</td>
+					<td><span class="f_blue">修改完成</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">关闭</span></td>
+					<td class="ng-binding">项目经理</td>
+					<td><span class="f_blue">重开</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">修改完成</span></td>
+					<td class="ng-binding">项目经理,测试工程师</td>
+					<td><span class="f_blue">关闭</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">修改完成</span></td>
+					<td class="ng-binding">项目经理</td>
+					<td><span class="f_blue">重开</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">驳回</span></td>
+					<td class="ng-binding">项目经理,测试工程师</td>
+					<td><span class="f_blue">关闭</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">驳回</span></td>
+					<td class="ng-binding">项目经理</td>
+					<td><span class="f_blue">重开</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+				<tr class="ng-scope">
+					<td><span class="f_blue">重开</span></td>
+					<td class="ng-binding">项目经理,开发工程师</td>
+					<td><span class="f_blue">分配</span></td>
+					<td class="f_red ng-hide">默认开始</td>
+					<td class="f_red"></td>
+				</tr>
+			</tbody>
+		</table>
+	</ul>
+</div>
+<div class="modal-footer">
+	<button class="btn_blue" ng-click="ok()">确认</button>
+</div>
