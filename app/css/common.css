@@ -124,7 +124,15 @@ a.f_red:hover {
 .i_color5 {
     color: #fa4552
 }
-
+.i_color6{
+    color: #0091ea;
+}
+.i_color7{
+    color:#ff9800;
+}
+.i_color8{
+    color: #00bcd4;
+}
 .cursor_p {
     cursor: pointer;
 }
