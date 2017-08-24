@@ -95,6 +95,7 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
+                            	 '../js/controller/home/projectlist/projectCreateProjectCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });

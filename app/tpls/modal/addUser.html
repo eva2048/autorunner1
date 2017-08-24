@@ -1,0 +1,121 @@
+<style type="text/css">
+	.searchPanelBig {
+		width: 100%;
+		position: relative;
+		border: 1px solid #dddddd;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		margin-top: 10px;
+	}
+	
+	.searchPanelBig img {
+		position: absolute;
+		top: 14px;
+		left: 14px;
+	}
+	
+	.searchPanelBig .searchBox {
+		width: 100%;
+		border: none;
+		height: 44px;
+		line-height: 44px;
+		padding: 0px 100px 0px 40px;
+		outline: none;
+	}
+	
+	.searchPanelBig .btn_search {
+		position: absolute;
+		padding: 0px 20px;
+		right: 0px;
+		top: 0px;
+		height: 44px;
+		text-align: center;
+		background: #3462fe;
+		color: #fff;
+		font-size: 14px;
+		border: 1px solid #1f4ce5;
+	}
+	
+	.searchResultPanel {
+		margin-bottom: 30px;
+	}
+	
+	.searchResultLi {
+		line-height: 44px;
+		font-size: 14px;
+		color: #212121;
+	}
+	
+	.searchResultLi span {
+		margin-right: 5px;
+	}
+	
+	.searchResultLi h1 {
+		color: #6e6e6e;
+	}
+	.selectNoborder {
+	    border: none;
+	    margin-left: -4px;
+	    outline: none;
+	}
+	.btn_blue {
+	    padding: 0px 25px;
+	    text-align: center;
+	    background: #3462fe;
+	    color: #fff;
+	    font-size: 14px;
+	    height: 36px;
+	    border: 1px solid #1f4ce5;
+	    border-radius: 3px;
+	    -webkit-border-radius: 3px;
+	    -moz-border-radius: 3px;
+	    cursor: pointer;
+	}
+</style>
+<div class="modal-header">
+	<h3>添加成员</h3>
+</div>
+<div class="modal-body modalBody">
+	<div class="searchPanelTitle clearfix">
+		<div class="floatright">
+			<span class="line"></span>
+			<a ng-click="open('ProjectPeople')" class="f_blue cursor_p">导入已有项目成员</a>
+		</div>
+	</div>
+	<div class="searchPanelBig">
+		<img src="/images/projectNav_search.png">
+		<input class="searchBox ng-pristine ng-valid" ng-model="searchUser.email" name="" placeholder="请输入您想搜索用户">
+		<input class="btn_blue floatright btn_search" ng-disabled="isUserSearch" ng-click="searchUserFun()" type="button" value="搜索">
+	</div>
+	<div class="searchResultPanel">
+		<ul>
+			<li class="ng-hide">
+				<div class="floatleft searchResultLi">
+					<span class="ng-binding">2@qq.com</span>
+					<img src="/images/projectInfoList_manager.png">
+					<h1>该用户已在项目中</h1>
+				</div>
+			</li>
+			<li >
+    			<div class="floatleft searchResultLi">
+    				<span class="ng-binding">222222222</span>
+    				<img src="/images/projectInfoList_manager.png">
+    				<select class="selectNoborder">
+    					<option value="0">项目经理</option>
+    					<option value="1">开发工程师</option>
+    					<option value="2">测试工程师</option>
+    				</select>
+	                <h1 class="ng-binding">2@qq.com</h1>
+    			</div>
+    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btn_blue margint_20" type="button" value="添加">
+    			<div class="clear"></div>
+    		</li>
+		</ul>
+
+	</div>
+</div>
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+</div>
