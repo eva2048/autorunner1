@@ -13,6 +13,7 @@ define(['app'], function(app) {
                     enableColumnResizing: true,
                     rowHeight: 40,
                     enableCellEdit:false,
+                    enableFiltering:true,
                     selectionRowHeaderWidth: 40,
                     paginationPageSizes: [10, 15, 20], //每页显示个数可选项
                     enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示

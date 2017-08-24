@@ -123,58 +123,119 @@
     top: 12px;
     left: 10px;
 }
+/*显示模式切换*/
+.navTabPanel{
+    border-bottom: 1px solid #d9d9d9;
+}
+.navTabPanel ul>li{
+    width: 50%;
+    text-align: center;
+    float: left;
+    padding: 15px 0px;
+}
+.navTabPanel ul>li .iconfont{
+    font-size: 18px;
+}
+.navPanel{
+    position: absolute;
+    top: 56px;
+    bottom: 0px;
+    width: 100%;
+    border-right: 1px solid transparent;
+}
 /*列表切换块*/
 .projectNavList {
     width: 100%;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
 }
-
-.projectNavList li {
-    overflow: hidden;
-    line-height: 38px;
+.projectNavList .title {
+    height: 40px;
     font-size: 14px;
-    color: #000000;
+    padding: 0px 10px 0px 15px;
+    color: #6e6e6e;
+    line-height: 40px;
+    border-top: 1px solid #d9d9d9;
+}
+
+.projectNavList .title .treefunicon {
+    margin-left: 5px;
+    line-height: 38px;
+}
+
+.projectNavList .title .iconfont {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
     cursor: pointer;
-    padding: 10px 0px;
 }
-
-.projectNavList li.active {
+.projectNavList>ul>li {
+    line-height: 40px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgba(0,0,0,0.87);
+}
+.projectNavList>ul>li .filterIcon{
+    font-size: 24px;
+    margin: 0px 10px 0px 15px;
+    float: left;
+}
+.projectNavList>ul>li.active {
     background: #bbdefb;
 }
 
-.projectNavList li.active:hover {
+.projectNavList>ul>li.active:hover {
     background: #bbdefb;
 }
 
-.projectNavList li:hover {
+.projectNavList>ul>li:hover {
     background: #f5f5f5;
 }
 
-.projectNavList li img {
+.projectNavList>ul>li img {
     float: left;
     margin: 0px 15px;
     width: 38px;
 }
-
-.projectNavList li span {
+.projectNavList>ul>li .filtername{
+    max-width: 150px;
+    display: inline-block;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+.projectNavList>ul>li .filternum{
     float: right;
-    margin-right: 15px;
-    font-size: 12px;
+    line-height: 39px;
+    margin-right: 10px;
+    display: none;
+}
+.projectNavList>ul>li .filternum:hover{
+    color: #008bff;
+}
+.projectNavList>ul>li:hover .filternum{
+    display: block;
 }
 
 /*usecaseTree*/
 
 .useCaseTree {
-    width: 249px;
+    width: 100%;
     background: #FFFFFF;
     position: absolute;
-    top: 175px;
+    top: 0px;
     bottom: 0px;
 }
 
 .useCaseTree .title {
     height: 40px;
     font-size: 14px;
-    padding: 0px 10px;
+    padding: 0px 10px 0px 15px;
     color: #6e6e6e;
     line-height: 40px;
     border-bottom: 1px solid #d9d9d9;
@@ -184,7 +245,10 @@
 .useCaseTree .title .treefunicon {
     margin-left: 5px;
 }
-
+.useCaseTree .title .chatIconButton .iconfont{
+    color: #000;
+    font-weight: 700;
+}
 .useCaseTree .title .iconfont {
     font-size: 18px;
     cursor: pointer;
@@ -207,7 +271,9 @@
     display: inline-block;
     float: left;
 }
-
+.treeBody .treeToggle .iconfont{
+    font-size: 14px;
+}
 .treeBody .treeToggle img {
     width: 10px;
     vertical-align: baseline;
@@ -243,7 +309,11 @@
     font-family: "微软雅黑";
     font-weight: normal;
 }
-
+.treeBody .tree-node-content .icon-wenjianjia1{
+    color: #ff9800;
+    font-size: 13px;
+    margin-left: 5px;
+}
 .treeBody .tree-node-content .treeText {
     margin-left: 5px;
     padding-right: 10px;
