@@ -10,8 +10,6 @@ require.config({
 		'ui-bootstrap-tpls':'ui-bootstrap-tpls.min',
 		'angular-ui-tree':'angular-ui-tree.min',
 		'angular-resizable':'angular-resizable',
-		'bootstrap-datetimepicker':'bootstrap-datetimepicker',
-		'time-ng':'time-ng',
 		'ui-grid':'ui-grid',
 		'highstock':'highstock.src',
 		'exporting':'exporting.src',

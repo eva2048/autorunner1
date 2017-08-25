@@ -1,5 +1,5 @@
 define(['angular', 'router'], function() {
-    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree','highcharts-ng','angularResizable','time-ng','ui.grid','ui.grid.selection','ui.grid.edit','ui.grid.exporter','ui.grid.pagination','ui.grid.resizeColumns','ui.grid.autoResize','ui.grid.treeView'])
+    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree','highcharts-ng','angularResizable','ui.grid','ui.grid.selection','ui.grid.edit','ui.grid.exporter','ui.grid.pagination','ui.grid.resizeColumns','ui.grid.autoResize','ui.grid.treeView'])
     app.config(function($controllerProvider, $compileProvider, $filterProvider, $provide) {
             app.register = {
                 //得到$controllerProvider的引用
@@ -280,7 +280,7 @@ define(['angular', 'router'], function() {
                     url:"/component",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav2.html'
+                            templateUrl:'../tpls/home/projectNavComponent.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/component/componentManage.html'
@@ -307,6 +307,9 @@ define(['angular', 'router'], function() {
                 .state("index.testset",{
                     url:"/testset",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavTestset.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/testset/testsetManage.html'
                         },

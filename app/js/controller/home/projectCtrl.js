@@ -17,14 +17,15 @@ define(['app'], function(app) {
                     $('#mdAlertDialogClose').click(function() {
                         $('#mdAlertDialog').remove();
                     })
-                };
-
-                
+                };               
                 $scope.isAttribute = 0;
                 $scope.isFadeIn = false;
                 $scope.leftOut = true;
                 $scope.treeOut = true;
                 //日期控件1
+                $scope.inlineOptions = {
+                    showWeeks: false
+                };
                 $scope.dat = new Date();
                 $scope.dat0 = new Date();
                 $scope.format = "yyyy/MM/dd";
@@ -58,6 +59,11 @@ define(['app'], function(app) {
                 $http.get('./data/treenav.php')
                     .success(function(data) {
                         $scope.data = data.lists;
+                    });
+                //左侧导航树数据类型2
+                $http.get('./data/treenav1.php')
+                    .success(function(data) {
+                        $scope.treedata1 = data.lists;
                     });
                 /*创建自定义长度数组*/
                 $scope.range = function(n) {
@@ -133,5 +139,46 @@ define(['app'], function(app) {
             };
             //返回linking函数
             return (linkFunction);
+    });
+/*    app.register.directive('expander',function(){
+        return {
+            restrict:'AE',
+            replace:true,
+            transclude:true,
+            scope:{},
+            controller:function($scope){
+                $scope.showme=true;
+                $scope.toggle=function(){
+                    $scope.showme=!$scope.showme;                
+                }
+                
+            },
+            template:'<li ng-transclude>'
+                    +'</li>',
+            link:function(scope,element,attrs){
+            }
         }
-    );})
+    });
+    app.register.directive('expanderToggle',function(){
+        return {
+            restrict:'AE',
+            replace:true,
+            transclude:true,
+            scope:true,
+            require:'^expander',
+            template:'<div ng-transclude ng-click="toggle()">'
+                    +'</div>',
+        }
+    });
+    app.register.directive('expanderContent',function(){
+        return {
+            restrict:'AE',
+            replace:true,
+            transclude:true,
+            scope:true,
+            require:'^expander',
+            template:'<ol ng-show="showme" ng-transclude>'
+                    +'</ol>',
+        }
+    });*/
+})

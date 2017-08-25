@@ -1,75 +1,106 @@
 <style type="text/css">
 </style>
-<div class="projectNav" style="overflow: hidden;">
-    <div class="searchPanel">
-        <img src="images/projectNav_search.png">
-        <input class="searchBox" name="" placeholder="请输入项目名称">
-    </div>
-    <div class="projectNavList">
+<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=1">
+    <div class="navTabPanel">
         <ul>
-            <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1" ui-sref="index">
-                <i class="iconfont icon-zidong05" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #48a1ff;"></i> 自动设计用例              
+            <li ng-click="navTabPanel=1">
+                <span data-tip="树结构视图">
+                <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}" ui-sref="index.demand"></i>
+                </span>
             </li>
-            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2" ui-sref="index.manual">
-                 <i class="iconfont icon-shoudong" style="width: 32px;font-size: 28px;float: left;margin: 0px 10px 0px 15px;color: #FF4400;"></i> 手动设计用例            
+            <li ng-click="navTabPanel=2">
+                <span data-tip="过滤器结构视图">
+                <i class="iconfont icon-liebiao" ng-class="{'f_blue':navTabPanel==2}"></i>
+                </span>
             </li>
-            
+            <div class="clear"></div>
         </ul>
     </div>
-    <div class="useCaseTree">
-        <div class="title">
-           	 用例组
-            <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
-                <i class="iconfont icon-empty"></i>
-            </span>
-            <span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
-                <i class="iconfont icon-editor"></i>
-            </span>
-            <div class="dropdownDefault floatright treefunicon" dropdown>
-                <span class="chatIconButton floatright" data-tip="编辑节点" dropdown-toggle>
+    <div class="navPanel">
+        <div class="leftNavList projectNavList" ng-show="navTabPanel==1">
+            <div class="title">
+                过滤器
+                <span class="chatIconButton floatright treefunicon" data-tip="新建过滤器">
                     <i class="iconfont icon-add"></i>
                 </span>
-                <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                    <span class="triangle"></span>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-                </ul>               
             </div>
-            <div class="dropdownDefault floatright treefunicon" dropdown>
-                <span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
-                    <i class="iconfont icon-send"></i>
-                </span>
-                <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                    <span class="triangle"></span>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>下移</span></li>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>左移</span></li>
-                    <li><i class="iconfont icon-addpeople_fill"></i><span>右移</span></li>
-                </ul>               
-            </div>
-                     
+            <ul class="projectNavListContent">
+                <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
+                    <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
+                    <span class="filtername">全部用例</span>
+                </li>
+                <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+                    <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
+                    <span class="filtername">我创建的用例</span>
+                </li>
+            </ul>
         </div>
-        <div class="treeBody">
-            <div>
-                <script type="text/ng-template" id="nodes_renderer.html">
-                    <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
-                        <!-- <em class="space floatleft" ng-repeat="i in range(node.level) track by $index">&nbsp;&nbsp;</em> -->
-                        <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
-                        <span ng-show="!this.isEdit" class="treeText">
-                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
-                        </span>
-                    </div>
-                    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-                        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
-                        </li>
-                    </ol>
-                </script>
+        <div class="leftNavList useCaseTree" ng-show="navTabPanel==2">
+            <div class="title">
+                用例树
+                <span class="chatIconButton floatright treefunicon" data-tip="同步生成用例目录">
+                    <i class="iconfont icon-tongbusynchronize4"></i>
+                </span>
+                <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
+                    <i class="iconfont icon-empty"></i>
+                </span>
+                <span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
+                    <i class="iconfont icon-editor"></i>
+                </span>
+                <div class="dropdownDefault floatright treefunicon" dropdown>
+                    <span class="chatIconButton floatright" data-tip="编辑节点" dropdown-toggle>
+                        <i class="iconfont icon-add"></i>
+                    </span>
+                    <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                        <span class="triangle"></span>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
+                    </ul>
+                </div>
+                <div class="dropdownDefault floatright treefunicon" dropdown>
+                    <span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
+                        <i class="iconfont icon-send"></i>
+                    </span>
+                    <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                        <span class="triangle"></span>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>下移</span></li>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>左移</span></li>
+                        <li><i class="iconfont icon-addpeople_fill"></i><span>右移</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="treeBody">
                 <div>
-                    <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
-                        <ol ui-tree-nodes ng-model="data">
-                            <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
+                    <script type="text/ng-template" id="nodes_renderer.html">
+                        <span ui-tree-handle></span>
+                        <div class="tree-node tree-node-content" ng-class="{current:node.id==1.1}">
+                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0||node.cases && node.cases.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                            <i class="iconfont icon-wenjianjia1"></i>
+                            <span ng-show="!this.isEdit" class="treeText">
+                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                            </span>
+                        </div>
+                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
                             </li>
                         </ol>
+                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="case in node.cases" class="tree-node-content">
+                                <i class="iconfont icon-icon-yongliweiyunhang icon-case"></i>
+                                <span ng-show="!this.isEdit" class="treeText">
+                                {{case.title | limitTo:10}}{{case.title.length>10?'...':''}}
+                                </span>
+                            </li>
+                        </ol>
+                    </script>
+                    <div>
+                        <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+                            <ol ui-tree-nodes ng-model="data">
+                                <li ng-repeat="node in treedata1" ui-tree-node ng-include="'nodes_renderer.html'">
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
