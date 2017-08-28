@@ -1,4 +1,3 @@
-//加入项目
 define(['app'], function(app) {
     app.register
         .controller('projectNav1', ['$scope','$http',
