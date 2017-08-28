@@ -1,0 +1,50 @@
+<style type="text/css">
+</style>
+<div class="projectNav" style="overflow: hidden;">
+    <div class="useCaseTree">
+        <div class="title">
+            组织结构
+            <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
+                <i class="iconfont icon-empty"></i>
+            </span>
+            <span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
+                <i class="iconfont icon-editor"></i>
+            </span>
+            <div class="dropdownDefault floatright treefunicon" dropdown>
+                <span class="chatIconButton floatright" data-tip="编辑节点" dropdown-toggle>
+                    <i class="iconfont icon-add"></i>
+                </span>
+                <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                    <span class="triangle"></span>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
+                    <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
+                </ul>               
+            </div>                               
+        </div>
+        <div class="treeBody">
+            <div>
+                <script type="text/ng-template" id="nodes_renderer.html">
+                    <span ui-tree-handle></span>
+                    <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
+                        <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                        <span ng-show="!this.isEdit" class="treeText">
+                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                        </span>
+                    </div>
+                    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+                        </li>
+                    </ol>
+                </script>
+                <div>
+                    <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+                        <ol ui-tree-nodes ng-model="data">
+                            <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

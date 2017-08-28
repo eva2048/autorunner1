@@ -205,7 +205,7 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 }) 
-                /*需求详情*/
+                /*需求详情-需求内容*/
                 .state("index.demand.demandDetails",{
                     url:"/demandDetails",
                     views:{
@@ -213,7 +213,30 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavDemand.html'
                         },
                         'projectBody@index':{
-                            templateUrl:'../tpls/home/main/demand/projectDemandDetail.html'
+                            templateUrl:'../tpls/home/main/demand/demandContent.html'
+                        }                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })
+                /*需求详情-用例场景*/
+                .state("index.demand.useCaseScenario",{
+                    url:"/useCaseScenario",
+                    views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavDemand.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/demand/useCaseScenario.html'
                         }                       
                     },
                     resolve: {
@@ -373,7 +396,79 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
-                })                
+                })     
+			//后台-用户管理
+                .state("userManagement", {
+                    url: "/userManagement",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@userManagement':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@userManagement':{
+                            templateUrl:'../tpls/home/main.html'
+                        },
+                        'projectNav@userManagement':{
+                            templateUrl:'../tpls/home/projectNavUserManagement.html'
+                        },
+                        'projectBody@userManagement':{
+                            templateUrl:'../tpls/home/main/userManagement/userManagement.html'
+                        }
+                        
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+                               '../js/controller/home/userManagement/userManagementCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+//              项目管理
+                .state("projectManagement", {
+                    url: "/projectManagement",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@userManagement':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@userManagement':{
+                            templateUrl:'../tpls/home/main.html'
+                        }
+                                              
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+                               '../js/controller/home/userManagement/userManagementCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
         }])
     return app;
 })
