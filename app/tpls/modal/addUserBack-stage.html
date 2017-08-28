@@ -1,18 +1,21 @@
 <style type="text/css">
-	.titleUl li{
+	.titleUl li {
 		line-height: 34px;
 		margin-bottom: 0;
 	}
-	.titleUl li span{
+	
+	.titleUl li span {
 		cursor: pointer;
 		margin-right: 30px;
 	}
-	.titleUl li .radio{
+	
+	.titleUl li .radio {
 		float: left;
 		margin-top: 10px;
 		margin-right: 5px;
 	}
-	.titleUl li .inputText{
+	
+	.titleUl li .inputText {
 		width: 400px;
 	}
 </style>
@@ -23,8 +26,7 @@
 	<div class="modal-body">
 		<ul class="titleUl">
 			<li>
-				<h1>关联组织：</h1>
-				公司名称 > 部门名称
+				<h1>关联组织：</h1> 公司名称 > 部门名称
 				<i class="iconfont icon-editor" style="color:#008bff;font-size: 14px;margin-left: 10px;cursor: pointer;" ng-click="open('tree')"></i>
 			</li>
 			<li class="clearfix">
@@ -36,23 +38,23 @@
 				<span class="floatleft">
 					<input type="radio" name="n1" id="n2" value="" class="radio"/>
 					<label for="n2">管理员</label>
-				</span>				
+				</span>
 			</li>
 			<li class="margint_10">
 				<h1>账号：</h1>
-				<input type="text" name="" id="" value="" class="inputText"/>
+				<input type="text" name="" id="" value="" class="inputText" />
 			</li>
 			<li class="margint_10">
 				<h1>密码：</h1>
-				<input type="password" name="" id="" value="" class="inputText"/>
+				<input type="password" name="" id="" value="" class="inputText" />
 			</li>
 			<li class="margint_10">
 				<h1>真实姓名：</h1>
-				<input type="text" name="" id="" value="" class="inputText"/>
+				<input type="text" name="" id="" value="" class="inputText" />
 			</li>
 			<li class="margint_10">
 				<h1>电子邮箱：</h1>
-				<input type="email" name="" id="" value="" class="inputText"/>
+				<input type="email" name="" id="" value="" class="inputText" />
 			</li>
 			<li class="clearfix margint_10">
 				<h1>是否启用：</h1>
@@ -63,14 +65,14 @@
 				<span class="floatleft">
 					<input type="radio" name="q1" id="q2" value="" class="radio"/>
 					<label for="q2">不启用</label>
-				</span>				
-			</li>
+				</span>
+			</li>			
 		</ul>
 	</div>
 	<div class="modal-footer">
 		<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
 		<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
 		<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
-	</div>	
 	</div>
+</div>
 </div>

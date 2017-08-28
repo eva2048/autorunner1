@@ -1,0 +1,27 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="dataDictionaryCtrl">
+    <div class="projectBodyTitle">
+        属性值
+    </div>                  
+    <div class="projectBodyContent">
+        <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+        	<div class="useCaseListfunction">
+				<span class="chatIconButton floatleft" ng-click="open('addAttributeValue')">
+                    <i class="iconfont icon-tianjia"></i>添加
+               </span>
+				<span class="chatIconButton floatleft" ng-click="">
+                    <i class="iconfont icon-editor"></i>修改
+                </span>
+				<span class="chatIconButton floatleft" ng-click="">
+                    <i class="iconfont icon-empty_fill"></i>删除
+                </span>
+				<div class="clear"></div>
+			</div>            
+            <div class="userCaseListTable">
+                <div style="" ui-grid="gridAttributeValue"  ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
