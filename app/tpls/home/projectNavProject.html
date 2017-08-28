@@ -1,23 +1,21 @@
 <style type="text/css">
 </style>
 <div class="projectNav" style="overflow: hidden;">
-    <div class="searchPanel">
-        <img src="images/projectNav_search.png">
-        <input class="searchBox" name="" placeholder="请输入项目名称">
-    </div>
-    <div class="projectNavList" style="top:52px">
-        <ul>
+    <div class="leftNavList projectNavList">
+        <div class="title">
+            过滤器
+            <span class="chatIconButton floatright treefunicon" data-tip="新建过滤器">
+                <i class="iconfont icon-add"></i>
+            </span>
+        </div>
+        <ul class="projectNavListContent">
             <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
-                <img src="images/projectNav_total.png"> 我负责的
-                <span>10</span>
+                <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
+                <span class="filtername">全部用例</span>
             </li>
             <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
-                <img src="images/projectNav_at.png">我参与的
-                <span>2</span>
-            </li>
-            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
-                <img src="images/projectNav_tc.png">全部项目
-                <span>2</span>
+                <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
+                <span class="filtername">我创建的用例</span>
             </li>
         </ul>
     </div>
