@@ -15,10 +15,7 @@
                 <li><i class="iconfont icon-addpeople_fill"></i><span>待处理</span></li>
                 <li><i class="iconfont icon-addpeople_fill"></i><span>已处理</span></li>
             </ul>
-        </div>-->
-        <div class="floatleft btn_add" ng-click="open('createCompenent','lg')">
-            <span class="cicleicon"><i class="iconfont icon-add"></i></span> 新建组件
-        </div>
+        </div>-->       
         <div class="floatright btn_add" ng-click="open('createCompenent','lg')">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 新建组件
         </div>
@@ -27,13 +24,18 @@
         <div class="useCaseList" style="bottom: 0px; overflow: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
+                 <span class="chatIconButton">
+                    <i class="iconfont icon-gengxin"></i>更新脚本
+                </span> 
                 <span class="chatIconButton">
                     <i class="iconfont icon-import"></i>下载脚本
                 </span>                
                 <span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
                 </span>
-                
+                 <span class="chatIconButton floatright" ng-click="">
+                    <i class="iconfont icon-import"></i>导入组建
+                </span>
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

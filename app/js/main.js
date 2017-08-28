@@ -33,7 +33,7 @@ require.config({
 		},
 		'ui-grid':{
 			deps: ['angular']
-		},
+		},		
 		'router': {
 			deps: ['angular']
 		},
