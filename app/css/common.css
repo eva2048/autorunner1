@@ -530,6 +530,76 @@ a.f_red:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/*自定义勾选框样式*/
+.checkBox{
+    position: relative;
+}
+.checkBox input[type=checkbox]{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 0px;
+    left: 0px;
+    margin-left: 0!important;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    margin-top: 0;
+}
+.checkBox .defaultcheckText{
+    display: inline-block;
+    padding-left: 20px;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #5e5e5e;
+}
+.checkBox .input-helper:before{
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    border: 1px solid #ccc;
+}
+.checkBox input:checked+.input-helper:before {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+.checkBox .input-helper:after{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: scale(0) rotate(80deg);
+    -ms-transform: scale(0) rotate(80deg);
+    transform: scale(0) rotate(80deg);
+    width: 16px;
+    height: 9px;
+    left: -1px;
+    top: 2px;
+    border-bottom: 1px solid #008bff;
+    border-left: 1px solid #008bff;
+    border-bottom-left-radius: 2px;
+}
+.checkBox input:checked +.input-helper:after {
+    -webkit-transform: scale(1) rotate(-50deg);
+    -ms-transform: scale(1) rotate(-50deg);
+    transform: scale(1) rotate(-50deg);
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.input-helper:before,.input-helper:after{
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    content: "";
+}
 /*默认时间选择框*/
 .defaultTimeSelectBox{
     position: relative;
@@ -813,24 +883,34 @@ a.f_red:hover {
 /*表格搜索框*/
 
 .searchBox {
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     overflow: hidden;
+    position: relative;
 }
 
 .searchBox .inputSearch {
     width: 230px;
-    padding: 0px 15px;
+    padding: 0px 15px 0px 30px;
     color: #707070;
     font-size: 12px;
-    height: 36px;
-    line-height: 36px;
+    height: 32px;
+    line-height: 32px;
     border: none;
-    border-right: 1px solid #dddddd;
+    border: 1px solid #dddddd;
+    outline: none;
+    border-radius: 5px;
 }
-
+.searchBox .inputSearch:focus{
+    border-color: #008bff;
+}
+.searchBox .inputSearch:focus + .icon-search{
+    color: #008bff;
+}
+.searchBox .icon-search{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    color: #ccc;
+}
 .searchBox .btnSearch {
     cursor: pointer;
 }
