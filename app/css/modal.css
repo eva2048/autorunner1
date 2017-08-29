@@ -20,7 +20,10 @@
     line-height: 34px;
     margin-right: 10px;
 }
-
+.titleUl li h1.hauto{
+    width: auto;
+    margin-left: 20px;
+}
 .titleUl>li h2 {
     float: left;
     font-size: 14px;

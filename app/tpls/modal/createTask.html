@@ -1,0 +1,32 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <h3>新建任务</h3>
+</div>
+<div class="modal-body modalBody" ng-controller="modalCtrl">
+    <ul class="titleUl">
+        <li>
+            <h1>任务名称：</h1>
+            <input type="text" class="inputText">
+        </li>       
+        <div class="clear"></div>                    
+        <li>
+            <h1>任务描述：</h1>
+            <textarea class="projectTextarea"></textarea>
+        </li>
+        <li>
+            <h1>关联测试集：</h1>
+            <div class="inputSelect floatleft" ng-click="open('tree')">
+                <input type="text" class="inputText" disabled="disabled" placeholder="测试集1;测试集2">
+                <span class="inputSelectBtn">
+                    <i class="iconfont icon-trees"></i>
+                </span>
+            </div>
+        </li> 
+    </ul>
+</div>
+<div class="modal-footer">
+    <div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+</div>

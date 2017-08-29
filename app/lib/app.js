@@ -209,9 +209,6 @@ define(['angular', 'router'], function() {
                 .state("index.demand.demandDetails",{
                     url:"/demandDetails",
                     views:{
-                        'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavDemand.html'
-                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/demand/demandContent.html'
                         }                       
@@ -228,15 +225,32 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })
-                /*需求详情-用例场景*/
+                /*需求详情-用例场景-功能点*/
                 .state("index.demand.useCaseScenario",{
                     url:"/useCaseScenario",
                     views:{
-                        'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavDemand.html'
-                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/demand/useCaseScenario.html'
+                        }                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })
+                /*需求详情-用例场景-测试用例*/
+                .state("index.demand.useCaseScenario.usecase",{
+                    url:"/usecase",
+                    views:{
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/demand/useCaseScenarioUsecase.html'
                         }                       
                     },
                     resolve: {

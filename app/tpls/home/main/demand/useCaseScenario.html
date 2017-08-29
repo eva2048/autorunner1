@@ -1,91 +1,68 @@
 <style type="text/css">
-
 </style>
 <div class="projectBodyBox">
-	<div class="projectBodyTitle flexRow">
-		<div class="floatleft flexRow flex">需求名字</div>
-		<div class="floatleft personalNav">
-			<ul>
-				<li ui-sref="index.demand.demandDetails">
-					<a href="" class="cursor_p" ng-click="isAttribute=0">需求内容</a>
-				</li>
-				<li class="current">
-					<a href="" class="cursor_p" ng-click="isAttribute=1">用例场景</a>
-				</li>
-				<li>
-					<a href="" class="cursor_p" ng-click="isAttribute=2">需求链接</a>
-				</li>
-				<div class="clear"></div>
-			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="floatright flex">
-			<input type="button" class="floatright btndefault btndefault_blue" name="" id="" value="返回" ui-sref="index.demand" />
-		</div>
-	</div>
-	<div class="projectBodyContent">
-		<div class="attributeBox">
-			<div class="useCaseList">
-				<div class="useCaseListfunc clearfix">				
-					<div class="floatright btn_add" ng-click="open('addNewScene','lg')">
-						<span class="cicleicon"><i class="iconfont icon-add"></i></span> 新增场景
-					</div>
-				</div>
-				<div class="userCaseListTable clearfix">
-					<div class="title">
-						用例场景						
-					</div>
-					<table class="table-fullborder">
-						<tr>
-							<th>场景名称</th>
-							<th>创建人</th>
-							<th>创建时间</th>
-							<th>关联用例</th>
-							<th>关联缺陷</th>
-							<th>操作</th>
-						</tr>
-						<tr>
-							<td title="财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理"><span class="text_ellipsis8">财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理财务管理</span></td>
-							<td>hmq</td>
-							<td>2017-06-08 19:00</td>
-							<td>5</td>
-							<td>2</td>
-							<td ng-controller="modalCtrl">
-								<a href="" class="f_blue" ng-click="">场景设计</a>
-								<a href="" class="f_blue" ng-click="">用例设计</a>
-							</td>
-						</tr>
-					</table>
-					<div class="floatright">
-						<pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm embed-responsive-item" previous-text="上一页" next-text="下一页" first-text="首页" last-text="尾页" max-size="maxSize" rotate="false">
-						</pagination>
-					</div>
-				</div>
-				<div class="userCaseListTable clearfix">
-					<div class="title">
-						功能点 ：
-						<a href=""> ㊉ </a>
-					</div>
-					<table class="table-fullborder">
-						<tr>
-							<th>序号</th>
-							<th>功能名称</th>
-							<th>功能描述</th>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td><span class="text_ellipsis10 ">功能名称名称</span></td>
-							<td><span class="text_ellipsis10 ">功能描述描述</span></td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td><span class="text_ellipsis10 ">功能名称名称</span></td>
-							<td><span class="text_ellipsis10 ">功能描述描述</span></td>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-
+    <div class="projectBodyTitle flexRow">
+        <div class="floatleft flexRow flex">需求名字</div>
+        <div class="floatleft personalNav">
+            <ul>
+                <li ui-sref="index.demand.demandDetails">
+                    <a href="" class="cursor_p">需求内容</a>
+                </li>
+                <li class="current">
+                    <a href="" class="cursor_p">用例设计</a>
+                </li>
+                <li>
+                    <a href="" class="cursor_p">需求链接</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="floatright flex">
+            <input type="button" class="floatright btndefault btndefault_blue" name="" id="" value="返回" ui-sref="index.demand" />
+        </div>
+    </div>
+    <div class="projectBodyContent">
+        <div class="projectBodyBox" ng-controller="demandCtrl">
+            <div class="projectBodyTitle flexRow">
+                <div class="floatleft flexRow flex"></div>
+                <div class="floatleft personalNav">
+                    <ul>
+                        <li class="current">
+                            <a href="" class="cursor_p">功能点</a>
+                        </li>
+                        <li ui-sref="index.demand.useCaseScenario.usecase">
+                            <a href="" class="cursor_p">测试用例</a>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="flex"></div>
+            </div>
+            <div class="projectBodyContent projectBodyContent2">
+                <div class="useCaseList" ng-style="useCaseListStyle">
+                    <div class="useCaseListfunction">
+                        <span class="floatleft selectNum">已选中2项：</span>
+                        <span class="chatIconButton">
+		                    <i class="iconfont icon-guanlian"></i>自动设计用例
+		                </span>
+                        <span class="chatIconButton">
+		                    <i class="iconfont icon-brush_fill"></i>组合设计用例
+		                </span>
+                        <span class="chatIconButton floatright">
+		                    <i class="iconfont icon-guanlian"></i>导入已有功能点
+		                </span>
+                        <span class="chatIconButton floatright" ng-click="open('createFuncPoints','lg')">
+		                    <i class="iconfont icon-guanlian"></i>新增功能点
+		                </span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="userCaseListTable">
+                        <div style="" ui-grid="gridOptionsFuncPoints" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -451,7 +451,32 @@ a.f_red:hover {
 .inputTextl_250 {
     width: 250px;
 }
-
+.inputSelect{
+    position: relative;
+    cursor: pointer;
+}
+.inputSelect .inputText{
+    background: #fff;
+    cursor: pointer;
+}
+.inputSelect .inputSelectBtn{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border: 1px solid #c3c4c9;
+    border-radius: 3px;
+    color: #aaa;
+    background: #eee;
+}
+.inputSelect:hover .inputSelectBtn{
+    color: #fff;
+    background: #008bff;
+    border-color: #008bff;
+}
 .selectBox {
     font-size: 14px;
     width: 180px;
@@ -885,6 +910,7 @@ a.f_red:hover {
 .searchBox {
     overflow: hidden;
     position: relative;
+    line-height: 1em;
 }
 
 .searchBox .inputSearch {
@@ -908,7 +934,7 @@ a.f_red:hover {
 .searchBox .icon-search{
     position: absolute;
     left: 6px;
-    top: 6px;
+    top: 9px;
     color: #ccc;
 }
 .searchBox .btnSearch {

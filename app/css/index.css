@@ -442,9 +442,11 @@
     position: relative;
     z-index: 102;
 }
+.projectBodyTitle .btn_add{
+    margin-top: 10px;
+}
 /*一级标题导航*/
 .personalNav {
-    border-bottom: 1px solid #e5e5e5;
     background: #fff;
 }
 
@@ -515,7 +517,22 @@
 .projectBodyContent1 {
     background: none;
 }
-
+.projectBodyContent2{
+    left: 0px;
+    top: 46px;
+}
+.projectBodyContent2 .userCaseListTable{
+    position: absolute;
+    top: 44px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow-y: auto;
+}
+.usecaseListPanel{
+    position: relative;
+    height: 100%;
+}
 /*筛选功能块*/
 
 .useCaseListfunc {
@@ -528,7 +545,15 @@
     background: #fff;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
 }
-
+.useCaseListfunc .searchBox{
+    margin-top: 6px;
+}
+.useCaseListfunc .personalNav{
+    border-bottom: 0px;
+}
+.useCaseListfunc .personalNav ul li a{
+    line-height: 41px;
+}
 .useCaseListfunc .btn_add {
     margin-top: 9px;
 }
