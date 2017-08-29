@@ -541,7 +541,7 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-//                             '../js/controller/home/back-stageManagement/userManagementCtrl.js'
+                               '../js/controller/home/back-stageManagement/defectProcessCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
