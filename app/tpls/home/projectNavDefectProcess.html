@@ -1,0 +1,56 @@
+<style type="text/css">
+	.roleGroup {
+		
+	}
+	.roleGroup li{
+		padding: 0px 10px 0px 15px;
+		height: 30px;
+		line-height: 30px;
+		font-size: 12px;
+		color: #313131;
+		cursor: pointer;
+	}
+	.roleGroup li:hover{
+		background: #e5f3ff;
+	}
+	.roleGroup li .icon-wenjianjia1 {
+		color: #ff9800;
+		font-size: 12px;
+		margin:0 5px;
+	}
+	
+</style>
+<div class="projectNav" style="overflow: hidden;">
+	<div class="useCaseTree">
+		<div class="title">
+			缺陷流程列表
+			<span class="chatIconButton floatright treefunicon" data-tip="删除">
+                <i class="iconfont icon-empty"></i>
+            </span>
+			<span class="chatIconButton floatright treefunicon" data-tip="编辑">
+                <i class="iconfont icon-editor"></i>
+            </span>
+			<div class="dropdownDefault floatright treefunicon" ng-click="open('addDefectProcess')">
+				<span class="chatIconButton floatright" data-tip="添加缺陷流程">
+                    <i class="iconfont icon-add"></i>
+               </span>				
+			</div>
+		</div>
+		<div class="roleGroup">
+			<ul>
+				<li>
+					<i class="iconfont icon-wenjianjia1"></i>默认缺陷流程
+				</li>
+				<li>
+					<i class="iconfont icon-wenjianjia1"></i>流程1
+				</li>
+				<li>
+					<i class="iconfont icon-wenjianjia1"></i>流程2
+				</li>
+				<li>
+					<i class="iconfont icon-wenjianjia1"></i>流程3
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

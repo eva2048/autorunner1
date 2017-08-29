@@ -431,7 +431,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavUserManagement.html'
                         },
                         'projectBody@userManagement':{
-                            templateUrl:'../tpls/home/main/userManagement/userManagement.html'
+                            templateUrl:'../tpls/home/main/back-stageManagement/userManagement.html'
                         }
                         
                     },
@@ -445,7 +445,7 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-                               '../js/controller/home/userManagement/userManagementCtrl.js'
+                               '../js/controller/home/back-stageManagement/userManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -460,11 +460,11 @@ define(['angular', 'router'], function() {
                         '':{
                             templateUrl:'../tpls/home/index.html'
                         },
-                        'topbar@userManagement':{
+                        'topbar@projectManagement':{
                             templateUrl:'../tpls/home/topbarBack-stage.html'
                         },
-                        'main@userManagement':{
-                            templateUrl:'../tpls/home/main.html'
+                        'main@projectManagement':{
+                            templateUrl:'../tpls/home/main/back-stageManagement/projectManagement.html'
                         }
                                               
                     },
@@ -478,7 +478,123 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-                               '../js/controller/home/userManagement/userManagementCtrl.js'
+                               '../js/controller/home/back-stageManagement/projectManagementCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+//              角色组管理
+                 .state("roleGroupManagement", {
+                    url: "/roleGroupManagement",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@roleGroupManagement':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@roleGroupManagement':{
+                            templateUrl:'../tpls/home/main.html'
+                        },
+                        'projectNav@roleGroupManagement':{
+                            templateUrl:'../tpls/home/projectNavRoleGroup.html'
+                        },
+                        'projectBody@roleGroupManagement':{
+                            templateUrl:'../tpls/home/main/back-stageManagement/roleGroupManagement.html'
+                        }
+                        
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js'                             
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+//              缺陷流程定制
+                .state("defectProcess", {
+                    url: "/defectProcess",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@defectProcess':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@defectProcess':{
+                            templateUrl:'../tpls/home/main.html'
+                        },
+                        'projectNav@defectProcess':{
+                            templateUrl:'../tpls/home/projectNavDefectProcess.html'
+                        },
+                        'projectBody@defectProcess':{
+                            templateUrl:'../tpls/home/main/back-stageManagement/defectProcess.html'
+                        }
+                        
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+//                             '../js/controller/home/back-stageManagement/userManagementCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+//              数据字典
+                .state("dataDictionary", {
+                    url: "/dataDictionary",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@dataDictionary':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@dataDictionary':{
+                            templateUrl:'../tpls/home/main.html'
+                        },
+                        'projectNav@dataDictionary':{
+                            templateUrl:'../tpls/home/projectNavDataDictionary.html'
+                        },
+                        'projectBody@dataDictionary':{
+                            templateUrl:'../tpls/home/main/back-stageManagement/dataDictionary.html'
+                        }
+                        
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+                               '../js/controller/home/back-stageManagement/dataDictionaryCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
