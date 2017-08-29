@@ -20,8 +20,11 @@
     line-height: 34px;
     margin-right: 10px;
 }
-
-.titleUl li h2 {
+.titleUl li h1.hauto{
+    width: auto;
+    margin-left: 20px;
+}
+.titleUl>li h2 {
     float: left;
     font-size: 14px;
     color: #000;
@@ -33,7 +36,7 @@
     margin: 10px 10px 0px;
 }
 
-.titleUl li {
+.titleUl>li {
     margin-bottom: 15px;
 }
 
@@ -44,18 +47,21 @@
     overflow-y: auto;
 }
 
-.titleUl .borderUl li {
+.titleUl .borderUl>li {
     margin-bottom: 0px;
 }
 
-.titleUl .multselectUl li {
+/* .titleUl .multselectUl>li {
     line-height: 34px;
     font-size: 14px;
 }
 
-.titleUl .multselectUl li input {
+.titleUl .multselectUl>li input {
     margin: 0px 5px 0px 10px;
     vertical-align: middle;
+} */
+.titleUl .funcBox{
+    margin-left: 115px;
 }
 /*发起执行弹窗*/
 .runningDeviceBox .titleUl>li{
@@ -112,19 +118,101 @@
     width: 30%;
 }
 
-.runningDeviceBox .titleUl li h1 {
+.runningDeviceBox .titleUl>li h1 {
     width: auto;
     text-align: left;
     font-size: 12px;
     line-height: 30px;
 }
-.runningDeviceBox .titleUl li .inputText{
+.runningDeviceBox .titleUl>li .inputText{
     line-height: 30px;
     height: 30px;
     font-size: 12px;
 }
-.runningDeviceBox .titleUl li .selectNormal{
+.runningDeviceBox .titleUl>li .selectNormal{
     line-height: 30px;
     height: 30px;
     font-size: 12px;
+}
+/*创建功能点*/
+.createFuncPoints .titleUl{    
+}
+.createFuncPoints .modalRightContent{
+    height: 400px;
+    overflow-y: auto;
+}
+/*多选块*/
+.modalSelectPanel{
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 10px 20px;
+    border-top: 1px solid #eee;
+}
+.modalSelectPanel .title{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.modalSelectPanel .multselectUl>li{
+    font-size: 14px;
+    width: 30%;
+    float: left;
+    margin-bottom: 5px;
+}
+.createFuncPoints .titleUl .funcBox1{
+    margin-left: 20px;
+}
+.modalDataPanel .title{
+    font-size: 14px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.modalDataPanel .title .leftTitle{
+    margin-top: 6px;
+}
+.modalDataPanel .title span .iconfont{
+    font-size: 20px;
+    color: #008bff;
+    line-height: 1em;
+    vertical-align: text-top;
+}
+.modalDataPanel .table-fullborder tbody>tr{
+    height: 30px;
+    line-height: 30px;
+}
+.modalDataPanel{
+    padding: 0px 20px 10px;
+    border-top: 1px solid #eee;
+}
+.modalDataPanel .tablePanel{
+    max-height: 220px;
+    overflow-y: auto;
+}
+.modalDataPanel .table-fullborder tbody>tr>td{
+    font-size: 13px;
+    line-height: 22px;
+    padding: 5px 10px;
+}
+/*弹窗左切换*/
+.modalLeftTab{
+    width: 145px;
+    border-right: 1px solid #eee;
+    height: 400px;
+}
+.modalLeftTab>li{
+    color: #333;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 13px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.modalLeftTab>li:hover{
+    background: #f5f5f5;
+}
+.modalLeftTab>li.current{
+    color: #008bff;
+    font-size: 14px;
 }

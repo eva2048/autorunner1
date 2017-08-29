@@ -42,14 +42,14 @@ define(['app'], function(app) {
                         },
                         {
                             field: "executeTime",
-                            displayName: '执行时间',
+                            displayName: '最近执行时间',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
                         },
                         {
                             field: "executeState",
-                            displayName: '执行状态',
+                            displayName: '关联测试集',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
@@ -59,6 +59,7 @@ define(['app'], function(app) {
                             displayName: '操作处理',
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">立即执行</a><a class="f_red">预约执行</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableColumnResizing: false,
                         }
                     ],
                     data:[]
