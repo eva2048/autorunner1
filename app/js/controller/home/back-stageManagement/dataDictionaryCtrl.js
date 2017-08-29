@@ -10,7 +10,7 @@ define(['app'], function(app) {
                 //表格初始化
                 i18nService.setCurrentLang("zh-cn");
                 $scope.gridAttributeValue = {
-                    enableColumnResizing: true,
+                    enableColumnResizing:false,
                     rowHeight: 40,
                     enableCellEdit:false,
                     selectionRowHeaderWidth: 40,

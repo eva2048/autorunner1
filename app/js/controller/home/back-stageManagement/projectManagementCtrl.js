@@ -29,30 +29,22 @@ define(['app'], function(app) {
                         {
                             field: "creater",
                             displayName: '创建人',
-                            enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
                         },                       
                         {
                             field: "State",
-                            displayName: '启用状态',
-                            enableSorting: false,
+                            displayName: '状态',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
                         },   
                         {
                             field: "createTime",
                             displayName: '创建时间',
-                            enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
                         }, 
                         {
                             field: "tasksNum",
                             displayName: '任务数',
-                            enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
                         }, 
                         {
                             field: "action",

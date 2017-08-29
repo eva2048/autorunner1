@@ -417,7 +417,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavUserManagement.html'
                         },
                         'projectBody@userManagement':{
-                            templateUrl:'../tpls/home/main/userManagement/userManagement.html'
+                            templateUrl:'../tpls/home/main/back-stageManagement/userManagement.html'
                         }
                         
                     },
@@ -431,7 +431,7 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-                               '../js/controller/home/userManagement/userManagementCtrl.js'
+                               '../js/controller/home/back-stageManagement/userManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -450,7 +450,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/topbarBack-stage.html'
                         },
                         'main@projectManagement':{
-                            templateUrl:'../tpls/home/main/userManagement/projectManagement.html'
+                            templateUrl:'../tpls/home/main/back-stageManagement/projectManagement.html'
                         }
                                               
                     },
@@ -464,7 +464,7 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-                               '../js/controller/home/userManagement/projectManagementCtrl.js'
+                               '../js/controller/home/back-stageManagement/projectManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -489,7 +489,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavRoleGroup.html'
                         },
                         'projectBody@roleGroupManagement':{
-                            templateUrl:'../tpls/home/main/userManagement/roleGroupManagement.html'
+                            templateUrl:'../tpls/home/main/back-stageManagement/roleGroupManagement.html'
                         }
                         
                     },
@@ -502,7 +502,46 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/modalCtrl.js',
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',                              
+                               '../js/controller/modal/tipmodalInstanceCtrl.js'                             
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
+//              缺陷流程定制
+                .state("defectProcess", {
+                    url: "/defectProcess",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@defectProcess':{
+                            templateUrl:'../tpls/home/topbarBack-stage.html'
+                        },
+                        'main@defectProcess':{
+                            templateUrl:'../tpls/home/main.html'
+                        },
+                        'projectNav@defectProcess':{
+                            templateUrl:'../tpls/home/projectNavDefectProcess.html'
+                        },
+                        'projectBody@defectProcess':{
+                            templateUrl:'../tpls/home/main/back-stageManagement/defectProcess.html'
+                        }
+                        
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([                           
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+//                             '../js/controller/home/back-stageManagement/userManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -527,7 +566,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavDataDictionary.html'
                         },
                         'projectBody@dataDictionary':{
-                            templateUrl:'../tpls/home/main/userManagement/dataDictionary.html'
+                            templateUrl:'../tpls/home/main/back-stageManagement/dataDictionary.html'
                         }
                         
                     },
@@ -541,7 +580,7 @@ define(['angular', 'router'], function() {
                                '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
                                '../js/controller/modal/tipmodalInstanceCtrl.js',
-                               '../js/controller/home/userManagement/dataDictionaryCtrl.js'
+                               '../js/controller/home/back-stageManagement/dataDictionaryCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });

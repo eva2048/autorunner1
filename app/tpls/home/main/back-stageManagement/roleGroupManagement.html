@@ -102,8 +102,7 @@
 							<script type="text/ng-template" id="nodes_renderer.html">
 								<div class="tree-node tree-node-content treeLine">
 									<input class="treeNodeCheckbox" type="checkbox">
-									<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><img ng-src="{{collapsed?'images/treeBody_close.png':'images/treeBody_open.png'}}"></a>
-
+									<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><img ng-src="{{collapsed?'images/treeBody_close.png':'images/treeBody_open.png'}}"></a>									
 									<span ng-show="!this.isEdit" class="treeText">
                             	{{node.title | limitTo:10}}{{node.title.length>5?'...':''}}
                         		</span>

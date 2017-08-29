@@ -5,12 +5,13 @@
 		<h3>选择关联组织</h3>
 	</div>
 	<div class="modal-body" style="height: 300px;">
-		<div class="treeBody" style="width: 80%;">
+		<div class="treeBody" style="width: 80%;top: 10px;" >
 			<div>
 				<script type="text/ng-template" id="nodes_renderer.html">
 					<span ui-tree-handle></span>
 					<div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
 						<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+						<i class="iconfont icon-wenjianjia1" style="color: #ff9800;font-size: 12px;"></i>
 						<span ng-show="!this.isEdit" class="treeText">
                             {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
                         </span>
