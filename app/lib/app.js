@@ -413,7 +413,32 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
+                })  
+                 /*数据池*/
+                .state("index.dataPool",{
+                    url:"/dataPool",
+                    views:{
+                    	'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavDataPool.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/dataPool/dataPool.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                               
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
                 })     
+
 			//后台-用户管理
                 .state("userManagement", {
                     url: "/userManagement",
