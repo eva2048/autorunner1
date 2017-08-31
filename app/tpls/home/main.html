@@ -1,5 +1,9 @@
 <div ng-controller="modalCtrl" ng-controller="modalCtrl">
-    <div ng-click="fadeOut()" ui-view="projectNav" style="width:250px; display: block;position: absolute; top: 0px; bottom:0px;z-index: 102;border-right:1px solid #e3e3e3" ng-style="projectNavStyle"></div>
+    <div ng-click="fadeOut()" ui-view="projectNav" style="width:250px; display: block;position: absolute; top: 0px; bottom:0px;z-index: 102;border-right:1px solid #e3e3e3" ng-style="projectNavStyle">
+    </div>
+    <div class="leftNavOpen" ng-click="closeLeftnav()" ng-class="{'leftNavClose':!leftnavOpen}">
+    	<i class="iconfont icon-open" ng-class="{'icon-open-copy':leftnavOpen}"></i>
+    </div>
     <div ng-click="fadeOut()" ui-view="projectBody" style="position: absolute;width:auto; top: 0px; bottom:0px; right:0px; overflow-y:auto;left: 250px;" ng-style="projectBodyStyle"></div>
     <div ui-view="projectDetail" style="position: absolute;width: 640px;top:46px; bottom:0px; background:#fff;z-index: 102;" ng-class="{true:'fadeIn',false:'fadeOut'}[isFadeIn]" class="projectDetailStyle"></div>
     <div class="loading modal"">      

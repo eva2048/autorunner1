@@ -203,7 +203,9 @@ a.f_red:hover {
     white-space: nowrap;
     max-width: 120px;
 }
-
+.text_nowrap{
+    white-space: nowrap;
+}
 
 
 
@@ -268,7 +270,13 @@ a.f_red:hover {
 .btndefault_red:hover {
     background: #f94e32;
 }
+.btndefault_lblue {
+    background: #00bcd4;
+}
 
+.btndefault_lblue:hover {
+    background: #02b4cb;
+}
 .btndefault_gray {
     background: #e9ecf4;
     color: #515c78;
@@ -451,6 +459,29 @@ a.f_red:hover {
 .inputTextl_250 {
     width: 250px;
 }
+/*带默认值的输入框*/
+.inputTextBox{
+    position: relative;
+}
+.inputTextBox .inputText{
+    width: 300px;
+    border-width: 0px 0px 1px 0px;
+    outline: none;
+    color: #333;
+    border-radius: 0px;
+}
+.inputTextBox .inputText:focus{
+    border-color: #008bff;
+}
+.inputTextBox .defaultText{
+    float: left;
+    font-size: 14px;
+    line-height: 31px;
+    margin-right: 10px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #c3c4c9;
+}
+/* 带按钮的输入框 */
 .inputSelect{
     position: relative;
     cursor: pointer;
@@ -793,8 +824,16 @@ a.f_red:hover {
     color: #fff;
 }
 
-
-
+/*下拉新增框*/
+.dropdownAdd .dropdowntoggle{
+    line-height: 32px;
+    color: #008bff;
+    margin-left: 10px;
+}
+.dropdownAdd .dropdown-menu .inputText{
+    width: 300px;
+    margin: 5px 10px;
+}
 
 /*下拉菜单二级菜单*/
 

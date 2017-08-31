@@ -57,7 +57,7 @@ define(['app'], function(app) {
                         {
                             field: "action",
                             displayName: '操作处理',
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">立即执行</a><a class="f_red">预约执行</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDeviceChooseCase\')">立即执行</a><a class="f_red">预约执行</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableColumnResizing: false,
                         }

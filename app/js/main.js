@@ -13,7 +13,11 @@ require.config({
 		'ui-grid':'ui-grid',
 		'highstock':'highstock.src',
 		'exporting':'exporting.src',
-		'highcharts-ng':'highcharts-ng'
+		'highcharts-ng':'highcharts-ng',
+		//富文本编辑器
+		'umeditor':'umeditor/umeditor.config',
+		'umeditor1':'umeditor/umeditor',
+		'umeditor2':'umeditor/metaUmeditor',
 	},
 	shim: {
 		'angular': {
@@ -43,6 +47,12 @@ require.config({
 		'bootstrap':{
 			deps:['jquery']
 		},
+		'umeditor2':{
+			deps: ['angular']
+		},
+		'umeditor1':{
+			deps:['jquery']
+		},
 		'exporting':{
 			deps:['highstock']
 		},
@@ -51,6 +61,6 @@ require.config({
 	}
 })
 // 初始化myModule模块
-require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','exporting','highcharts-ng'],function(){
+require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','exporting','highcharts-ng','umeditor','umeditor1','umeditor2'],function(){
 	angular.bootstrap(document, ['myModule']);
 })

@@ -4,7 +4,7 @@
     <h3>新建任务</h3>
 </div>
 <div class="modal-body modalBody" ng-controller="modalCtrl">
-    <ul class="titleUl">
+    <ul class="titleUl titleUlAuto">
         <li>
             <h1>任务名称：</h1>
             <input type="text" class="inputText">
@@ -16,7 +16,7 @@
         </li>
         <li>
             <h1>关联测试集：</h1>
-            <div class="inputSelect floatleft" ng-click="open('tree')">
+            <div class="inputSelect floatleft" ng-click="open('createTaskTestset')">
                 <input type="text" class="inputText" disabled="disabled" placeholder="测试集1;测试集2">
                 <span class="inputSelectBtn">
                     <i class="iconfont icon-trees"></i>
