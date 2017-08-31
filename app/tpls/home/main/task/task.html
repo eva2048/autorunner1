@@ -3,43 +3,15 @@
 <div class="projectBodyBox" ng-controller="taskCtrl">
     <div class="projectBodyTitle">
         任务列表
-        <div class="floatright btn_add" ng-click="open('createTask','lg')">
+        <div class="floatright btn_add" ng-click="open('createTask')">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 新建任务
         </div>
     </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">用例状态</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">筛选</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>  
-        <div class="floatright searchBox">
-            <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
-            <i class="iconfont icon-search"></i>
-        </div>     
-    </div>
-    <div class="projectBodyContent" style="top: 100px;" ng-controller="usecaseCtrl">
+    <div class="projectBodyContent" style="top: 56px;" ng-controller="usecaseCtrl">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
-                <span class="chatIconButton">
+                <span class="chatIconButton" ng-click="open('runningDevice','lg')">
                     <i class="iconfont icon-guanlian"></i>复制
                 </span>                
                 <span class="chatIconButton">
@@ -51,6 +23,10 @@
                 <span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
                 </span>
+                <div class="floatright searchBox">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div> 
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

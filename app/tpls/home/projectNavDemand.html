@@ -17,9 +17,31 @@
         </ul>
     </div>
     <div class="navPanel">
-        <div class="leftNavList projectNavList" ng-show="navTabPanel==2">
+        <div class="projectNavList" ng-show="navTabPanel==2">
             <div class="title">
                 过滤器
+            </div>
+            <ul class="projectNavListContent">
+                <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
+                    <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
+                    <span class="filtername">全部需求</span>
+                </li>
+                <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+                    <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
+                    <span class="filtername">我创建的需求</span>
+                </li>
+                <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+                    <i class="iconfont icon-shaixuan i_color8 filterIcon"></i>
+                    <span class="filtername">我负责的需求</span>
+                </li>
+            </ul>
+        </div>
+        <div class="leftNavList projectNavList" ng-show="navTabPanel==2" style="top: 160px;">
+            <div class="title">
+                自定义过滤器
+                <span class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
+                    <i class="iconfont icon-guanli"></i>
+                </span>
                 <span class="chatIconButton floatright treefunicon" data-tip="存储为新的过滤器">
                     <i class="iconfont icon-add"></i>
                 </span>

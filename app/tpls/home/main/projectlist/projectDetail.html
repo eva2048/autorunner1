@@ -64,7 +64,9 @@
                     <div class="addProjectModel">
                         <i class="iconfont icon-biaoqian"></i>
                         <input placeholder="添加项目模块,点击回车添加" ng-keyup="addModel($event)" ng-model="modelItem"></input>
-                        <span ng-repeat="(v,model) in pModel" class="filterspan"><i class="iconfont icon-huiyuan i_color1"></i>{{model}}
+                        <span ng-repeat="(v,model) in pModel" class="filterspan">
+                            <i class="iconfont icon-huiyuan i_color1"></i>
+                            <span class="filterspanText">{{model}}</span>
                             <i class="iconfont icon-delete_fill" ng-click="sModelDel(v)"></i>
                         </span>
                     </div>

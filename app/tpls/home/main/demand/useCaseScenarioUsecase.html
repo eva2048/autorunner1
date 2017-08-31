@@ -5,14 +5,14 @@
         <div class="floatleft flexRow flex">需求名字</div>
         <div class="floatleft personalNav">
             <ul>
-                <li>
-                    <a class="cursor_p" ui-sref="index.demand.demandDetails">需求内容</a>
+                <li ui-sref="index.demand.demandDetails">
+                    <a class="cursor_p">需求内容</a>
                 </li>
                 <li class="current">
                     <a class="cursor_p">用例设计</a>
                 </li>
-                <li>
-                    <a class="cursor_p">需求链接</a>
+                <li ui-sref="index.demand.usecaseHistory">
+                    <a class="cursor_p">需求历史</a>
                 </li>
                 <div class="clear"></div>
             </ul>
@@ -28,7 +28,7 @@
                 <div class="floatleft flexRow flex"></div>
                 <div class="floatleft personalNav">
                     <ul>
-                        <li ui-sref="index.demand.useCaseScenario">
+                        <li ui-sref="index.demand.usecaseScenario">
                             <a href="" class="cursor_p">功能点</a>
                         </li>
                         <li class="current">

@@ -84,6 +84,48 @@
 }
 /*顶部导航终*/
 /*左侧导航起始*/
+/*左侧导航栏开关*/
+.leftNavOpen{
+    height: 50px;
+    border-bottom: 9px solid transparent;
+    border-left: none;
+    border-right: 25px solid rgb(245, 246, 250);
+    border-top: 9px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    left: 224px;
+    z-index: 105;
+    cursor: pointer;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.4s;
+    /* Safari 和 Chrome */
+    -o-transition: all 0.4s;
+}
+.leftNavOpen .iconfont{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-weight: bold;
+}
+.leftNavOpen:hover{
+    border-right-color: #edeff7;
+    box-shadow: 0px 0px 3px #edeff7;
+}
+.leftNavClose{
+    border-right: none;
+    border-left: 25px solid rgb(245, 246, 250);
+    left: 0px;
+}
+.leftNavClose .iconfont{
+    left: -21px;
+}
+.leftNavClose:hover{
+    border-left-color: #edeff7;
+    box-shadow: 0px 0px 3px #edeff7;
+}
 .projectNav {
     width: 100%;
     height: 100%;
@@ -269,6 +311,11 @@
     cursor: pointer;
     display: inline-block;
     float: left;
+}
+.treeBody .tree-node-content .treeCheckBox{
+    float: left;
+    margin-top: 8px;
+    margin-left: 5px;
 }
 .treeBody .treeToggle .iconfont{
     font-size: 14px;
@@ -596,7 +643,6 @@
     margin: 0px 10px 0px 5px;
     height: 24px;
     line-height: 24px;
-    padding: 0px 13px 0 8px;
     position: relative;
     border-radius: 3px;
     font-size: 13px;
@@ -608,12 +654,20 @@
 }
 
 .filterspan .icon-huiyuan {
+    position: absolute;
     font-size: 15px;
-    margin-right: 3px;
-    line-height: 24px;
+    top: 5px;
+    left: 5px;
+    line-height: 1em;
     background: none;
 }
-
+.filterspan .filterspanText{
+    width: 100%;
+    padding: 0px 10px 0px 23px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
 .filterspan:hover .icon-delete_fill {
     display: block;
 }
@@ -637,6 +691,9 @@
     font-size: 14px;
     border-bottom: 1px solid #eee;
     line-height: 42px;
+}
+.useCaseListfunction .searchBox{
+    margin-top: 6px;
 }
 .useCaseListfunction .chatIconButton{
     margin: 0px 5px;
@@ -961,8 +1018,10 @@
     background: #eee;
     margin-bottom: 5px;
     margin-left: 0px;
+    max-width: 70%;
 
 }
+
 /*文件上传*/
 
 .fileuploadBox {
@@ -1279,7 +1338,7 @@
     margin-bottom: 24px;
 }
 .attribute .attributeTitle input{
-	width:730px ;
+	width:80%;
 	height: 30px;
 	border: 1px solid #E5E5E5;
 	padding: 0 5px;

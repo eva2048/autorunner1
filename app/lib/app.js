@@ -1,5 +1,5 @@
 define(['angular', 'router'], function() {
-    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree','highcharts-ng','angularResizable','ui.grid','ui.grid.selection','ui.grid.edit','ui.grid.exporter','ui.grid.pagination','ui.grid.resizeColumns','ui.grid.autoResize','ui.grid.treeView'])
+    var app = angular.module("myModule", ['ui.router', 'ui.bootstrap','ngAnimate','ui.tree','highcharts-ng','angularResizable','ui.grid','ui.grid.selection','ui.grid.edit','ui.grid.exporter','ui.grid.pagination','ui.grid.resizeColumns','ui.grid.autoResize','ui.grid.treeView','meta.umeditor'])
     app.config(function($controllerProvider, $compileProvider, $filterProvider, $provide) {
             app.register = {
                 //得到$controllerProvider的引用
@@ -131,7 +131,7 @@ define(['angular', 'router'], function() {
                     url: "/task",
                     views: {
                         'projectNav@index': {
-                            templateUrl: '../tpls/home/projectNav2.html'
+                            templateUrl: '../tpls/home/projectNavTask.html'
                         },
                         'projectBody@index': {
                             templateUrl: '../tpls/home/main/task/task.html'
@@ -226,11 +226,11 @@ define(['angular', 'router'], function() {
                     }
                 })
                 /*需求详情-用例场景-功能点*/
-                .state("index.demand.useCaseScenario",{
+                .state("index.demand.usecaseScenario",{
                     url:"/useCaseScenario",
                     views:{
                         'projectBody@index':{
-                            templateUrl:'../tpls/home/main/demand/useCaseScenario.html'
+                            templateUrl:'../tpls/home/main/demand/usecaseScenario.html'
                         }                       
                     },
                     resolve: {
@@ -246,11 +246,31 @@ define(['angular', 'router'], function() {
                     }
                 })
                 /*需求详情-用例场景-测试用例*/
-                .state("index.demand.useCaseScenario.usecase",{
+                .state("index.demand.usecaseScenario.usecase",{
                     url:"/usecase",
                     views:{
                         'projectBody@index':{
-                            templateUrl:'../tpls/home/main/demand/useCaseScenarioUsecase.html'
+                            templateUrl:'../tpls/home/main/demand/usecaseScenarioUsecase.html'
+                        }                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })
+                /*需求详情-需求历史*/
+                .state("index.demand.usecaseHistory",{
+                    url:"/usecaseHistory",
+                    views:{
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/demand/usecaseHistory.html'
                         }                       
                     },
                     resolve: {

@@ -6,12 +6,20 @@
 .modal-footer .defaultcheckBox {
     margin-top: 8px;
 }
-
+.modalFooterCenter{
+    text-align: center;
+}
+.modalFooterCenter .btndefault{
+    margin: 0px 5px;
+}
 .modalBody .selectColumn li input {
     float: left;
     margin: 13px 5px;
 }
-.titleUl li h1 {
+.modal-body .treeBody{
+    position:initial;
+}
+.titleUl>li h1 {
     float: left;
     width: 105px;
     text-align: right;
@@ -20,7 +28,7 @@
     line-height: 34px;
     margin-right: 10px;
 }
-.titleUl li h1.hauto{
+.titleUl>li h1.hauto{
     width: auto;
     margin-left: 20px;
 }
@@ -50,18 +58,36 @@
 .titleUl .borderUl>li {
     margin-bottom: 0px;
 }
-
-/* .titleUl .multselectUl>li {
-    line-height: 34px;
-    font-size: 14px;
+.titleUlAuto>li .inputText{
+    width: 350px;
 }
-
-.titleUl .multselectUl>li input {
-    margin: 0px 5px 0px 10px;
-    vertical-align: middle;
-} */
+.titleUlAuto>li .projectTextarea{
+    width: 350px;
+}
 .titleUl .funcBox{
     margin-left: 115px;
+}
+/*50%titleUl*/
+.titleUl1{
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    padding:15px 10px;
+    margin:0px; 
+}
+.titleUl1>li{
+    width: 33%;
+    margin-bottom: 0px;
+    float: left;
+}
+.titleUl1>li h1{
+    width: auto;
+    line-height: 24px;
+}
+.titleUl1>li h2{
+    font-size: 12px;
+    max-width: 60%;
+    line-height: 24px;
+    word-break: break-all;
 }
 /*发起执行弹窗*/
 .runningDeviceBox .titleUl>li{
@@ -134,6 +160,21 @@
     height: 30px;
     font-size: 12px;
 }
+/*执行用例*/
+.deviceInfo{
+    padding: 10px 20px;
+}
+/*执行日志*/
+.runningLog{
+    padding:5px 10px 0px 20px;
+}
+.runningLogText{
+    color: #999;
+    word-break: break-all;
+    line-height: 24px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
 /*创建功能点*/
 .createFuncPoints .titleUl{    
 }
@@ -170,11 +211,20 @@
 .modalDataPanel .title .leftTitle{
     margin-top: 6px;
 }
-.modalDataPanel .title span .iconfont{
+.modalDataPanel .title .chatIconButton .iconfont{
     font-size: 20px;
     color: #008bff;
     line-height: 1em;
     vertical-align: text-top;
+}
+.modalDataPanel .title .chatIconButton{
+    color: #666;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+}
+.modalDataPanel .title .chatIconButton:hover{
+    color: #008bff;
 }
 .modalDataPanel .table-fullborder tbody>tr{
     height: 30px;

@@ -8,6 +8,7 @@ define(['app'], function(app) {
                         $scope.gridOptionsDemand.data = data.lists;
                         $scope.gridOptionsUsecaseData.data = data.lists;
                         $scope.gridOptionsUsecase.data = data.lists;
+                        $scope.gridOptionsHistory.data = data.lists;                        
                     });
                 $http.get('./data/demand.php')
                     .success(function(data) {
@@ -208,6 +209,50 @@ define(['app'], function(app) {
                         {
                             field: "creater",
                             displayName: '数据池',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        }
+                    ],
+                    data: []
+                };
+                //需求历史表格
+                $scope.gridOptionsHistory = {
+                    enableColumnResizing: true,
+                    rowHeight: 40,
+                    enableCellEdit: false,
+                    enableFiltering: true,
+                    selectionRowHeaderWidth: 40,
+                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
+                    enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
+                    enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
+                    columnDefs: [{
+                            field: 'num',
+                            displayName: '修改项',
+                            width: '10%',
+                            editableCellTemplate: 'ui-grid/dropdownEditor',
+                            editDropdownRowEntityOptionsArrayPath: 'foo.bar[0].options',
+                            editDropdownIdLabel: 'value',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "demandName",
+                            displayName: '修改前值',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableCellEdit: true, // 是否可编辑
+                        },
+                        {
+                            field: "creater",
+                            displayName: '修改后值',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "creater",
+                            displayName: '修改者',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "connectCaseNum",
+                            displayName: '修改时间',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
                     ],

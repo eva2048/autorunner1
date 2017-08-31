@@ -3,36 +3,11 @@
 <div class="projectBodyBox" ng-controller="demandCtrl">
     <div class="projectBodyTitle">
         需求管理
-    </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">需求状态</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>待处理</span></li>
-                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>已处理</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">优先级</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>中</span></li>
-                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>高</span></li>
-                <li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>低</span></li>
-            </ul>
-        </div>
         <div class="floatright btn_add" ng-click="open('newDemand','lg')">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
         </div>
     </div>
-    <div class="projectBodyContent" style="top: 100px;">
+    <div class="projectBodyContent" style="top: 56px;">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
@@ -41,16 +16,20 @@
                 </span>                
                 <span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
-                </span>
-                <span class="chatIconButton floatright" ng-click="open('customRow','')">
-                    <i class="iconfont icon-zidingyilie"></i>自定义列
-                </span>
-                <span class="chatIconButton floatright" ng-click="open('import','')">
+                </span>               
+                <span class="chatIconButton" ng-click="open('import','')">
                     <i class="iconfont icon-import"></i>导入
                 </span>
-                <span class="chatIconButton floatright">
+                <span class="chatIconButton">
                     <i class="iconfont icon-daochu2"></i>导出
-                </span>               
+                </span> 
+                <span class="chatIconButton" ng-click="open('customRow','')">
+                    <i class="iconfont icon-zidingyilie"></i>自定义列
+                </span>
+                <div class="floatright searchBox">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div>              
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

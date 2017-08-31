@@ -3715,7 +3715,6 @@ angular.module('ui.grid').directive('uiGridCell', ['$compile', '$parse', 'gridUt
                         function setup() {
                             // Bind to window resize events
                             angular.element($window).on('resize', gridResize);
-
                             // Unbind from window resize events when the grid is destroyed
                             $elm.on('$destroy', function() {
                                 angular.element($window).off('resize', gridResize);
@@ -3805,7 +3804,6 @@ angular.module('ui.grid').directive('uiGridCell', ['$compile', '$parse', 'gridUt
                         function gridResize($event) {
                             grid.gridWidth = $scope.gridWidth = gridUtil.elementWidth($elm);
                             grid.gridHeight = $scope.gridHeight = gridUtil.elementHeight($elm);
-
                             grid.refreshCanvas(true);
                         }
                     }

@@ -1,111 +1,161 @@
 <style type="text/css">
-.modal-content {
-    width: 1000px;
-}
-
-.modal-body {
-    padding: 0px;
-}
-
-
 </style>
-<div class="modal-content addNewScene">
-    <div class="modal-header">
-        <h3>TestCenter 运行器</h3>
-    </div>
-    <div class="modal-body">
-        <div class="runningDeviceBox">
-            <div class="leftPanel">
-                <div class="leftTopPanel">
-                    <ul class="titleUl">
-                        <li>
-                            <h1>运行名称：</h1>
-                            <input type="text" name="" id="" value="" class="inputText" required="required" />
-                        </li>
-                        <li>
-                            <h1>测试集名称：</h1>
-                            <input type="text" name="" id="" value="" class="inputText" required="required" />
-                        </li>
-                        <li class="">
-                            <h1>关联轮次：</h1>
-                            <select class="selectNormal">
-                                <option>状态1</option>
-                                <option>状态2</option>
-                                <option>状态3</option>
-                            </select>
-                        </li>
-                        <li>
-                            <div class="defaultcheckBox">
-                                <input class="floatleft" type="checkbox" name=""><em>组件运行失败，关联数据池数据恢复</em></div>
-                        </li>
-                        <li style="width: 100%">
-                            <h1>需求描述：</h1>
-                            <input type="text" name="" id="" value="" class="inputText" required="required" style="width: 82.5%;" />
-                        </li>
-                        <div class="clear"></div>
-                    </ul>
-                </div>
-                <div class="leftBottomPanel" ng-init="isAttribute=1">
-                    <div class="tab">
-                        <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">总运行情况</span>
-                        <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">测试器情况</span>
-                    </div>
-                    <div class="leftBottomPanelChild" ng-show="isAttribute==1">
-                        <div class="leftBottomPanelChildFunc">
-                            <span class="chartIconButton borderbtndefault">
-                                <!-- <i class="iconfont icon-addpeople_fill"></i> -->刷新活动机器
-                            </span>
-                            <select class="selectNormal">
-                                <option>状态1</option>
-                                <option>状态2</option>
-                                <option>状态3</option>
-                            </select>
-                            <span class="chartIconButton borderbtndefault">
-                                <!-- <i class="iconfont icon-addpeople_fill"></i> -->加载
-                            </span>
+<div class="modal-header">
+    <h3>执行用例</h3>
+</div>
+<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1">
+    <div class="flexRow">
+        <div class="floatleft">
+            <ul class="modalLeftTab">
+                <li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
+                    <i class="iconfont icon-barrage_fill"></i>
+                    <span>发起执行</span>
+                </li>
+                <li ng-class="{'current':createFuncPoints==2}" ng-click="createFuncPoints=2">
+                    <i class="iconfont icon-guanlianbangding1"></i>
+                    <span>运行情况</span>
+                </li>
+                <li ng-class="{'current':createFuncPoints==3}" ng-click="createFuncPoints=3">
+                    <i class="iconfont icon-activity_fill"></i>
+                    <span>运行日志</span>
+                </li>
+            </ul>
+        </div>
+        <div class="floatleft flex modalRightContent">
+            <!-- 基本信息 -->
+            <div ng-show="createFuncPoints==1">
+                <ul class="titleUl">
+                    <li>
+                        <h1>执行名称：</h1>
+                        <div class="floatleft inputTextBox">
+                            <input type="text" class="inputText">
+                            <span class="defaultText">2018-08-29-</span>
                         </div>
-                        <table class="table-fullborder floatleft" style="width: 30%">
-                            <tr>
-                                <th>
-                                    <input type="checkbox" name="">
-                                </th>
-                                <th>可执行的</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="">
-                                </td>
-                                <td>192.168.1.1</td>
-                            </tr>
-                        </table>
-                        <table class="table-fullborder floatright" style="width: 68%">
-                            <tr>
-                                <th>
-                                    <input type="checkbox" name="">
-                                </th>
-                                <th>IP地址</th>
-                                <th>用户</th>
-                                <th>执行器类型</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="">
-                                </td>
-                                <td>192.168.1.1</td>
-                                <td>spasvo</td>
-                                <td>2</td>
-                            </tr>
-                        </table>
+                        <div class="clear"></div>
+                    </li>                   
+                    <li>
+                        <h1>执行类型：</h1>
+                        <select class="selectNormal floatleft" ng-init="selected=pModel[0]" ng-model="selected" ng-options="x for x in pModel">
+                        </select>
+                        <div class="dropdownDefault dropdownAdd floatleft" dropdown>
+                            <div dropdown-toggle class="dropdowntoggle">
+                                <span class="dropdowntoggletext">                   
+                                    <i class="iconfont icon-add"></i>自定义
+                                </span>
+
+                            </div>
+                            <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                                <input ng-click="$event.stopPropagation()" ng-keyup="addModel($event)" type="text" name="" class="inputText" placeholder="输入执行类型按回车添加" ng-model="modelItem">
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </li>                   
+                    <div class="modalDataPanel">
+                        <div class="title">
+                            <div class="floatleft leftTitle">
+                                执行器列表：
+                                <span class="chatIconButton">
+                                    <i class="iconfont icon-gengxin-copy"></i>
+                                    刷新执行器
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="tablePanel" style="max-height: 180px;">
+                            <table class="table-fullborder">
+                                <tr class="text_nowrap">
+                                    <th><input type="checkbox" name=""></th>
+                                    <th>IP地址</th>
+                                    <th>用户</th>
+                                    <th>执行器类型</th>
+                                    <th>执行器状态</th>
+                                    <th>备注</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name=""></td>
+                                    <td>255.255.255.255</td>
+                                    <td>公司名称公司名称公司名称公司</td>
+                                    <td>类型</td>
+                                    <td>已占用</td>
+                                    <td>执行器备注</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                </ul>
             </div>
-            <div class="rightPanel"></div>
+            <!-- 运行情况 -->
+            <div class="" ng-show="createFuncPoints==2">
+                <ul class="titleUl titleUl1">
+                    <li>
+                        <h1>开始时间：</h1>
+                        <h2>2017-8-29 17：00：00</h2>
+                        <div class="clear"></div>
+                    </li>                   
+                    <li>
+                        <h1>运行时间：</h1>
+                        <h2>35：00</h2>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <h1>剩余时间：</h1>
+                        <h2>35：00</h2>
+                        <div class="clear"></div>
+                    </li> 
+                                       
+                </ul>
+                <ul class="titleUl titleUl1">
+                    <li>
+                        <h1>总用例数：</h1>
+                        <h2>20</h2>
+                        <div class="clear"></div>
+                    </li>                   
+                    <li>
+                        <h1>成功用例数：</h1>
+                        <h2>10</h2>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <h1>失败用例数：</h1>
+                        <h2>0</h2>
+                        <div class="clear"></div>
+                    </li>   
+                </ul>
+                <ul class="titleUl titleUl1">
+                    <li>
+                        <h1>运行组件：</h1>
+                        <h2>20</h2>
+                        <div class="clear"></div>
+                    </li>                   
+                    <li>
+                        <h1>成功用例数：</h1>
+                        <h2>10</h2>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <h1>失败用例数：</h1>
+                        <h2>0</h2>
+                        <div class="clear"></div>
+                    </li>   
+                </ul>
+            </div>
+            <!-- 运行日志 -->
+            <div class="runningLog" ng-show="createFuncPoints==3">
+                <p class="runningLogText">
+                    【aiyina】添加描述：evalbert 修改任务隶属项目原隶属项目：纯纯粹粹-由evalbert复制 新隶属项目：纯纯粹粹
+                    【aiyina】添加描述：evalbert 修改任务隶属项目原隶属项目：纯纯粹粹-由evalbert复制 新隶属项目：纯纯粹粹
+                </p>
+                <p class="runningLogText">
+                    【aiyina】添加描述：evalbert 修改任务隶属项目原隶属项目：纯纯粹粹-由evalbert复制 新隶属项目：纯纯粹粹
+                    【aiyina】添加描述：evalbert 修改任务隶属项目原隶属项目：纯纯粹粹-由evalbert复制 新隶属项目：纯纯粹粹
+                </p>
+            </div>
         </div>
     </div>
-    <div class="modal-footer">
-        <input type="button" name="" value="开始" class="btndefault btndefault_blue" ng-click="ok()">
-        <input type="button" name="" value="暂停" class="btndefault btndefault_gray" ng-click="ok()">
-        <input type="button" name="" value="停止" class="btndefault btndefault_gray" ng-click="ok()">
-        <input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="ok()">
-    </div>
+</div>
+<div class="modal-footer modalFooterCenter" style="text-align: center;">
+    <button class="btndefault btndefault_blue" ng-click="ok()">开始</button>
+    <button class="btndefault btndefault_lblue" ng-click="ok()">暂停</button>
+    <button class="btndefault btndefault_red" ng-click="ok()">停止</button>
+    <button class="btndefault btndefault_gray" ng-click="ok()">取消</button>
 </div>
