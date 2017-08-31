@@ -5,6 +5,13 @@
         },
         {
             "attributeValue":"低"                                  
-        }  
+        },  
+        {
+            "attributeValue":"中"                                  
+        } 
+        ,  
+        {
+            "attributeValue":"12345679"                                  
+        }   
     ]
 }

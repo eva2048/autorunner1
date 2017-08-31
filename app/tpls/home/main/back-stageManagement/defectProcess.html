@@ -1,4 +1,7 @@
 <style type="text/css">
+	.listTable{
+		padding:0 15px 250px;
+	}
 	.select {
 		width: 220px;
 		height: 25px;
@@ -8,8 +11,59 @@
 		border: 1px solid #e4e6f1;
 		margin-right: 20px;
 	}
+	.editTable{
+		width: 100%;
+		border-collapse: collapse;
+		border: 1px solid #eee;
+	}
+	.editTable tr{
+		height: 40px;
+	}
+	.editTable th{
+		padding-left: 20px;
+		background: #f5f6fa;
+		border-bottom: 1px solid #eee;		
+	}
+	.editTable td{
+		padding-left: 20px;
+		border-bottom: 1px solid #eee;
+	}
+	.editTable td select{
+		width: 150px;
+		height: 38px;
+		border: 1px solid #008bff;
+		font-size: 14px;
+		color: #009DFF;
+	}
+	.dropdown-menu{
+		top: 35px;
+	}
+	.dropdown-menu li{
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 20px;
+	}
+	.dropdown-menu li input.dropdowncheckbox{
+		float: left;
+		margin:8px 10px 0 0;
+	}
+	.listFooter{
+		margin: 20px;
+	}
+	.delete{
+		cursor: pointer;
+	}
+	.dropdowntoggle{
+		height: 40px;
+		line-height: 40px;
+	}
+	.dropdowntoggle span{
+		font-size: 14px;
+		color: #6E6E6E;
+	}
 </style>
-<div class="projectBodyBox" ng-controller="">
+<div class="projectBodyBox" ng-controller="defectProcessCtrl">
 	<div class="projectBodyTitle">
 		用户列表
 	</div>
@@ -26,24 +80,114 @@
             		</select>
             	</span>
 				<span class="chatIconButton floatleft">
-                    <i class="iconfont icon-tianjia"></i>添加
+                    <i class="iconfont icon-tianjia-copy"></i>添加
              	</span>
-             	<span class="chatIconButton floatright">
+				<span class="chatIconButton floatright" ng-show="edit==0" ng-click="edit=1">
                     <i class="iconfont icon-bianji"></i>编辑缺陷流程
              	</span>
 				<div class="clear"></div>
 			</div>
-			<div class="userCaseListTable">
+			<div class="listTable">
 				<div class="gridTableBox margint-20">
-					<table border="" cellspacing="" cellpadding="">
+					<table border="1" cellspacing="" cellpadding="" class="editTable">
 						<tr>
 							<th>起始状态</th>
-							<th>Header</th>
-							<th>Header</th>
-							<th>Header</th>
+							<th style="width: 50%;">角色</th>
+							<th>目标状态</th>
+							<th>默认开始</th>
+							<th ng-show="edit==1">操作</th>
 						</tr>
-						<tr><td>Data</td></tr>
+						<tr>
+							<td>
+								<span class="f_blue" ng-show="edit==0">新建</span>
+								<select name="" ng-show="edit==1">
+									<option value="">新建</option>
+									<option value="">确认</option>
+								</select>
+							</td>
+							<td>
+								<span class="f_gray" ng-show="edit==0">测试工程师;测试负责人;开发工程师;开发负责人;技术负责人;业务负责人;项目经理</span>
+								<div ng-show="edit==1">
+									<div class="dropdownBox dateBoxClear" dropdown>
+										<div dropdown-toggle class="dropdowntoggle" >		
+											<span>测试工程师;测试负责人;开发工程师;开发负责人;技术负责人;业务负责人;项目经理</span>
+											<i class="iconfont icon-unfold floatright"></i>
+										</div>
+										<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">											
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>测试工程师</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>测试负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>开发工程师</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>开发负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>技术负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>业务负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>项目经理</span></li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<span class="f_blue" ng-show="edit==0">确认</span>
+								<select name="" ng-show="edit==1">
+									<option value="">分配</option>
+									<option value="">新建</option>
+									<option value="">修改完成</option>
+								</select>
+							</td>
+							<td>
+								<span class="f_red">默认开始</span>
+							</td>
+							<td ng-show="edit==1">
+								<span class="delete f_red">删除</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class="f_blue" ng-show="edit==0">新建</span>
+								<select name="" ng-show="edit==1">
+									<option value="">新建</option>
+									<option value="">确认</option>
+								</select>
+							</td>
+							<td>
+								<span class="f_gray" ng-show="edit==0">测试工程师;测试负责人;开发工程师;开发负责人;技术负责人;业务负责人;项目经理</span>
+								<div ng-show="edit==1">
+									<div class="dropdownBox dateBoxClear" dropdown>
+										<div dropdown-toggle class="dropdowntoggle" >		
+											<span></span>
+											<i class="iconfont icon-unfold floatright"></i>
+										</div>
+										<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">											
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>测试工程师</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>测试负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>开发工程师</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>开发负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>技术负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>业务负责人</span></li>
+											<li ng-click="$event.stopPropagation()"><input class="dropdowncheckbox" type="checkbox" name=""><span>项目经理</span></li>
+										</ul>
+									</div>
+								</div>
+							</td>
+							<td>
+								<span class="f_blue" ng-show="edit==0">分配</span>
+								<select name="" ng-show="edit==1">
+									<option value="">分配</option>
+									<option value="">新建</option>
+									<option value="">修改完成</option>
+								</select>
+							</td>
+							<td>
+								<!--<span class="f_red">默认开始</span>-->
+							</td>
+							<td ng-show="edit==1">
+								<span class="delete f_red">删除</span>
+							</td>
+						</tr>
 					</table>
+				</div>				
+				<div class="listFooter" ng-show="edit==1">
+					<input type="button" name="" value="保存" class="btndefault btndefault_blue" ng-click="edit=0">
+					<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="edit=0">
 				</div>
 			</div>
 		</div>

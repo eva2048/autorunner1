@@ -49,6 +49,7 @@ define(['app'], function(app) {
                         {
                             field: "action",
                             displayName: '操作',
+                            enableSorting: false,
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }

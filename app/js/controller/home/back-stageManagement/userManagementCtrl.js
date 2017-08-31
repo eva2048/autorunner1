@@ -57,20 +57,19 @@ define(['app'], function(app) {
                         {
                             field: "createTime",
                             displayName: '创建时间',
-                            enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
                         }, 
                         {
                             field: "lastLoginTime",
-                            displayName: '最后登录时间',
-                            enableSorting: false,
+                            displayName: '最后登录时间',         
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
                         }, 
                         {
                             field: "action",
                             displayName: '操作处理',
+                            enableSorting: false,
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">修改</a><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
