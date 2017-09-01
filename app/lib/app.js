@@ -442,7 +442,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/projectNavDataPool.html'
                         },
                         'projectBody@index':{
-                            templateUrl:'../tpls/home/main/dataPool/dataPool.html'
+                            templateUrl:'../tpls/home/main/dataPool/dataPoolManagement.html'
                         }
                     },
                     resolve: {
@@ -458,7 +458,26 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })     
-
+				 .state("index.dataPool.dataCollection",{
+                    url:"/dataCollection",
+                    views:{                   	
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/dataPool/dataCollection.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                               
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })     
 			//后台-用户管理
                 .state("userManagement", {
                     url: "/userManagement",

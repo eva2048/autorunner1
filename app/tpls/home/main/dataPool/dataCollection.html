@@ -61,19 +61,16 @@
 	<div class="projectBodyTitle">
 		<div class="floatleft">数据池</div>
 		<ul class="tabTitle clearfix">
-			<li ng-class="{current:isAttribute==0}">
-				<a href="" class="cursor_p" ng-click="isAttribute=0">数据池管理</a>
+			<li>
+				<a href="" class="cursor_p" ng-click="isAttribute=0" ui-sref="index.dataPool">数据池管理</a>
 			</li>
-			<li ng-class="{current:isAttribute==1}">
-				<a href="" class="cursor_p" ng-click="isAttribute=1">采集数据</a>
+			<li class="current">
+				<a href="" class="cursor_p" >采集数据</a>
 			</li>
 		</ul>
 	</div>
-	<div class="projectBodyContent" style="top: 45px;left: 0;">
-		<div class="" ng-show="isAttribute==0">
-			6666
-		</div>
-		<div ng-show="isAttribute==1">
+	<div class="projectBodyContent" style="top: 45px;left: 0;">		
+		<div>
 			<div class="collection">
 				<ul class="">
 					<li>
@@ -127,6 +124,9 @@
 	               	 <i class="iconfont icon-import"></i>导入数据
 	                </span>
 				</div>
+				 <div class="userCaseListTable">
+	                
+	            </div>
 			</div>
 		</div>
 	</div>
