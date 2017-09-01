@@ -1,7 +1,7 @@
 define(['app'], function(app) {
     app.register
         .controller('projectCtrl',
-            function($scope, $rootScope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService) {
+            function($scope, $rootScope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService,$window) {
                 /*隐藏左侧树*/
                 $rootScope.leftnavOpen = true;
                 $rootScope.closeLeftnav = function() {
@@ -13,7 +13,7 @@ define(['app'], function(app) {
                         $scope.projectBodyStyle = {
                             "left": "0",
                         };
-                        $rootScope.leftnavOpen = false;
+                        $rootScope.leftnavOpen = false;                        
                     } else {
                         $scope.projectNavStyle = {
                             "width": "250",
@@ -77,7 +77,7 @@ define(['app'], function(app) {
                 };
                 $scope.back = function() {
                     history.go(-1);
-                }
+                };
                 //左侧导航树数据
                 $http.get('./data/treenav.php')
                     .success(function(data) {

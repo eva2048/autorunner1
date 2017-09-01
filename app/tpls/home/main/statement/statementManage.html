@@ -4,60 +4,7 @@
     <div class="projectBodyTitle">
         报表管理
     </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">发起人</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">筛选</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
-        <div class="dropdownBox floatleft dateBoxClear" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">时间范围</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
-                <li>
-                    <a>开始时间：
-                                <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-                                <div class="clear"></div>
-                            </a>
-                </li>
-                <li>
-                    <a>结束时间：
-                                <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-                                <div class="clear"></div>
-                            </a>
-                </li>
-                <li class="marginb_10">
-                    <a>
-                        <input type="button" class="btn btn-sm btn-success" value="确认">
-                        <input type="button" class="btn btn-sm btn-info" value="清空">、
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="floatright btn_add" ng-click="open('newDemand','lg')">
-            <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
-        </div>
-    </div>
-    <div class="projectBodyContent" style="top: 100px;" ng-controller="statementCtrl">
+    <div class="projectBodyContent" style="top: 56px;" ng-controller="statementCtrl">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="userCaseListTable">
                 <div ui-grid="gridOptionsStatement" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>

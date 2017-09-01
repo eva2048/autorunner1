@@ -34,7 +34,7 @@ angular.module('highcharts-ng', [])
 
         return {
             restrict: 'EC',
-            replace: false,
+            replace: true,
             scope: {
                 series: '=',
                 options: '=',
