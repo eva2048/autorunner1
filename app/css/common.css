@@ -20,7 +20,15 @@
     background-color: hsla(0, 0%, 59%, .5)
 }
 
-
+/*过渡效果*/
+.transitionStyle{
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    /* Firefox 4 */
+    -webkit-transition: all 0.4s;
+    /* Safari 和 Chrome */
+    -o-transition: all 0.4s;
+}
 /*图标字号*/
 .iconfont-32{
     font-size: 32px;
