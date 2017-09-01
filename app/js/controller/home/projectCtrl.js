@@ -16,7 +16,7 @@ define(['app'], function(app) {
                         $rootScope.leftnavOpen = false;                        
                     } else {
                         $scope.projectNavStyle = {
-                            "width": "250",
+                            "width": "250px",
                             "overflow": ""
                         };
                         $scope.projectBodyStyle = {

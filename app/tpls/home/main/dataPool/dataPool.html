@@ -1,0 +1,133 @@
+<style type="text/css">
+	.tabTitle {
+		width: 240px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	.tabTitle li {
+		width: 120px;
+		float: left;
+		cursor: pointer;
+	}
+	
+	.tabTitle li a {
+		font-size: 14px;
+		color: #6e6e6e;
+		text-align: center;
+		display: block;
+		line-height: 44px;
+		margin-right: 15px;
+		border-bottom: 2px solid transparent;
+	}
+	
+	.tabTitle li.current a {
+		color: #008BFF;
+		border-bottom-color: #008BFF;
+	}
+	
+	.collection ul {
+		padding: 20px;
+	}
+	
+	.collection ul li {
+		margin-bottom: 10px;
+	}
+	
+	.collection ul li .left {
+		float: left;
+		width: 150px;
+		text-align: right;
+		font-size: 14px;
+		color: #313131;
+		line-height: 34px;
+		margin-right: 10px;
+	}
+	
+	.collection ul li .right textarea {
+		width: 480px;
+		height: 150px;
+		resize: none;
+		float: left;
+		margin-right: 8px;
+	}
+	
+	.btndefault{
+		width: 100px;
+		margin: 0 5px;
+	}
+</style>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle">
+		<div class="floatleft">数据池</div>
+		<ul class="tabTitle clearfix">
+			<li ng-class="{current:isAttribute==0}">
+				<a href="" class="cursor_p" ng-click="isAttribute=0">数据池管理</a>
+			</li>
+			<li ng-class="{current:isAttribute==1}">
+				<a href="" class="cursor_p" ng-click="isAttribute=1">采集数据</a>
+			</li>
+		</ul>
+	</div>
+	<div class="projectBodyContent" style="top: 45px;left: 0;">
+		<div class="" ng-show="isAttribute==0">
+			6666
+		</div>
+		<div ng-show="isAttribute==1">
+			<div class="collection">
+				<ul class="">
+					<li>
+						<div class="left">
+							采集方式：
+						</div>
+						<div class="right">
+							<select name="" class="selectNormal">
+								<option value="">手工输入</option>
+								<option value="">数据库抓取</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<div class="left">
+							数据库连接：
+						</div>
+						<div class="right">
+							<select name="" class="selectNormal selectNormal_480">
+								<option value=""></option>
+							</select>
+							<input type="button" name="" id="" value="配置" class="btndefault btndefault_gray" />
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="left">
+							输入SQL：
+						</div>
+						<div class="right">
+							<textarea name="" rows="" cols="" class="projectTextarea"></textarea>
+							<input type="button" name="" id="" value="查询数据" class="btndefault btndefault_gray" />
+							<input type="button" name="" id="" value="执行" class="btndefault btndefault_gray" />
+							<input type="button" name="" id="" value="批量执行" class="btndefault btndefault_gray" />
+						</div>
+					</li>
+				</ul>
+				<div class="useCaseListfunction clearfix" style="border-top: 1px solid #eee;">
+					<span class="chatIconButton">
+	               	 <i class="iconfont icon-tianjia-copy"></i>新增列
+	                </span>
+					<span class="chatIconButton">
+	               	 <i class="iconfont icon-empty_fill"></i>删除列
+	                </span>
+	                <span class="chatIconButton">
+	               	 <i class="iconfont icon-charuhang"></i>插入行
+	                </span>
+	                <span class="chatIconButton">
+	               	 <i class="iconfont icon-empty_fill"></i>删除行
+	                </span>
+					<span class="chatIconButton">
+	               	 <i class="iconfont icon-import"></i>导入数据
+	                </span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

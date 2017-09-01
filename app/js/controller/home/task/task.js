@@ -31,28 +31,28 @@ define(['app'], function(app) {
                             displayName: '创建人',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+//                          enableCellEdit: true, // 是否可编辑
                         },
                         {
                             field: "createTime",
                             displayName: '创建时间',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+//                          enableCellEdit: true, // 是否可编辑
                         },
                         {
                             field: "executeTime",
                             displayName: '最近执行时间',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+//                          enableCellEdit: true, // 是否可编辑
                         },
                         {
                             field: "executeState",
                             displayName: '关联测试集',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+//                          enableCellEdit: true, // 是否可编辑
                         },                        
                         {
                             field: "action",
