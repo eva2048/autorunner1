@@ -393,6 +393,9 @@ define(['angular', 'router'], function() {
                 .state("index.statement",{
                     url:"/statement",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavStatement.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/statement/statementManage.html'
                         },
@@ -417,6 +420,9 @@ define(['angular', 'router'], function() {
                 .state("index.statement.statementDetail",{
                     url:"/statementDetail",
                     views:{
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavStatementChart.html'
+                        },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/statement/statementManageDetail.html'
                         }

@@ -1,0 +1,22 @@
+<style type="text/css">
+</style>
+<div class="projectNav" style="overflow: hidden;" ng-controller="statementCtrl">
+    <div class="projectNavList">
+        <div class="title">
+            过滤器
+            <span class="chatIconButton floatright treefunicon" data-tip="新建过滤器">
+                <i class="iconfont icon-add"></i>
+            </span>
+        </div>
+        <ul class="projectNavListContent">
+            <li class="{{projectNavNow==1?'active':''}}" ng-click="chartChange('0')">
+                <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
+                <span class="filtername">全部用</span>
+            </li>
+            <li class="{{projectNavNow==2?'active':''}}" ng-click="chartChange('1')">
+                <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
+                <span class="filtername">我创建的用例</span>
+            </li>
+        </ul>
+    </div>
+</div>   

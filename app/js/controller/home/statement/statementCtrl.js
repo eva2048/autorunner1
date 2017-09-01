@@ -1,7 +1,13 @@
 define(['app'], function(app) {
     app.register
         .controller('statementCtrl',
-            function($scope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService) {
+            function($scope,$rootScope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService) {
+                //图表切换
+                $rootScope.src="tpls/home/main/statement/chart/chart0.html";
+                $scope.chartChange=function(index){
+                    $rootScope.src="tpls/home/main/statement/chart/chart"+index+".html";
+                };
+                
                 //表格初始化
                 //显示数据字典
                 var h = $("#statementDetail").height() / 2;
@@ -15,12 +21,11 @@ define(['app'], function(app) {
                         $(".detailAttributeBottom").css("height", h);
                         $(".detailAttributeTop").css("bottom", h);
                     }
-                }
+                };
                 $scope.hideBottom = function() {
                     $(".detailAttributeBottom").css("height", "0");
                     $(".detailAttributeTop").css("bottom", "0");
-
-                }
+                };
                 $http.get('./data/statementmanage.php')
                     .success(function(data) {
                         $scope.gridOptionsStatement.data = data.lists;
@@ -148,7 +153,11 @@ define(['app'], function(app) {
                 $scope.chart = {
                     options: {
                         chart: {
-                            type: 'pie'
+                            type: 'pie',
+                            width:'200',
+                            style:{
+                                "margin": "0 auto"
+                            }
                         },
                         plotOptions: {
                             pie: {
@@ -180,17 +189,13 @@ define(['app'], function(app) {
                     }],
                     title: {
                         text: '组件运行图'
-                    }, function(c) {
-                        // 环形图圆心
-                        var centerY = c.series[0].center[1],
-                            titleHeight = parseInt(c.title.styles.fontSize);
-                        c.setTitle({
-                            y:centerY + titleHeight/2
-                        });
-                        chart = c;
-                    }
+                    },
+                    size:{
+                            width:200,
+                            height:100
+                        }
 
-                }
+                };
 
             });
 })

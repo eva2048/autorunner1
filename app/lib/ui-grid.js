@@ -3719,7 +3719,9 @@ angular.module('ui.grid').directive('uiGridCell', ['$compile', '$parse', 'gridUt
                             $elm.on('$destroy', function() {
                                 angular.element($window).off('resize', gridResize);
                             });
-
+                            $(".leftNavOpen").click(function(){
+                                gridResize();
+                            });
                             // If we add a left container after render, we need to watch and react
                             $scope.$watch(function() { return grid.hasLeftContainer(); }, function(newValue, oldValue) {
                                 if (newValue === oldValue) {
