@@ -912,8 +912,11 @@
     height: 46px;
     border-bottom: 1px solid #e0e0e0;
     padding-left: 20px;
+    padding-right: 20px;
 }
-
+.describeBox .describeTitle .searchBox{
+    margin-top: 7px;
+}
 .describeContent textarea {
     width: 100%;
     height: 100px;

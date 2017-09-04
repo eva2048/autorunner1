@@ -29,6 +29,9 @@ define(['app'], function(app) {
                 $http.get('./data/statementmanage.php')
                     .success(function(data) {
                         $scope.gridOptionsStatement.data = data.lists;
+                        $scope.gridOptionsChart1.data = data.lists;
+                        $scope.gridOptionsChart2.data = data.lists;
+                        $scope.gridOptionsChart3.data = data.lists;
                     });
                 //报表管理页表格
                 $scope.gridOptionsStatement = {
@@ -195,6 +198,128 @@ define(['app'], function(app) {
                             height:100
                         }
 
+                };
+
+                //需求运行明细
+                $scope.gridOptionsChart1 = {
+                    enableRowSelection: true,
+                    enableSelectAll: true,
+                    selectionRowHeaderWidth: 40,
+                    enableColumnResizing: true,
+                    rowHeight: 40,
+                    enableCellEdit: false,
+                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
+                    enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
+                    enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
+                    columnDefs: [{
+                            field: "name",
+                            displayName: '需求名称',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableCellEdit: true, // 是否可编辑
+                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p" ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.name}}</div>',
+                        },
+                        {
+                            field: "creater",
+                            displayName: '需求编号',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '成功用例数',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "starttime",
+                            displayName: '失败用例数',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "endtime",
+                            displayName: '未执行用例数',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        }
+                    ],
+                    data: [{}]
+                };
+                //执行错误用例
+                $scope.gridOptionsChart2 = {
+                    enableRowSelection: true,
+                    enableSelectAll: true,
+                    selectionRowHeaderWidth: 40,
+                    enableColumnResizing: true,
+                    rowHeight: 40,
+                    enableCellEdit: false,
+                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
+                    enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
+                    enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
+                    columnDefs: [{
+                            field: "name",
+                            displayName: '用例名称',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableCellEdit: true, // 是否可编辑
+                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p" ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.name}}</div>',
+                        },
+                        {
+                            field: "creater",
+                            displayName: '用例编号',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '错误原因',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        }
+                    ],
+                    data: [{}]
+                };
+                //缺陷统计报表
+                $scope.gridOptionsChart3 = {
+                    enableRowSelection: true,
+                    enableSelectAll: true,
+                    selectionRowHeaderWidth: 40,
+                    enableColumnResizing: true,
+                    rowHeight: 40,
+                    enableCellEdit: false,
+                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
+                    enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
+                    enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
+                    columnDefs: [{
+                            field: "name",
+                            displayName: '缺陷编号',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableCellEdit: true, // 是否可编辑
+                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p" ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.name}}</div>',
+                        },
+                        {
+                            field: "creater",
+                            displayName: '缺陷标题',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '严重程度',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '缺陷状态',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '测试版本',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        },
+                        {
+                            field: "type",
+                            displayName: '提交人',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                        }
+                    ],
+                    data: [{}]
                 };
 
             });
