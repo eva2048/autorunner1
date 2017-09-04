@@ -10,24 +10,14 @@
         <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>       
 		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>		        
 		<a class="topbarLink" href="" ui-sref="index.statement">统计</a>
-		<a class="topbarLink" href="" ui-sref="index.dataPool">数据池</a>
-		<a class="topbarLink" href="" ui-sref="equipment">设备</a>
+		<a class="topbarLink" href="" ui-sref="index.dataPool">数据池</a>		
 	</div>
-	<div class="floatright rightMenu">		
-        <div class="dropdownDefault floatleft" dropdown>
-            <a href="" class="topbarLink" dropdown-toggle>项目名称</a>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-            	<span class="triangle"></span>               
-                <li><span>项目1</span></li>
-                <li><span>项目2</span></li>
-                <li><span>项目3</span></li>
-            </ul>
-        </div>
+	<div class="floatright rightMenu">		      
         <div class="dropdownDefault floatleft" dropdown>
             <a href="" class="topbarLink" dropdown-toggle>账户昵称</a>
             <ul class="dropdown-menu transition" dropdown-menu role="menu">
             	<span class="triangle"></span>               
-                <li><span>切换项目</span></li>
+                <li ui-sref="index.project"><span>切换项目</span></li>
                 <li><span>个人信息</span></li>
                 <li><span>修改密码</span></li>
                 <li class="line"></li>

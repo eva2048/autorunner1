@@ -126,6 +126,34 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })
+                //跨项目任务
+                 .state("index.cross-projectTask", {
+                    url: "/cross-projectTask",
+                    views:{
+                        'topbar@index':{
+                            templateUrl:'../tpls/home/topbarProject.html'
+                        },
+                        'projectNav@index':{
+                            templateUrl:'../tpls/home/projectNavProject.html'
+                        },
+                        'projectBody@index':{
+                            templateUrl:'../tpls/home/main/Cross-projectTask/Cross-projectTask.html'
+                        }
+                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/Cross-projectTask/Cross-projectTask.js'                                
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
                 /*任务*/
                 .state("index.task", {
                     url: "/task",
@@ -142,8 +170,7 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
-                                '../js/controller/home/task/task.js',
-                                '../js/controller/home/usecase/usecaseCtrl.js'
+                                '../js/controller/home/task/task.js'                            
                             ], function(controller) {
                                 deferred.resolve();
                             });
@@ -492,7 +519,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/index.html'
                         },
                         'topbar@equipment':{
-                            templateUrl:'../tpls/home/topbar.html'
+                            templateUrl:'../tpls/home/topbarProject.html'
                         },
                         'main@equipment':{
                             templateUrl:'../tpls/home/main/equipment/equipment.html'
