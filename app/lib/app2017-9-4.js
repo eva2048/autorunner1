@@ -464,6 +464,10 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })     
+<<<<<<< HEAD
+
+			     //后台-用户管理
+=======
 				 .state("index.dataPool.dataCollection",{
                     url:"/dataCollection",
                     views:{                   	
@@ -518,6 +522,7 @@ define(['angular', 'router'], function() {
                     }
                 }) 
 			//后台-用户管理
+>>>>>>> 18af4f09650670b7f7350f0d22071a844ee5e0ef
                 .state("userManagement", {
                     url: "/userManagement",
                     views:{
