@@ -483,7 +483,40 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
-                })     
+                })    
+			//  设备
+                .state("equipment", {
+                    url: "/equipment",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index.html'
+                        },
+                        'topbar@equipment':{
+                            templateUrl:'../tpls/home/topbar.html'
+                        },
+                        'main@equipment':{
+                            templateUrl:'../tpls/home/main/equipment/equipment.html'
+                        }
+                       
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/tipmodalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/modal/tipmodalInstanceCtrl.js',
+                               '../js/controller/home/equipment/equipmentCtrl.js',
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
 			//后台-用户管理
                 .state("userManagement", {
                     url: "/userManagement",
