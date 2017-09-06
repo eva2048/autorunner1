@@ -58,7 +58,7 @@ define(['app'], function(app) {
                             field: "action",
                             displayName: '操作处理',
                             minWidth:350,
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDevice\',\'lg\')">立即执行</a><a class="f_blue">查看最新报表</a><a class="f_blue" ng-click="grid.appScope.open(\'createTaskTestset\')">修改测试集</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDevice\',\'lg\')">立即执行</a><a class="f_blue" ui-sref="index.task.statementDetail">查看最新报表</a><a class="f_blue" ng-click="grid.appScope.open(\'createTaskTestset\')">修改测试集</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableColumnResizing: false,
                         }
