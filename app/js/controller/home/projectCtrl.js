@@ -4,7 +4,7 @@ define(['app'], function(app) {
             function($scope, $rootScope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService,$window) {
                 /*隐藏左侧树*/
                 $rootScope.leftnavOpen = true;
-                $rootScope.closeLeftnav = function() {
+                $rootScope.closeLeftnav = function() {                	
                     if ($rootScope.leftnavOpen) {
                         $scope.projectNavStyle = {
                             "width": "0",
@@ -23,7 +23,7 @@ define(['app'], function(app) {
                             "left": "250px"
                         };
                         $rootScope.leftnavOpen = true;
-                    }
+                    }                                                      
                 };
                 /*提示弹窗*/
                 /*关闭错误提示*/

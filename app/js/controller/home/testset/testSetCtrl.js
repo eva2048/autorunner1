@@ -1,7 +1,7 @@
 define(['app'], function(app) {
     app.register
         .controller('testSetCtrl',
-            function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService) {
+            function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService,) {
                 //表格初始化
                 $http.get('./data/demand.php')
                     .success(function(data) {                       
