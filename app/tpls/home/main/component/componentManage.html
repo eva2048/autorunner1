@@ -11,7 +11,7 @@
         <div class="useCaseList" style="bottom: 0px; overflow: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
-                 <span class="chatIconButton">
+                 <span class="chatIconButton" ng-click="open('updateScript','lg')">
                     <i class="iconfont icon-gengxin"></i>更新脚本
                 </span> 
                 <span class="chatIconButton">
@@ -20,7 +20,7 @@
                 <span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
                 </span>
-                 <span class="chatIconButton" ng-click="">
+                 <span class="chatIconButton" ng-click="open('importComponent')">
                     <i class="iconfont icon-import"></i>导入组件
                 </span>
                 <div class="floatright searchBox">
