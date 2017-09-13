@@ -26,6 +26,13 @@ define(['app'], function(app) {
                 };
                 /*顶部导航*/
                 $rootScope.topNavIndex=$stateParams.num;
+                /*左栏导航*/
+                if($stateParams.left){
+                    $rootScope.leftNavIndex=$stateParams.left;
+                }else{
+                    $rootScope.leftNavIndex=0;
+                }
+                
                 /*提示弹窗*/
                 /*关闭错误提示*/
                 var tiptimer = function() {
