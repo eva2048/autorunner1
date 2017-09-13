@@ -1,6 +1,6 @@
 define(['app'], function(app) {
     app.register
-        .controller('taskCtrl',
+        .controller('deviceCtrl',
             function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService) {
                 //表格初始化
                 $http.get('./data/task.php')

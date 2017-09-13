@@ -489,6 +489,23 @@ a.f_red:hover {
     padding: 0px 5px;
     border-bottom: 1px solid #c3c4c9;
 }
+/*表格修改框*/
+.inputTable{
+    width: 100%;
+    line-height: 32px;
+    margin: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding:0px 5px;
+    border:1px solid transparent;
+}
+.inputTable:focus{
+    border-color: #008bff;
+}
+.inputTable:hover{
+    border:1px solid #008bff;
+}
 /* 带按钮的输入框 */
 .inputSelect{
     position: relative;

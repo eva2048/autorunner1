@@ -11,11 +11,11 @@ define(['angular', 'router'], function() {
             };
         })
         .config(['$stateProvider', '$urlRouterProvider','$controllerProvider', function($stateProvider, $urlRouterProvider,$controllerProvider) {
-            $urlRouterProvider.otherwise('index/project');
+            $urlRouterProvider.otherwise('index/1/project');
             $stateProvider
                 /*首页模板*/
                 .state("index", {
-                    url: "/index",
+                    url: "/index/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -27,7 +27,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNav2.html'
+                            templateUrl:'../tpls/home/leftnav/projectNav2.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/projectlist/projectManage.html'
@@ -43,9 +43,7 @@ define(['angular', 'router'], function() {
                             require([
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -61,7 +59,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/topbarProject.html'
                         },
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavProject.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavProject.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/projectlist/projectManage.html'
@@ -131,7 +129,7 @@ define(['angular', 'router'], function() {
                     url: "/task",
                     views: {
                         'projectNav@index': {
-                            templateUrl: '../tpls/home/projectNavTask.html'
+                            templateUrl: '../tpls/home/leftnav/projectNavTask.html'
                         },
                         'projectBody@index': {
                             templateUrl: '../tpls/home/main/task/task.html'
@@ -151,13 +149,31 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 })
-
+                .state("device", {
+                    url: "/device",
+                    templateUrl:'../tpls/home/main/deviceInfo/device.html',
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                               '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                               '../js/controller/home/deviceInfo/device.js',
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })
                 /*首页用例管理*/
                 .state("index.usecase", {
                     url: "/usecase",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavCase.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavCase.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/usecase/projectUsecaseManage.html'
@@ -185,7 +201,7 @@ define(['angular', 'router'], function() {
                     url: "/demand",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavDemand.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavDemand.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/demand/projectDemandManage.html'
@@ -290,7 +306,7 @@ define(['angular', 'router'], function() {
                     url:"/bug",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavBug.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavBug.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/bug/projectBugManage.html'
@@ -316,7 +332,7 @@ define(['angular', 'router'], function() {
                     url:"/createbug",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavBug.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavBug.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/bug/projectCreateBug.html'
@@ -339,7 +355,7 @@ define(['angular', 'router'], function() {
                     url:"/component",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavComponent.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavComponent.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/component/componentManage.html'
@@ -367,7 +383,7 @@ define(['angular', 'router'], function() {
                     url:"/testset",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavTestset.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavTestset.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/testset/testsetManage.html'
@@ -394,7 +410,7 @@ define(['angular', 'router'], function() {
                     url:"/statement",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavStatement.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavStatement.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/statement/statementManage.html'
@@ -421,7 +437,7 @@ define(['angular', 'router'], function() {
                     url:"/statementDetail",
                     views:{
                         'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavStatementChart.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavStatementChart.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/statement/statementManageDetail.html'
@@ -445,7 +461,7 @@ define(['angular', 'router'], function() {
                     url:"/dataPool",
                     views:{
                     	'projectNav@index':{
-                            templateUrl:'../tpls/home/projectNavDataPool.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavDataPool.html'
                         },
                         'projectBody@index':{
                             templateUrl:'../tpls/home/main/dataPool/dataPoolManagement.html'
@@ -486,7 +502,7 @@ define(['angular', 'router'], function() {
                 })    
 			//  设备
                 .state("equipment", {
-                    url: "/equipment",
+                    url: "/equipment/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -506,9 +522,7 @@ define(['angular', 'router'], function() {
                             require([
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                '../js/controller/home/equipment/equipmentCtrl.js',
                                 ], function(controller) { 
                                     deferred.resolve(); 
@@ -545,9 +559,7 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                '../js/controller/home/back-stageManagement/userManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
@@ -578,9 +590,7 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                '../js/controller/home/back-stageManagement/projectManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
@@ -603,7 +613,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@roleGroupManagement':{
-                            templateUrl:'../tpls/home/projectNavRoleGroup.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavRoleGroup.html'
                         },
                         'projectBody@roleGroupManagement':{
                             templateUrl:'../tpls/home/main/back-stageManagement/roleGroupManagement.html'
@@ -617,9 +627,7 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
-                               '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js'                             
+                               '../js/controller/modal/modalInstanceCtrl.js',                          
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -641,7 +649,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@defectProcess':{
-                            templateUrl:'../tpls/home/projectNavDefectProcess.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavDefectProcess.html'
                         },
                         'projectBody@defectProcess':{
                             templateUrl:'../tpls/home/main/back-stageManagement/defectProcess.html'
@@ -655,9 +663,7 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                '../js/controller/home/back-stageManagement/defectProcessCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
@@ -680,7 +686,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@dataDictionary':{
-                            templateUrl:'../tpls/home/projectNavDataDictionary.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavDataDictionary.html'
                         },
                         'projectBody@dataDictionary':{
                             templateUrl:'../tpls/home/main/back-stageManagement/dataDictionary.html'
@@ -694,9 +700,7 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/tipmodalCtrl.js',
                                '../js/controller/modal/modalInstanceCtrl.js',
-                               '../js/controller/modal/tipmodalInstanceCtrl.js',
                                '../js/controller/home/back-stageManagement/dataDictionaryCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 

@@ -2,16 +2,16 @@
 </style>
 <div class="topbar">
 	<div class="floatleft leftMenu">
-        <a class="topbarLink" href="" ui-sref="index.project">项目列表</a>
-		<a class="topbarLink" href="" ui-sref="index.task">任务</a>
-		<a class="topbarLink" ng-class="{'current':isAttribute==0}" href="" ui-sref="index.component">组件</a>
-		 <a class="topbarLink" href="" ui-sref="index.demand">需求</a>
-        <a class="topbarLink" href="" ui-sref="index.usecase">用例</a>
-        <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>       
-		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>		        
-		<a class="topbarLink" href="" ui-sref="index.statement">统计</a>
-		<a class="topbarLink" href="" ui-sref="index.dataPool">数据池</a>
-		<a class="topbarLink" href="" ui-sref="equipment">设备</a>
+        <a class="topbarLink" href="" ui-sref="index.project({num:-1})">项目列表</a>
+		<a class="topbarLink" href="" ng-class="{'current':topNavIndex==0}" ui-sref="index.task({num:0})">任务</a>
+		<a class="topbarLink" ng-class="{'current':topNavIndex==1}" href="" ui-sref="index.component({num:1})">组件</a>
+		 <a class="topbarLink" ng-class="{'current':topNavIndex==2}" href="" ui-sref="index.demand({num:2})">需求</a>
+        <a class="topbarLink" ng-class="{'current':topNavIndex==3}" href="" ui-sref="index.usecase({num:3})">用例</a>
+        <a class="topbarLink" ng-class="{'current':topNavIndex==4}" href="" ui-sref="index.testset({num:4})">测试集</a>       
+		<a class="topbarLink" ng-class="{'current':topNavIndex==5}" href="" ui-sref="index.bug({num:5})">缺陷</a>		        
+		<a class="topbarLink" ng-class="{'current':topNavIndex==6}" href="" ui-sref="index.statement({num:6})">统计</a>
+		<a class="topbarLink" ng-class="{'current':topNavIndex==7}" href="" ui-sref="index.dataPool({num:7})">数据池</a>
+		<a class="topbarLink" ng-class="{'current':topNavIndex==8}" href="" ui-sref="equipment({num:8})">设备</a>
 	</div>
 	<div class="floatright rightMenu">		
         <div class="dropdownDefault floatleft" dropdown>

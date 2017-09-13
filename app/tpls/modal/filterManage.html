@@ -1,0 +1,31 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+	<h3>过滤器管理
+	<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+	</h3>
+</div>
+<div class="modal-body">
+	<div class="tableListBox">
+		<div class="listBody" style="padding: 0px;">
+			<table class="table-fullborder" style="width:100%; margin-left: -1px;">
+				<tbody>
+					<tr>
+						<th>昵称</th>
+						<th>操作</th>
+					</tr>
+					<tr ng-repeat="v in [1,2]">
+						<td style="padding-left: 0px;"><input class="inputTable" type="text" name="" value="过滤器一"></td>
+						<td>
+							<a href="" class="f_red">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="modal-footer ng-scope">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

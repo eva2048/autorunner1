@@ -1,20 +1,9 @@
 <style type="text/css" class="ng-scope">
-	.btn_blue {
-		padding: 0px 25px;
-		text-align: center;
-		background: #3462fe;
-		color: #fff;
-		font-size: 14px;
-		height: 36px;
-		border: 1px solid #1f4ce5;
-		border-radius: 3px;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		cursor: pointer;
-	}
 </style>
 <div class="modal-header ng-scope">
-	<h3>查看缺陷流程</h3>
+	<h3>查看缺陷流程
+	<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+	</h3>
 </div>
 <div class="modal-body modalBody ng-scope">
 	<ul class="titleUl">
@@ -119,5 +108,6 @@
 	</ul>
 </div>
 <div class="modal-footer">
-	<button class="btn_blue" ng-click="ok()">确认</button>
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
 </div>

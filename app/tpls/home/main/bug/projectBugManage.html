@@ -4,111 +4,11 @@
 <div class="projectBodyBox" ng-controller="bugCtrl">
     <div class="projectBodyTitle projectBodyTitle1">
         缺陷列表
-    </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">排序方式</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li class="current"><i class="iconfont icon-clock"></i><span>默认</span></li>
-                <li><i class="iconfont icon-editor"></i><span>最新创建</span></li>
-                <li><i class="iconfont icon-activity"></i><span>最近操作</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">筛选</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li class="dropdown-menu-child">
-                    <div class="dropdown-menu-link">
-                        <i class="iconfont icon-collection"></i><span>缺陷等级</span>
-                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-child-menu">
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown-menu-child">
-                    <div class="dropdown-menu-link">
-                        <i class="iconfont icon-flip"></i><span>缺陷状态</span>
-                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-child-menu">
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown-menu-child">
-                    <div class="dropdown-menu-link">
-                        <i class="iconfont icon-createtask"></i><span>项目模块</span>
-                        <span class="floatright"><i class="iconfont icon-play_fill"></i></span>
-                    </div>
-                    <ul class="dropdown-menu dropdown-menu-child-menu">
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>加急</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>高</span>
-                        </li>
-                        <li ng-click="$event.stopPropagation()">
-                            <input class="dropdowncheckbox" type="checkbox" name=""><span>中</span>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="dropdownBox floatleft dateBoxClear" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">时间范围</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
-                <li class="datetimePicker">
-                    <a>开始时间：
-                        <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-                        <div class="clear"></div>
-                    </a>
-                </li>
-                <li class="datetimePicker">
-                    <a>结束时间：
-                        <input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-                        <div class="clear"></div>
-                    </a>
-                </li>
-                <li class="marginb_10">
-                    <a>
-                        <input type="button" class="btn btn-sm btn-success" value="确认">
-                        <input type="button" class="btn btn-sm btn-info" value="清空">、
-                    </a>
-                </li>
-            </ul>
-        </div>
         <div class="floatright btn_add" ui-sref="index.createbug">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 新建缺陷
         </div>
     </div>
-    <div class="projectBodyContent" style="top: 100px;">
+    <div class="projectBodyContent" style="top: 56px;">
         <div class="useCaseList" style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
@@ -124,6 +24,10 @@
                 <span class="chatIconButton">
                     <i class="iconfont icon-brush_fill"></i>修改处理人
                 </span>
+                <div class="floatright searchBox">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div> 
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

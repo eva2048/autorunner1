@@ -14,13 +14,17 @@
 		color: #000;
 		margin-right:5px;
 	}
+    .customFilterBtn{
+        padding: 13px 10px;
+    }
 </style>
 <div class="projectNav" style="overflow: hidden;">
-    <div class="navTabPanel">
-    	<div class="addDataPool" ng-click="open('addDataPool')">
-    		 <i class="iconfont icon-addition_fill addD"></i>新增数据池
-    	</div>      
-    </div>
+    	<!-- <div class="addDataPool" ng-click="open('addDataPool')">
+             <i class="iconfont icon-addition_fill addD"></i>新增数据池
+        </div>   -->
+        <div class="customFilterBtn" ng-click="open('addDataPool')">
+            <a class="customFilterSave" href="">新增数据池</a>
+        </div>    
     <div class="navPanel">            
         <div class="leftNavList useCaseTree">
             <div class="title">

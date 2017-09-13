@@ -2,7 +2,9 @@
 <style type="text/css" class="ng-scope">
 </style>
 <div class="modal-header ng-scope">
-    <h3>自定义列</h3>
+    <h3>自定义列
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
 </div>
 <div class="modal-body modalBody">
     <table class="table-fullborder">
@@ -30,6 +32,6 @@
     </tbody></table>
 </div>
 <div class="modal-footer">
-    <button class="btndefault btn_blue" ng-click="ok()">关闭</button>
+    <button class="btndefault btn_blue" ng-click="cancel()">关闭</button>
     <!-- <button class="btn_gray" ng-click="cancel()">取消</button> -->
 </div></div>

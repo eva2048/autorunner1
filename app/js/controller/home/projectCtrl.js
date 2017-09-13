@@ -3,28 +3,29 @@ define(['app'], function(app) {
         .controller('projectCtrl',
             function($scope, $rootScope, $stateParams, $interval, $timeout, uiGridTreeViewConstants, $http, i18nService,$window) {
                 /*隐藏左侧树*/
-                $rootScope.leftnavOpen = true;
                 $rootScope.closeLeftnav = function() {
                     if ($rootScope.leftnavOpen) {
-                        $scope.projectNavStyle = {
-                            "width": "0",
-                            "overflow": "hidden"
-                        };
-                        $scope.projectBodyStyle = {
-                            "left": "0",
-                        };
-                        $rootScope.leftnavOpen = false;                        
-                    } else {
-                        $scope.projectNavStyle = {
+                        $rootScope.projectNavStyle = {
                             "width": "250px",
                             "overflow": ""
                         };
-                        $scope.projectBodyStyle = {
+                        $rootScope.projectBodyStyle = {
                             "left": "250px"
                         };
-                        $rootScope.leftnavOpen = true;
+                        $rootScope.leftnavOpen = false;                                               
+                    } else {
+                        $rootScope.projectNavStyle = {
+                            "width": "0",
+                            "overflow": "hidden"
+                        };
+                        $rootScope.projectBodyStyle = {
+                            "left": "0",
+                        };
+                        $rootScope.leftnavOpen = true; 
                     }
                 };
+                /*顶部导航*/
+                $rootScope.topNavIndex=$stateParams.num;
                 /*提示弹窗*/
                 /*关闭错误提示*/
                 var tiptimer = function() {

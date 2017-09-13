@@ -1,28 +1,25 @@
 <style type="text/css">
 </style>
-<div class="projectNav" style="overflow: hidden;">
+<div class="projectNav">
     <div class="projectNavList">
         <div class="title">
             过滤器
-            <span class="chatIconButton floatright treefunicon" data-tip="新建过滤器">
-                <i class="iconfont icon-add"></i>
-            </span>
         </div>
         <ul class="projectNavListContent">
             <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
                 <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
-                <span class="filtername">全部任务</span>
+                <span class="filtername">全部项目</span>
             </li>
             <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
                 <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
-                <span class="filtername">我创建的任务</span>
+                <span class="filtername">我创建的项目</span>
             </li>
         </ul>
     </div>
     <div class="leftNavList projectNavList " style="top: 120px;">
         <div class="title">
             自定义过滤器
-            <span class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
+            <span ng-click="open('filterManage')" class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
                 <i class="iconfont icon-guanli"></i>
             </span>
             <span class="chatIconButton floatright treefunicon" data-tip="存储为新的过滤器">
@@ -42,7 +39,7 @@
                 <li accordion-group>
                     <div accordion-heading>
                         <span data-tip="全选"><i class="iconfont icon-quanxuan selectAll"></i></span>
-                        <span>创建人</span>
+                        <span>缺陷等级</span>
                         <i class="iconfont  floatright openFilter icon-unfold"></i>
                     </div>
                     <ol class="customFilterSelect">
@@ -67,21 +64,55 @@
                 <li accordion-group>
                     <div accordion-heading>
                         <span data-tip="全选"><i class="iconfont icon-quanxuan selectAll"></i></span>
-                        <span>创建时间</span>
+                        <span>缺陷状态</span>
                         <i class="iconfont  floatright openFilter icon-unfold"></i>
                     </div>
-                    <ol class="customFilterTime">
-                        <li class="defaultTimeSelectBox datetimePicker">
-                            <input type="text" class="timeselectInput floatleft"  datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-                            <span class="timeselectTitle">开始时间：</span>
-                            <div class="clear"></div>
+                    <ol class="customFilterSelect">
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">新建</span>
+                        </li>
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">驳回</span>
+                        </li>
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">待审</span>
                         </li>
                     </ol>
                 </li>
                 <li accordion-group>
                     <div accordion-heading>
                         <span data-tip="全选"><i class="iconfont icon-quanxuan selectAll"></i></span>
-                        <span>最近执行时间</span>
+                        <span>项目模块</span>
+                        <i class="iconfont  floatright openFilter icon-unfold"></i>
+                    </div>
+                    <ol class="customFilterSelect">
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">新建</span>
+                        </li>
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">驳回</span>
+                        </li>
+                        <li class="checkBox">
+                            <input type="checkbox" name="">
+                            <i class="input-helper"></i>
+                            <span title="" class="defaultcheckText">待审</span>
+                        </li>
+                    </ol>
+                </li>
+                <li accordion-group>
+                    <div accordion-heading>
+                        <span data-tip="全选"><i class="iconfont icon-quanxuan selectAll"></i></span>
+                        <span>创建时间</span>
                         <i class="iconfont  floatright openFilter icon-unfold"></i>
                     </div>
                     <ol class="customFilterTime">
@@ -98,4 +129,4 @@
             </div>
         </div>
     </div>
-</div>   
+</div>

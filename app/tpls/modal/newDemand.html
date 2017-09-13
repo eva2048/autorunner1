@@ -1,6 +1,8 @@
 <div class="modal-content newDemand">
 	<div class="modal-header">
-		<h3>提需求</h3>
+		<h3>提需求
+		<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+		</h3>
 	</div>
 	<div class="modal-body">
 		<ul class="titleUl">			
@@ -45,7 +47,7 @@
 	<div class="modal-footer">
 		<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
 		<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-		<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+		<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
 	</div>	
 	</div>
 </div>

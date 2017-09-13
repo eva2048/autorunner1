@@ -13,6 +13,7 @@
 		position: absolute;
 		top: 14px;
 		left: 14px;
+		z-index: 100;
 	}
 	
 	.searchPanelBig .searchBox {
@@ -59,22 +60,11 @@
 	    margin-left: -4px;
 	    outline: none;
 	}
-	.btn_blue {
-	    padding: 0px 25px;
-	    text-align: center;
-	    background: #3462fe;
-	    color: #fff;
-	    font-size: 14px;
-	    height: 36px;
-	    border: 1px solid #1f4ce5;
-	    border-radius: 3px;
-	    -webkit-border-radius: 3px;
-	    -moz-border-radius: 3px;
-	    cursor: pointer;
-	}
 </style>
 <div class="modal-header">
-	<h3>添加成员</h3>
+	<h3>添加成员
+	<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+	</h3>
 </div>
 <div class="modal-body modalBody" ng-controller="modalCtrl">
 	<div class="searchPanelTitle clearfix">
@@ -108,7 +98,7 @@
     				</select>
 	                <h1 class="ng-binding">2@qq.com</h1>
     			</div>
-    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btn_blue margint_20" type="button" value="添加">
+    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btndefault btndefault_blue margint_20" type="button" value="添加">
     			<div class="clear"></div>
     		</li>
 		</ul>
@@ -117,5 +107,5 @@
 </div>
 <div class="modal-footer">
 	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-	<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
 </div>

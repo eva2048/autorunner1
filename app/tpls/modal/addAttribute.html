@@ -1,76 +1,62 @@
 <style type="text/css" class="ng-scope">
-	.btn_blue {
-		padding: 0px 25px;
-		text-align: center;
-		background: #3462fe;
-		color: #fff;
-		font-size: 14px;
-		height: 36px;
-		border: 1px solid #1f4ce5;
-		border-radius: 3px;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		cursor: pointer;
-	}
 </style>
 <div class="modal-header ng-scope">
-	<h3>添加属性</h3>
+    <h3>
+		添加属性
+		<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+	</h3>
 </div>
-<div class="modal-body modalBody ng-scope">
-	<ul class="titleUl">
-		<form name="submitForm" id="submitForm" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
-			<li>
-				<h1>属性名称：</h1>
-				<input type="text" class="inputText ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" name="name" ng-model="editItem.name" ng-maxlength="10" ng-required="true" required="required">
-
-				<span class="error">属性名称必填</span>
-				<span class="error ng-hide">属性名称长度不能超过10</span>
-			</li>
-			<div class="clear"></div>
-			<li class="floatleft">
-				<h1>所属模块：</h1>
-				<select class="selectNormal ng-pristine ng-valid">
-					<option value="0">缺陷属性</option>
-					<option value="1">用例属性</option>
-				</select>
-			</li>
-			<li>
-				<h1>显示类型：</h1>
-				<select class="selectNormal ng-pristine ng-valid" >
-					<option value="0">Textinput</option>
-					<option value="1">ComoBox</option>
-					<option value="2">Date</option>
-				</select>
-			</li>
-			<div class="clear"></div>
-			<li class="floatleft">
-				<h1>是否显示：</h1>
-				<select class="selectNormal ng-pristine ng-valid">
-					<option value="显示">显示</option>
-					<option value="隐藏">隐藏</option>
-				</select>
-			</li>
-			<li>
-				<h1>是否必填：</h1>
-				<select class="selectNormal ng-pristine ng-valid">
-					<option value="是">是</option>
-					<option value="否">否</option>
-				</select>
-			</li>
-
-			<li>
-				<h1>默认值：</h1>
-				<input type="text" class="inputText ng-pristine ng-valid" ng-model="editItem.defaultValue" ng-disabled="defValIsDisable">
-			</li>
-			<li>
-				<h1>选项值：</h1>
-				<input type="text" class="inputText ng-pristine ng-valid ng-valid-required" value="高；中；低" placeholder="例：选项1,选项2" name="optionalValue" ng-model="editItem.optionalValue" ng-disabled="optValIsDisable" ng-required="optValIsDisableMinLength">
-				<span class="error ng-hide">必填，选项值用英文的','隔开</span>
-			</li>
-		</form>
-	</ul>
+<div class="modal-body modalBody">
+    <form name="submitForm" id="submitForm" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
+        <ul class="titleUl">
+            <li>
+                <h1>属性名称：</h1>
+                <input type="text" class="inputText ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength" name="name" ng-model="editItem.name" ng-maxlength="10" ng-required="true" required="required">
+            </li>
+            <div class="clear"></div>
+            <li class="floatleft">
+                <h1>所属模块：</h1>
+                <select class="selectNormal ng-pristine ng-valid">
+                    <option value="0">缺陷属性</option>
+                    <option value="1">用例属性</option>
+                </select>
+            </li>
+            <li>
+                <h1>显示类型：</h1>
+                <select class="selectNormal ng-pristine ng-valid">
+                    <option value="0">Textinput</option>
+                    <option value="1">ComoBox</option>
+                    <option value="2">Date</option>
+                </select>
+            </li>
+            <div class="clear"></div>
+            <li class="floatleft">
+                <h1>是否显示：</h1>
+                <select class="selectNormal ng-pristine ng-valid">
+                    <option value="显示">显示</option>
+                    <option value="隐藏">隐藏</option>
+                </select>
+            </li>
+            <li>
+                <h1>是否必填：</h1>
+                <select class="selectNormal ng-pristine ng-valid">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </li>
+            <li>
+                <h1>默认值：</h1>
+                <input type="text" class="inputText ng-pristine ng-valid" ng-model="editItem.defaultValue" ng-disabled="defValIsDisable">
+            </li>
+            <li>
+                <h1>选项值：</h1>
+                <input type="text" class="inputText ng-pristine ng-valid ng-valid-required" value="高；中；低" placeholder="例：选项1,选项2" name="optionalValue" ng-model="editItem.optionalValue" ng-disabled="optValIsDisable" ng-required="optValIsDisableMinLength">
+                <span class="error ng-hide">必填，选项值用英文的','隔开</span>
+            </li>
+        </ul>
+    </form>
 </div>
 <div class="modal-footer ng-scope">
-	<button class="btn_blue" type="submit" ng-click="ok()">确认</button>
-	<button class="btn_gray" ng-click="cancel()">取消</button>
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="cancel()">
 </div>

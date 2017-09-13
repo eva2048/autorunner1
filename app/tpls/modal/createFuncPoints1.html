@@ -89,8 +89,13 @@
             </div>
             <!-- 输入数据 -->
             <div class ng-show="createFuncPoints==3">
-                <ul class="titleUl" style="margin-top: 0px;">
-                    <div class="modalDataPanel" style="padding-top: 0px;">
+                <ul class="titleUl">
+                    <li>
+                        <h1 class="hauto">批量添加</h1>
+                        <input type="text" name="" class="inputText" placeholder="以';'隔开">
+                        <button class="btndefault btn_blue">添加</button>
+                    </li>
+                    <div class="modalDataPanel">
                         <div class="title">
                             <div class="floatleft leftTitle">
                                 数据列表：
@@ -102,10 +107,6 @@
                                     <i class="iconfont icon-delete_fill"></i>
                                     删除数据
                                 </span>
-                                <span ng-controller="modalCtrl" class="chatIconButton" ng-click="open('createFuncPointsAdddata','lg')">
-                                    <i class="iconfont icon-addition_fill"></i>
-                                    批量添加数据
-                                </span>
                             </div>
                             <div class="searchBox floatright">                               
                                 <input type="text" name="" class="inputSearch" placeholder="输入搜索条件回车搜索">
@@ -113,42 +114,47 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                        <div class="tablePanel marginb_15" style="max-height: 280px;overflow-y: auto;overflow-x: hidden;">
+                        <div class="tablePanel">
                             <table class="table-fullborder">
                                 <tr>
                                     <th><input type="checkbox" name=""></th>
                                     <th width="80">序号</th>
                                     <th>公司名称</th>
-                                    <th>公司地址</th>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name=""></td>
+                                    <td>1</td>
+                                    <td>公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称公司名称</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name=""></td>
                                     <td>1</td>
                                     <td>公司名称</td>
-                                    <td>公司地址</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name=""></td>
                                     <td>1</td>
                                     <td>公司名称</td>
-                                    <td>公司地址</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name=""></td>
                                     <td>1</td>
                                     <td>公司名称</td>
-                                    <td>公司地址</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" name=""></td>
                                     <td>1</td>
                                     <td>公司名称</td>
-                                    <td>公司地址</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name=""></td>
+                                    <td>1</td>
+                                    <td>公司名称</td>
                                 </tr>
                             </table>
                         </div>
                     </div>
-                    <li class="">
+                    <li class="funcBox funcBox1">
                         <button class="btndefault btn_blue" ng-click="ok()">保存</button>
                     </li>
                 </ul>
