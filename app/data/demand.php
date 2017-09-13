@@ -9,7 +9,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         },
         {
                 "num": "1.0-1",
@@ -20,7 +21,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         },
         {
                 "num": "1.0-1",
@@ -31,7 +33,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         },
         {
                 "num": "1.0-1",
@@ -42,7 +45,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         },
         {
                 "num": "1.0-1",
@@ -53,7 +57,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         },
         {
                 "num": "1.0-1",
@@ -64,7 +69,8 @@
                 "priority":"中",
                 "lastupdateTime":"2017-06-05 18:00",
                 "assign":"humq",
-                "connectCaseNum":"2"
+                "connectCaseNum":"2",
+                "caseNum":"1"
         }
     ]
 }

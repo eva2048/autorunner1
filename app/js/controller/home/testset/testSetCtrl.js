@@ -27,6 +27,13 @@ define(['app'], function(app) {
                             cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.num}}</div>',
                         },
                         {
+                            field: "caseNum",
+                            displayName: '关联用例数',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableCellEdit: true, // 是否可编辑
+                        },
+                        {
                             field: "demandName",
                             displayName: '描述',
                             enableSorting: false,

@@ -5,12 +5,12 @@
         <input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
     </div>
     <div class="bugDetailBox" ng-init="isAttribute=1">
-        <div class="tab">
+        <!--<div class="tab">
             <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">属性</span>
             <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">脚本</span>
-            <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">关联用例表</span>
-        </div>
-        <div class="detailAttribute" ng-show="isAttribute==1">
+            <span class="current">关联用例表</span>
+        </div>-->
+        <!--<div class="detailAttribute" ng-show="isAttribute==1">
             <ul class="attributeList attributeList1">
                 <li>
                     <span class="attributeLeft">
@@ -28,8 +28,8 @@
             <div class="btnBox">
                 <input type="button" name="" class="btndefault btndefault_blue" value="保存">
             </div>
-        </div>
-        <div class="detailAttribute" ng-show="isAttribute==2">
+        </div>-->
+        <!--<div class="detailAttribute" ng-show="isAttribute==2">
             <ul class="attributeList attributeList1">
                 <li>
                     <span class="attributeLeft">
@@ -53,28 +53,21 @@
             <div class="btnBox">
                 <input type="button" name="" class="btndefault btndefault_blue" value="保存">
             </div>
-        </div>
-        <div class="detailAttribute" ng-show="isAttribute==3">
+        </div>-->
+        <div class="detailAttribute" style="top:0px ;">
             <div class="marginb_20">
-                <input type="button" value="修改关联用例" name="" class="fbtn_blue">
+                <input type="button" value="修改关联用例" name="" class="fbtn_blue" ng-click="open('ModifyUserCase')">
             </div>
             <table class="table-fullborder">
                 <tr>
+                	<th>用例ID</th>
                     <th>用例名称</th>
-                    <th>用例路径</th>
-                    <th>执行顺序</th>
-                    <th>执行状态</th>
-                    <th>操作</th>
+                    <th>所属需求</th>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>错误提示</td>
-                    <td>root</td>
-                    <td></td>
-                    <td>
-                        <a class="f_blue">上移</a>
-                        <a class="f_blue">下移</a>
-                    </td>
+                    <td>错误提示</td>                  
+                    <td>123456</td>                    
                 </tr>
             </table>
         </div>
