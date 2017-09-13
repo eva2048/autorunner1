@@ -5,7 +5,7 @@
         <ul>
             <li ng-click="navTabPanel=1">
                 <span data-tip="树结构视图">
-                <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}" ui-sref="index.demand"></i>
+                <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}"></i>
                 </span>
             </li>
             <li ng-click="navTabPanel=2">
@@ -20,29 +20,26 @@
         <div class="projectNavList" ng-show="navTabPanel==2">
             <div class="title">
                 过滤器
+                
             </div>
             <ul class="projectNavListContent">
                 <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
                     <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
-                    <span class="filtername">全部需求</span>
+                    <span class="filtername">全部用例</span>
                 </li>
                 <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
                     <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
-                    <span class="filtername">我创建的需求</span>
-                </li>
-                <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
-                    <i class="iconfont icon-shaixuan i_color8 filterIcon"></i>
-                    <span class="filtername">我负责的需求</span>
+                    <span class="filtername">我创建的用例</span>
                 </li>
             </ul>
         </div>
-        <div class="leftNavList projectNavList" ng-show="navTabPanel==2" style="top: 160px;">
+        <div class="leftNavList projectNavList" ng-show="navTabPanel==2" style="top: 120px;">
             <div class="title">
                 自定义过滤器
-                <span class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
+                <span ng-click="open('filterManage')" class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
                     <i class="iconfont icon-guanli"></i>
                 </span>
-                <span class="chatIconButton floatright treefunicon" data-tip="存储为新的过滤器">
+                <span class="chatIconButton floatright treefunicon" data-tip="新建过滤器">
                     <i class="iconfont icon-add"></i>
                 </span>
             </div>
@@ -151,7 +148,7 @@
         </div>
         <div class="leftNavList useCaseTree" ng-show="navTabPanel==1">
             <div class="title">
-                需求树
+                用例树
                 <span class="chatIconButton floatright treefunicon" data-tip="同步生成用例目录">
                     <i class="iconfont icon-tongbusynchronize4"></i>
                 </span>
@@ -188,22 +185,30 @@
                 <div>
                     <script type="text/ng-template" id="nodes_renderer.html">
                         <span ui-tree-handle></span>
-                        <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
-                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                        <div class="tree-node tree-node-content" ng-class="{current:node.id==1.1}">
+                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0||node.cases && node.cases.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
                             <i class="iconfont icon-wenjianjia1"></i>
                             <span ng-show="!this.isEdit" class="treeText">
                             {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
-                        </span>
+                            </span>
                         </div>
                         <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
                             <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+                            </li>
+                        </ol>
+                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="case in node.cases" class="tree-node-content">
+                                <i class="iconfont icon-icon-yongliweiyunhang icon-case"></i>
+                                <span ng-show="!this.isEdit" class="treeText">
+                                {{case.title | limitTo:10}}{{case.title.length>10?'...':''}}
+                                </span>
                             </li>
                         </ol>
                     </script>
                     <div>
                         <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
                             <ol ui-tree-nodes ng-model="data">
-                                <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
+                                <li ng-repeat="node in treedata1" ui-tree-node ng-include="'nodes_renderer.html'">
                                 </li>
                             </ol>
                         </div>

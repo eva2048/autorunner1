@@ -1,0 +1,175 @@
+<style type="text/css">
+.deviceInfoBox{
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+}
+.deviceInfoBox .projectBodyContent{
+    top: 56px;
+    background: #e4e6f1;
+}
+.deviceInfoContent{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.dateDetail{
+    width: 250px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 102;
+    border-right: 10px solid #e4e6f1;
+}
+.dateContent{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.datePanel{
+    width: 20%;
+    border-right:1px solid #e3e4e6;
+    border-bottom:1px solid #e3e4e6;
+    height: 25%;
+    min-height: 150px;
+    position: relative;
+    float: left;
+}
+.datePanel .title{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #008bff;
+    padding-left: 10px;
+    border-bottom: 1px solid #eee;
+}
+.datePanel .title .num{
+    height: 20px;
+    line-height: 20px;
+    background: #008bff;
+    color: #fff;
+    margin-top: 5px;
+    padding: 0px 6px;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: #ff9800;
+}
+.datePanel .title .num0{
+    background: #cfd7ed;
+    border-radius: 3px;
+}
+.datePanel .content{
+    position: absolute;
+    top: 30px;
+    bottom: 0px;
+    width: 100%;
+    padding: 5px 0px;
+    overflow: auto;
+}
+.datePanel .content>ul>li{
+    overflow: hidden;
+    padding: 6px 10px;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+}
+.datePanel .content>ul>li:hover{
+    background: #cfd7ed;
+}
+.datePanel .content>ul>li h1{
+    width: 100%;
+    float:left;
+    padding-right: 95px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.datePanel .content>ul>li h2{
+    position: absolute;
+    float:right;
+    right: 10px;
+    text-align: right;
+}
+.deviceInfoBox .defaultTimeSelectBox .timeselectInput{
+    margin-top: 6px;
+    border:1px solid #bbb;
+    border-radius: 3px;
+    padding-left: 10px;
+    height: 34px;
+}
+.deviceInfoBox .defaultTimeSelectBox .timeselectTitle{
+    top: 7px;
+    font-size: 14px;
+    color: #000;
+    left: -80px;
+}
+.deviceInfoBox .timequantum{
+    margin-left: 20px;
+    line-height: 1em;
+    margin-top: 6px;
+    border-color: #bbb;
+    font-size: 14px;
+}
+</style>
+<div class="projectBodyBox deviceInfoBox" ng-controller="projectCtrl">
+    <div class="projectBodyTitle flexRow">
+        <div class="flex floatleft">执行器预约情况</div>
+        <div class="defaultTimeSelectBox datetimePicker floatleft">
+            <input type="text" class="timeselectInput floatleft"  datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+            <span class="timeselectTitle">选择日期：</span>
+            <div class="clear"></div>
+        </div>
+        <div class="timequantum floatleft">
+            <span>选择时间段：</span>
+            <select class="selectNormal">
+                <option>全部</option>
+                <option>00:00 ~ 12：00</option>
+                <option>12:00 ~ 24：00</option>
+            </select>
+        </div>
+        <div class="flex">
+        </div>
+    </div>
+    <div class="projectBodyContent" style="" ng-controller="deviceCtrl">
+        <div class="deviceInfoContent">
+            <div class="dateContent">
+                <div class="datePanel">
+                    <div class="title">
+                        00:00 ~ 01：00
+                        <span class="floatright num">4</span>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <h1>服务器1服务器1服务器1服务器1</h1>
+                                <h2>00:05 ~ 00:10</h2>
+                            </li>
+                            <li>
+                                <h1>服务器1服务器1服务器1服务器1</h1>
+                                <h2>00:05 ~ 00:10</h2>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="datePanel">
+                    <div class="title">
+                        00:00 ~ 01：00
+                        <span class="floatright num num0">暂无</span>
+                    </div>
+                    <div class="content">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

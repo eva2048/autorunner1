@@ -2,21 +2,19 @@
 </style>
 <div class="topbar">
 	<div class="floatleft leftMenu">
-        <a class="topbarLink" href="" ui-sref="index.project">项目列表</a>
-		<a class="topbarLink" href="" ui-sref="index.task">任务</a>
-		<a class="topbarLink" ng-class="{'current':isAttribute==0}" href="" ui-sref="index.component">组件</a>
-		 <a class="topbarLink" href="" ui-sref="index.demand">需求</a>
-        <a class="topbarLink" href="" ui-sref="index.usecase">用例</a>
-        <a class="topbarLink" href="" ui-sref="index.testset">测试集</a>       
-		<a class="topbarLink" href="" ui-sref="index.bug">缺陷</a>		        
-		<a class="topbarLink" href="" ui-sref="statement">执行记录</a>
-		<a class="topbarLink" href="" ui-sref="index.dataPool">数据池</a>		
+		<a class="topbarLink" href="" ng-class="{'current':topNavIndex==0}" ui-sref="index.task({num:0})">任务</a>
+		<a class="topbarLink" ng-class="{'current':topNavIndex==1}" href="" ui-sref="index.component({num:1})">组件</a>
+		 <a class="topbarLink" ng-class="{'current':topNavIndex==2}" href="" ui-sref="index.demand({num:2})">需求</a>
+        <a class="topbarLink" ng-class="{'current':topNavIndex==3}" href="" ui-sref="index.usecase({num:3})">用例</a>
+        <a class="topbarLink" ng-class="{'current':topNavIndex==4}" href="" ui-sref="index.testset({num:4})">测试集</a>       
+		<a class="topbarLink" ng-class="{'current':topNavIndex==5}" href="" ui-sref="index.bug({num:5})">缺陷</a>		        
+		<a class="topbarLink" ng-class="{'current':topNavIndex==6}" href="" ui-sref="statement({num:6})">执行记录</a>
+		<a class="topbarLink" ng-class="{'current':topNavIndex==7}" href="" ui-sref="index.dataPool({num:7})">数据池</a>
 	</div>
-	<div class="floatright rightMenu">		      
+	<div class="floatright rightMenu">		
         <div class="dropdownDefault floatleft" dropdown>
             <a href="" class="topbarLink" dropdown-toggle>账户昵称</a>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-            	<span class="triangle"></span>               
+            <ul class="dropdown-menu transition" dropdown-menu role="menu">             
                 <li ui-sref="index.project"><span>切换项目</span></li>
                 <li><span>个人信息</span></li>
                 <li><span>修改密码</span></li>

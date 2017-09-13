@@ -48,24 +48,12 @@
 }
 </style>
 <div class="modal-header">
-    <h3>执行用例
+    <h3>预约执行
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
 <div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1">
     <div class="flexRow">
-        <div class="floatleft">
-            <ul class="modalLeftTab">
-                <li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
-                    <i class="iconfont icon-barrage_fill"></i>
-                    <span>执行设置</span>
-                </li>
-                <li ng-class="{'current':createFuncPoints==2}" ng-click="createFuncPoints=2">
-                    <i class="iconfont icon-guanlianbangding1"></i>
-                    <span>执行情况</span>
-                </li>
-            </ul>
-        </div>
         <div class="floatleft flex modalRightContent modalRightContent1">
             <!-- 基本信息 -->
             <div>
@@ -78,7 +66,7 @@
                         </div>
                         <div class="clear"></div>
                     </li>
-                    <li>
+                    <li class="floatleft">
                         <h1>执行类型：</h1>
                         <select class="selectNormal floatleft" ng-init="selected=pModel[0]" ng-model="selected" ng-options="x for x in pModel">
                         </select>
@@ -94,8 +82,18 @@
                         </div>
                         <div class="clear"></div>
                     </li>
+                    <li class="floatright">
+                        <h1>信息知会人：</h1>
+                        <div class="inputSelect floatleft" ng-click="open('createTaskTestset')">
+                            <input type="text" class="inputText" disabled="disabled" placeholder="测试集1;测试集2">
+                            <span class="inputSelectBtn">
+                                <i class="iconfont icon-trees"></i>
+                            </span>
+                        </div>                       
+                    </li>
+                    <div class="clear"></div>
                 </ul>
-            <!-- 执行设置 -->            
+                <!-- 执行设置 -->
             </div>
             <div ng-show="createFuncPoints==1" class="runningDeviceDateBox">
                 <div class="clearfix">
@@ -136,6 +134,10 @@
                                     <i class="iconfont icon-gengxin-copy"></i>
                                     刷新执行器
                                 </span>
+                                <a class="chatIconButton" ui-sref="device" target="_blank">
+                                    <i class="iconfont icon-clock_fill"></i>
+                                    查看执行器预约情况
+                                </a>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -175,7 +177,8 @@
                                 </th>
                                 <th>测试集</th>
                                 <th>执行器</th>
-                                <th>被测系统ServerId</th>
+                                <th>运行模式</th>
+                                <th>预约时间</th>
                             </tr>
                             <tr>
                                 <td>
@@ -188,22 +191,12 @@
                                     192.168.0.140:3
                                 </td>
                                 <td>
-                                    测试服务器1
+                                    <select class="selectNoborder">
+                                        <option>可顺延</option>
+                                        <option>不可顺延</option>
+                                    </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="">
-                                </td>
-                                <td>
-                                    测试集b
-                                </td>
-                                <td>
-                                    192.168.0.140:3
-                                </td>
-                                <td>
-                                    测试服务器2
-                                </td>
+                                <td></td>
                             </tr>
                         </table>
                     </div>
@@ -273,9 +266,9 @@
                 </div>
                 <div class="notice floatright" style="width: 28%;">
                     <span>
-						<input type="checkbox" name="" id="" value="" />
-						保留最新执行消息
-					</span>
+                        <input type="checkbox" name="" id="" value="" />
+                        保留最新执行消息
+                    </span>
                     <div class="log">
                         <p>
                             加载用例开始

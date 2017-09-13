@@ -3,35 +3,11 @@
 <div class="projectBodyBox" ng-controller="modalCtrl">
     <div class="projectBodyTitle">
         用例管理
-    </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">用例状态</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">筛选</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
         <div class="floatright btn_add" ng-click="open('newDemand','lg')">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
         </div>
     </div>
-    <div class="projectBodyContent" style="top: 100px;" ng-controller="usecaseCtrl">
+    <div class="projectBodyContent" style="top: 56px;" ng-controller="usecaseCtrl">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
@@ -47,15 +23,19 @@
                 <span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
                 </span>
-                <span class="chatIconButton floatright">
+                <span class="chatIconButton">
                     <i class="iconfont icon-tongji"></i>用例统计
                 </span>
-                <span class="chatIconButton floatright">
+                <span class="chatIconButton">
                     <i class="iconfont icon-import"></i>导入
                 </span>
-                <span class="chatIconButton floatright">
+                <span class="chatIconButton">
                     <i class="iconfont icon-daochu2"></i>导出
                 </span>
+                <div class="floatright searchBox">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div>
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">

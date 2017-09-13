@@ -3,50 +3,29 @@
 <div class="projectBodyBox" ng-controller="projectListCtrl">
     <div class="projectBodyTitle">
         项目管理
-    </div>
-    <div class="useCaseListfunc clearfix">
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">项目状态</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
-        <div class="dropdownDefault floatleft" dropdown>
-            <div dropdown-toggle class="dropdowntoggle">
-                <span class="dropdowntoggletext">项目级别</span>
-                <i class="iconfont icon-unfold"></i>
-            </div>
-            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                <span class="triangle"></span>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
-            </ul>
-        </div>
         <div class="floatright btn_add" ui-sref="index.project.create">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span>新建项目
         </div>
     </div>
-    <div class="projectBodyContent" style="top: 100px;">
+    <div class="projectBodyContent" style="top: 56px;">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
-                <span class="floatleft selectNum">我负责的项目</span>               
-                <span class="chatIconButton floatright"  ng-click="open('tableColumn')">
+                <span class="floatleft selectNum">我创建的项目</span>   
+                <span class="chatIconButton floatleft"  ng-click="open('tableColumn')">
                     <i class="iconfont icon-liebiao"></i>自定义列                   
                 </span>
-                <span class="chatIconButton floatright"  ng-click="open('mubanCreateproject')">
+                <span class="chatIconButton floatleft"  ng-click="open('mubanCreateproject')">
                     <i class="iconfont icon-moban"></i>模板创建项目               
-                </span>
+                </span> 
+                <div class="floatright searchBox marginl_5">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div>             
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">
                 <div style="" ui-grid="gridOptionsUsecase"  ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
-            </div>
-            
+            </div>            
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 define(['app'], function(app) {
     app.register
-        .controller('taskCtrl',
+        .controller('deviceCtrl',
             function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService) {
                 //表格初始化
                 $http.get('./data/task.php')
@@ -52,13 +52,14 @@ define(['app'], function(app) {
                             displayName: '关联测试集',
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            cellTemplate:'<div class="ui-grid-cell-contents"><i ng-click="grid.appScope.open(\'testsetManage\')" title="测试集管理" class="iconfont icon-createtask_fill f_blue cursor_p"></i><span class="marginl_10">0</span></div>'
 //                          enableCellEdit: true, // 是否可编辑
                         },                        
                         {
                             field: "action",
                             displayName: '操作处理',
                             minWidth:350,
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDevice\',\'lg\')">立即执行</a><a class="f_blue" ui-sref="statementDetail">查看最新报表</a><a class="f_blue" ng-click="grid.appScope.open(\'createTaskTestset\')">修改测试集</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDevice\',\'lg\')">立即执行</a><a class="f_blue">查看最新报表</a><a class="f_blue" ng-click="grid.appScope.open(\'testsetManage\')">修改测试集</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableColumnResizing: false,
                         }

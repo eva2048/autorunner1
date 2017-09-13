@@ -2,7 +2,10 @@
 .modal-header {
     font-size: 16px;
 }
-
+.modal-header .modalCloseIcon{
+    font-size: 18px;
+    cursor: pointer;
+}
 .modal-footer .defaultcheckBox {
     margin-top: 8px;
 }
@@ -47,7 +50,12 @@
 .titleUl>li {
     margin-bottom: 15px;
 }
-
+.titleUl>li p {
+    float: left;        
+    font-size: 14px;
+    color: #313131;
+    line-height: 34px       
+}
 .titleUl .borderUl {
     border: 1px solid #c3c4c9;
     width: 330px;
@@ -160,6 +168,11 @@
     height: 30px;
     font-size: 12px;
 }
+.runningDeviceDateBox{
+    height: 460px;
+    overflow-y: auto;
+    border-top: 1px solid #eee;
+}
 /*执行用例*/
 .deviceInfo{
     padding: 10px 20px;
@@ -182,8 +195,9 @@
     height: 400px;
     overflow-y: auto;
 }
-.modalRightContent1{
+.createFuncPoints .modalRightContent1{
     padding-left: 10px;
+    height: 570px;
 }
 /*多选块*/
 .modalSelectPanel{
@@ -233,12 +247,19 @@
     line-height: 30px;
 }
 .modalDataPanel{
-    padding: 10px 0px;
-    border-top: 1px solid #eee;
+    padding: 10px 0px 0px;
 }
 .modalDataPanel .tablePanel{
     max-height: 220px;
     overflow-y: auto;
+}
+.modalDataPanel .tablePanel1{
+    height: 180px;
+    overflow-y: auto;
+    border:1px solid #eee;
+}
+.modalDataPanel .tablePanel1 .table-fullborder{
+    border:none;
 }
 .modalDataPanel .table-fullborder tbody>tr>td{
     font-size: 13px;
