@@ -1087,20 +1087,20 @@ a.f_red:hover {
 	border-bottom: none;
 }
 
-.table-fullborder tr {
+.table-fullborder>tbody>tr {
 	height: 40px;
 	line-height: 40px;
 	font-size: 14px;
 }
 
-.table-fullborder tr th {
+.table-fullborder>tbody>tr>th {
 	background: #f5f6fa;
 	color: #3b3b3b;
 	padding: 0px 10px;
 	border-bottom: 1px solid #e1e6eb;
 }
 
-.table-fullborder tr td {
+.table-fullborder>tbody>tr>td {
 	background: #fff;
 	padding: 0px 10px;
 	color: #6e6e6e;

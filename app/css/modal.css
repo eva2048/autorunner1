@@ -261,7 +261,7 @@
 .modalDataPanel .tablePanel1 .table-fullborder{
     border:none;
 }
-.modalDataPanel .table-fullborder tbody>tr>td{
+.modalDataPanel .table-fullborder>tbody>tr>td{
     font-size: 13px;
     line-height: 22px;
     padding: 5px 10px;

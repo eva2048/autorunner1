@@ -475,10 +475,13 @@ define(['angular', 'router'], function() {
                             templateUrl: '../tpls/home/topbar.html'
                         },
                         'main@statement': {
-                            templateUrl: '../tpls/home/main/statement/statementManage.html'
+                            templateUrl: '../tpls/home/main1.html'
                         },
-                        'projectDetail@statement': {
-                            templateUrl: '../tpls/home/main/statement/statementDetail.html'
+                        'projectBody@statement':{
+                            templateUrl:'../tpls/home/main/statement/statementManage.html'
+                        },
+                        'projectDetail@statement':{
+                            templateUrl:'../tpls/home/main/statement/statementDetail.html'
                         }
                     },
                     resolve: {
