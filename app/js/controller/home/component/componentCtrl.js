@@ -31,6 +31,12 @@ define(['app'], function(app) {
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         },
                         {
+                            field: "functionPoint",
+                            displayName: '关联功能点',
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            cellTemplate:'<div class="ui-grid-cell-contents"><i ng-click="grid.appScope.open(\'functionPoint\')" title="测试集管理" class="iconfont icon-createtask_fill f_blue cursor_p"></i><span class="marginl_10">0</span></div>'
+                        },
+                        {
                             field: "demandState",
                             displayName: '运行环境',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
@@ -44,7 +50,7 @@ define(['app'], function(app) {
                             field: "action",
                             displayName: '操作处理',
                             enableColumnResizing: false,
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">下载脚本</a><a class="f_blue">编辑</a><a class="f_red">删除</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">下载脚本</a><a class="f_blue" ng-click="grid.appScope.open(\'updateScript\',\'lg\')">编辑</a><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
                     ],
