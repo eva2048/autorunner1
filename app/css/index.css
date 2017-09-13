@@ -47,8 +47,7 @@
 }
 
 .topbar .rightMenu .dropdownDefault .dropdown-menu {
-    left: 50%;
-    margin-left: -84px;
+    right: 0px;
     display: block;
     opacity: 0;
     filter: alpha(opacity=0);
@@ -58,7 +57,8 @@
     -webkit-transition: all 0.4s;
     /* Safari 和 Chrome */
     -o-transition: all 0.4s;
-    top: 58px;
+    top: 40px;
+    left: auto;
 }
 
 .topbar .rightMenu .dropdownDefault .dropdown-menu .triangle {
@@ -81,7 +81,7 @@
 .topbar .rightMenu .dropdownDefault:hover .dropdown-menu {
     opacity: 1;
     filter: alpha(opacity=100);
-    top: 50px;
+    top: 47px;
 }
 
 
@@ -700,7 +700,12 @@
     height: 100%;
 }
 
-
+.useCaseList{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+}
 /*筛选功能块*/
 
 .useCaseListfunc {

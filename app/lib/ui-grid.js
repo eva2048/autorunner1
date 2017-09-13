@@ -3801,13 +3801,15 @@ angular.module('ui.grid').directive('uiGridCell', ['$compile', '$parse', 'gridUt
 
                             grid.gridHeight = $scope.gridHeight = gridUtil.elementHeight($elm);
                         }
-
+                        
                         // Resize the grid on window resize events
                         function gridResize($event) {
                             grid.gridWidth = $scope.gridWidth = gridUtil.elementWidth($elm);
                             grid.gridHeight = $scope.gridHeight = gridUtil.elementHeight($elm);
                             grid.refreshCanvas(true);
+                            
                         }
+                        
                     }
                 };
             }

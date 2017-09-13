@@ -75,7 +75,7 @@ define(['app'], function(app) {
                         {
                             field: "action",
                             displayName: '操作处理',
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ui-sref="index.statement.statementDetail">查看报表</a><a class="f_blue" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">查看日志</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">查看日志</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
                     ],

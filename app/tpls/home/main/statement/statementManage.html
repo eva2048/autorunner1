@@ -1,15 +1,78 @@
 <style type="text/css">
+	.chatIconButton {
+		margin: 0px 5px;
+		color: #666;
+		cursor: pointer;
+		font-size: 13px;
+		margin-left: 10px;
+	}
+	.chatIconButton:hover{
+		color: #008BFF;
+	}
+	.chatIconButton .iconfont {
+		color: #008bff;
+		font-size: 13px;
+		margin-right: 5px;
+	}
 </style>
 <div class="projectBodyBox" ng-controller="modalCtrl">
-    <div class="projectBodyTitle">
-        报表管理
-    </div>
-    <div class="projectBodyContent" style="top: 56px;" ng-controller="statementCtrl">
-        <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
-            <div class="userCaseListTable">
-                <div ui-grid="gridOptionsStatement" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
-            </div>
-            
-        </div>
-    </div>
+	<div class="projectBodyTitle">
+		执行记录
+	</div>
+	<div class="projectBodyContent" style="top: 56px;" ng-controller="statementCtrl">
+		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+			<div class="useCaseListfunc" style="line-height: 43px;">
+				<div class="dropdownDefault floatleft" dropdown>
+					<div dropdown-toggle class="dropdowntoggle">
+						<span class="dropdowntoggletext">执行类型</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu transition" dropdown-menu role="menu">
+						<span class="triangle"></span>
+						<li class="current"><i class="iconfont icon-clock"></i><span>默认</span></li>
+						<li><i class="iconfont icon-iconchenggong"></i><span>执行成功</span></li>
+						<li><i class="iconfont icon-shibai"></i><span>执行失败</span></li>
+					</ul>
+				</div>
+				<div class="dropdownBox floatleft dateBoxClear" dropdown>
+					<div dropdown-toggle class="dropdowntoggle">
+						<span class="dropdowntoggletext">时间范围</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+						<li class="datetimePicker">
+							<a>开始时间：
+								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<div class="clear"></div>
+							</a>
+						</li>
+						<li class="datetimePicker">
+							<a>结束时间：
+								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<div class="clear"></div>
+							</a>
+						</li>
+						<li class="marginb_10">
+							<a>
+								<input type="button" class="btn btn-sm btn-success" value="确认">
+								<input type="button" class="btn btn-sm btn-info" value="清空">、
+							</a>
+						</li>
+					</ul>
+				</div>
+				<span class="chatIconButton">
+                    <i class="iconfont icon-empty_fill"></i>删除
+                </span>
+				<div class="floatright searchBox">
+					<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+					<i class="iconfont icon-search"></i>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="userCaseListTable">
+				<div ui-grid="gridOptionsStatement" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+			</div>
+
+		</div>
+	</div>
 </div>
