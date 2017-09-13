@@ -89,7 +89,7 @@
                             <span class="inputSelectBtn">
                                 <i class="iconfont icon-trees"></i>
                             </span>
-                        </div>                       
+                        </div>
                     </li>
                     <div class="clear"></div>
                 </ul>
@@ -196,7 +196,13 @@
                                         <option>不可顺延</option>
                                     </select>
                                 </td>
-                                <td></td>
+                                <td>
+                                    <div class="defaultTimeSelectBox datetimePicker floatleft">
+                                        <input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                                        <span class="timeselectTitle">选择日期：</span>
+                                        <div class="clear"></div>
+                                    </div>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -286,8 +292,6 @@
     </div>
 </div>
 <div class="modal-footer modalFooterCenter" style="text-align: center;">
-    <button class="btndefault btndefault_blue" ng-click="ok()">开始</button>
-    <button class="btndefault btndefault_lblue" ng-click="ok()">暂停</button>
-    <button class="btndefault btndefault_red" ng-click="ok()">停止</button>
+    <button class="btndefault btndefault_blue" ng-click="ok()">确定</button>
     <button class="btndefault btndefault_gray" ng-click="cancel()">取消</button>
 </div>
