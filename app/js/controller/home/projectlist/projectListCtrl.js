@@ -138,7 +138,7 @@ define(['app'], function(app) {
                         {
                             field: "action",
                             displayName: '操作处理',
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ui-sref="index.usecase")">进入项目</a><a class="f_blue">结项</a><a class="f_red">删除</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ui-sref="index.component({num:1})")">进入项目</a><a class="f_blue">结项</a><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
                     ],

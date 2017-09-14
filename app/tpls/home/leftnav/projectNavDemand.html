@@ -1,18 +1,19 @@
 <style type="text/css">
 </style>
-<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=1">
+<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=2">
     <div class="navTabPanel">
         <ul>
-            <li ng-click="navTabPanel=1">
-                <span data-tip="树结构视图">
-                <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}" ui-sref="index.demand"></i>
-                </span>
-            </li>
-            <li ng-click="navTabPanel=2">
+        	<li ng-click="navTabPanel=2" ui-sref="index.demand">
                 <span data-tip="过滤器结构视图">
                 <i class="iconfont icon-liebiao" ng-class="{'f_blue':navTabPanel==2}"></i>
                 </span>
             </li>
+            <li ng-click="navTabPanel=1" ui-sref="index.demand.demandDetails">
+                <span data-tip="树结构视图">
+                <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}" ui-sref="index.demand"></i>
+                </span>
+            </li>
+            
             <div class="clear"></div>
         </ul>
     </div>
