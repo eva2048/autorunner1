@@ -1,6 +1,6 @@
 <style type="text/css">
 </style>
-<div class="projectBodyBox dataPoolBox">
+<div class="projectBodyBox dataPoolBox" ng-controller="datapoolCtrl">
 	<div class="projectBodyTitle">
 		<div class="floatleft">数据池</div>
 		<ul class="tabTitle clearfix">
@@ -14,7 +14,8 @@
 	</div>
 	<div class="projectBodyContent" style="top: 45px;left: 0;">
 		<div>
-			6666777
+			<line-chart config="config" data="data"></line-chart>
+    		<line-chart config="config" data="multiple"></line-chart>
 		</div>
 		
 	</div>
