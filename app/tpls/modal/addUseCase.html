@@ -1,0 +1,34 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <h3>新增用例
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody" ng-controller="modalCtrl">
+    <ul class="titleUl titleUlAuto">
+        <li>
+            <h1>用例名称：</h1>
+            <input type="text" class="inputText">
+        </li>       
+        <div class="clear"></div>                    
+        <li>
+            <h1>用例描述：</h1>
+            <textarea class="projectTextarea"></textarea>
+        </li>
+        <li>
+            <h1>关联组件：</h1>
+            <div class="inputSelect floatleft" ng-click="open('createTaskTestset')">
+                <input type="text" class="inputText" disabled="disabled" placeholder="组件1">
+                <span class="inputSelectBtn">
+                    <i class="iconfont icon-trees"></i>
+                </span>
+            </div>
+        </li> 
+    </ul>
+</div>
+<div class="modal-footer">
+    <div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

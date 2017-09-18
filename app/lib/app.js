@@ -80,27 +80,7 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
-                }) 
-                .state("index.project.create", {
-                    url: "/create",
-                    views:{
-                        'projectBody@index':{
-                            templateUrl:'../tpls/home/main/projectlist/projectCreateProject.html'
-                        }
-                    },
-                    resolve: {
-                        loadCtrl: ["$q", function($q) {
-                            var deferred = $q.defer();
-                            //异步加载controller／directive/filter/service
-                            require([
-                            	 '../js/controller/home/projectlist/projectCreateProjectCtrl.js'
-                                ], function(controller) { 
-                                    deferred.resolve(); 
-                                });
-                            return deferred.promise;
-                        }]
-                    }
-                }) 
+                })                 
                 .state("index.manual", {
                     url: "/manual",
                     views: {                      
@@ -271,8 +251,8 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
-                               '../js/controller/home/demand/demandCtrl.js'
-
+                                '../js/controller/home/demand/demandCtrl.js',
+								'../js/controller/home/demand/projectNavDemandCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -428,7 +408,9 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
-                                '../js/controller/home/component/componentCtrl.js'
+                                '../js/controller/home/component/componentCtrl.js',
+                                '../js/controller/home/component/componentDetailCtrl.js',
+                                '../js/controller/home/component/projectNavComponentCtrl.js'                               
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -456,7 +438,8 @@ define(['angular', 'router'], function() {
                             var deferred = $q.defer();
                             //异步加载controller／directive/filter/service
                             require([
-                                '../js/controller/home/testset/testSetCtrl.js'
+                                '../js/controller/home/testset/testSetCtrl.js',
+                                '../js/controller/home/testset/projectNavTestsetCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });
@@ -466,41 +449,42 @@ define(['angular', 'router'], function() {
                 })      
                 /*执行记录*/
                 .state("statement", {
-                    url: "/statement/:num",
-                    views: {
-                        '': {
-                            templateUrl: '../tpls/home/index.html'
-                        },
-                        'topbar@statement': {
-                            templateUrl: '../tpls/home/topbar.html'
-                        },
-                        'main@statement': {
-                            templateUrl: '../tpls/home/main1.html'
-                        },
-                        'projectBody@statement':{
-                            templateUrl:'../tpls/home/main/statement/statementManage.html'
-                        },
-                        'projectDetail@statement':{
-                            templateUrl:'../tpls/home/main/statement/statementDetail.html'
-                        }
-                    },
-                    resolve: {
-                        loadCtrl: ["$q", function($q) {
-                            var deferred = $q.defer();
-                            //异步加载controller／directive/filter/service
-                            require([
-                                '../js/controller/home/projectCtrl.js',
-                                '../js/controller/modal/modalCtrl.js',
-                                '../js/controller/modal/modalInstanceCtrl.js',
-                                '../js/controller/home/statement/statementCtrl.js'
-                            ], function(controller) {
-                                deferred.resolve();
-                            });
-                            return deferred.promise;
-                        }]
-                    }
-                })
-                
+					url: "/statement/:num",
+					views: {
+						'': {
+							templateUrl: '../tpls/home/index.html'
+						},
+						'topbar@statement': {
+							templateUrl: '../tpls/home/topbar.html'
+						},
+						'main@statement': {							
+							templateUrl: '../tpls/home/main1.html'
+						},
+						'projectBody@statement': {						
+							templateUrl: '../tpls/home/main/statement/statementManage.html'
+						},
+						'projectDetail@statement': {
+							templateUrl: '../tpls/home/main/statement/statementDetail.html'
+						}
+					},
+					resolve: {
+						loadCtrl: ["$q", function($q) {
+							var deferred = $q.defer();
+							//异步加载controller／directive/filter/service
+							require([
+								'../js/controller/home/projectCtrl.js',
+								'../js/controller/modal/modalCtrl.js',
+								'../js/controller/modal/tipmodalCtrl.js',
+								'../js/controller/modal/modalInstanceCtrl.js',
+								'../js/controller/modal/tipmodalInstanceCtrl.js',
+								'../js/controller/home/statement/statementCtrl.js'
+							], function(controller) {
+								deferred.resolve();
+							});
+							return deferred.promise;
+						}]
+					}
+				})
                  /*数据池*/
                 .state("index.dataPool",{
                     url:"/dataPool",
@@ -578,7 +562,7 @@ define(['angular', 'router'], function() {
                 }) 
 			//后台-用户管理
                 .state("userManagement", {
-                    url: "/userManagement",
+                    url: "/userManagement/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -590,7 +574,7 @@ define(['angular', 'router'], function() {
                             templateUrl:'../tpls/home/main.html'
                         },
                         'projectNav@userManagement':{
-                            templateUrl:'../tpls/home/projectNavUserManagement.html'
+                            templateUrl:'../tpls/home/leftnav/projectNavUserManagement.html'
                         },
                         'projectBody@userManagement':{
                             templateUrl:'../tpls/home/main/back-stageManagement/userManagement.html'
@@ -615,7 +599,7 @@ define(['angular', 'router'], function() {
                 }) 
 //              项目管理
                 .state("projectManagement", {
-                    url: "/projectManagement",
+                    url: "/projectManagement/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -644,9 +628,29 @@ define(['angular', 'router'], function() {
                         }]
                     }
                 }) 
+                .state("projectManagement.create", {
+                    url: "/create/:num",
+                    views:{
+                        'main@projectManagement':{
+                            templateUrl:'../tpls/home/main/projectlist/projectCreateProject.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                            	 '../js/controller/home/projectlist/projectCreateProjectCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                }) 
 //              角色组管理
                  .state("roleGroupManagement", {
-                    url: "/roleGroupManagement",
+                    url: "/roleGroupManagement/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -682,7 +686,7 @@ define(['angular', 'router'], function() {
                 }) 
 //              缺陷流程定制
                 .state("defectProcess", {
-                    url: "/defectProcess",
+                    url: "/defectProcess/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'
@@ -719,7 +723,7 @@ define(['angular', 'router'], function() {
                 }) 
 //              数据字典
                 .state("dataDictionary", {
-                    url: "/dataDictionary",
+                    url: "/dataDictionary/:num",
                     views:{
                         '':{
                             templateUrl:'../tpls/home/index.html'

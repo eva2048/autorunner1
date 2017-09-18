@@ -1,69 +1,33 @@
 <style type="text/css">
 
 </style>
-<div class="projectDetailBox">
+<div class="projectDetailBox" ng-controller="componentDetailCtrl">
 	<div class="detailTitle">
 		<span class="floatleft bugId">233</span>
 		<span class="bugName text_ellipsis">组件名称</span>
-		<input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
 	</div>
 	<div class="bugDetailBox" ng-init="isAttribute=1">
 		<div class="tab">
-			<span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">脚本</span>
-			<span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">属性</span>
-			<span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">数据维护</span>
+			<span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">数据维护</span>
+			<span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">脚本</span>
 		</div>
 		<div class="detailAttribute" ng-show="isAttribute==2">
 			<ul class="attributeList attributeList1">
 				<li>
 					<span class="attributeLeft">
-                        <span>组</span>
-					<span>件</span>
-					<span>名</span>
-					<span>称</span>
-					</span>
-					<input type="text" class="inputText" name="">
-				</li>
-				<li>
-					<span class="attributeLeft">
-                        <span>运</span>
-					<span>行</span>
-					<span>环</span>
-					<span>境</span>
-					</span>
-					<input type="text" class="inputText" name="">
-				</li>
-				<li>
-					<span class="attributeLeft">
-                        <span>详</span>
-					<span>细</span>
-					<span>描</span>
-					<span>述</span>
-					</span>
-					<textarea class="projectTextarea"></textarea>
-				</li>
-			</ul>
-			<div class="btnBox">
-				<input type="button" name="" class="btndefault btndefault_blue" value="保存">
-			</div>
-		</div>
-		<div class="detailAttribute" ng-show="isAttribute==1">
-			<ul class="attributeList attributeList1">
-				<li>
-					<span class="attributeLeft">
                         <span>脚</span>
-					<span>本</span>
-					<span>名</span>
-					<span>称</span>
+						<span>本</span>
+						<span>名</span>
+						<span>称</span>
 					</span>
 					<input type="text" class="inputText" name="">
 				</li>
 				<li>
 					<span class="attributeLeft">
                         <span>脚</span>
-					<span>本</span>
-					<span>内</span>
-					<span>容</span>
+						<span>本</span>
+						<span>内</span>
+						<span>容</span>
 					</span>
 					<textarea class="projectTextarea" style="height: 300px;"></textarea>
 				</li>
@@ -72,32 +36,10 @@
 				<input type="button" name="" class="btndefault btndefault_blue" value="保存">
 			</div>
 		</div>
-		<div class="detailAttribute" ng-show="isAttribute==3">
-			<table class="table-fullborder">
-				<tr>
-					<th>参数名称</th>
-					<th>值</th>
-					<th>是否只读</th>
-					<th>参数类型</th>
-					<th>描述</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>错误提示</td>
-					<td>
-						<select name="" class="sele">
-							<option value="">只读</option>
-						</select>
-					</td>
-					<td>
-						<select name="">
-							<option value="">入参</option>
-						</select>
-					</td>
-					<td></td>
-
-				</tr>
-			</table>
+		<div class="detailAttribute" ng-show="isAttribute==1">
+			<div class="content">
+				<div style="background: #fff;" ui-grid="gridOptionsComp1" ui-grid-resize-columns ui-grid-edit class="gridTableBox"></div>
+			</div>
 		</div>
 
 	</div>
