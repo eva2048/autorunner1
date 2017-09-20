@@ -1,9 +1,9 @@
 <style type="text/css">
-.modal-dialog {
+.modal-dialog.modal-lg {
     width: 1100px;
 }
 
-.modal-body {
+.modal-lg .modal-body {
     height: 600px;
     max-height: 600px;
 }
@@ -52,7 +52,7 @@
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
-<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1">
+<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1" ng-controller="modalCtrl">
     <div class="flexRow">
         <div class="floatleft flex modalRightContent modalRightContent1">
             <!-- 基本信息 -->
@@ -84,7 +84,7 @@
                     </li>
                     <li class="floatright">
                         <h1>信息知会人：</h1>
-                        <div class="inputSelect floatleft" ng-click="open('createTaskTestset')">
+                        <div class="inputSelect floatleft" ng-click="open('createTaskTestset','lg')">
                             <input type="text" class="inputText" disabled="disabled" placeholder="测试集1;测试集2">
                             <span class="inputSelectBtn">
                                 <i class="iconfont icon-trees"></i>
@@ -178,7 +178,7 @@
                                 <th>测试集</th>
                                 <th>执行器</th>
                                 <th>运行模式</th>
-                                <th>预约时间</th>
+                                <th>预约时间</th>                              
                             </tr>
                             <tr>
                                 <td>
@@ -197,12 +197,13 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <div class="defaultTimeSelectBox datetimePicker floatleft">
+                                    <!--<div class="defaultTimeSelectBox datetimePicker floatleft">
                                         <input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
                                         <span class="timeselectTitle">选择日期：</span>
                                         <div class="clear"></div>
-                                    </div>
-                                </td>
+                                    </div>-->
+                                    <input type="text" readonly="readonly" ng-click="open('appointmentTime','sm')" style="border-bottom: 1px solid #DDDDDD;"/>
+                                </td>                                
                             </tr>
                         </table>
                     </div>
