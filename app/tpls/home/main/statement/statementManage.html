@@ -19,7 +19,7 @@
 	<div class="projectBodyTitle">
 		执行记录
 	</div>
-	<div class="projectBodyContent" style="top: 56px;" ng-controller="statementCtrl">
+	<div class="projectBodyContent" style="top: 56px;left:0px" ng-controller="statementCtrl">
 		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
 			<div class="useCaseListfunc" style="line-height: 43px;">
 				<div class="dropdownDefault floatleft" dropdown>
@@ -48,7 +48,7 @@
 						</li>
 						<li class="datetimePicker">
 							<a>结束时间：
-								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
 								<div class="clear"></div>
 							</a>
 						</li>
@@ -72,7 +72,6 @@
 			<div class="userCaseListTable">
 				<div ui-grid="gridOptionsStatement" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
 			</div>
-
 		</div>
 	</div>
 </div>

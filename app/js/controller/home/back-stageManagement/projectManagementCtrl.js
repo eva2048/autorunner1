@@ -52,6 +52,7 @@ define(['app'], function(app) {
                             enableSorting: false,
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableColumnResizing: false
                         }
                     ],
                     data:[]

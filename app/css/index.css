@@ -369,19 +369,22 @@
 .useCaseTree .title .iconfont:hover {
     color: #008bff;
 }
-
+.dropdown-menu .iconfont:hover{
+	color: #FFFFFF !important;
+}
 .treeBody {
     width: 100%;
     overflow: auto;
     position: absolute;
     top: 45px;
     bottom: 0px;
+    padding-left: 10px;
 }
 
 .treeBody .treeToggle {
-    cursor: pointer;
-    display: inline-block;
-    float: left;
+    cursor: pointer; 
+    position: absolute;
+    left: -10px;
 }
 
 .treeBody .tree-node-content .treeCheckBox {

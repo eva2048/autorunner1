@@ -1,14 +1,14 @@
 <style type="text/css">
 </style>
-<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=2">
+<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=2" ng-controller="projectNavDemandCtrl">
     <div class="navTabPanel">
         <ul>
-        	<li ng-click="navTabPanel=2" ui-sref="index.demand">
+        	<li ng-click="navTabPanel=2" ng-modal="navTabPanel" ui-sref="index.demand">
                 <span data-tip="过滤器结构视图">
                 <i class="iconfont icon-liebiao" ng-class="{'f_blue':navTabPanel==2}"></i>
                 </span>
             </li>
-            <li ng-click="navTabPanel=1" ui-sref="index.demand.demandDetails">
+            <li ng-click="navTabPanel=1" ng-modal="navTabPanel" ui-sref="index.demand.demandDetails">
                 <span data-tip="树结构视图">
                 <i class="iconfont icon-pinzhongjiegou" ng-class="{'f_blue':navTabPanel==1}" ui-sref="index.demand"></i>
                 </span>
@@ -159,6 +159,18 @@
                 <span class="chatIconButton floatright treefunicon" data-tip="删除节点">
                     <i class="iconfont icon-empty"></i>
                 </span>
+                <div class="dropdownDefault floatright treefunicon" dropdown>
+                    <span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
+                       <i class="iconfont icon-yidong" style="font-size: 15px;"></i>
+                    </span>
+                    <ul class="dropdown-menu transition" dropdown-menu role="menu">
+                        <span class="triangle"></span>
+                        <li><i class="iconfont icon-guanlihoutai23"></i><span>上移</span></li>
+	                    <li><i class="iconfont icon-guanlihoutai23-copy"></i><span>下移</span></li>
+	                    <li><i class="iconfont icon-zuoyi1" style="font-size: 16px;"></i><span>左移</span></li>
+	                    <li><i class="iconfont icon-youyi1" style="font-size: 16px;"></i><span>右移</span></li>
+                    </ul>
+                </div>
                 <span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
                     <i class="iconfont icon-editor"></i>
                 </span>
@@ -168,22 +180,10 @@
                     </span>
                     <ul class="dropdown-menu transition" dropdown-menu role="menu">
                         <span class="triangle"></span>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>新增子节点</span></li>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>新增同级节点</span></li>
+                        <li><i class="iconfont icon-tianjia1"></i><span>新增子节点</span></li>
+                    	<li><i class="iconfont icon-449xianxingtianjiatongji" style="font-size: 16px;"></i><span>新增同级节点</span></li>
                     </ul>
-                </div>
-                <div class="dropdownDefault floatright treefunicon" dropdown>
-                    <span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
-                        <i class="iconfont icon-send"></i>
-                    </span>
-                    <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                        <span class="triangle"></span>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>上移</span></li>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>下移</span></li>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>左移</span></li>
-                        <li><i class="iconfont icon-addpeople_fill"></i><span>右移</span></li>
-                    </ul>
-                </div>
+                </div>               
             </div>
             <div class="treeBody">
                 <div>

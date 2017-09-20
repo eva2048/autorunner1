@@ -18,7 +18,7 @@ require.config({
 		//富文本编辑器
 		'umeditor':'umeditor/umeditor.config',
 		'umeditor1':'umeditor/umeditor',
-		'umeditor2':'umeditor/metaUmeditor',
+		'umeditor2':'umeditor/metaUmeditor'
 	},
 	shim: {
 		'angular': {

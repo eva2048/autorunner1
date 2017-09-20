@@ -162,7 +162,7 @@ define(['app'], function(app) {
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
-                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p" ui-sref="index.demand.demandDetails">{{row.entity.demandName}}</div>',
+//                          cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p">{{row.entity.demandName}}</div>',
                         },
                         {
                             field: "creater",

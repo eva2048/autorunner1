@@ -1,0 +1,97 @@
+<style type="text/css">
+	.modal-dialog.modal-sm {
+		width: 800px;
+	}
+	
+	.modal-sm .modal-body {
+		height: 450px;
+		max-height: 600px;
+	}
+	
+	.inputText {
+		width: 200px;
+		border: none;
+		border-bottom: 1px solid #eee;
+	}					
+	.dropdowncheckbox {
+		float: left;
+		margin:8px 10px !important;		
+	}
+	.dropdownList{
+		height: 30px;
+		line-height: 30px;
+	} 
+	.dropdowntoggle {
+		margin-left: 20px;
+		margin-top: 5px;
+	}
+</style>
+<div class="modal-header">
+	<h3>预约类型
+	 <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+	</h3>
+</div>
+<div class="modal-body modalBody">
+	<ul class="titleUl">
+		<li class="clearfix">
+			<h1>预约类型：</h1>
+			<select class="selectNormal" ng-model="selectModel" ng-init="selectModel=1">
+				<option value="1">单次执行</option>
+				<option value="2">周期执行</option>
+			</select>
+		</li>
+		<li class="clearfix" ng-show="selectModel==1">
+			<h1>预约时间：</h1>
+			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />			
+		</li>
+		<li class="clearfix" ng-show="selectModel==2">
+			<h1>重复周期：</h1>			 
+			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />		
+				~
+			<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+		</li>
+		<li class="clearfix" ng-show="selectModel==2">
+			<h1>重复方式：</h1>
+			<select class="selectNormal floatleft" ng-model="selectModel2" ng-init="selectModel2=1">
+				<option value="1">每天执行</option>
+				<option value="2">每周执行</option>
+			</select>
+			<div class="dropdownBox floatleft dateBoxClear" dropdown ng-show="selectModel2==2">
+				<div dropdown-toggle class="dropdowntoggle">
+					<span class="dropdowntoggletext">选择时间</span>
+					<i class="iconfont icon-unfold"></i>
+				</div>
+				<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周一
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周二
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周三
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周四
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周五
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周六
+					</li>
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
+						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周日
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="clearfix" ng-show="selectModel==2">
+			<h1>预约时间：</h1>
+		</li>
+	</ul>
+</div>
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

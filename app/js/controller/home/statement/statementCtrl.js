@@ -77,6 +77,7 @@ define(['app'], function(app) {
                             displayName: '操作处理',
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">查看日志</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            enableColumnResizing: false,
                         }
                     ],
                     data: [{}]

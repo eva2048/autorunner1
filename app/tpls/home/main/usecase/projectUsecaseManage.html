@@ -4,58 +4,52 @@
 <div class="projectBodyBox" ng-controller="modalCtrl">
 	<div class="projectBodyTitle">
 		用例管理
-		<div class="floatright btn_add" ng-click="open('newDemand','lg')">
-			<span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
+		<div class="floatright searchBox" style="margin-top: 7px;">
+			<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+			<i class="iconfont icon-search"></i>
 		</div>
 	</div>
 	<div class="projectBodyContent" style="top: 56px;" ng-controller="usecaseCtrl">
-		<div class="usecaseListPanel floatleft" style="width: 60%;border-right: 5px solid #e4e6f1" ng-style="useCaseListStyle">
-			<div class="useCaseListfunction">
-				<span class="floatleft selectNum">已选中2项：</span>
-				<span class="chatIconButton">
+		<div class="useCaseListfunction">
+			<span class="floatleft selectNum">已选中2项：</span>
+			<span class="chatIconButton">
                     <i class="iconfont icon-guanlian"></i>复制
                 </span>
-				<span class="chatIconButton">
+			<span class="chatIconButton">
                     <i class="iconfont icon-brush_fill"></i>剪切
                 </span>
-				<span class="chatIconButton">
+			<span class="chatIconButton">
                     <i class="iconfont icon-import"></i>粘贴
                 </span>
-				<span class="chatIconButton">
+			<span class="chatIconButton">
                     <i class="iconfont icon-empty_fill"></i>删除
                 </span>
-				<span class="chatIconButton">
-                    <i class="iconfont icon-tongji"></i>用例统计
-                </span>
-				<span class="chatIconButton">
-                    <i class="iconfont icon-import"></i>导入
-                </span>
-				<span class="chatIconButton">
+
+			<div class="floatright btn_add" ng-click="open('addUseCase')" style="margin-top: 8px;margin-left: 10px;">
+				<span class="cicleicon"><i class="iconfont icon-add"></i></span> 新增用例
+			</div>
+			<span class="chatIconButton floatright">
                     <i class="iconfont icon-daochu2"></i>导出
                 </span>
-				<div class="floatright searchBox">
-					<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
-					<i class="iconfont icon-search"></i>
-				</div>
-				<div class="clear"></div>
-			</div>
+			<span class="chatIconButton floatright">
+                    <i class="iconfont icon-import"></i>导入
+                </span>
+			<span class="chatIconButton floatright">
+                    <i class="iconfont icon-tongji"></i>用例统计
+                </span>
+			<div class="clear"></div>
+		</div>
+		<div class="usecaseListPanel floatleft" style="width: 60%;border-right: 5px solid #e4e6f1" ng-style="useCaseListStyle">
 			<div class="userCaseListTable">
 				<div style="" ui-grid="gridOptionsUsecase" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
 			</div>
 
 		</div>
 		<div class="usecaseListPanel floatright" style="width: 40%;" ng-style="useCaseListStyle">
-			<div class="useCaseListfunction">
-				<span class="floatleft selectNum">已选中2项：</span>
-				<span class="chatIconButton">
-                            <i class="iconfont icon-tianjia-copy"></i>添加数据
-                        </span>
-				<span class="chatIconButton">
-                            <i class="iconfont icon-empty_fill"></i>删除数据
-                        </span>
-				<div class="clear"></div>
-			</div>
 			<div class="userCaseListTable">
+				<div style="width: 100%;font-size: 14px;color: #313131;margin-bottom: 10px;">
+					用例名称用例名称
+				</div>
 				<div ui-grid="gridOptionsUsecaseData" ui-grid-autoResize ui-grid-selection ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
 			</div>
 		</div>
