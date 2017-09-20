@@ -12,6 +12,7 @@ require.config({
 		'angular-resizable':'angular-resizable',
 		'ui-grid':'ui-grid',
 		'highstock':'highstock.src',
+		'highchartmore':'highcharts-more.src',
 		'exporting':'exporting.src',
 		'highcharts-ng':'highcharts-ng',
 		//富文本编辑器
@@ -41,6 +42,9 @@ require.config({
 		'router': {
 			deps: ['angular']
 		},
+		'highchartmore':{
+			deps: ['highstock']
+		},
 		'app': {
 			deps: ['router']
 		},
@@ -61,6 +65,6 @@ require.config({
 	}
 })
 // 初始化myModule模块
-require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','exporting','highcharts-ng','umeditor','umeditor1','umeditor2'],function(){
+require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','highchartmore','exporting','highcharts-ng','umeditor','umeditor1','umeditor2'],function(){
 	angular.bootstrap(document, ['myModule']);
 })
