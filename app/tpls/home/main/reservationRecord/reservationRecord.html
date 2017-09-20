@@ -1,0 +1,119 @@
+<style type="text/css">
+	.chatIconButton {
+		margin: 0px 5px;
+		color: #666;
+		cursor: pointer;
+		font-size: 13px;
+		margin-left: 10px;
+	}
+	
+	.chatIconButton:hover {
+		color: #008BFF;
+	}
+	
+	.chatIconButton .iconfont {
+		color: #008bff;
+		font-size: 13px;
+		margin-right: 5px;
+	}
+	.dropdownList{
+		height: 30px;
+		line-height: 30px;
+	} 
+	.dropdowncheckbox {
+		float: left;
+		margin:8px 10px !important;		
+	}
+	
+</style>
+<div class="projectBodyBox" ng-controller="modalCtrl">
+	<div class="projectBodyTitle">
+		预约记录
+	</div>
+	<div class="projectBodyContent" style="top: 56px;left:0px" ng-controller="reservationRecordCtrl">
+		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+			<div class="useCaseListfunc" style="line-height: 43px;">
+				<div class="dropdownBox floatleft dateBoxClear" dropdown  style="margin-right: 10px;">
+					<div dropdown-toggle class="dropdowntoggle">
+						<span class="dropdowntoggletext">预约时间</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+						<li class="datetimePicker">
+							<a>开始时间：
+								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<div class="clear"></div>
+							</a>
+						</li>
+						<li class="datetimePicker">
+							<a>结束时间：
+								<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<div class="clear"></div>
+							</a>
+						</li>
+						<li class="marginb_10">
+							<a>
+								<input type="button" class="btn btn-sm btn-success" value="确认">
+								<input type="button" class="btn btn-sm btn-info" value="清空">、
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdownBox floatleft dateBoxClear" dropdown style="margin-right: 10px;">
+					<div dropdown-toggle class="dropdowntoggle">
+						<span class="dropdowntoggletext">预约人</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />王大锤
+						</li>
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />王大厨
+						</li>		
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />王大拿
+						</li>	
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />王大嘴
+						</li>	
+					</ul>
+				</div>
+				<div class="dropdownBox floatleft dateBoxClear" dropdown style="margin-right: 10px;">
+					<div dropdown-toggle class="dropdowntoggle">
+						<span class="dropdowntoggletext">执行器</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />执行器1
+						</li>
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />执行器2
+						</li>		
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />执行器3
+						</li>	
+						<li class="dropdownList"  ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" />执行器4
+						</li>	
+					</ul>
+				</div>
+				<span class="chatIconButton">
+                    <i class="iconfont icon-empty_fill"></i>取消
+               </span>
+				<div class="floatright searchBox" style="margin-left: 10px;">
+					<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+					<i class="iconfont icon-search"></i>
+				</div>
+				<a class="chatIconButton floatright" ui-sref="device" target="_blank" href="#/device">
+					<i class="iconfont icon-clock_fill"></i> 查看执行器预约情况
+				</a>
+				<div class="clear"></div>
+			</div>
+			<div class="userCaseListTable">
+				<div ui-grid="gridOptionsReservationRecord" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+			</div>
+		</div>
+	</div>
+</div>

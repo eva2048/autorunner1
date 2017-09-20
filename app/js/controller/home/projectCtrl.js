@@ -59,7 +59,7 @@ define(['app'], function(app) {
                 };
                 $scope.dat = new Date();
                 $scope.dat0 = new Date();
-                $scope.format = "yyyy/MM/dd";
+                $scope.format ="yyyy/MM/dd";
                 $scope.altInputFormats = ['yyyy/M!/d!'];
                 $scope.popup1 = {
                     opened: false

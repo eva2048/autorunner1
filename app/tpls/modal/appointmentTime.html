@@ -15,10 +15,12 @@
 	}					
 	.dropdowncheckbox {
 		float: left;
-		margin-left: 10px !important;
-		margin-right: 10px !important;
+		margin:8px 10px !important;		
 	}
-	
+	.dropdownList{
+		height: 30px;
+		line-height: 30px;
+	} 
 	.dropdowntoggle {
 		margin-left: 20px;
 		margin-top: 5px;
@@ -40,13 +42,13 @@
 		</li>
 		<li class="clearfix" ng-show="selectModel==1">
 			<h1>预约时间：</h1>
-			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />			
+			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />			
 		</li>
 		<li class="clearfix" ng-show="selectModel==2">
 			<h1>重复周期：</h1>			 
-			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />		
+			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />		
 				~
-			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+			<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
 		</li>
 		<li class="clearfix" ng-show="selectModel==2">
 			<h1>重复方式：</h1>
@@ -60,25 +62,25 @@
 					<i class="iconfont icon-unfold"></i>
 				</div>
 				<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周一
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周二
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周三
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周四
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周五
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周六
 					</li>
-					<li ng-click="$event.stopPropagation()">
+					<li class="dropdownList" ng-click="$event.stopPropagation()">
 						<input class="dropdowncheckbox" type="checkbox" name="" id="" value="" /> 周日
 					</li>
 				</ul>

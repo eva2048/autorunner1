@@ -485,6 +485,44 @@ define(['angular', 'router'], function() {
 						}]
 					}
 				})
+                /*预约记录*/
+                .state("reservationRecord", {
+					url: "/reservationRecord/:num",
+					views: {
+						'': {
+							templateUrl: '../tpls/home/index.html'
+						},
+						'topbar@reservationRecord': {
+							templateUrl: '../tpls/home/topbar.html'
+						},
+						'main@reservationRecord': {							
+							templateUrl: '../tpls/home/main1.html'
+						},
+						'projectBody@reservationRecord': {						
+							templateUrl: '../tpls/home/main/reservationRecord/reservationRecord.html'
+						},
+						'projectDetail@reservationRecord': {
+							templateUrl: '../tpls/home/main/reservationRecord/reservationDetail.html'
+						}
+					},
+					resolve: {
+						loadCtrl: ["$q", function($q) {
+							var deferred = $q.defer();
+							//异步加载controller／directive/filter/service
+							require([
+								'../js/controller/home/projectCtrl.js',
+								'../js/controller/modal/modalCtrl.js',
+								'../js/controller/modal/tipmodalCtrl.js',
+								'../js/controller/modal/modalInstanceCtrl.js',
+								'../js/controller/modal/tipmodalInstanceCtrl.js',
+								'../js/controller/home/reservationRecord/reservationRecord.js'
+							], function(controller) {
+								deferred.resolve();
+							});
+							return deferred.promise;
+						}]
+					}
+				})
                  /*数据池*/
                 .state("index.dataPool",{
                     url:"/dataPool",
