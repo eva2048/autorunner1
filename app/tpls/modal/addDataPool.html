@@ -1,24 +1,60 @@
 <style type="text/css">
+	.thead {
+		float: left;
+		max-width: 370px;
+	}
+	
+	.thead li {
+		display: inline-block;
+		padding: 0 10px;
+		min-width: 60px;
+		margin-bottom: 10px;
+		height: 32px;
+		line-height: 32px;
+		border: 1px solid #c3c4c9;
+		position: relative;
+		margin-right: 5px;
+		cursor: pointer;
+	}
+	.thead li .bianhao_control{
+		position: absolute;
+		width: 100%;		
+		height: 20px;
+		line-height: 20px;
+		background: #F2F2F2;
+		left: 0;
+		top: -21px;
+		display: none;
+	}
+	.thead li .bianhao_control .iconfont{
+		font-size: 12px;
+		color: #999;
+		cursor: pointer;
+		margin-right: 5px;
+	}	
+	.thead li:hover .bianhao_control{
+		display: block;
+	}
 </style>
 <div class="modal-header">
-    <h3>添加数据池
+	<h3>添加数据池
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
 <div class="modal-body modalBody">
-    <ul class="titleUl">          	
-       <li class="clearfix">  
-       		<h1>名称：</h1>
-            <input type="text" class="inputText floatleft" style=" width: 370px;">                 	
-        </li>            
-        <li class="clearfix">  
-       		<h1>备注：</h1>
-            <textarea name="" rows="" cols="" class="projectTextarea" style=" width: 370px;"></textarea>
-        </li>    
-    </ul>
+	<ul class="titleUl">
+		<li class="clearfix">
+			<h1>名称：</h1>
+			<input type="text" class="inputText floatleft" style=" width: 370px;">
+		</li>		
+		<li class="clearfix">
+			<h1>备注：</h1>
+			<textarea name="" rows="" cols="" class="projectTextarea" style=" width: 370px;"></textarea>
+		</li>
+	</ul>
 </div>
-<div class="modal-footer">  
+<div class="modal-footer">
 	<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
-    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="cancel()">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="cancel()">
 </div>

@@ -7,6 +7,7 @@ define(['app'], function(app) {
 				$scope.selected = {
 					item: $scope.items[0]
 				};
+				
 				$scope.pModel = ['123', '222'];
                 //日期控件1
                 $scope.inlineOptions = {
@@ -100,7 +101,7 @@ define(['app'], function(app) {
                         },
                     ],
                     data:[]
-                };
+                };                                                                                        
 			}
 		])
 })

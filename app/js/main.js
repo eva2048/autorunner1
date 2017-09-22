@@ -8,6 +8,7 @@ require.config({
 		'bootstrap':'bootstrap.min',
 		'router': 'angular-ui-router.min',
 		'ui-bootstrap-tpls':'ui-bootstrap-tpls.min',
+		'bootstrap-datetimepicker':'bootstrap-datetimepicker',
 		'angular-ui-tree':'angular-ui-tree.min',
 		'angular-resizable':'angular-resizable',
 		'ui-grid':'ui-grid',
