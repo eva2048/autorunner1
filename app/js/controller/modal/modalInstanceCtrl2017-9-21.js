@@ -126,20 +126,20 @@ define(['app'], function(app) {
                 //是否显示不在当前时间范围内的用例
                 $scope.showall=true;
                 //是否是实时数据
-                $scope.actualtime=false;
+                $scope.actualtime=true;
                 //定义结束时间
-                $scope.endtime = new Date('2017-9-18 16:42:00');
+                $scope.endtime = new Date('2017-9-18 16:52:00');
                 $scope.endtimeString = Date.parse($scope.endtime);
                 //定义开始时间
                 $scope.starttimeString = beforeNowtime($scope.endtimeString,$scope.timerange);
                 $scope.t = new Date('2017-9-18 16:52:00');
                 $scope.ts = Date.parse($scope.t);
-                //计算每秒占几px
+                //计算每分钟占几px
                 $scope.pxmin = $scope.statewidth / 3600 / $scope.timerange;
                 //数据
-                $http.get('./data/actuators.php')
+                $http.get('./data/cases.php')
                     .success(function(data) {
-                        $scope.casedata = data.actuators;
+                        $scope.casedata = data.cases;
                         returndata($scope.casedata);
                     });
                 /*定义方法*/
@@ -152,45 +152,29 @@ define(['app'], function(app) {
                     }
                 };
                 //获取进度条右侧位置
-                var findPot = function(timestring,defaultstring) {
-                    if (timestring < defaultstring) {
-                        var fp = turnmin(timestring, defaultstring) * $scope.pxmin;
+                var findPot = function(timestring) {
+                    if (timestring < $scope.endtimeString) {
+                        var fp = turnmin(timestring, $scope.endtimeString) * $scope.pxmin;
                         return fp;
                     } else {
                         return 0;
                     };
                 };
                 //获取进度条左侧位置
-                var findPot1 = function(timestring1,defaultstring) {
-                    if (timestring1 < defaultstring) {
+                var findPot1 = function(timestring1) {
+                    if (timestring1 < $scope.starttimeString) {
                         return 0;
                     } else {
-                        var fp = turnmin(defaultstring, timestring1) * $scope.pxmin;
+                        var fp = turnmin($scope.starttimeString, timestring1) * $scope.pxmin;
                         return fp;
                     }
                 };
                 //转换数据
                 var returndata=function(data){
                     for(var i=0;i<data.length;i++){
-                        var cases=data[i].cases;
-                        for(var j=0;j<cases.length;j++){
-                            cases[j].potleft=findPot1(cases[j].starttime,$scope.starttimeString);
-                            cases[j].potright=findPot(cases[j].endtime,$scope.endtimeString);
-                            var scripts=cases[j].scripts;
-                            for(var k=0;k<scripts.length;k++){
-                                if(cases[j].starttime<$scope.starttimeString){
-                                    scripts[k].potleft=findPot1(scripts[k].starttime,$scope.starttimeString);
-                                }else{
-                                    scripts[k].potleft=findPot1(scripts[k].starttime,cases[j].starttime);
-                                }
-                                if(cases[j].endtime>$scope.endtimeString){
-                                    scripts[k].potright=findPot(scripts[k].endtime,$scope.endtimeString);
-                                }else{
-                                    scripts[k].potright=findPot(scripts[k].endtime,cases[j].endtime);
-                                }                               
-                            }
-                        }                       
-                    };
+                        data[i].potleft=findPot1(data[i].starttime);
+                        data[i].potright=findPot(data[i].endtime);
+                    }
                 };
                 //设置时间范围（时/日）        
                 $scope.setTimerange = function(length) {
@@ -231,9 +215,9 @@ define(['app'], function(app) {
                 var updatedata=function(){
                     $scope.endtimeString=$scope.endtimeString+1000;
                     $scope.starttimeString = $scope.starttimeString+1000;
-                    $http.get('./data/actuators.php')
+                    $http.get('./data/cases.php')
                     .success(function(data) {
-                        $scope.casedata = data.actuators;
+                        $scope.casedata = data.cases;
                         returndata($scope.casedata);                   
                     });
                 };
@@ -253,13 +237,11 @@ define(['app'], function(app) {
                 $scope.customtime={
                     "date":"2017-9-18",
                     "hour":11,
-                    "min":12,
-                    "sec":12
+                    "min":12
                 };
                 $scope.customtime.date=new Date("2017-9-18 12:00");
                 $scope.customtime.hour=$scope.customtime.date.getHours();
                 $scope.customtime.min=$scope.customtime.date.getMinutes();
-                $scope.customtime.sec=$scope.customtime.date.getSeconds();
                 //调整小时/分钟
                 $scope.settime=function(timetype,dir){
                     if(dir=="up"){
@@ -275,12 +257,6 @@ define(['app'], function(app) {
                             }else{
                                 $scope.customtime.min+=1;
                             }                            
-                        }else if(timetype=="sec"){
-                            if($scope.customtime.sec==59){
-                                $scope.customtime.sec=00;
-                            }else{
-                                $scope.customtime.sec+=1;
-                            }                            
                         }
                     }else if(dir=="down"){
                         if(timetype=="hour"){
@@ -294,12 +270,6 @@ define(['app'], function(app) {
                                 $scope.customtime.min=59;
                             }else{
                                 $scope.customtime.min-=1;
-                            }                            
-                        }else if(timetype=="sec"){
-                            if($scope.customtime.sec==0){
-                                $scope.customtime.sec=59;
-                            }else{
-                                $scope.customtime.sec-=1;
                             }                            
                         }
                     }
@@ -317,32 +287,20 @@ define(['app'], function(app) {
                 $scope.setvalidateTime=function(){
                     $scope.customtime.date.setHours($scope.customtime.hour);
                     $scope.customtime.date.setMinutes($scope.customtime.min);
-                    $scope.customtime.date.setSeconds($scope.customtime.sec);
+
+                    var tnow = new Date();
+                    var tnowstring = Date.parse(tnow);
                     var customtimedate=Date.parse($scope.customtime.date);
-                    if(customtimedate>$scope.endtimeString){
-                        $scope.customtime.date=new Date($scope.endtimeString);
-                        $scope.customtime.hour=$scope.customtime.date.getHours();
-                        $scope.customtime.min=$scope.customtime.date.getMinutes();
-                        $scope.customtime.sec=$scope.customtime.date.getSeconds();
-                    }else{
-                        $scope.endtimeString=customtimedate;
-                        $scope.starttimeString = beforeNowtime($scope.endtimeString,$scope.timerange);
-                        returndata($scope.casedata);
-                    }
                 };
                 
-                /*$scope.timer=$interval(function(){
+                $scope.timer=$interval(function(){
                     updatedata();
-                },1000);*/
+                },1000);
                 //关闭实时
                 $scope.changeactual=function(){
                     if($scope.actualtime){
                         $interval.cancel($scope.timer);
-                    }else{
-                        $scope.endtime = new Date('2017-9-18 16:42:00');
-                        $scope.endtimeString = Date.parse($scope.endtime);
-                        //定义开始时间
-                        $scope.starttimeString = beforeNowtime($scope.endtimeString,$scope.timerange);                      
+                    }else{                      
                         $scope.timer=$interval(function(){
                             updatedata();
                         },1000);

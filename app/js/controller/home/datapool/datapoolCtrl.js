@@ -106,7 +106,7 @@ define(['app'], function(app) {
                 //定义时间范围类型
                 $scope.timerange = 1/60;
                 //定义列表宽度
-                $scope.statewidth = 360;
+                $scope.statewidth = 720;
                 //是否显示不在当前时间范围内的用例
                 $scope.showall=true;
                 //定义结束时间

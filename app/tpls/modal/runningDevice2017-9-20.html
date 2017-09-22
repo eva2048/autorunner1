@@ -52,10 +52,10 @@
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
-<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1" style="overflow: visible;">
+<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1">
     <div class="flexRow">
         <div class="floatleft">
-            <ul class="modalLeftTab" style="height: 100%">
+            <ul class="modalLeftTab">
                 <li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
                     <i class="iconfont icon-barrage_fill"></i>
                     <span>执行设置</span>
@@ -66,7 +66,7 @@
                 </li>
             </ul>
         </div>
-        <div class="floatleft flex modalRightContent modalRightContent1" style="overflow: visible;">
+        <div class="floatleft flex modalRightContent modalRightContent1">
             <!-- 基本信息 -->
             <div>
                 <ul class="titleUl">
@@ -95,7 +95,7 @@
                         <div class="clear"></div>
                     </li>
                 </ul>
-                <!-- 执行设置 -->
+            <!-- 执行设置 -->            
             </div>
             <div ng-show="createFuncPoints==1" class="runningDeviceDateBox">
                 <div class="clearfix">
@@ -210,108 +210,82 @@
                 </div>
             </div>
             <!-- 运行情况 -->
-            <div ng-show="createFuncPoints==2" class="runningDeviceDateBox" style="overflow: visible;">
-                <div class="caseChart" id="caseChart">
-                    <div class="timetype">
-                        <!-- 开启实时 -->
-                        <div class="floatleft switchBox marginr_10">
-                            <label class="switchbg"></label>
-                            <input type="checkbox" name="" ng-model="actualtime" ng-click="changeactual()">
-                            <span class="switchbtn transitionStyle">实时</span>
-                        </div>
-                        <!-- 选择结束时间 -->
-                        <div class="customTime floatleft" ng-hide="actualtime" style="margin-left: 30px;">
-                            <div class="defaultDateTimeSelectBox datetimePicker floatleft">
-                                <span class="timeselectTitle floatleft">结束时间：</span>
-                                <input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="customtime.date" is-open="popup1.opened" datepicker-options="inlineOptions" ng-click="$event.stopPropagation();open1()" show-button-bar="false" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />                           
-                                <div class="clear"></div>
-                            </div>
-                            <div class="floatleft" style="line-height: 28px;color:#000;font-weight: bold;margin: 0px 5px;">~</div>
-                            <div class="floatleft defaultTimepicker">
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.hour" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('hour','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('hour','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>  
-                                <div class="floatleft timeicon" style="">:</div>
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.min" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('min','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('min','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>  
-                                <div class="floatleft timeicon" style="">:</div>
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.sec" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('sec','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('sec','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>
-                                <div class="btnGroup floatright marginl_10">
-                                    <button class="bgBtn redBtn" type="button" ng-click="setTimerange(1/60);setvalidateTime()">确定</button>
-                                    <button class="bgBtn greenBtn" type="button" ng-click="setTimerange(1)">重置</button>
-                                    <div class="clear"></div>
-                                </div>                            
-                            </div>
-                        </div>
-                        
-                        <!-- 时间范围 -->
-                        <div class="btnGroup floatright">
-                            <button class="bgBtn" ng-class="{'current':timerange==1/240}" type="button" ng-click="setTimerange(1/240)">15s</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1/120}" type="button" ng-click="setTimerange(1/120)">30s</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1/60}" type="button" ng-click="setTimerange(1/60)">分</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1}" type="button" ng-click="setTimerange(1)">时</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==24}" type="button" ng-click="setTimerange(24)">日</button>
+            <div ng-show="createFuncPoints==2" class="runningDeviceDateBox">
+                <div class="leftTable floatleft" style="width: 70%;">
+                    <ul class="titleUl titleUl1">
+                        <li>
+                            <h1>开始时间：</h1>
+                            <h2>2017-8-29 17:00:00</h2>
                             <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>运行时间：</h1>
+                            <h2>35:00</h2>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>剩余时间：</h1>
+                            <h2>35:00</h2>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                    <ul class="titleUl titleUl1">
+                        <li>
+                            <h1>总用例数：</h1>
+                            <h2>20</h2>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>成功用例数：</h1>
+                            <h2>10</h2>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>失败用例数：</h1>
+                            <h2>0</h2>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                    <ul class="titleUl titleUl1">
+                        <li>
+                            <h1>运行组件：</h1>
+                            <h2>20</h2>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>成功用例数：</h1>
+                            <h2>10</h2>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                            <h1>失败用例数：</h1>
+                            <h2>0</h2>
+                            <div class="clear"></div>
+                        </li>
+                    </ul>
+                    <div class="result">
+                        <p>
+                            <span>测试集：测试集a</span>
+                            <span>成功用例：0</span>
+                            <span>失败用例：0</span>
+                        </p>
                     </div>
-                    <div class="casetableBox">
-                        <table class="casetable" id="casetable">
-                            <tbody>
-                                <tr ng-repeat="(index,actuators) in casedata">
-                                    <td><div class="casename">{{actuators.name}}</div></td>
-                                    <td class="state" ng-style="{width:(statewidth+3+'px')}">
-                                        <div class="barBox">
-                                            <div ng-repeat="(i,case) in actuators.cases" class="bar barcase"  style="right:{{case.potright+'px'}};left:{{case.potleft+'px'}};background:{{i%2==0?'#d8dcee':'#eee';}}" title="{{case.name}}">
-                                                <div ng-repeat="(j,script) in case.scripts" class="bar barchild" style="right:{{script.potright+'px'}};left:{{script.potleft+'px'}};background:{{getcolor(script.state)}}">{{script.name}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <table class="casetable casetable1" style="">
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td class="foottime" ng-style="{width:(statewidth+3+'px')}">
-                                    <div class="time starttime">{{starttimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
-                                    <div class="time endtime">{{endtimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <div class="timetype margint_10">
-                        <!-- 翻页 -->
-                        <div class="btnGroup floatleft" ng-hide="actualtime">
-                            <button class="bgBtn bgBtnPage" ng-click="changepage('before')" type="button"><i class="iconfont icon-left-page"></i></button>
-                            <button class="bgBtn bgBtnPage" type="button" ng-click="changepage('after')"><i class="iconfont icon-right-page"></i></button>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="colorInfoBox floatleft timetypecenter">
-                            <div class="colorInfo fail">
-                                <span></span>执行失败
-                            </div>
-                            <div class="colorInfo success">
-                                <span></span>执行成功
-                            </div>
-                            <div class="colorInfo running">
-                                <span></span>正在执行
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
+                </div>
+                <div class="notice floatright" style="width: 28%;">
+                    <span>
+						<input type="checkbox" name="" id="" value="" />
+						保留最新执行消息
+					</span>
+                    <div class="log">
+                        <p>
+                            加载用例开始
+                        </p>
+                        <p>
+                            真正复制用例数据成功
+                        </p>
+                        <p>
+                            测试集：测试集a准备数据成功
+                        </p>
                     </div>
                 </div>
             </div>

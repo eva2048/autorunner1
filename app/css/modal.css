@@ -289,3 +289,294 @@
     color: #008bff;
     font-size: 14px;
 }
+
+/*立即执行执行情况*/
+.caseChart{
+    margin: 20px 10px 10px 10px;
+}
+.casetable>tbody>tr>td{
+    line-height: 32px;
+    border:1px solid #eee;
+    border-width: 0px 1px 1px 0px;
+}
+.casetable>tbody>tr>td:last-child{
+    border-right: 0px;
+}
+.casetable{
+    border:1px solid #eee;
+    border-width: 0px 0px 0px 0px;
+}
+.casetable1{
+    border-width: 0px 1px 1px 1px;
+}
+.casetable>tbody>tr>td:first-child{
+    padding: 0px 10px;
+    width: 170px;
+}
+.casetable>tfoot>tr>td:first-child{
+    padding: 0px 10px;
+    width: 170px;
+}
+.casetable>tbody>tr>td.state .barBox{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top:0px;
+    bottom: 0px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.casetable>tbody>tr>td.state .bar{
+    right: 0px;
+    background: #008bff;
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: 0px;
+}
+.casetable>tbody>tr>td.state .barchild{
+    top: 8px;
+    bottom: 8px;
+    border-right: 1px solid #fff;
+    color: #fff;
+    line-height: 14px;
+    text-align: center;
+    font-size: 11px;
+    white-space: nowrap;
+}
+.casetable>tbody>tr>td.state .barcase{
+    top:0px;
+    bottom: 0px;
+}
+.casetable>tbody>tr>td.state .barcase:hover{
+    background: #bbdefb!important;
+}
+.casetable>tbody>tr.timeTr>td{
+    height: 100px;
+}
+.casetable>tbody>tr>td.state{
+    width: 360px;
+    position: relative;
+}
+.casetable>tbody>tr>td.state:hover .detailBox{
+    display: block;
+}
+.casetable>tbody>tr>td.state .detailBox{
+    max-width: 400px;
+    min-width: 250px;
+    background: rgba(255,255,255,1);
+    padding: 10px;
+    position: absolute;
+    top: 90%;
+    transform:translate(-50%,0);
+    -ms-transform:translate(-50%,0);
+    -moz-transform:translate(-50%,0); 
+    -webkit-transform:translate(-50%,0);
+    -o-transform:translate(-50%,0);
+    left: 50%;
+    z-index: 5;
+    border: 1px solid #008bff;
+    box-shadow: 0px 0px 5px #008bff;
+    display: none;
+}
+.casetable>tbody>tr>td>.casename{
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.casetable>tbody>tr>td.state .detailBox:before{
+    content: "";
+    border: 8px solid transparent;
+    border-bottom-color: #008bff;
+    position: absolute;
+    left: 50%;
+    top: -16px;
+    margin-left: -8px;
+}
+.casetable>tbody>tr>td.state .detailBox .casename{
+    max-width: 100%;
+    word-break: break-all;
+    line-height: 20px;
+    color: #008bff;
+}
+.casetable>tbody>tr>td.state .detailBox:after{
+    content: "";
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    margin-left: -6px;
+}
+.casetable>tbody>tr>td.state .detailBox p{
+    line-height: 24px;
+}
+.casetable>tfoot>tr{
+    height: 32px;
+}
+.casetable>tfoot>tr>td .time{
+    position: absolute;
+    top: 10px;
+    text-align: center;
+}
+.casetable>tfoot>tr>td.foottime{
+    position: relative;
+    color: #000;
+}
+.casetable>tfoot>tr>td .starttime{
+    left: 10px;
+    /* transform:translate(-50%,0);
+    -ms-transform:translate(-50%,0);    IE 9
+    -moz-transform:translate(-50%,0);   Firefox
+    -webkit-transform:translate(-50%,0); Safari 和 Chrome
+    -o-transform:translate(-50%,0); */
+}
+.casetable>tfoot>tr>td .endtime{
+    right: 10px;
+    /* transform:translate(50%,0);
+    -ms-transform:translate(50%,0); IE 9
+    -moz-transform:translate(50%,0);    Firefox
+    -webkit-transform:translate(50%,0); Safari 和 Chrome
+    -o-transform:translate(50%,0); */
+}
+.caseChart .timetype{
+    margin-bottom: 10px;
+    position: relative;
+}
+.caseChart .timetype .selectBox{
+    line-height: 28px;
+    height: 28px;
+    border: 1px solid #ddd;
+    position: relative;
+    width: auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fff;
+    font-size: 12px;
+    padding: 0px 5px;
+}
+.caseChart .timetype .timetypecenter{
+    position: absolute;
+    left: 50%;
+    transform:translate(-50%,0);
+    -ms-transform:translate(-50%,0); 
+    -moz-transform:translate(-50%,0);   
+    -webkit-transform:translate(-50%,0); 
+    -o-transform:translate(-50%,0);
+    z-index: 100;
+}
+.caseChart .timetype .shownow{
+    line-height: 28px;
+}
+.caseChart .timetype .shownow input{
+    float:left;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+.caseChart .btnGroup .bgBtn{
+    border: 1px solid #ddd;
+    box-shadow: none;
+    border-left: 0;
+    cursor: pointer;
+    height: 28px;
+    vertical-align: middle;
+    background: #fff;
+    color: #333;
+    padding: 0px 10px;
+    text-align: center;
+    outline: none;
+    float:left;
+}
+.caseChart .btnGroup .bgBtn.current{
+    background: #008bff;
+    color: #fff;
+}
+.caseChart .btnGroup .bgBtn.redBtn{
+    background: #ff6248;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.caseChart .btnGroup .bgBtn.redBtn:hover{
+    background: #ff6248;
+    color: #fff;
+}
+.caseChart .btnGroup .bgBtn.greenBtn{
+    background: #02b4cb;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+.caseChart .btnGroup .bgBtn.greenBtn:hover{
+    background: #02b4cb;
+    color: #fff;
+}
+.caseChart .btnGroup .bgBtnPage{
+    width: 28px;
+    padding: 0px;
+}
+.caseChart .btnGroup .bgBtnPage:hover .iconfont{
+    color: #fff;
+}
+.caseChart .btnGroup .bgBtnPage .iconfont{
+    font-size: 12px;
+    color: #b1b1b1;
+}
+.caseChart .btnGroup .bgBtn:hover{
+    background: #008bff;
+    color: #fff;
+}
+.caseChart .btnGroup .bgBtn:first-child{
+    border-left: 1px solid #ddd;
+    border-radius: 3px 0px 0px 3px;
+}
+.caseChart .btnGroup .bgBtn:last-child{
+    border-radius: 0px 3px 3px 0px;
+}
+.colorInfoBox{
+    margin: 0 auto;
+}
+.colorInfoBox .colorInfo{
+    line-height: 1em;
+    float: left;
+    margin: 8px 10px;
+}
+.colorInfoBox .colorInfo span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #008bff;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 50%;
+    float: left;
+    margin-top: 3px;
+}
+.colorInfoBox .colorInfo.fail span{
+    background: #fa4552;
+}
+.colorInfoBox .colorInfo.success span{
+    background: #4caf50;
+}
+.colorInfoBox .colorInfo.running span{
+    background: #008bff;
+}
+/* 日期时间选择器 */
+.defaultDateTimeSelectBox .timeselectInput{
+    height: 28px;
+    border: 1px solid #ddd;
+    padding: 0px 10px;
+    width: 100px;
+}
+.defaultDateTimeSelectBox .timeselectTitle{
+    line-height: 28px;
+
+}
+.casetableBox{
+    height: 330px;
+    border: 1px solid #eee;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

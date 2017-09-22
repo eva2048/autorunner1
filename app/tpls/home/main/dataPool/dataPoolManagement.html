@@ -1,168 +1,5 @@
 <style type="text/css">
-.caseChart{
-	margin: 40px;
-	width: 500px;
-}
-.casetable>tbody>tr>td{
-	line-height: 32px;
-	border:1px solid #eee;
-	border-width: 0px 1px 1px 0px;
-}
-.casetable{
-	border:1px solid #eee;
-	border-width: 1px 0px 0px 1px;
-}
-.casetable>tbody>tr>td:first-child{
-	padding: 0px 10px;
-	width: 100px;
-}
-.casetable>tfoot>tr>td:first-child{
-	padding: 0px 10px;
-	width: 100px;
-}
-.casetable>tbody>tr>td.state .barBox{
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top:0px;
-	bottom: 0px;
-	overflow: hidden;
-	cursor: pointer;
-}
-.casetable>tbody>tr>td.state .bar{
-	right: 0px;
-	background: #008bff;
-	position: absolute;
-	top: 11px;
-	bottom: 11px;
-	left: 0px;
-}
-.casetable>tbody>tr.timeTr>td{
-	height: 100px;
-}
-.casetable>tbody>tr>td.state{
-	width: 360px;
-	position: relative;
-}
-.casetable>tbody>tr>td.state:hover .detailBox{
-	display: block;
-}
-.casetable>tbody>tr>td.state .detailBox{
-	width: 200px;
-	background: rgba(255,255,255,0.8);
-	padding: 10px;
-	position: absolute;
-	top: 50%;
-	transform:translate(110%,-50%);
-	-ms-transform:translate(110%,-50%);	/* IE 9 */
-	-moz-transform:translate(110%,-50%);	/* Firefox */
-	-webkit-transform:translate(110%,-50%); /* Safari 和 Chrome */
-	-o-transform:translate(110%,-50%);
-	right: 0px;
-	z-index: 5;
-	border: 1px solid #008bff;
-	box-shadow: 0px 0px 5px #008bff;
-	display: none;
-}
-.casetable>tbody>tr>td.state .detailBox:before{
-	content: "";
-	border: 8px solid transparent;
-	border-right-color: #008bff;
-	position: absolute;
-	left: -17px;
-	top: 50%;
-	margin-top: -8px;
-}
-.casetable>tbody>tr>td.state .detailBox:after{
-	content: "";
-	border: 6px solid transparent;
-	border-right-color: #fff;
-	position: absolute;
-	left: -12px;
-	top: 50%;
-	margin-top: -6px;
-}
-.casetable>tbody>tr>td.state .detailBox p{
-	line-height: 24px;
-}
-.casetable>tfoot>tr{
-	height: 60px;
-}
-.casetable>tfoot>tr>td .time{
-	position: absolute;
-	top: 10px;
-	text-align: center;
-}
-.casetable>tfoot>tr>td.foottime{
-	position: relative;
-}
-.casetable>tfoot>tr>td .starttime{
-	left: 0px;
-	transform:translate(-50%,0);
-	-ms-transform:translate(-50%,0);	/* IE 9 */
-	-moz-transform:translate(-50%,0);	/* Firefox */
-	-webkit-transform:translate(-50%,0); /* Safari 和 Chrome */
-	-o-transform:translate(-50%,0);
-}
-.casetable>tfoot>tr>td .endtime{
-	right: 0px;
-	transform:translate(50%,0);
-	-ms-transform:translate(50%,0);	/* IE 9 */
-	-moz-transform:translate(50%,0);	/* Firefox */
-	-webkit-transform:translate(50%,0); /* Safari 和 Chrome */
-	-o-transform:translate(50%,0);
-}
-.caseChart .timetype{
-	margin-bottom: 10px;
-}
-.caseChart .timetype .shownow{
-	line-height: 28px;
-}
-.caseChart .timetype .shownow input{
-	float:left;
-	margin-top: 8px;
-	margin-right: 5px;
-}
-.caseChart .btnGroup .bgBtn{
-	border: 1px solid #ddd;
-    box-shadow: none;
-    border-left: 0;
-    cursor: pointer;
-    height: 28px;
-    vertical-align: middle;
-    background: #fff;
-    color: #333;
-    padding: 0px 10px;
-    text-align: center;
-    outline: none;
-    float:left;
-}
-.caseChart .btnGroup .bgBtn.current{
-	background: #008bff;
-	color: #fff;
-}
-.caseChart .btnGroup .bgBtnPage{
-	width: 28px;
-	padding: 0px;
-}
-.caseChart .btnGroup .bgBtnPage:hover .iconfont{
-	color: #fff;
-}
-.caseChart .btnGroup .bgBtnPage .iconfont{
-	font-size: 12px;
-	color: #b1b1b1;
-}
-.caseChart .btnGroup .bgBtn:hover{
-	background: #008bff;
-	color: #fff;
-}
-.caseChart .btnGroup .bgBtn:first-child{
-	border-left: 1px solid #ddd;
-	border-radius: 3px 0px 0px 3px;
-}
-.caseChart .btnGroup .bgBtn:last-child{
-	border-radius: 0px 3px 3px 0px;
-}
+
 </style>
 <div class="projectBodyBox dataPoolBox" ng-controller="datapoolCtrl">
 	<div class="projectBodyTitle">
@@ -187,6 +24,11 @@
 	            		<button class="bgBtn" ng-class="{'current':timerange==1}" type="button" ng-click="setTimerange(1)">时</button>
 	            		<button class="bgBtn" ng-class="{'current':timerange==24}" type="button" ng-click="setTimerange(24)">日</button>
 	            		<button class="bgBtn" ng-class="{'current':timerange==0}" type="button" ng-click="setTimerange(0)">实时</button>
+	            		<div class="floatleft switchBox">
+	            			<label class="switchbg"></label>
+	            			<input type="checkbox" name="">	            			
+	            			<span class="switchbtn transitionStyle">实时</span>
+	            		</div>
 	            		<div class="clear"></div>
             		</div>
             		<div class="floatright shownow">
@@ -226,12 +68,25 @@
             			</tr>
             		</tfoot>
             	</table>
-            	<div class="timetype">
-            		<div class="btnGroup floatright">
+            	<div class="timetype flexRow">
+            		<div class="btnGroup floatleft">
 	            		<button class="bgBtn bgBtnPage" type="button"><i class="iconfont icon-left-page"></i></button>
 	            		<button class="bgBtn bgBtnPage" type="button"><i class="iconfont icon-right-page"></i></button>
 	            		<div class="clear"></div>
             		</div>
+            		<div class="colorInfoBox floatleft">
+            			<div class="colorInfo fail">
+            				<span></span>执行失败
+            			</div>
+            			<div class="colorInfo success">
+            				<span></span>执行成功
+            			</div>
+            			<div class="colorInfo running">
+            				<span></span>正在执行
+            			</div>
+            			<div class="clear"></div>
+            		</div>
+            		
             		<div class="clear"></div>
             	</div>
             </div>
