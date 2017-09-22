@@ -12,18 +12,38 @@
 		width: 200px;
 		border: none;
 		border-bottom: 1px solid #eee;
-	}					
+	}
+	
 	.dropdowncheckbox {
 		float: left;
-		margin:8px 10px !important;		
+		margin: 8px 10px !important;
 	}
-	.dropdownList{
+	
+	.dropdownList {
 		height: 30px;
 		line-height: 30px;
-	} 
+	}
+	
 	.dropdowntoggle {
 		margin-left: 20px;
 		margin-top: 5px;
+	}
+	
+	.form-control {
+		background: #FFFFFF !important;
+	}
+	
+	.input-group-addon {
+		background: #FFFFFF !important;
+	}
+	
+	.separator {
+		display: inline-block;
+		width: 20px;
+		height: 2px;
+		background: #333333;
+		float: left;
+		margin: 15px 10px;
 	}
 </style>
 <div class="modal-header">
@@ -32,6 +52,7 @@
 	</h3>
 </div>
 <div class="modal-body modalBody">
+
 	<ul class="titleUl">
 		<li class="clearfix">
 			<h1>预约类型：</h1>
@@ -41,14 +62,33 @@
 			</select>
 		</li>
 		<li class="clearfix" ng-show="selectModel==1">
-			<h1>预约时间：</h1>
-			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />			
+			<div class="form-group floatleft">
+				<h1>预约时间：</h1>
+				<div ng-model='timepickerTest' ng-time class="input-group date form_datetime col-md-5" data-date="2017-09-16T05:25:07Z" data-date-format="yyyy-MM-dd - HH:ii p" data-link-field="dtp_input1">
+					<input class="form-control" size="16" type="text" value="" readonly>
+					<!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+				</div>
+				<input type="hidden" id="dtp_input1" value="" /><br/>
+			</div>
 		</li>
 		<li class="clearfix" ng-show="selectModel==2">
-			<h1>重复周期：</h1>			 
-			<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />		
-				~
-			<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+			<div class="form-group">
+				<h1>重复周期：</h1>
+				<div ng-model='timepickerTest' ng-time class="input-group date form_date floatleft " style="width: 180px;" data-date="" data-date-format="yyyy-MM-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+					<input class="form-control" size="16" type="text" value="" readonly data-ng-model="start_time">
+					<!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				<input type="hidden" id="dtp_input2" value="" />
+				<span class="separator"></span>
+				<div ng-model='timepickerTest' ng-time class="input-group date form_date floatleft " style="width: 180px;" data-date="" data-date-format="yyyy-MM-dd" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
+					<input class="form-control" size="16" type="text" value="" readonly data-ng-model="end_time" >
+					<!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+				</div>
+				<input type="hidden" id="dtp_input3" value="" />
+			</div>
 		</li>
 		<li class="clearfix" ng-show="selectModel==2">
 			<h1>重复方式：</h1>
@@ -87,7 +127,15 @@
 			</div>
 		</li>
 		<li class="clearfix" ng-show="selectModel==2">
-			<h1>预约时间：</h1>
+			<div class="form-group floatleft">
+				<h1>预约时间：</h1>
+				<div ng-model='timepickerTest' ng-time class="input-group date form_time" style="width: 180px;" data-date="" data-date-format="hh:ii" data-link-field="dtp_input4" data-link-format="hh:ii">
+					<input class="form-control" size="16" type="text" value="" readonly>
+					<!--<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>-->
+					<span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+				</div>
+				<input type="hidden" id="dtp_input4" value="" />
+			</div>
 		</li>
 	</ul>
 </div>
