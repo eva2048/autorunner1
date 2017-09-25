@@ -117,7 +117,7 @@ define(['app'], function(app) {
 					}
 				};
 				//启用定时器
-				var fileupload = $interval(timer, 100); //间隔2秒定时执行
+				var fileupload = $interval(timer, 100); //间隔100毫秒定时执行
 
 				$scope.projectNavNow = $stateParams.num;
 				//分页
