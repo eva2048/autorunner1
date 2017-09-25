@@ -744,7 +744,8 @@ define(['angular', 'router'], function() {
                             require([                           
                                '../js/controller/home/projectCtrl.js',
                                '../js/controller/modal/modalCtrl.js',
-                               '../js/controller/modal/modalInstanceCtrl.js',                          
+                               '../js/controller/modal/modalInstanceCtrl.js',                                
+                               '../js/controller/home/back-stageManagement/roleGroupManagementCtrl.js'
                                 ], function(controller) { 
                                     deferred.resolve(); 
                                 });

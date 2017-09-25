@@ -117,7 +117,7 @@ define(['app'], function(app) {
 					}
 				};
 				//启用定时器
-				var fileupload = $interval(timer, 100); //间隔2秒定时执行
+				var fileupload = $interval(timer, 100); //间隔100毫秒定时执行
 
 				$scope.projectNavNow = $stateParams.num;
 				//分页
@@ -188,7 +188,8 @@ define(['app'], function(app) {
 					todayHighlight: 1,
 					startView: 2,
 					forceParse: 0,
-					showMeridian: 1
+					showMeridian: 1,
+					minuteStep:1,
 				});
 				$('.form_date').datetimepicker({
 					language: 'fr',
@@ -209,6 +210,7 @@ define(['app'], function(app) {
 					startView: 1,
 					minView: 0,
 					maxView: 1,
+					minuteStep:1,
 					forceParse: 0
 				});
 			},

@@ -96,7 +96,7 @@ define(['app'], function(app) {
                     enableRowSelection: true,
                     enableSelectAll: true,
                     selectionRowHeaderWidth: 40,
-                    enableColumnResizing: true,
+                    enableColumnResizing: true,                    
                     rowHeight: 40,
                     enableCellEdit: false,
                     paginationPageSizes: [10, 15, 20], //每页显示个数可选项
