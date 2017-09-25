@@ -1,0 +1,64 @@
+<style type="text/css">
+.resizeBox{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-content: space-around;
+    position: absolute;
+    top: 0px;
+    bottom:0px;
+    width: 100%;
+}
+.resizeRow{
+    min-height: 50px;
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: space-around; 
+} 
+.resizeRowContent{
+    flex: 1;
+    padding: 10px;
+    overflow: auto;
+}
+.resizeRowTop{
+    border-bottom: 1px solid #eee;
+}
+.resizeRowTop.resizable {
+    flex: 0 0 300px;
+}
+.resizeRowTop .rg-bottom{
+    margin-bottom: -7px;
+}
+.resizeRowBottom{
+    position: relative;
+}
+.resizeRowBottom .tab{
+    padding: 0px;
+}
+.resizeRowBottom .tab span{
+    width: 18%;
+}
+</style>
+<div class="projectDetailBox" ng-controller="statementCtrl">
+    <div class="detailTitle">
+        <span class="floatleft bugId">233</span>
+        <span class="bugName text_ellipsis">用例名称</span>
+    </div>
+    <div class="bugDetailBox" ng-init="isAttribute=1" style="overflow: hidden;">        
+        <div class="resizeBox">
+            <div class="resizeRow resizeRowTop" resizable r-directions="['bottom']" r-flex="true">
+                <div class="resizeRowContent"><div ui-grid="gridOptionsComponent" ui-grid-resize-columns class="gridTableBox gridTableBox1"></div></div>
+            </div>
+            <div class="resizeRow resizeRowBottom">
+                <div class="resizeRowContent">
+                    <div class="content">                               
+                        <div style="background: #fff" ui-grid="gridOptions1" ui-grid-resize-columns class="gridTableBox gridTableBox1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

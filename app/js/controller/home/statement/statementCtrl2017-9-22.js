@@ -10,13 +10,28 @@ define(['app'], function(app) {
                 
                 //表格初始化
                 //显示数据字典
+                var h = $("#statementDetail").height() / 2;
+                $(".detailAttributeBottom").css("height", h);
+                $(".detailAttributeBottom").css("maxHeight", h * 2 - 20);
+                $(".detailAttributeTop").css("bottom", h);
+                $scope.showDetail = function(row) {
+                    $scope.gridOptions1.data = row.data;
+                    if ($(".detailAttributeBottom").height() < 1) {
+                        var h = $("#statementDetail").height() / 2;
+                        $(".detailAttributeBottom").css("height", h);
+                        $(".detailAttributeTop").css("bottom", h);
+                    }
+                };
+                $scope.hideBottom = function() {
+                    $(".detailAttributeBottom").css("height", "0");
+                    $(".detailAttributeTop").css("bottom", "0");
+                };
                 $http.get('./data/statementmanage.php')
                     .success(function(data) {
                         $scope.gridOptionsStatement.data = data.lists;
                         $scope.gridOptionsChart1.data = data.lists;
                         $scope.gridOptionsChart2.data = data.lists;
                         $scope.gridOptionsChart3.data = data.lists;
-                        $scope.gridOptionsComponent.data=data.lists;
                     });
                 //报表管理页表格
                 $scope.gridOptionsStatement = {
@@ -68,7 +83,7 @@ define(['app'], function(app) {
                     data: [{}]
                 };
 
-                //运行详情-用例表
+                //图表详情页表格
                 $http.get('./data/statement.php')
                     .success(function(data) {
                         $scope.gridOptions.data = data.lists;
@@ -77,12 +92,11 @@ define(['app'], function(app) {
                 $scope.gridOptions = {
                     enableSorting: false, //能否排序
                     enableFiltering: false, //能否筛选
-                    selectionRowHeaderWidth: 40,
                     enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
                     enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
                     showTreeExpandNoChildren: false,
                     enableColumnMenus: false,
-                    rowHeight: 40,
+                    rowHeight: 30,
                     cellClass: 'cellclass',
                     /*rowTemplate: "<div ng-click=\"grid.appScope.fadeOut()\" ng-repeat=\"(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name\" class=\"ui-grid-cell ui-grid-cell-hover\" ng-class=\"{ 'ui-grid-row-header-cell': col.isRowHeader }\" ui-grid-cell></div>",*/ //单击行事件
                     columnDefs: [{
@@ -93,13 +107,13 @@ define(['app'], function(app) {
                         {
                             name: 'name',
                             displayName: '用例名称',
-                            cellTemplate: '<div ng-click="grid.appScope.fadeIn();$event.stopPropagation();" class="ui-grid-cell-contents f_blue cursor_p">{{row.entity.name}}</div>',
+                            cellTemplate: '<div ng-click="grid.appScope.showDetail(row.entity)" class="ui-grid-cell-contents f_blue cursor_p">{{row.entity.name}}</div>',
                         },
                         {
                             name: 'state',
                             width: '100',
                             displayName: '执行结果',
-                            cellTemplate: '<div style="line-height:40px;text-align:center"><span class="glyphicon" ng-class="{\'glyphicon-ok\':row.entity.state==\'成功\',\'f_green\':row.entity.state==\'成功\',\'glyphicon-remove\':row.entity.state==\'失败\',\'f_red\':row.entity.state==\'失败\'}"></span></div>',
+                            cellTemplate: '<div style="line-height:30px;text-align:center"><span class="glyphicon" ng-class="{\'glyphicon-ok\':row.entity.state==\'成功\',\'f_green\':row.entity.state==\'成功\',\'glyphicon-remove\':row.entity.state==\'失败\',\'f_red\':row.entity.state==\'失败\'}"></span></div>',
                         }
                     ],
                     data: [],
@@ -107,38 +121,7 @@ define(['app'], function(app) {
                         $scope.gridApi = gridApi;
                     }
                 };
-                //运行详情-用例表详情-组件表
-                $scope.gridOptionsComponent = {
-                    enableRowSelection: true,
-                    enableSelectAll: true,
-                    selectionRowHeaderWidth: 40,
-                    enableColumnResizing: true,
-                    rowHeight: 30,
-                    enableCellEdit: false,
-                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
-                    enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
-                    enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
-                    columnDefs: [{
-                            field: "name",
-                            displayName: '依赖组件名',
-                            enableSorting: false,
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
-                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p">{{row.entity.name}}</div>',
-                        },
-                        {
-                            field: "creater",
-                            displayName: '组件原型',
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                        },
-                        {
-                            field: "type",
-                            displayName: '运行状态',
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                        }
-                    ],
-                    data: [{}]
-                };
+
                 //图表表格2
                 $scope.gridOptions1 = {
                     enableSorting: false, //能否排序

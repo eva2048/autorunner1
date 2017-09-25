@@ -133,17 +133,14 @@ define(['angular', 'router'], function() {
                     }
                 })
                 /*报表详情*/
-                .state("statementDetail",{
-                    url:"/statementDetail",
+                .state("chartDetail",{
+                    url:"/chartDetail",
                     views:{
                         '':{
-                            templateUrl:'../tpls/home/index.html'
+                            templateUrl:'../tpls/home/index1.html'
                         },
-                        'topbar@statementDetail':{
-                            templateUrl:'../tpls/home/topbarProject.html'
-                        },
-                        'main@statementDetail':{
-                            templateUrl:'../tpls/home/main/statement/statementManageDetail.html'
+                        'main@chartDetail':{
+                            templateUrl:'../tpls/home/main/chart/chartDetail.html'
                         }
                     },
                     resolve: {
@@ -162,7 +159,7 @@ define(['angular', 'router'], function() {
                             return deferred.promise;
                         }]
                     }
-                }) 
+                })
                 /*任务*/
                 .state("index.task", {
                     url: "/task",
@@ -485,6 +482,39 @@ define(['angular', 'router'], function() {
 						}]
 					}
 				})
+                /*报表详情*/
+                .state("statementDetail",{
+                    url:"/statementDetail",
+                    views:{
+                        '':{
+                            templateUrl:'../tpls/home/index1.html'
+                        },
+                        'main@statementDetail':{
+                            templateUrl:'../tpls/home/main1.html'
+                        },
+                        'projectBody@statementDetail': {                      
+                            templateUrl: '../tpls/home/main/statement/statementDetail.html'
+                        },
+                        'projectDetail@statementDetail': {
+                            templateUrl: '../tpls/home/main/statement/statementDetailDetail.html'
+                        }
+                    },
+                    resolve: {
+                        loadCtrl: ["$q", function($q) {
+                            var deferred = $q.defer();
+                            //异步加载controller／directive/filter/service
+                            require([
+                                '../js/controller/home/projectCtrl.js',
+                               '../js/controller/modal/modalCtrl.js',
+                               '../js/controller/modal/modalInstanceCtrl.js',
+                                '../js/controller/home/statement/statementCtrl.js'
+                                ], function(controller) { 
+                                    deferred.resolve(); 
+                                });
+                            return deferred.promise;
+                        }]
+                    }
+                })
                 /*预约记录*/
                 .state("reservationRecord", {
 					url: "/reservationRecord/:num",

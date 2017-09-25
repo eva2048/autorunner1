@@ -35,6 +35,7 @@ define(['app'], function(app) {
                     }
                     return false;
                 };
+                //预约执行新增执行类型
                 $scope.addModel = function(e) {
                     var keycode = window.event ? e.keyCode : e.which;
                     if (keycode == 13) {

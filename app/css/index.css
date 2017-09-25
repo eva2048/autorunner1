@@ -977,7 +977,20 @@
     background: #fff;
     /* box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2); */
 }
-
+.projectDetailBox .bugDetailBox .detailAttributeBottom .tab{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+}
+.projectDetailBox .bugDetailBox .detailAttributeBottom .tab span{
+    line-height: 36px;
+    width: 19%;
+    margin: 0px;
+}
+.projectDetailBox .bugDetailBox .detailAttributeBottom .tab{
+    padding: 0px;
+}
 .projectDetailBox .bugDetailBox .detailAttributeBottom .rg-top {
     position: absolute;
 }
