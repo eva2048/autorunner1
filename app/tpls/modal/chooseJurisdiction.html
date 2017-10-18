@@ -1,0 +1,61 @@
+<style type="text/css">
+	.check{
+		float: left;
+		margin-top: 14px !important;
+		margin-right:5px !important;
+	}
+	table td span{
+		float: left;
+		margin-right: 10px;
+	}
+</style>
+<div class="modal-header">
+	<h3>管理员权限</h3>
+</div>
+<div class="modal-body modalBody" ng-controller="modalCtrl">
+	<table border="" cellspacing="" cellpadding="" class="table-fullborder">
+		<tr>
+			<th>功能</th>
+			<th>权限</th>
+		</tr>
+		<tr>
+			<td>用户管理</td>
+			<td>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>查看</span>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>管理</span>
+			</td>
+		</tr>
+		<tr>
+			<td>项目管理</td>
+			<td>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>查看</span>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>管理</span>
+			</td>
+		</tr>
+		<tr>
+			<td>角色管理</td>
+			<td>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>查看</span>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>管理</span>
+			</td>
+		</tr>
+		<tr>
+			<td>流程管理</td>
+			<td>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>查看</span>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>管理</span>
+			</td>
+		</tr>
+		<tr>
+			<td>数据字典</td>
+			<td>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>查看</span>
+				<input type="checkbox" name="" id="" value="" class="check"/><span>管理</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

@@ -1,5 +1,9 @@
 <style type="text/css">
-
+.attributeList3>li .attributeLeft {
+	display: inline-block; 
+    width: 130px !important; 
+    text-align: right; 
+}
 </style>
 <div class="projectBodyBox" ng-controller="projectCreateProjectCtrl">
 	<div class="projectBodyTitle">
@@ -25,7 +29,32 @@
 							</li>
 							<li>
 								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('开,始,时,间')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('需,求,编,码')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="">
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('项,目,代,码')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="">
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('项,目,类,型')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<select name="" class="selectBox" style="width: 480px;">
+									<option value="">界面</option>
+									<option value="">接口</option>
+									<option value="">APP</option>
+								</select>
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('测,试,计,划,开,始,时,间')">{{n}}</span>
 								<em class="f_red">*</em>
 								</span>
 								<a>
@@ -35,7 +64,7 @@
 							</li>
 							<li>
 								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('结,束,时,间')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('测,试,计,划,结,束,时,间')">{{n}}</span>
 								<em class="f_red">*</em>
 								</span>
 								<a>
@@ -43,7 +72,27 @@
 									<div class="clear"></div>
 								</a>
 							</li>
-							<li class="">
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('测,试,实,际,开,始,时,间')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<a>
+									<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('测,试,实,际,结,束,时,间')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<a>
+									<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+									<div class="clear"></div>
+								</a>
+							</li>
+							<li class="" ng-controller="modalCtrl">
 								<span class="attributeLeft">
                                 <span  ng-repeat="n in turnArray('缺,陷,流,程')">{{n}}</span>
 								<em class="f_red">*</em>
@@ -53,6 +102,54 @@
 									<option>项目1流程</option>
 								</select>
 								<span style="color: #48a1ff;font-size: 14px;margin-left: 40px;cursor: pointer;" ng-click="open('checkProcess','lg')">查看缺陷流程</span>
+							</li>							
+							<li class="" ng-controller="modalCtrl">
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('项,目,经,理')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="" readonly="readonly" style="width: 150px;">
+								<i class="iconfont icon-addpeople_fill" style="color: #48a1ff;font-size: 20px;cursor: pointer;"  ng-click="open('selectManager')"></i>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('联,系,电,话')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="" style="width: 140px;">
+							</li>							
+							<li class="" ng-controller="modalCtrl">
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('测,试,经,理')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="" readonly="readonly" style="width: 150px;">
+								<i class="iconfont icon-addpeople_fill" style="color: #48a1ff;font-size: 20px;cursor: pointer;"  ng-click="open('selectManager')"></i>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('联,系,电,话')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<input type="text" class="inputText" name="" style="width: 140px;">
+							</li>	
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('状,态')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<select name="" class="selectBox" style="width: 480px;">
+									<option value="">未执行</option>
+									<option value="">执行中</option>
+									<option value="">已执行</option>
+								</select>
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                <span  ng-repeat="n in turnArray('是,否,启,用')">{{n}}</span>
+								<em class="f_red">*</em>
+								</span>
+								<select name="" class="selectBox" style="width: 480px;">
+									<option value="">启用</option>
+									<option value="">不启用</option>
+									
+								</select>
 							</li>
 							<div class="clear"></div>
 						</ul>
