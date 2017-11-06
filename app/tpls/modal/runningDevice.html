@@ -1,326 +1,332 @@
 <style type="text/css">
-.modal-dialog {
-    width: 1100px;
-}
-
-.modal-body {
-    height: 600px;
-    max-height: 600px;
-}
-
-.notice span {
-    display: block;
-    padding: 15px 10px;
-    margin: 0px;
-    font-size: 14px;
-}
-
-.notice span input {
-    float: left;
-    margin-right: 10px;
-}
-
-.notice .log {
-    width: 100%;
-    height: 400px;
-    padding: 10px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-}
-
-.notice .log p {
-    font-size: 14px;
-    color: #6c7786;
-    line-height: 24px;
-}
-
-.result {
-    widows: 100%;
-    height: 279px;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.result span {
-    font-size: 14px;
-    margin-right: 10px;
-}
+	.modal-dialog {
+		width: 1100px;
+	}
+	
+	.modal-body {
+		height: 600px;
+		max-height: 600px;
+	}
+	
+	.notice span {
+		display: block;
+		padding: 15px 10px;
+		margin: 0px;
+		font-size: 14px;
+	}
+	
+	.notice span input {
+		float: left;
+		margin-right: 10px;
+	}
+	
+	.notice .log {
+		width: 100%;
+		height: 400px;
+		padding: 10px;
+		margin-top: 4px;
+		border: 1px solid #ccc;
+	}
+	
+	.notice .log p {
+		font-size: 14px;
+		color: #6c7786;
+		line-height: 24px;
+	}
+	
+	.result {
+		widows: 100%;
+		height: 279px;
+		margin-top: 10px;
+		padding: 10px;
+		border: 1px solid #ccc;
+	}
+	
+	.result span {
+		font-size: 14px;
+		margin-right: 10px;
+	}
+	
+	.chatIconButton {
+		color: #666;
+		cursor: pointer;
+		font-size: 13px;
+		margin-right: 5px;
+	}
+	
+	.chatIconButton:hover {
+		color: #008bff;
+	}
 </style>
 <div class="modal-header">
-    <h3>执行用例
+	<h3>执行用例
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
-<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1" style="overflow: visible;">
-    <div class="flexRow">
-        <div class="floatleft">
-            <ul class="modalLeftTab" style="height: 100%">
-                <li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
-                    <i class="iconfont icon-barrage_fill"></i>
-                    <span>执行设置</span>
-                </li>
-                <li ng-class="{'current':createFuncPoints==2}" ng-click="createFuncPoints=2">
-                    <i class="iconfont icon-guanlianbangding1"></i>
-                    <span>执行情况</span>
-                </li>
-            </ul>
-        </div>
-        <div class="floatleft flex modalRightContent modalRightContent1" style="overflow: visible;">
-            <!-- 基本信息 -->
-            <div>
-                <ul class="titleUl">
-                    <li>
-                        <h1>执行名称：</h1>
-                        <div class="floatleft inputTextBox">
-                            <input type="text" class="inputText">
-                            <span class="defaultText">2018-08-29-</span>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <h1>执行类型：</h1>
-                        <select class="selectNormal floatleft" ng-init="selected=pModel[0]" ng-model="selected" ng-options="x for x in pModel">
-                        </select>
-                        <div class="dropdownDefault dropdownAdd floatleft" dropdown>
-                            <div dropdown-toggle class="dropdowntoggle">
-                                <span class="dropdowntoggletext">                   
-                                    <i class="iconfont icon-add"></i>自定义
-                                </span>
-                            </div>
-                            <ul class="dropdown-menu transition" dropdown-menu role="menu">
-                                <input ng-click="$event.stopPropagation()" ng-keyup="addModel($event)" type="text" name="" class="inputText" placeholder="输入执行类型按回车添加" ng-model="modelItem">
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                </ul>
-                <!-- 执行设置 -->
-            </div>
-            <div ng-show="createFuncPoints==1" class="runningDeviceDateBox">
-                <div class="clearfix">
-                    <div class="modalDataPanel floatleft" style="width: 30%">
-                        <div class="title">
-                            <div class="floatleft leftTitle">
-                                <span class="chatIconButton">
+<div class="modal-body modalBody createFuncPoints runningDevice" ng-init="createFuncPoints=1" ng-controller="modalCtrl" style="overflow: visible;">
+	<div class="flexRow">
+		<div class="floatleft">
+			<ul class="modalLeftTab" style="height: 100%">
+				<li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
+					<i class="iconfont icon-barrage_fill"></i>
+					<span>执行设置</span>
+				</li>
+				<li ng-class="{'current':createFuncPoints==2}" ng-click="createFuncPoints=2">
+					<i class="iconfont icon-guanlianbangding1"></i>
+					<span>执行情况</span>
+				</li>
+			</ul>
+		</div>
+		<div class="floatleft flex modalRightContent modalRightContent1" style="overflow: visible;">
+			<!-- 基本信息 -->
+			<div>
+				<ul class="titleUl">
+					<li>
+						<h1>执行名称：</h1>
+						<div class="floatleft inputTextBox">
+							<input type="text" class="inputText">
+							<span class="defaultText">2018-08-29-</span>
+						</div>
+						<div class="clear"></div>
+					</li>
+					<li>
+						<h1>执行类型：</h1>
+						<select class="selectNormal floatleft" ng-init="selected=pModel[0]" ng-model="selected" ng-options="x for x in pModel">
+						</select>
+						<span class="chatIconButton floatleft" ng-click="open('executiveTypeManagement')" style="margin-top:7px;">
+                        	 <i class="iconfont icon-guanli floatleft" style="color: #008bff;margin:-2px 10px"></i>执行类型管理
+                        </span>
+						<div class="clear"></div>
+					</li>
+				</ul>
+				<!-- 执行设置 -->
+			</div>
+			<div ng-show="createFuncPoints==1" class="runningDeviceDateBox">
+				<div class="clearfix">
+					<div class="modalDataPanel floatleft" style="width: 30%">
+						<div class="title">
+							<div class="floatleft leftTitle">
+								<span class="chatIconButton">
                                     <i class="iconfont icon-guanlihoutai23"></i>上移                                   
                                 </span>
-                                <span class="chatIconButton">
+								<span class="chatIconButton">
                                     <i class="iconfont icon-guanlihoutai23-copy"></i>下移                                 
                                 </span>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="tablePanel tablePanel1">
-                            <table class="table-fullborder">
-                                <tr class="text_nowrap">
-                                    <th>
-                                        <input type="checkbox" name="">
-                                    </th>
-                                    <th>测试集名称</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="">
-                                    </td>
-                                    <td>公司名称公司名称公司名称公司</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="modalDataPanel floatright" style="width: 68%">
-                        <div class="title">
-                            <div class="floatleft leftTitle">
-                                执行器列表：
-                                <span class="chatIconButton">
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="tablePanel tablePanel1">
+							<table class="table-fullborder">
+								<tr class="text_nowrap">
+									<th>
+										<input type="checkbox" name="">
+									</th>
+									<th>测试集名称</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="">
+									</td>
+									<td>公司名称公司名称公司名称公司</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="modalDataPanel floatright" style="width: 68%">
+						<div class="title">
+							<div class="floatleft leftTitle">
+								执行器列表：
+								<span class="chatIconButton">
                                     <i class="iconfont icon-gengxin-copy"></i>
                                     刷新执行器
                                 </span>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="tablePanel tablePanel1" style="max-height: 180px;">
-                            <table class="table-fullborder">
-                                <tr class="text_nowrap">
-                                    <th>
-                                        <input type="checkbox" name="">
-                                    </th>
-                                    <th>IP地址</th>
-                                    <th>用户</th>
-                                    <th>执行器类型</th>
-                                    <th>执行器状态</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="">
-                                    </td>
-                                    <td>255.255.255.255</td>
-                                    <td>公司名称公司名称公司名称公司</td>
-                                    <td>类型</td>
-                                    <td>已占用</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="modalDataPanel" style="width: 100%;">
-                    <div class="title" style="text-align: center;">
-                        <input type="button" class="btndefault btndefault_blue" name="" value="新增">
-                    </div>
-                    <div class="tablePanel tablePanel1">
-                        <table class="table-fullborder">
-                            <tr>
-                                <th>
-                                    <input type="checkbox" name="">
-                                </th>
-                                <th>测试集</th>
-                                <th>执行器</th>
-                                <th>被测系统ServerId</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="">
-                                </td>
-                                <td>
-                                    测试集a
-                                </td>
-                                <td>
-                                    192.168.0.140:3
-                                </td>
-                                <td>
-                                    测试服务器1
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="">
-                                </td>
-                                <td>
-                                    测试集b
-                                </td>
-                                <td>
-                                    192.168.0.140:3
-                                </td>
-                                <td>
-                                    测试服务器2
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- 运行情况 -->
-            <div ng-show="createFuncPoints==2" class="runningDeviceDateBox" style="overflow: visible;">
-                <div class="caseChart" id="caseChart">
-                    <div class="timetype">
-                        <!-- 开启实时 -->
-                        <div class="floatleft switchBox marginr_10">
-                            <label class="switchbg"></label>
-                            <input type="checkbox" name="" ng-model="actualtime" ng-click="changeactual()">
-                            <span class="switchbtn transitionStyle">实时</span>
-                        </div>
-                        <!-- 选择结束时间 -->
-                        <div class="customTime floatleft" ng-hide="actualtime" style="margin-left: 30px;">
-                            <div class="defaultDateTimeSelectBox datetimePicker floatleft">
-                                <span class="timeselectTitle floatleft">结束时间：</span>
-                                <input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="customtime.date" is-open="popup1.opened" datepicker-options="inlineOptions" ng-click="$event.stopPropagation();open1()" show-button-bar="false" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />                           
-                                <div class="clear"></div>
-                            </div>
-                            <div class="floatleft" style="line-height: 28px;color:#000;font-weight: bold;margin: 0px 5px;">~</div>
-                            <div class="floatleft defaultTimepicker">
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.hour" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('hour','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('hour','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>  
-                                <div class="floatleft timeicon" style="">:</div>
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.min" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('min','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('min','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>  
-                                <div class="floatleft timeicon" style="">:</div>
-                                <div class="timeselect floatleft">
-                                    <input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.sec" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
-                                    <a class="timebtn upbtn" ng-click="settime('sec','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
-                                    <a class="timebtn downbtn" ng-click="settime('sec','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
-                                </div>
-                                <div class="btnGroup floatright marginl_10">
-                                    <button class="bgBtn redBtn" type="button" ng-click="setTimerange(1/60);setvalidateTime()">确定</button>
-                                    <button class="bgBtn greenBtn" type="button" ng-click="setTimerange(1)">重置</button>
-                                    <div class="clear"></div>
-                                </div>                            
-                            </div>
-                        </div>
-                        
-                        <!-- 时间范围 -->
-                        <div class="btnGroup floatright">
-                            <button class="bgBtn" ng-class="{'current':timerange==1/240}" type="button" ng-click="setTimerange(1/240)">15s</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1/120}" type="button" ng-click="setTimerange(1/120)">30s</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1/60}" type="button" ng-click="setTimerange(1/60)">分</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==1}" type="button" ng-click="setTimerange(1)">时</button>
-                            <button class="bgBtn" ng-class="{'current':timerange==24}" type="button" ng-click="setTimerange(24)">日</button>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="casetableBox">
-                        <table class="casetable" id="casetable">
-                            <tbody>
-                                <tr ng-repeat="(index,actuators) in casedata">
-                                    <td><div class="casename">{{actuators.name}}</div></td>
-                                    <td class="state" ng-style="{width:(statewidth+3+'px')}">
-                                        <div class="barBox">
-                                            <div ng-repeat="(i,case) in actuators.cases" class="bar barcase"  style="right:{{case.potright+'px'}};left:{{case.potleft+'px'}};background:{{i%2==0?'#d8dcee':'#eee';}}" title="{{case.name}}">
-                                                <div ng-repeat="(j,script) in case.scripts" class="bar barchild" style="right:{{script.potright+'px'}};left:{{script.potleft+'px'}};background:{{getcolor(script.state)}}">{{script.name}}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <table class="casetable casetable1" style="">
-                        <tfoot>
-                            <tr>
-                                <td></td>
-                                <td class="foottime" ng-style="{width:(statewidth+3+'px')}">
-                                    <div class="time starttime">{{starttimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
-                                    <div class="time endtime">{{endtimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <div class="timetype margint_10">
-                        <!-- 翻页 -->
-                        <div class="btnGroup floatleft" ng-hide="actualtime">
-                            <button class="bgBtn bgBtnPage" ng-click="changepage('before')" type="button"><i class="iconfont icon-left-page"></i></button>
-                            <button class="bgBtn bgBtnPage" type="button" ng-click="changepage('after')"><i class="iconfont icon-right-page"></i></button>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="colorInfoBox floatleft timetypecenter">
-                            <div class="colorInfo fail">
-                                <span></span>执行失败
-                            </div>
-                            <div class="colorInfo success">
-                                <span></span>执行成功
-                            </div>
-                            <div class="colorInfo running">
-                                <span></span>正在执行
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="tablePanel tablePanel1" style="max-height: 180px;">
+							<table class="table-fullborder">
+								<tr class="text_nowrap">
+									<th>
+										<input type="checkbox" name="">
+									</th>
+									<th>IP地址</th>
+									<th>用户</th>
+									<th>执行器类型</th>
+									<th>执行器状态</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="">
+									</td>
+									<td>255.255.255.255</td>
+									<td>公司名称公司名称公司名称公司</td>
+									<td>类型</td>
+									<td>已占用</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="modalDataPanel" style="width: 100%;">
+					<div class="title" style="text-align: center;">
+						<input type="button" class="btndefault btndefault_blue" name="" value="新增">
+					</div>
+					<div class="tablePanel tablePanel1">
+						<table class="table-fullborder">
+							<tr>
+								<th>
+									<input type="checkbox" name="">
+								</th>
+								<th>测试集</th>
+								<th>执行器</th>
+								<th>被测系统ServerId</th>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="">
+								</td>
+								<td>
+									测试集a
+								</td>
+								<td>
+									192.168.0.140:3
+								</td>
+								<td>
+									测试服务器1
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="">
+								</td>
+								<td>
+									测试集b
+								</td>
+								<td>
+									192.168.0.140:3
+								</td>
+								<td>
+									测试服务器2
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 运行情况 -->
+			<div ng-show="createFuncPoints==2" class="runningDeviceDateBox" style="overflow: visible;">
+				<div class="caseChart" id="caseChart">
+					<div class="timetype">
+						<!-- 开启实时 -->
+						<div class="floatleft switchBox marginr_10">
+							<label class="switchbg"></label>
+							<input type="checkbox" name="" ng-model="actualtime" ng-click="changeactual()">
+							<span class="switchbtn transitionStyle">实时</span>
+						</div>
+						<!-- 选择结束时间 -->
+						<div class="customTime floatleft" ng-hide="actualtime" style="margin-left: 30px;">
+							<div class="defaultDateTimeSelectBox datetimePicker floatleft">
+								<span class="timeselectTitle floatleft">结束时间：</span>
+								<input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="customtime.date" is-open="popup1.opened" datepicker-options="inlineOptions" ng-click="$event.stopPropagation();open1()" show-button-bar="false" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+								<div class="clear"></div>
+							</div>
+							<div class="floatleft" style="line-height: 28px;color:#000;font-weight: bold;margin: 0px 5px;">~</div>
+							<div class="floatleft defaultTimepicker">
+								<div class="timeselect floatleft">
+									<input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.hour" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
+									<a class="timebtn upbtn" ng-click="settime('hour','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
+									<a class="timebtn downbtn" ng-click="settime('hour','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+								</div>
+								<div class="floatleft timeicon" style="">:</div>
+								<div class="timeselect floatleft">
+									<input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.min" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
+									<a class="timebtn upbtn" ng-click="settime('min','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
+									<a class="timebtn downbtn" ng-click="settime('min','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+								</div>
+								<div class="floatleft timeicon" style="">:</div>
+								<div class="timeselect floatleft">
+									<input type="text" maxlength="2" class="timeselectInput" name="" ng-model="customtime.sec" ng-blur="validateTime($event.target)" onkeypress="return event.keyCode>=48&&event.keyCode<=57" ng-pattern="/[^a-zA-Z]/">
+									<a class="timebtn upbtn" ng-click="settime('sec','up')"><i class="glyphicon glyphicon-triangle-top"></i></a>
+									<a class="timebtn downbtn" ng-click="settime('sec','down')"><i class="glyphicon glyphicon-triangle-bottom"></i></a>
+								</div>
+								<div class="btnGroup floatright marginl_10">
+									<button class="bgBtn redBtn" type="button" ng-click="setTimerange(1/60);setvalidateTime()">确定</button>
+									<button class="bgBtn greenBtn" type="button" ng-click="setTimerange(1)">重置</button>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 时间范围 -->
+						<div class="btnGroup floatright">
+							<button class="bgBtn" ng-class="{'current':timerange==1/240}" type="button" ng-click="setTimerange(1/240)">15s</button>
+							<button class="bgBtn" ng-class="{'current':timerange==1/120}" type="button" ng-click="setTimerange(1/120)">30s</button>
+							<button class="bgBtn" ng-class="{'current':timerange==1/60}" type="button" ng-click="setTimerange(1/60)">分</button>
+							<button class="bgBtn" ng-class="{'current':timerange==1}" type="button" ng-click="setTimerange(1)">时</button>
+							<button class="bgBtn" ng-class="{'current':timerange==24}" type="button" ng-click="setTimerange(24)">日</button>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="casetableBox">
+						<table class="casetable" id="casetable">
+							<tbody>
+								<tr ng-repeat="(index,actuators) in casedata">
+									<td>
+										<div class="casename">{{actuators.name}}</div>
+									</td>
+									<td class="state" ng-style="{width:(statewidth+3+'px')}">
+										<div class="barBox">
+											<div ng-repeat="(i,case) in actuators.cases" class="bar barcase" style="right:{{case.potright+'px'}};left:{{case.potleft+'px'}};background:{{i%2==0?'#d8dcee':'#eee';}}" title="{{case.name}}">
+												<div ng-repeat="(j,script) in case.scripts" class="bar barchild" style="right:{{script.potright+'px'}};left:{{script.potleft+'px'}};background:{{getcolor(script.state)}}">{{script.name}}
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<table class="casetable casetable1" style="">
+						<tfoot>
+							<tr>
+								<td></td>
+								<td class="foottime" ng-style="{width:(statewidth+3+'px')}">
+									<div class="time starttime">{{starttimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
+									<div class="time endtime">{{endtimeString | date:'yy-MM-dd HH:mm:ss'}}</div>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+					<div class="timetype margint_10">
+						<!-- 翻页 -->
+						<div class="btnGroup floatleft" ng-hide="actualtime">
+							<button class="bgBtn bgBtnPage" ng-click="changepage('before')" type="button"><i class="iconfont icon-left-page"></i></button>
+							<button class="bgBtn bgBtnPage" type="button" ng-click="changepage('after')"><i class="iconfont icon-right-page"></i></button>
+							<div class="clear"></div>
+						</div>
+						<div class="colorInfoBox floatleft timetypecenter">
+							<div class="colorInfo fail">
+								<span></span>执行失败
+							</div>
+							<div class="colorInfo success">
+								<span></span>执行成功
+							</div>
+							<div class="colorInfo running">
+								<span></span>正在执行
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="modal-footer modalFooterCenter" style="text-align: center;">
-    <button class="btndefault btndefault_blue" ng-click="ok()">开始</button>
-    <button class="btndefault btndefault_lblue" ng-click="ok()">暂停</button>
-    <button class="btndefault btndefault_red" ng-click="ok()">停止</button>
-    <button class="btndefault btndefault_gray" ng-click="cancel()">取消</button>
+	<button class="btndefault btndefault_blue" ng-click="ok()">开始</button>
+	<button class="btndefault btndefault_lblue" ng-click="ok()">暂停</button>
+	<button class="btndefault btndefault_red" ng-click="ok()">停止</button>
+	<button class="btndefault btndefault_gray" ng-click="cancel()">取消</button>
 </div>

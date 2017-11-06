@@ -1,0 +1,36 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <h3>执行类型管理
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody">
+    <ul class="titleUl">          	
+       <li class="clearfix">  
+       		<h1>类型：</h1>
+            <input type="text" class="inputText floatleft" style=" width: 370px;margin-right:20px">    
+            <input type="button" class="btndefault" name="" id="" value="添加"  />
+        </li>           
+    </ul>
+    <table class="table-fullborder table-fullborder2">
+    	<tr>
+    		<th>
+    			类型名称
+    		</th>
+    		<th>
+    			操作
+    		</th>
+    	</tr>
+    	<tr>
+    		<td>调试类型</td>
+    		<td>
+    			<span class="f_red cursor_p">删除</span>
+    		</td>
+    	</tr>   	
+    </table>
+</div>
+<div class="modal-footer">
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>
