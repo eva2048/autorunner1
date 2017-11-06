@@ -1,183 +1,224 @@
 <style type="text/css">
-	.catalog {
-		font-size: 14px;
-		width: 210px;
-		color: #6c7786;
-		float: left;
-		margin-left: 20px;
-		line-height: 34px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-	
-	.icon-bianji {
-		line-height: 34px;
-		cursor: pointer;
-		margin-left: 20px;
-	}
-	
-	.group {
-		width: 750px;		
-		margin-left: 45px;
-		min-height: 200px;
-	}
-	.groupLeft{
-		width: 480px;
-		border: 1px solid #C3C4C9;
-		float: left;
-		padding: 20px 0;
-		min-height: 200px;
-	}
-	.treeBody{
-		width: 200px;
-	}
-	.case{
-		padding:5px 10px;
-		width: 260px;
-		min-height: 200px;
-		border-left: 1px solid #C3C4C9;
-		font-size: 14px;
-		color: #6C7786;
-	}
-	.case h1{	
-		width: 100%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		margin-bottom: 10px;
-	}
-	
-	.case ul li span{
-		display: inline-block;
-		width: 200px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-	.groupRight{
-		float: right;
-		width: 245px;
-		margin-left: 10px;
-		border: 1px solid #C3C4C9;
-		min-height: 242px;		
-	}
-	.groupRight h2{
-		width: 100%;
-		border-bottom: 1px solid #C3C4C9;		
-		padding: 10px;
-		font-size: 14px;
-		color: #6C7786;
-	}
-	.groupRight ul{
-		padding: 10px;
-	}
-	.groupRight ul li span{
-		display: inline-block;
-		width: 180px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		font-size: 14px;
-		color: #6C7786;
-	}
-	.groupRight ul li .iconfont{
-		font-size: 16px;
-		cursor: pointer;
-	}
+.catalog {
+    font-size: 14px;
+    width: 210px;
+    color: #6c7786;
+    float: left;
+    margin-left: 20px;
+    line-height: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon-bianji {
+    line-height: 34px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.group {
+    width: 750px;
+    margin-left: 45px;
+    min-height: 200px;
+}
+
+.groupLeft {
+    width: 100%;
+    border: 1px solid #C3C4C9;
+    border-top-width: 0;
+    float: left;
+    padding: 5px 0;
+    min-height: 200px;
+}
+
+.treeBody {
+    width: 200px;
+}
+
+.case {
+    padding: 5px 10px;
+    width: 260px;
+    min-height: 200px;
+    border-left: 1px solid #C3C4C9;
+    font-size: 14px;
+    color: #6C7786;
+}
+
+.case h1 {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.case ul li span {
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.groupRight {
+    float: right;
+    width: 245px;
+    border: 1px solid #C3C4C9;
+    border-top-width: 0;
+    min-height: 242px;
+}
+
+.groupRight h2 {
+    width: 100%;
+    border-bottom: 1px solid #C3C4C9;
+    padding: 10px;
+    font-size: 14px;
+    color: #6C7786;
+}
+
+.groupRight ul {
+    padding: 10px;
+}
+
+.groupRight ul li span {
+    display: inline-block;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #6C7786;
+}
+
+.groupRight ul li .iconfont {
+    font-size: 16px;
+    cursor: pointer;
+}
+.group .grouptop{
+	border: 1px solid #C3C4C9;
+	padding: 5px 10px;
+}
+.grouptop .searchBox input{
+	border-radius: 0;
+}
+.group .grouptop h1{
+	font-size: 14px;
+	color: #6c7786;
+	float:left;
+	line-height: 32px;
+}
+.titleUl{
+	margin-left: 45px;
+}
+.titleUl>li h1{
+	width:auto;
+}
+.titleUl>li .caseList .caseItem{
+	display: inline-block;
+	border:1px solid #008bff;
+	color:#008bff;
+	position: relative;
+	max-width: 200px;
+	padding: 0 20px 0 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 28px;
+	margin-top: 2px;
+	margin-right: 5px;
+	border-radius: 3px;
+}
+.titleUl>li .caseList .caseItem .icon-close{
+	position: absolute;
+	right: 5px;
+}
 </style>
 <div class="modal-header">
-	<h3>新增测试集</h3>
+    <h3>新增测试集</h3>
 </div>
 <div class="modal-body modalBody" ng-controller="modalCtrl">
-	<ul class="titleUl titleUlAuto">
-		<li class="floatleft">
-			<h1>名称：</h1>
-			<input type="text" class="inputText" style="width: 200px;">
-		</li>
-		<li class="floatleft">
-			<h1>描述：</h1>
-			<input type="text" class="inputText">
-		</li>
-		<div class="clear"></div>
-		<li class="floatleft">
-			<h1>关联用例：</h1>
-			<div class="searchBox">
-				<input type="text" name="" class="inputSearch" placeholder="输入用例名搜索" style="width: 400px;">
-				<i class="iconfont icon-search"></i>
-			</div>
-		</li>
-		<li class="floatleft">
-			<div class="catalog" title="目录1>目录1.1>目录1.1.1">
-				所属目录：目录1>目录1.1>目录1.1.1
-			</div>
-			<i class="iconfont icon-bianji" ng-click="open('createTaskTestset')"></i>
-		</li>
-		<div class="clear"></div>
-	</ul>
-	<div class="group">
-		<div class="groupLeft">
-			<div class="treeBody floatleft">
-				<div>
-					<script type="text/ng-template" id="nodes_renderer.html">
-						<span ui-tree-handle></span>
-						<div class="tree-node tree-node-content">
-							<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
-							<i class="iconfont icon-wenjianjia1" style="color: #ff9800;font-size: 12px;"></i>
-							<span ng-show="!this.isEdit" class="treeText">
+    <ul class="titleUl titleUlAuto">
+        <li class="">
+            <h1>测试集名称：</h1>
+            <input type="text" class="inputText">
+        </li>
+        <div class="clear"></div>
+        <li class="">
+            <h1>测试集描述：</h1>
+            <input type="text" class="inputText">
+        </li>
+        <li style="margin-bottom: 5px;">
+            <h1>已&nbsp;选&nbsp;用&nbsp;例&nbsp;：</h1>
+            <div class="caseList">
+            	<span class="caseItem">测试用例0001测试用例0001测试用例0001测试用例0001测试用例0001<i class="iconfont icon-close"></i></span>
+            	<span class="caseItem">测试用例0001测试用例0001测试用例0001测试用例0001测试用例0001<i class="iconfont icon-close"></i></span>
+            	<span class="caseItem">测试用例0001测试用例0001测试用例0001测试用例0001测试用例0001<i class="iconfont icon-close"></i></span>
+            	<span class="caseItem">测试用例0001测试用例0001测试用例0001测试用例0001测试用例0001<i class="iconfont icon-close"></i></span>
+            </div>
+        </li>
+        <div class="clear"></div>
+    </ul>
+    <div class="group">
+        <div class="grouptop">
+            <div class="searchBox floatleft">
+                <input type="text" name="" class="inputSearch" placeholder="输入用例名搜索" style="width: 200px;">
+                <i class="iconfont icon-search"></i>
+            </div>
+            <div class="floatright">
+	            <div class="catalog" title="目录1>目录1.1>目录1.1.1">
+	                所属目录：目录1>目录1.1>目录1.1.1
+	            </div>
+	            <i class="iconfont icon-bianji" ng-click="open('createTaskTestset')"></i>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="groupLeft">
+            <div class="treeBody floatleft">
+                <div>
+                    <script type="text/ng-template" id="nodes_renderer.html">
+                        <span ui-tree-handle></span>
+                        <div class="tree-node tree-node-content">
+                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                            <i class="iconfont icon-wenjianjia1" style="color: #ff9800;font-size: 12px;"></i>
+                            <span ng-show="!this.isEdit" class="treeText">
                             {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
                         </span>
-						</div>
-						<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-							<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
-							</li>
-						</ol>
-					</script>
-					<div>
-						<div ui-tree="treeOptions" id="tree-root" drag-delay="200">
-							<ol ui-tree-nodes ng-model="data">
-								<li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
-								</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="case floatright">
-				<h1>用例组1>用例组1.1</h1>
-				<ul>
-					<li>
-						<span>测试用例0001，用例来的</span>
-						<input type="checkbox" name="" id="" value="" class="floatright" />
-					</li>
-					<li>
-						<span>测试用例0001，用例来的666666</span>
-						<input type="checkbox" name="" id="" value="" class="floatright" />
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="groupRight">
-			<h2>已选用例（3）</h2>
-			<ul>
-				<li>
-					<span>测试用例0001</span>
-					<i class="iconfont icon-delete floatright"></i>
-				</li>
-				<li>
-					<span>测试用例0001，用例来的666666</span>
-					<i class="iconfont icon-delete floatright"></i>
-				</li>
-				<li>
-					<span>测试用例0001，用例来的666666</span>
-					<i class="iconfont icon-delete floatright"></i>
-				</li>
-			</ul>
-		</div>
-	</div>
+                        </div>
+                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+                            </li>
+                        </ol>
+                    </script>
+                    <div>
+                        <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+                            <ol ui-tree-nodes ng-model="data">
+                                <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case floatright">
+                <h1>用例组1>用例组1.1</h1>
+                <ul>
+                    <li>
+                        <span>测试用例0001，用例来的</span>
+                        <input type="checkbox" name="" id="" value="" class="floatright" />
+                    </li>
+                    <li>
+                        <span>测试用例0001，用例来的666666</span>
+                        <input type="checkbox" name="" id="" value="" class="floatright" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="modal-footer">
-	<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
-	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-	<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+    <div class="floatleft defaultcheckBox">
+        <input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
 </div>

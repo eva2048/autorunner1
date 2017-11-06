@@ -160,10 +160,11 @@
 								<input style="opacity: 0;position: absolute;left: 0px;top: 0px;width: 108px;bottom: 0px;" type="file" name="" value="选择文件" class="">
 							</div>
 							<div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
-								<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false">
-									<i class="iconfont icon-addition_fill" style="margin-left: 10px;cursor: pointer;font-size:20px;color:#48a1ff;" title="添加功能点"></i>
+								<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false" style="position: relative;">
+									<input type="button" name="" value="添加功能点" readonly="readonly" class="btndefault btndefault_blue" style="margin-left: 10px;padding-right: 40px;">
+									<i class="glyphicon glyphicon-triangle-bottom" style="position: absolute;right: 20px;top: 10px;color: #fff;"></i>
 								</div>
-								<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu">
+								<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu" style="left: 10px">
 									<li class="dropdownList">
 										<span class="list" ng-click="open('ruleBank')">引用功能点库</span>
 									</li>

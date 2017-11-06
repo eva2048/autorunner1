@@ -19,7 +19,7 @@
     <div class="navPanel">
         <div class="projectNavList" ng-show="navTabPanel==2">
             <div class="title">
-                过滤器              
+                过滤器
             </div>
             <ul class="projectNavListContent">
                 <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
@@ -133,7 +133,7 @@
                         </div>
                         <ol class="customFilterTime">
                             <li class="defaultTimeSelectBox datetimePicker">
-                                <input type="text" class="timeselectInput floatleft"  datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+                                <input type="text" class="timeselectInput floatleft" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" datepicker-options="inlineOptions" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
                                 <span class="timeselectTitle">开始时间：</span>
                                 <div class="clear"></div>
                             </li>
@@ -147,40 +147,31 @@
         </div>
         <div class="leftNavList useCaseTree" ng-show="navTabPanel==1">
             <div class="title">
-                用例树              
+                用例树
                 <span class="chatIconButton floatright treefunicon" data-tip="刷新">
                     <i class="iconfont icon-gengxin" style="font-size:14px;"></i>
                 </span>
-                                                            
             </div>
             <div class="treeBody">
                 <div>
                     <script type="text/ng-template" id="nodes_renderer.html">
                         <span ui-tree-handle></span>
-                        <div class="tree-node tree-node-content" ng-class="{current:node.id==1.1}">
-                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0||node.cases && node.cases.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+                        <div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
+                            <a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
                             <i class="iconfont icon-wenjianjia1"></i>
                             <span ng-show="!this.isEdit" class="treeText">
                             {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
-                            </span>
+                        </span>
                         </div>
                         <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
                             <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
-                            </li>
-                        </ol>
-                        <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-                            <li ng-repeat="case in node.cases" class="tree-node-content">
-                                <i class="iconfont icon-icon-yongliweiyunhang icon-case"></i>
-                                <span ng-show="!this.isEdit" class="treeText">
-                                {{case.title | limitTo:10}}{{case.title.length>10?'...':''}}
-                                </span>
                             </li>
                         </ol>
                     </script>
                     <div>
                         <div ui-tree="treeOptions" id="tree-root" drag-delay="200">
                             <ol ui-tree-nodes ng-model="data">
-                                <li ng-repeat="node in treedata1" ui-tree-node ng-include="'nodes_renderer.html'">
+                                <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'">
                                 </li>
                             </ol>
                         </div>

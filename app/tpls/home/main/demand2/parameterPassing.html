@@ -77,6 +77,35 @@
 		width: 200px;
 		font-size: 14px;
 	}
+	.selector .iconfont{
+		font-size: 32px;
+		float: left;
+		color: #ccc
+	}
+	.selector{
+		border-radius: 3px;
+		overflow: hidden;
+		border: 1px solid #ddd;
+		width: 244px;
+		margin: 5px auto;
+	}
+	.selector .selectNormal{
+		border-color: #ddd;
+		float: left;
+		margin-right: 0px;
+		border-radius: 0px;
+		border-width: 0px 1px
+	}
+	.selector .leftbtn{
+		height: 34px;
+		padding: 0 8px;
+		float:left;
+		display: inline-block;
+	}
+	.selector .leftbtn .iconfont{
+		font-size: 14px;
+		line-height: 34px;
+	}
 </style>
 <div class="projectBodyBox">
 	<div class="projectBodyTitle " style="text-align: center;">
@@ -106,33 +135,40 @@
 					<span>流程场景</span>
 					<span>数据设计</span>
 				</div>
+				<input type="button" name="" id="" value="保存" class="save" />
 			</div>
 			<div class="projectBodyContent projectBodyContent2">
 				<div class="useCaseList" ng-style="useCaseListStyle">
-					<div class="useCaseListfunction">
-						<div class="floatleft searchBox">
-							<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
-							<i class="iconfont icon-search"></i>
-						</div>
-						<span class="chatIconButton" ng-click="open('addCase')">
-		                    <i class="iconfont icon-addition"></i>添加用例
-		                </span>
-						<span class="chatIconButton">
-		                    <i class="iconfont icon-empty_fill"></i>删除用例
-		                </span>
-						<input type="button" name="" id="" value="保存" class="save" />
-					</div>
-					<div class="userCaseListTable" style="overflow:hidden">
-						<div class="position">
+					<div class="useCaseListfunction flexRow">
+						<div class="floatleft">
+							<span>已选2项:</span>
+							<span class="chatIconButton" ng-click="open('addCase')">
+			                    <i class="iconfont icon-addition"></i>添加用例
+			                </span>
+							<span class="chatIconButton">
+			                    <i class="iconfont icon-empty_fill"></i>删除用例
+			                </span>
+		                </div>
+		                <div class="selector">
 							<div class="center">
-								<i class="iconfont icon-sanjiao4" ng-click="goLeft()"></i>
-								<select name="">
+								<span class="leftbtn">
+									<i class="iconfont icon-left-page" ng-click="goLeft()"></i>
+								</span>
+								<select class="selectNormal">
 									<option value="">组件1</option>
 									<option value="">组件2</option>
 								</select>
-								<i class="iconfont icon-sanjiao3" ng-click="goRight()"></i>
+								<span class="leftbtn">
+									<i class="iconfont icon-right-page" ng-click="goRight()"></i>
+								</span>
 							</div>
 						</div>
+						<div class="floatright searchBox">
+							<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+							<i class="iconfont icon-search"></i>
+						</div>
+					</div>
+					<div class="userCaseListTable" style="overflow:hidden">
 						<div  style="position:relative;width:100%;">
 							<div class="floatleft" style="width:20%;position:absolute;left:0;top:0;">
 								<table class="table-fullborder table-fullborder2">
@@ -140,7 +176,7 @@
 										<td rowspan="2" class="check">
 											<input type="checkbox" name="" id="" value="" />
 										</td>
-										<td rowspan="2" class="name">
+										<td rowspan="2" class="name" style="text-align: left;padding-left: 10px;">
 											用例名称
 										</td>
 									</tr>

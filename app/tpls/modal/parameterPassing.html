@@ -7,15 +7,16 @@
 	.parameterItems {
 		width: 100%;
 		height: 200px;
-		border: 1px solid #C3C4C9;
+		border: 1px solid #e1e6eb;
 		margin-top: 10px;
 	}
 	
 	.parameterItems h5 {
+		background: #f5f6fa;
 		width: 100%;
 		height: 35px;
 		font-size: 14px;
-		border-bottom: 1px solid #C3C4C9;
+		border-bottom: 1px solid #e1e6eb;
 		padding: 10px;
 	}
 	
@@ -26,12 +27,12 @@
 	}
 	
 	.parameterItems ul li {
-		font-size: 14px;
+		font-size: 12px;
 		line-height: 25px;
 		width: 100%;
-		color: #6E6E6E;
+		color: #878787;
 		padding: 0 10px;
-		border-bottom: 1px solid #C3C4C9;
+		border-bottom: 1px solid #e1e6eb;
 		cursor: pointer;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -53,10 +54,12 @@
 	}
 	
 	.bodyRight .btndefault {
-		margin-right: 20px;
+		margin-right: 10px;
 		margin-bottom: 4px;
 	}
-	
+	.bodyRight .btndefault_red {
+		margin-right: 0px;
+	}
 	.passResult{
 		width:100%;
 		height: 250px;
@@ -117,7 +120,7 @@
 	<div class="bodyRight" ng-controller="modalCtrl">
 		<input type="button" class="btndefault" name="" id="" value="智能匹配" />
 		<input type="button" class="btndefault" name="" id="" value="添加参数项" ng-click="open('addParameterItem')" />
-		<input type="button" class="btn btn-danger floatright" name="" id="" value="保存" />
+		<input type="button" class="btndefault btndefault_red floatright" name="" id="" value="传递参数" />
 		<div class="parameterItems">
 			<h5>参数传递
     		<input type="checkbox" name="" id="" value="" class="floatright"/>

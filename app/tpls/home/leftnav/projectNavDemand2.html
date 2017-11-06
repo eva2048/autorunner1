@@ -49,8 +49,8 @@
 							<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0||node.cases && node.cases.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
 							<i class="iconfont icon-wenjianjia1"></i>
 							<span ng-show="!this.isEdit" class="treeText">
-                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
-                        </span>
+                            	{{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                        	</span>
 						</div>
 						<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
 							<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">

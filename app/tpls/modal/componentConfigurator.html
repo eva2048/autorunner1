@@ -13,12 +13,19 @@
 	<h3>组件管理</h3>
 </div>
 <div class="modal-body modalBody" ng-controller="modalCtrl">		
-	<input type="button" name="" value="组件管理" class="btndefault" ng-click="open('selectModule')">	
-	<ul class="modules">
-		<li>组件1</li>
-		<li>组件2</li>
-		<li>组件3</li>
-	</ul>
+	<input type="button" name="" value="添加组件" class="btndefault" ng-click="open('selectModule')">	
+	<table class="table-fullborder" style="margin-top: 10px;">
+		<tbody>
+			<tr>
+				<th>组件名称</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td><h1 style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 350px;">组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一组件一</h1></td>
+				<td><a href="" class="f_red">删除</a></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <div class="modal-footer">
 	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">

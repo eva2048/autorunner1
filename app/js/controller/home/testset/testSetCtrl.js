@@ -24,7 +24,7 @@ define(['app'], function(app) {
                             editDropdownRowEntityOptionsArrayPath: 'foo.bar[0].options', 
                             editDropdownIdLabel: 'value',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.caseID}}</div>',
+                            cellTemplate: '<div class="f_blue ui-grid-cell-contents" >{{row.entity.caseID}}</div>',
                         },
                         {
                             field: "caseName",

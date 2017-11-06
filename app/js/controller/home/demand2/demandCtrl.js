@@ -117,7 +117,8 @@ define(['app'], function(app) {
 						{
 							field: "caseNum",
 							displayName: '用例数',
-							enableColumnMenu: false, // 是否显示列头部菜单按钮							
+							enableColumnMenu: false, // 是否显示列头部菜单按钮	
+							cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ui-sref="index.demand2.parameterPassing">{{row.entity.caseNum}}</a></div>',						
 						},
 						{
 							field: "creater",
