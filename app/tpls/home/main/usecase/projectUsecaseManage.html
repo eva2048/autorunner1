@@ -1,42 +1,36 @@
 <style type="text/css">
-
+	.userCaseListTable table td {
+		text-align: center;
+		padding: 0 !important;
+		min-width: 100px;
+	}
+	
+	.userCaseListTable table td input[type=text] {
+		width: 100%;
+		padding: 0 10px;
+	}
+	.caseData h5{
+		font-size: 14px;
+		line-height: 25px;
+		color:#48a1ff;
+		margin-bottom: 20px;
+		border-bottom: 1px dashed #e6e6e6;
+	}
 </style>
 <div class="projectBodyBox" ng-controller="modalCtrl">
 	<div class="projectBodyTitle">
 		用例管理
-		<div class="floatright searchBox" style="margin-top: 7px;">
-			<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
-			<i class="iconfont icon-search"></i>
-		</div>
 	</div>
 	<div class="projectBodyContent" style="top: 56px;" ng-controller="usecaseCtrl">
 		<div class="useCaseListfunction">
 			<span class="floatleft selectNum">已选中2项：</span>
 			<span class="chatIconButton">
-                    <i class="iconfont icon-guanlian"></i>复制
-                </span>
-			<span class="chatIconButton">
-                    <i class="iconfont icon-brush_fill"></i>剪切
-                </span>
-			<span class="chatIconButton">
-                    <i class="iconfont icon-import"></i>粘贴
-                </span>
-			<span class="chatIconButton">
-                    <i class="iconfont icon-empty_fill"></i>删除
-                </span>
-
-			<div class="floatright btn_add" ng-click="open('addUseCase')" style="margin-top: 8px;margin-left: 10px;">
-				<span class="cicleicon"><i class="iconfont icon-add"></i></span> 新增用例
+                <i class="iconfont icon-empty_fill"></i>删除
+            </span>
+			<div class="floatright searchBox" style="margin-top: 7px;">
+				<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+				<i class="iconfont icon-search"></i>
 			</div>
-			<span class="chatIconButton floatright">
-                    <i class="iconfont icon-daochu2"></i>导出
-                </span>
-			<span class="chatIconButton floatright">
-                    <i class="iconfont icon-import"></i>导入
-                </span>
-			<span class="chatIconButton floatright">
-                    <i class="iconfont icon-tongji"></i>用例统计
-                </span>
 			<div class="clear"></div>
 		</div>
 		<div class="usecaseListPanel floatleft" style="width: 60%;border-right: 5px solid #e4e6f1" ng-style="useCaseListStyle">
@@ -48,9 +42,52 @@
 		<div class="usecaseListPanel floatright" style="width: 40%;" ng-style="useCaseListStyle">
 			<div class="userCaseListTable">
 				<div style="width: 100%;font-size: 14px;color: #313131;margin-bottom: 10px;">
-					用例名称用例名称
+					<p>用例名称： 用例名称 用例名称 用例名称 用例名称
+					</p>
+					<p>关联需求：需求 >
+						<a sref="">需求1.1</a> >
+						<a sref="">场景1</a>
+					</p>
 				</div>
-				<div ui-grid="gridOptionsUsecaseData" ui-grid-autoResize ui-grid-selection ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+				<div class="caseData">
+					<h5>用例数据</h5>
+					<table class="table-fullborder table-fullborder2">
+						<tr>
+							<th>组件名称</th>
+							<th>参数</th>
+							<th>值</th>
+						</tr>
+						<tr>
+							<td rowspan="4">组件1</td>
+							<td>参数1</td>
+							<td>
+								<input type="text" name="" id="" value="11111" />
+							</td>
+						</tr>
+						<tr>
+							<!--<td colspan="4">组件1</td>-->
+							<td>参数2</td>
+							<td>
+								<input type="text" name="" id="" value="22222" />
+							</td>
+						</tr>
+						<tr>
+							<!--<td colspan="4">组件1</td>-->
+							<td>参数3</td>
+							<td>
+								<input type="text" name="" id="" value="33333" />
+							</td>
+						</tr>
+						<tr>
+							<!--<td colspan="4">组件1</td>-->
+							<td>参数4</td>
+							<td>
+								<input type="text" name="" id="" value="44444" />
+							</td>
+						</tr>
+					</table>
+				</div>
+
 			</div>
 		</div>
 	</div>

@@ -18,6 +18,30 @@
 	.titleUl li .inputText {
 		width: 400px;
 	}
+	
+	.jurisdiction {
+		width: 400px;
+		padding-right: 50px;
+		padding-left: 10px;
+		margin-bottom: 10px;
+		position: relative;
+		background: #FFFFFF;
+		border: 1px solid #c3c4c9;
+		border-radius: 3px;
+    	-webkit-border-radius: 3px;
+    	-moz-border-radius: 3px;
+	}
+	
+	.jurisdiction .inputSelectBtn {
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 32px;
+		height: 32px;
+		text-align: center;
+		line-height: 32px;
+		color: #aaa;
+	}
 </style>
 <div class="modal-content" ng-controller="modalCtrl">
 	<div class="modal-header">
@@ -26,7 +50,7 @@
 		</h3>
 	</div>
 	<div class="modal-body">
-		<ul class="titleUl">
+		<ul class="titleUl" ng-init="show==0">
 			<li>
 				<h1>关联组织：</h1> 公司名称 > 部门名称
 				<i class="iconfont icon-editor" style="color:#008bff;font-size: 14px;margin-left: 10px;cursor: pointer;" ng-click="open('tree')"></i>
@@ -34,13 +58,20 @@
 			<li class="clearfix">
 				<h1>账户类型：</h1>
 				<span class="floatleft">
-					<input type="radio" name="n1" id="n1" value="" checked="checked" class="radio"/>
+					<input type="radio" name="n1" id="n1" value="" checked="checked" class="radio" ng-click="show=0"/>
 					<label for="n1">项目用户</label>
 				</span>
 				<span class="floatleft">
-					<input type="radio" name="n1" id="n2" value="" class="radio"/>
+					<input type="radio" name="n1" id="n2" value="" class="radio" ng-click="show=1"/>
 					<label for="n2">管理员</label>
 				</span>
+			</li>
+			<li class="margint_10" ng-show="show==1">
+				<h1>管理员权限：</h1>
+				<div class="jurisdiction floatleft" ng-click="open('chooseJurisdiction')">
+					<span>权限</span>
+					<i class="iconfont icon-trees inputSelectBtn"></i>
+				</div>
 			</li>
 			<li class="margint_10">
 				<h1>账号：</h1>
@@ -48,7 +79,7 @@
 			</li>
 			<li class="margint_10">
 				<h1>密码：</h1>
-				<input type="password" name="" id="" value="" class="inputText" />
+				<input type="text" name="" id="" value="" class="inputText" />
 			</li>
 			<li class="margint_10">
 				<h1>真实姓名：</h1>
@@ -68,7 +99,7 @@
 					<input type="radio" name="q1" id="q2" value="" class="radio"/>
 					<label for="q2">不启用</label>
 				</span>
-			</li>			
+			</li>
 		</ul>
 	</div>
 	<div class="modal-footer">

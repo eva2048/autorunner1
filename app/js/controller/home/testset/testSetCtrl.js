@@ -3,7 +3,7 @@ define(['app'], function(app) {
         .controller('testSetCtrl',
             function($scope, $stateParams, $interval, $timeout,uiGridTreeViewConstants,$http,i18nService) {
                 //表格初始化
-                $http.get('./data/demand.php')
+                $http.get('./data/testset.php')
                     .success(function(data) {                       
                         $scope.gridOptionsTestset.data = data.lists;
                     });
@@ -18,32 +18,36 @@ define(['app'], function(app) {
                     enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
                     enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
                     columnDefs: [{
-                            field: 'num',
-                            displayName: '测试集名称',
+                            field: 'caseID',
+                            displayName: '用例ID',
                             editableCellTemplate: 'ui-grid/dropdownEditor',
                             editDropdownRowEntityOptionsArrayPath: 'foo.bar[0].options', 
                             editDropdownIdLabel: 'value',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.num}}</div>',
+                            cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.caseID}}</div>',
                         },
                         {
-                            field: "caseNum",
-                            displayName: '关联用例数',
+                            field: "caseName",
+                            displayName: '用例名称',
                             enableSorting: false,
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮                            
                         },
                         {
-                            field: "demandName",
-                            displayName: '描述',
+                            field: "csequence",
+                            displayName: '执行顺序',
                             enableSorting: false,
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            enableCellEdit: true, // 是否可编辑
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮                            
                         },
+                        {
+                            field: "state",
+                            displayName: '执行状态',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮                            
+                        },                       
                         {
                             field: "action",
                             displayName: '操作处理',
-                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.alertTip($event,\'aa\',\'aaaaaaaa\')">编辑</a><a class="f_blue">复制</a><a class="f_blue">剪切</a><a class="f_blue" ng-click="grid.appScope.open(\'performUserCase\',\'lg\')">发起执行</a><a class="f_red">删除</a></div>',
+                            cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue" ng-click="grid.appScope.open(\'performUserCase\',\'lg\')">发起执行</a><a class="f_blue">提交缺陷</a><a class="f_red">删除</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         }
                     ],

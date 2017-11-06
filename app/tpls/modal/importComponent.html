@@ -1,21 +1,93 @@
 <style type="text/css">
+	.rightLabel {
+		width: 70%;
+		margin-left: 125px;
+	}
+	
+	label {
+		margin-right: 10px;
+		font-size: 14px;
+		color: #6c7786;
+		line-height: 34px;
+	}
+	
+	label input {
+		float: left;
+		margin: 10px 5px 0 0 !important;
+	}
+	
+	.fileuploadBox {
+		width: 70%;
+		margin-left: 125px;
+	}
 </style>
 <div class="modal-header">
-    <h3>导入组建</h3>
+	<h3>导入组件</h3>
 </div>
 <div class="modal-body modalBody">
-    <ul class="titleUl">          	
-       <li class="clearfix">  
-       		<h1>接口文件：</h1>
-            <input type="text" class="inputText floatleft" style="width: 265px; margin-right: 7px;">
-            <div class="floatleft" style="position: relative;">
-                <input type="button" name="" value="选择文件" class="btndefault btndefault_blue">
-                <input style="opacity: 0;position: absolute;left: 0px;top: 0px;width: 108px;bottom: 0px;" type="file" name="" value="选择文件" class="">
-            </div>         	
-        </li>            
-    </ul>
+	<ul class="titleUl">
+		<li class="clearfix">
+			<h1>接口类型：</h1>
+			<div class="rightLabel">
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />普通            	
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />快速交易
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />恒生接口
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />根网接口
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />讯投接口
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />贵金属交易
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />贵金属交易管理系统
+	            </label>
+				<label>
+	            	<input type="radio" name="interface" id="" value="" />中泰KESB
+	           </label>	            	            
+			</div>
+		</li>
+		<li class="clearfix">
+			<h1>接口文件：</h1>
+			<div class="floatleft" style="position: relative;">
+				<input type="button" name="" value="选择文件" class="btndefault btndefault_blue">
+				<input style="opacity: 0;position: absolute;left: 0px;top: 0px;width: 108px;bottom: 0px;" type="file" name="" value="选择文件" class="">
+			</div>
+		</li>
+	</ul>
+	<div class="describeList fileuploadBox" ng-controller="projectCtrl">
+		<ul class="fileList">
+			<li ng-repeat="v in range(2) track by $index">
+				<span class="fileIcon fileIcon-doc"></span>
+				<div class="fileName">
+					测试需求文档.doc
+					<i class="iconfont icon-close"></i>
+				</div>
+				<div class="fileFooter">
+					<div class="fileSize">
+						<div class="progress progressDefault" ng-hide="fileuploadSize==-1;">
+							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{fileuploadSize+'%'}}">
+								{{fileuploadSize+'%'}}
+							</div>
+						</div>
+						<div class="size" ng-show="fileuploadSize==-1;">
+							180kb
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>
-<div class="modal-footer">   
-    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
-    <input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="返回" class="btndefault btndefault_gray" ng-click="ok()">
 </div>

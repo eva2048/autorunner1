@@ -1,5 +1,25 @@
 <style type="text/css">
-
+	.chatIconButton1 {
+		margin-top: 0px !important;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	
+	.textarea {
+		width: 480px;
+		height: 300px;
+		font-size: 14px;
+		color: #6e6e6e;
+		font-family: "微软雅黑";		
+		line-height: 20px;
+		padding: 10px;
+		overflow-y: hidden;
+		border: 1px solid #c3c4c9;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		resize: none;
+	}
 </style>
 <div class="projectDetailBox" ng-controller="componentDetailCtrl">
 	<div class="detailTitle">
@@ -16,20 +36,11 @@
 				<li>
 					<span class="attributeLeft">
                         <span>脚</span>
-						<span>本</span>
-						<span>名</span>
-						<span>称</span>
+					<span>本</span>
+					<span>内</span>
+					<span>容</span>
 					</span>
-					<input type="text" class="inputText" name="">
-				</li>
-				<li>
-					<span class="attributeLeft">
-                        <span>脚</span>
-						<span>本</span>
-						<span>内</span>
-						<span>容</span>
-					</span>
-					<textarea class="projectTextarea" style="height: 300px;"></textarea>
+					<textarea class="textarea" style="height: 300px;"></textarea>
 				</li>
 			</ul>
 			<div class="btnBox">
@@ -37,6 +48,15 @@
 			</div>
 		</div>
 		<div class="detailAttribute" ng-show="isAttribute==1">
+			<div class="openTableListToptitle">
+				<span class="chatIconButton chatIconButton1 floatleft" ng-click="open('addParameter','lg')">
+                    添加参数
+                </span>
+				<span class="chatIconButton chatIconButton1 floatleft" ng-click="open('showDetail')">
+                   文本显示
+                </span>
+				<div class="clear"></div>
+			</div>
 			<div class="content">
 				<div style="background: #fff;" ui-grid="gridOptionsComp1" ui-grid-resize-columns ui-grid-edit class="gridTableBox"></div>
 			</div>

@@ -41,7 +41,12 @@
 	.searchResultPanel {
 		margin-bottom: 30px;
 	}
-	
+	.searchResultPanel>ul>li{
+		height: 44px;
+		line-height: 44px;	
+		margin-left: 10px;
+		margin-top: 5px;
+	}
 	.searchResultLi {
 		line-height: 44px;
 		font-size: 14px;
@@ -56,9 +61,25 @@
 		color: #6e6e6e;
 	}
 	.selectNoborder {
+		width: 200px;
 	    border: none;
-	    margin-left: -4px;
-	    outline: none;
+	    margin-left: -4px;	   	   
+	    display: inline-block;
+	}
+	.dropdownBox1 .tableDropdownToggle{
+		border:none ;		
+	}
+	.roleName{
+		height: 34px;
+		line-height: 34px;
+		display:inline-block;
+		width: 160px;
+	    border: none;
+	    margin-left: -4px;	
+	    overflow: hidden;   
+	    text-overflow:ellipsis ;
+	    white-space:nowrap;
+	    display: inline-block;
 	}
 </style>
 <div class="modal-header">
@@ -66,7 +87,7 @@
 	<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
 	</h3>
 </div>
-<div class="modal-body modalBody" ng-controller="modalCtrl">
+<div class="modal-body modalBody" ng-controller="modalCtrl" style="height:350px">
 	<div class="searchPanelTitle clearfix">
 		<div class="floatright">
 			<span class="line"></span>
@@ -79,28 +100,74 @@
 		<input class="btn_blue floatright btn_search" ng-disabled="isUserSearch" ng-click="searchUserFun()" type="button" value="搜索">
 	</div>
 	<div class="searchResultPanel">
-		<ul>
-			<li class="ng-hide">
-				<div class="floatleft searchResultLi">
-					<span class="ng-binding">2@qq.com</span>
-					<img src="/images/projectInfoList_manager.png">
-					<h1>该用户已在项目中</h1>
-				</div>
-			</li>
+		<ul style="margin-top:20px">			
 			<li >
     			<div class="floatleft searchResultLi">
-    				<span class="ng-binding">222222222</span>
-    				<img src="/images/projectInfoList_manager.png">
-    				<select class="selectNoborder">
-    					<option value="0">项目经理</option>
-    					<option value="1">开发工程师</option>
-    					<option value="2">测试工程师</option>
-    				</select>
-	                <h1 class="ng-binding">2@qq.com</h1>
+    				<span class="roleName">222222222（胡名气） </span>   				
+    				<div class="selectNoborder">
+    					<div class="dropdownBox dropdownBox1" dropdown="">
+							<div dropdown-toggle="" class="tableDropdownToggle" aria-haspopup="true" aria-expanded="false">
+								<span class="roleName">测试工程师，项目经理，开发工程师</span>
+								<img class="floatright" src="/images/dropdownBox_icon.png">
+								<div class="clear"></div>
+							</div>
+							<ul class="dropdown-menu tableDropdownMenu" dropdown-menu="" role="menu">
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">项目经理
+									</a>
+								</li>
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">开发工程师
+									</a>
+								</li>
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">测试工程师
+									</a>
+								</li>
+							</ul>
+						</div>
+    				</div>	               
     			</div>
-    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btndefault btndefault_blue margint_20" type="button" value="添加">
+    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btndefault btndefault_blue " type="button" value="添加">
     			<div class="clear"></div>
     		</li>
+    		<li >
+    			<div class="floatleft searchResultLi">
+    				<span class="roleName">22222222222222222222222222（胡名气） </span>   				
+    				<div class="selectNoborder">
+    					<div class="dropdownBox dropdownBox1" dropdown="">
+							<div dropdown-toggle="" class="tableDropdownToggle" aria-haspopup="true" aria-expanded="false">
+								<span class="roleName">测试工程师，项目经理，开发工程师</span>
+								<img class="floatright" src="/images/dropdownBox_icon.png">
+								<div class="clear"></div>
+							</div>
+							<ul class="dropdown-menu tableDropdownMenu" dropdown-menu="" role="menu">
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">项目经理
+									</a>
+								</li>
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">开发工程师
+									</a>
+								</li>
+								<li >
+									<a class="ng-binding">
+										<input class="checkbox"  ng-click="$event.stopPropagation();" type="checkbox">测试工程师
+									</a>
+								</li>
+							</ul>
+						</div>
+    				</div>	               
+    			</div>
+    			<input ng-click="saveUserApplyProject(1)" ng-disabled="isSaveUserApplyProject" class="floatright btndefault btndefault_blue " type="button" value="添加">
+    			<div class="clear"></div>
+    		</li>
+    		
 		</ul>
 
 	</div>

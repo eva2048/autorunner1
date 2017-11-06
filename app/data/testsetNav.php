@@ -4,11 +4,31 @@
         "id": 1,
         "level": 0,
         "title": "根目录",
+         "cases":[
+            {
+                "id":1,
+                "title":"测试集一"
+            },
+            {
+                "id":2,
+                "title":"测试集二"
+            }
+        ],
         "nodes": [
         {
             "id": 11,
             "level": 1,
             "title": "测试集1",
+            "cases":[
+                {
+                    "id":1,
+                    "title":"用例一"
+                },
+                {
+                    "id":2,
+                    "title":"用例二"
+                }
+            ],
             "nodes": [
                 {
                     "id": 111,

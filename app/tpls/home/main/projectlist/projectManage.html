@@ -1,20 +1,10 @@
 <style type="text/css">
 </style>
 <div class="projectBodyBox" ng-controller="projectListCtrl">
-    <div class="projectBodyTitle">
-        项目管理
-       
-    </div>
-    <div class="projectBodyContent" style="top: 56px;">
+    <div class="projectBodyContent" style="top: 0px;">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
-                <span class="floatleft selectNum">我创建的项目</span>   
-                <!--<span class="chatIconButton floatleft"  ng-click="open('tableColumn')">
-                    <i class="iconfont icon-liebiao"></i>自定义列                   
-                </span>
-                <span class="chatIconButton floatleft"  ng-click="open('mubanCreateproject')">
-                    <i class="iconfont icon-moban"></i>模板创建项目               
-                </span> -->
+                <span class="floatleft selectNum">我的项目</span>                  
                 <div class="floatright searchBox marginl_5">
                     <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
                     <i class="iconfont icon-search"></i>
@@ -22,7 +12,7 @@
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">
-                <div style="" ui-grid="gridOptionsUsecase"  ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                <div style="" ui-grid="gridOptionsProject"  ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
             </div>            
         </div>
     </div>

@@ -24,21 +24,16 @@ define(['app'], function(app) {
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableCellEdit: true, // 是否可编辑
                             cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.demandName}}</div>',
-                        },
-                        {
-                            field: "createTime",
-                            displayName: '创建时间',
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                        },
+                        },                     
                         {
                             field: "functionPoint",
-                            displayName: '关联功能点',
+                            displayName: '关联规则',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             cellTemplate:'<div class="ui-grid-cell-contents"><i ng-click="grid.appScope.open(\'functionPoint\')" title="测试集管理" class="iconfont icon-createtask_fill f_blue cursor_p"></i><span class="marginl_10">0</span></div>'
                         },
                         {
                             field: "demandState",
-                            displayName: '运行环境',
+                            displayName: '类型',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         },
                         {

@@ -10,7 +10,7 @@
 	}
 </style>
 <div class="projectNav" style="overflow: hidden;" ng-controller="projectNavTestsetCtrl">
-	<div class="customFilterBtn" ng-click="open('addTestSet')">
+	<div class="customFilterBtn" ng-click="open('addTestSet','lg')">
 		<a class="customFilterSave" href="">新增测试集</a>
 	</div>
 	<div class="navPanel">
@@ -44,7 +44,18 @@
 						<li><i class="iconfont icon-tianjia1"></i><span>新增子节点</span></li>
                     	<li><i class="iconfont icon-449xianxingtianjiatongji" style="font-size: 16px;"></i><span>新增同级节点</span></li>
 					</ul>
-				</div>				
+				</div>	
+					<div class="dropdownDefault floatright treefunicon" dropdown>
+					<span class="chatIconButton floatright" data-tip="操作" dropdown-toggle>
+                        <i class="iconfont icon-guanli" style="font-size: 15px;"></i>
+                    </span>
+					<ul class="dropdown-menu transition" dropdown-menu role="menu">
+						<span class="triangle"></span>
+						<li><i class="iconfont icon-fuzhi"></i><span>复制</span></li>
+	                    <li><i class="iconfont icon-tubiao13"></i><span>剪切</span></li>
+	                    <li><i class="iconfont icon-import" style="font-size: 16px;"></i><span>粘贴</span></li>
+	                 </ul>
+				</div>
 			</div>
 			<div class="treeBody">
 				<div>
@@ -61,6 +72,14 @@
 							<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
 							</li>
 						</ol>
+						 <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+                            <li ng-repeat="case in node.cases" class="tree-node-content">
+                                <i class="iconfont icon-icon-yongliweiyunhang icon-case"></i>
+                                <span ng-show="!this.isEdit" class="treeText">
+                                {{case.title | limitTo:10}}{{case.title.length>10?'...':''}}
+                                </span>
+                            </li>
+                        </ol>
 					</script>
 					<div>
 						<div ui-tree="treeOptions" id="tree-root" drag-delay="200">
