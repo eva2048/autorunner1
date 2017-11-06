@@ -1,9 +1,9 @@
 <style type="text/css">
-.attributeList3>li .attributeLeft {
-	display: inline-block; 
-    width: 130px !important; 
-    text-align: right; 
-}
+	.attributeList3>li .attributeLeft {
+		display: inline-block;
+		width: 130px !important;
+		text-align: right;
+	}
 </style>
 <div class="projectBodyBox" ng-controller="projectCreateProjectCtrl">
 	<div class="projectBodyTitle">
@@ -26,17 +26,17 @@
 								<em class="f_red">*</em>
 								</span>
 								<input type="text" class="inputText" name="">
-							</li>
+							</li>							
 							<li>
 								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('需,求,编,码')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('项,目,代,码')">{{n}}</span>
 								<em class="f_red">*</em>
 								</span>
 								<input type="text" class="inputText" name="">
 							</li>
 							<li>
 								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('项,目,代,码')">{{n}}</span>
+                                <span  ng-repeat="n in turnArray('需,求,编,码')">{{n}}</span>
 								<em class="f_red">*</em>
 								</span>
 								<input type="text" class="inputText" name="">
@@ -72,26 +72,6 @@
 									<div class="clear"></div>
 								</a>
 							</li>
-							<li>
-								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('测,试,实,际,开,始,时,间')">{{n}}</span>
-								<em class="f_red">*</em>
-								</span>
-								<a>
-									<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-									<div class="clear"></div>
-								</a>
-							</li>
-							<li>
-								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('测,试,实,际,结,束,时,间')">{{n}}</span>
-								<em class="f_red">*</em>
-								</span>
-								<a>
-									<input type="text" class="inputText" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
-									<div class="clear"></div>
-								</a>
-							</li>
 							<li class="" ng-controller="modalCtrl">
 								<span class="attributeLeft">
                                 <span  ng-repeat="n in turnArray('缺,陷,流,程')">{{n}}</span>
@@ -101,34 +81,17 @@
 									<option>默认流程</option>
 									<option>项目1流程</option>
 								</select>
-								<span style="color: #48a1ff;font-size: 14px;margin-left: 40px;cursor: pointer;" ng-click="open('checkProcess','lg')">查看缺陷流程</span>
-							</li>							
+								<span style="color: #48a1ff;font-size: 14px;margin-left: 10px;cursor: pointer;" ng-click="open('checkProcess','lg')">查看缺陷流程</span>
+							</li>
 							<li class="" ng-controller="modalCtrl">
 								<span class="attributeLeft">
                                 <span  ng-repeat="n in turnArray('项,目,经,理')">{{n}}</span>
 								<em class="f_red">*</em>
 								</span>
-								<input type="text" class="inputText" name="" readonly="readonly" style="width: 150px;">
-								<i class="iconfont icon-addpeople_fill" style="color: #48a1ff;font-size: 20px;cursor: pointer;"  ng-click="open('selectManager')"></i>
-								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('联,系,电,话')">{{n}}</span>
-								<em class="f_red">*</em>
-								</span>
-								<input type="text" class="inputText" name="" style="width: 140px;">
-							</li>							
-							<li class="" ng-controller="modalCtrl">
-								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('测,试,经,理')">{{n}}</span>
-								<em class="f_red">*</em>
-								</span>
-								<input type="text" class="inputText" name="" readonly="readonly" style="width: 150px;">
-								<i class="iconfont icon-addpeople_fill" style="color: #48a1ff;font-size: 20px;cursor: pointer;"  ng-click="open('selectManager')"></i>
-								<span class="attributeLeft">
-                                <span  ng-repeat="n in turnArray('联,系,电,话')">{{n}}</span>
-								<em class="f_red">*</em>
-								</span>
-								<input type="text" class="inputText" name="" style="width: 140px;">
-							</li>	
+								<input type="text" class="inputText" name="" readonly="readonly" style="width: 350px;">
+								<i class="iconfont icon-addpeople_fill" style="color: #48a1ff;font-size: 20px;margin-left: 10px;cursor: pointer;" ng-click="open('selectManager')"></i>
+							</li>
+
 							<li>
 								<span class="attributeLeft">
                                 <span  ng-repeat="n in turnArray('状,态')">{{n}}</span>
@@ -148,7 +111,7 @@
 								<select name="" class="selectBox" style="width: 480px;">
 									<option value="">启用</option>
 									<option value="">不启用</option>
-									
+
 								</select>
 							</li>
 							<div class="clear"></div>
@@ -158,81 +121,51 @@
 			</div>
 			<div class="createBugContent">
 				<div class="describeBox">
-					<div class="describeTitle">
-						项目模块
+					<div class="describeTitle" ng-controller="modalCtrl">
+						定制属性<span style="color: gray;">（已选：模板的名称）</span>
+						<i class="iconfont icon-bianji floatright" style="cursor: pointer;" ng-click="open('customAttributes','lg')"></i>
 					</div>
-					<div class="describeList" bn-document-click="addDescribe=false" ">
-						<div class="addProjectModel " style="border: none;>
-						<i class="iconfont icon-biaoqian"></i>
-						<input placeholder="添加项目模块,点击回车添加" ng-keyup="addModel2($event)" ng-model="modelItem2">
-						<span ng-repeat="(v,model) in pModel2" class="filterspan">
-							<i class="iconfont icon-huiyuan i_color1"></i>
-							<span class="filterspanText">{{model}}</span>
-                            <i class="iconfont icon-delete_fill" ng-click="sModelDel2(v)"></i>
-                    	</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="createBugContent">
-			<div class="describeBox">
-				<div class="describeTitle">
-					项目描述
-				</div>
-				<div class="describeContent">
-					<textarea placeholder="请输入项目的描述"></textarea>
-				</div>
-			</div>
-		</div>
-		<div class="createBugContent">
-			<div class="describeBox">
-				<div class="describeTitle">
-					项目文件
-				</div>
-				<div class="describeContent">
-					<div class="describeList fileuploadBox">
-						<div class="fileselectBox">
-							<div class="floatleft btn_add btn_addfile"><span class="cicleicon"><i class="iconfont icon-createtask"></i></span>选择文件
-								<input class="inputfile" type="file" value="选择文件">
-							</div>
-							<span class="floatright">文件最大不超过30M</span>
-						</div>
-						<ul class="fileList">
-							<li ng-repeat="v in range(2) track by $index">
-								<span class="fileIcon fileIcon-doc"></span>
-								<div class="fileName">
-									测试需求文档.doc
-									<i class="iconfont icon-close"></i>
-								</div>
-								<div class="fileFooter">
-									<div class="fileSize">
-										<div class="progress progressDefault" ng-hide="fileuploadSize==-1;">
-											<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{fileuploadSize+'%'}}">
-												{{fileuploadSize+'%'}}
-											</div>
-										</div>
-										<div class="size" ng-show="fileuploadSize==-1;">180kb
-											<div class="filemoreFunc dropdownDefault floatright treefunicon" dropdown>
-												<i class="iconfont icon-gengduo floatright tooltipdefaulticon" dropdown-toggle></i>
-												<ul class="dropdown-menu dropdown-menu-right transition" dropdown-menu role="menu">
-													<span class="triangle"></span>
-													<li><i class="iconfont icon-download" style="font-size: 14px;"></i><span>下载</span></li>
-													<li><i class="iconfont icon-empty_fill"></i><span>删除</span></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+					<div class="describeContent padding_20">
+						<ul class=" attributeList1 attributeList3">
+							<li>
+								<span class="attributeLeft">TextInput</span>
+								<input type="text" class="inputText" name="" id="" value="" />
+							</li>
+							<li>
+								<span class="attributeLeft">
+                               	date
+								</span>
+								<a>
+									<input type="text" class="inputText" datepicker-popup="{{format}}" ng-model="dat" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />									
+								</a>
+							</li>
+							<li>
+								<span class="attributeLeft">
+                                comobox								
+								</span>
+								<select name="" class="selectBox" style="width: 480px;">
+									<option value="">111111111111111111</option>
+									<option value="">2222222222222222222</option>
+								</select>
 							</li>
 						</ul>
 					</div>
+				</div>
+			</div>
+			<div class="createBugContent">
+				<div class="describeBox">
+					<div class="describeTitle">
+						项目描述
+					</div>
+					<div class="describeContent">
+						<textarea placeholder="请输入项目的描述"></textarea>
+					</div>
 					<div class="createBugBtnBox clearfix">
-	                    <input type="button" name="" value="返回" class="floatright btndefault btndefault_gray">
-	                    <input type="button" name="" value="提交" class="floatright btndefault btndefault_blue">        
-	                </div>
+						<input type="button" name="" value="返回" class="floatright btndefault btndefault_gray">
+						<input type="button" name="" value="提交" class="floatright btndefault btndefault_blue">
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>

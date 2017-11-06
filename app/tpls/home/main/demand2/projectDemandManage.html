@@ -2,21 +2,19 @@
 </style>
 <div class="projectBodyBox" ng-controller="demandCtrl">
     <div class="projectBodyTitle">
-        需求管理
-        <div class="floatright btn_add" ng-click="open('newDemand','lg')">
+        需求管理2
+         <div class="floatright">
+           <i class="iconfont icon-fanhuishangyiye" style="margin-left: 20px;cursor: pointer;color: #48a1ff;" ng-click="back()" title="返回树结构"></i>
+        </div>
+        <div class="floatright btn_add" ng-click="open('newDemand2','lg')">
             <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
         </div>
+       
     </div>
     <div class="projectBodyContent" style="top: 56px;">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
-                <span class="floatleft selectNum">已选中2项：</span>
-                <span class="chatIconButton">
-                    <i class="iconfont icon-zhipaidan"></i>指派
-                </span>                
-                <span class="chatIconButton">
-                    <i class="iconfont icon-empty_fill"></i>删除
-                </span>               
+                <span class="floatleft selectNum">已选中2项：</span>                                                    
                 <span class="chatIconButton" ng-click="open('import','')">
                     <i class="iconfont icon-import"></i>导入
                 </span>

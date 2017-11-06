@@ -1,0 +1,63 @@
+<style type="text/css">
+	.projectBodyTitle .step{
+		font-size: 16px;
+		display:inline-block;
+		color: #48a1ff;
+	}
+	.projectBodyTitle .step span{
+		display:inline-block;
+		margin-left: 15px;
+		color: #6e6e6e;
+	}
+</style>
+<div class="projectBodyBox">
+    <div class="projectBodyTitle " style="text-align: center;">
+        <div class="floatleft ">需求名字2</div>
+        <div class=" personalNav" style="display: inline-block;">
+            <ul>
+                <li ui-sref="index.demand2">
+                    <a href="" class="cursor_p">需求内容</a>
+                </li>
+                <li class="current">
+                    <a href="" class="cursor_p">用例场景</a>
+                </li>
+                <li ui-sref="index.demand2.usecaseHistory">
+                    <a href="" class="cursor_p">需求历史</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </div>       
+    </div>
+    <div class="projectBodyContent">
+        <div class="projectBodyBox" ng-controller="demandCtrl">     
+        	<div class="projectBodyTitle">
+                 <i class="iconfont icon-left-page" style="margin-right:10px;cursor: pointer;" ng-click="back()" title="返回上一页"></i> 
+                 <div class="step">
+                 	正在编辑
+                 <span>场景名称</span>
+                 <span>规则场景</span>
+                 </div>                 	
+            </div>
+            <div class="projectBodyContent projectBodyContent2">
+                <div class="useCaseList" ng-style="useCaseListStyle">
+                    <div class="useCaseListfunction">             	
+                    	<span class="chatIconButton">
+		                    <i class="iconfont icon-addition"></i>添加数据
+		                </span>
+		                <span class="chatIconButton">
+		                    <i class="iconfont icon-empty_fill"></i>删除数据
+		                </span>	
+		                <div class="floatright searchBox">
+		                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+		                    <i class="iconfont icon-search"></i>
+		                </div>
+                    </div>
+                    <div class="userCaseListTable">
+                        <div style="" ui-grid="gridOptionsRuleScene" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

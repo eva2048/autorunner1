@@ -1,0 +1,273 @@
+<style type="text/css">
+	.projectBodyTitle .step {
+		font-size: 16px;
+		display: inline-block;
+		color: #48a1ff;
+	}
+	
+	.projectBodyTitle .step span {
+		display: inline-block;
+		margin-left: 15px;
+		color: #6e6e6e;
+	}
+	
+	.projectBodyTitle a {
+		font-size: 14px;
+		color: #48a1ff;
+	}
+	
+	.save {
+		padding: 0px 30px;
+		text-align: center;
+		background: red;
+		color: #fff;
+		font-size: 12px;
+		float: right;
+		height: 32px;
+		line-height: 32px;
+		border-radius: 3px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		cursor: pointer;
+		margin-top: 5px;
+	}
+	
+	.userCaseListTable table {
+		position: relative;
+	}
+	
+	.userCaseListTable table td {
+		text-align: center;
+		padding: 0 !important;
+		min-width: 100px;
+	}
+	
+	.userCaseListTable table td.name {
+		min-width: 200px;
+	}
+	
+	.userCaseListTable table td.check {
+		min-width: 50px;
+		max-width: 50px;
+	}
+	
+	.userCaseListTable table td input[type=text] {
+		width: 100%;
+		padding: 0 10px;
+	}
+	
+	.userCaseListTable .position {
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	
+	.userCaseListTable .position .center {
+		position: fixed;
+		left: 50%;
+	}
+	
+	.userCaseListTable .position .center .iconfont {
+		cursor: pointer;
+	}
+	
+	.userCaseListTable .position select {
+		border: none;
+		margin: 0 20px;
+		width: 200px;
+		font-size: 14px;
+	}
+</style>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle " style="text-align: center;">
+		<div class="floatleft">需求名字2</div>
+		<div class="personalNav" style="display: inline-block;">
+			<ul>
+				<li ui-sref="index.demand2">
+					<a href="" class="cursor_p">需求内容</a>
+				</li>
+				<li class="current">
+					<a href="" class="cursor_p">用例场景</a>
+				</li>
+				<li ui-sref="index.demand2.usecaseHistory">
+					<a href="" class="cursor_p">需求历史</a>
+				</li>
+				<div class="clear"></div>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="projectBodyContent">
+		<div class="projectBodyBox" ng-controller="parameterPassingCtrl">
+			<div class="projectBodyTitle">
+				<i class="iconfont icon-left-page" style="margin-right:10px;cursor: pointer;" ng-click="back()" title="返回上一页"></i>
+				<div class="step">
+					场景名称
+					<span>流程场景</span>
+					<span>数据设计</span>
+				</div>
+			</div>
+			<div class="projectBodyContent projectBodyContent2">
+				<div class="useCaseList" ng-style="useCaseListStyle">
+					<div class="useCaseListfunction">
+						<div class="floatleft searchBox">
+							<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+							<i class="iconfont icon-search"></i>
+						</div>
+						<span class="chatIconButton" ng-click="open('addCase')">
+		                    <i class="iconfont icon-addition"></i>添加用例
+		                </span>
+						<span class="chatIconButton">
+		                    <i class="iconfont icon-empty_fill"></i>删除用例
+		                </span>
+						<input type="button" name="" id="" value="保存" class="save" />
+					</div>
+					<div class="userCaseListTable" style="overflow:hidden">
+						<div class="position">
+							<div class="center">
+								<i class="iconfont icon-sanjiao4" ng-click="goLeft()"></i>
+								<select name="">
+									<option value="">组件1</option>
+									<option value="">组件2</option>
+								</select>
+								<i class="iconfont icon-sanjiao3" ng-click="goRight()"></i>
+							</div>
+						</div>
+						<div  style="position:relative;width:100%;">
+							<div class="floatleft" style="width:20%;position:absolute;left:0;top:0;">
+								<table class="table-fullborder table-fullborder2">
+									<tr style="height:41px">
+										<td rowspan="2" class="check">
+											<input type="checkbox" name="" id="" value="" />
+										</td>
+										<td rowspan="2" class="name">
+											用例名称
+										</td>
+									</tr>
+									<tr style="height:41px">
+									</tr>
+									<tr>
+										<td class="check">
+											<input type="checkbox" name="" id="" value="" />
+										</td>
+										<td class="name">
+											<input type="text" name="" id="" value="用例a" />
+										</td>
+									</tr>
+									<tr>
+										<td class="check">
+											<input type="checkbox" name="" id="" value="" />
+										</td>
+										<td class="name">
+											<input type="text" name="" id="" value="用例b" />
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="floatleft" style="position:absolute;left:20%;width:80%;top:0;overflow-y:scroll;">
+								<table class="table-fullborder table-fullborder2">
+									<tr>										
+										<td colspan="2" class="component">
+											组件1
+										</td>
+										<td colspan="3" class="component">
+											组件2
+										</td>
+										<td colspan="3" class="component">
+											组件3
+										</td>										
+									</tr>
+									<tr>
+										<td>
+											参数1
+										</td>
+										<td>
+											参数2
+										</td>
+
+										<td>
+											参数1
+										</td>
+										<td>
+											参数2
+										</td>
+										<td>
+											参数3
+										</td>
+										<td>
+											参数1
+										</td>
+										<td>
+											参数2
+										</td>
+										<td>
+											参数3
+										</td>
+										
+									</tr>
+									<tr>										
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="3333333333" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="3333333333" />
+										</td>
+										
+									</tr>
+									<tr>										
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="3333333333" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="1111111111" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="2222222222" />
+										</td>
+										<td>
+											<input type="text" name="" id="" value="3333333333" />
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

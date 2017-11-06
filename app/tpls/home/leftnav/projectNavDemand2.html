@@ -1,0 +1,80 @@
+<style type="text/css">
+
+</style>
+<div class="projectNav" style="overflow: hidden;" ng-init="navTabPanel=2" ng-controller="projectNavDemandCtrl">
+	<div class="customFilterBtn" style="padding: 13px 10px;" ng-click="open('newDemand2','lg')">
+		<a class="customFilterSave" href="">新增需求</a>
+	</div>
+	<div class="navPanel">
+		<div class="leftNavList useCaseTree">
+			<div class="title">
+				需求树
+				<span class="chatIconButton floatright treefunicon" data-tip="查看需求列表" ui-sref="index.demand2.demandDetails">
+                    <i class="iconfont icon-createtask"></i>
+                </span>
+				<span class="chatIconButton floatright treefunicon" data-tip="删除节点">
+                    <i class="iconfont icon-empty"></i>
+                </span>
+				<div class="dropdownDefault floatright treefunicon" dropdown>
+					<span class="chatIconButton floatright" data-tip="移动节点" dropdown-toggle>
+                       <i class="iconfont icon-yidong" style="font-size: 15px;"></i>
+                    </span>
+					<ul class="dropdown-menu transition" dropdown-menu role="menu">
+						<span class="triangle"></span>
+						<li><i class="iconfont icon-guanlihoutai23"></i><span>上移</span></li>
+						<li><i class="iconfont icon-guanlihoutai23-copy"></i><span>下移</span></li>
+						<li><i class="iconfont icon-zuoyi1" style="font-size: 16px;"></i><span>左移</span></li>
+						<li><i class="iconfont icon-youyi1" style="font-size: 16px;"></i><span>右移</span></li>
+					</ul>
+				</div>
+				<span class="chatIconButton floatright treefunicon" data-tip="编辑节点">
+                    <i class="iconfont icon-editor"></i>
+                </span>
+				<div class="dropdownDefault floatright treefunicon" dropdown>
+					<span class="chatIconButton floatright" data-tip="编辑节点" dropdown-toggle>
+                        <i class="iconfont icon-add"></i>
+                    </span>
+					<ul class="dropdown-menu transition" dropdown-menu role="menu">
+						<span class="triangle"></span>
+						<li><i class="iconfont icon-tianjia1"></i><span>新增子节点</span></li>
+						<li><i class="iconfont icon-449xianxingtianjiatongji" style="font-size: 16px;"></i><span>新增同级节点</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="treeBody">
+				<div>
+					<script type="text/ng-template" id="nodes_renderer.html">
+						<span ui-tree-handle></span>
+						<div class="tree-node tree-node-content" ng-class="{current:node.id==1}">
+							<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0||node.cases && node.cases.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>
+							<i class="iconfont icon-wenjianjia1"></i>
+							<span ng-show="!this.isEdit" class="treeText">
+                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                        </span>
+						</div>
+						<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+							<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+							</li>
+						</ol>
+						<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+							<li ng-repeat="case in node.cases" class="tree-node-content">
+								<i class="iconfont icon-icon-yongliweiyunhang icon-case"></i>
+								<span ng-show="!this.isEdit" class="treeText">
+                                {{case.title | limitTo:10}}{{case.title.length>10?'...':''}}
+                                </span>
+							</li>
+						</ol>
+					</script>
+					<div>
+						<div ui-tree="treeOptions" id="tree-root" drag-delay="200">
+							<ol ui-tree-nodes ng-model="data">
+								<li ng-repeat="node in treedata1" ui-tree-node ng-include="'nodes_renderer.html'">
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

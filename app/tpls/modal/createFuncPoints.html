@@ -1,158 +1,118 @@
 <style type="text/css">
+	.module {
+		display: inline-block;
+		margin: 5px 10px 0px 5px;
+		height: 24px;
+		line-height: 24px;
+		position: relative;
+		border-radius: 3px;
+		font-size: 13px;
+		color: #666;
+		background: #eee;
+		float: left;
+	}
+	
+	.module .moduleItems {
+		width: 100%;
+		padding: 0px 15px 0px 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+	}
+	
+	.module .icon-delete_fill {
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		display: none;
+	}
+	
+	.module:hover .icon-delete_fill {
+		display: block;
+	}
+	
+	.cicleicon {
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		text-align: center;
+		background: #008bff;
+		color: #fff;
+		border-radius: 11px;
+		margin-right: 5px;
+		float: left;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+	
+	.dropdownList {
+		height: 30px;
+		line-height: 30px;
+	}
+	
+	.dropdowncheckbox {
+		float: left;
+		margin: 8px 10px !important;
+	}
+	
+	.ruleWidth {
+		display: inline-block;
+		width: 400px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 </style>
 <div class="modal-header">
-    <h3>新增功能点
+	<h3>新增场景
     <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
     </h3>
 </div>
-<div class="modal-body modalBody createFuncPoints" ng-init="createFuncPoints=1">
-    <div class="flexRow">
-        <div class="floatleft">
-            <ul class="modalLeftTab">
-                <li ng-class="{'current':createFuncPoints==1}" ng-click="createFuncPoints=1">
-                    <i class="iconfont icon-barrage_fill"></i>
-                    <span>基本信息</span>
-                </li>
-                <li ng-class="{'current':createFuncPoints==2}" ng-click="createFuncPoints=2">
-                    <i class="iconfont icon-guanlianbangding1"></i>
-                    <span>关联组件</span>
-                </li>
-                <li ng-class="{'current':createFuncPoints==3}" ng-click="createFuncPoints=3">
-                    <i class="iconfont icon-activity_fill"></i>
-                    <span>输入数据</span>
-                </li>
-            </ul>
-        </div>
-        <div class="floatleft flex modalRightContent">
-            <!-- 基本信息 -->
-            <ul class="titleUl" ng-show="createFuncPoints==1">
-                <li>
-                    <h1>功能点名称：</h1>
-                    <input type="text" class="inputText">
-                </li>
-                <div class="clear"></div>
-                <li>
-                    <h1>定义规则：</h1>
-                    <select class="selectNormal">
-                        <option>正交规则</option>
-                        <option>对称规则</option>
-                    </select>
-                </li>
-                <li>
-                    <h1>详细描述：</h1>
-                    <textarea class="projectTextarea"></textarea>
-                </li>
-                <li class="funcBox">
-                    <button class="btndefault btn_blue" ng-click="ok()">创建</button>
-                </li>
-            </ul>
-            <!-- 关联组件 -->
-            <div class="" ng-show="createFuncPoints==2">
-                <ul class="titleUl">
-                    <li>
-                        <h1 class="hauto">关联组件</h1>
-                        <select class="selectNormal">
-                            <option>组件11111</option>
-                            <option>组件22222</option>
-                        </select>
-                    </li>
-                    <div class="modalSelectPanel">
-                        <div class="title">关联数据项</div>
-                        <ul class="multselectUl">
-                            <li class="checkBox">
-                                <input type="checkbox" name="">
-                                <i class="input-helper"></i>
-                                <span title="" class="defaultcheckText">公司名称</span>
-                            </li>
-                            <li class="checkBox">
-                                <input type="checkbox" name="">
-                                <i class="input-helper"></i>
-                                <span title="中及缺陷身上的呵呵大家的交付解放军解放" class="defaultcheckText">中及缺陷身上的呵呵大家的交付解放军解放</span>
-                            </li>
-                            <li class="checkBox">
-                                <input type="checkbox" name="">
-                                <i class="input-helper"></i>
-                                <span title="中及缺陷身上的呵呵大家的交付解放军解放" class="defaultcheckText">中及缺陷身上的呵呵大家的交付解放军解放</span>
-                            </li>
-                            <li class="checkBox">
-                                <input type="checkbox" name="">
-                                <i class="input-helper"></i>
-                                <span title="中及缺陷身上的呵呵大家的交付解放军解放" class="defaultcheckText">中及缺陷身上的呵呵大家的交付解放军解放</span>
-                            </li>
-                            <div class="clear"></div>
-                        </ul>
-                    </div>
-                    <li class="funcBox funcBox1">
-                        <button class="btndefault btn_blue" ng-click="ok()">保存</button>
-                    </li>
-                </ul>
-            </div>
-            <!-- 输入数据 -->
-            <div class ng-show="createFuncPoints==3">
-                <ul class="titleUl" style="margin-top: 0px;">
-                    <div class="modalDataPanel" style="padding-top: 0px;">
-                        <div class="title">
-                            <div class="floatleft leftTitle">
-                                数据列表：
-                                <span class="chatIconButton">
-                                    <i class="iconfont icon-addition_fill"></i>
-                                    新增数据
-                                </span>
-                                <span class="chatIconButton">
-                                    <i class="iconfont icon-delete_fill"></i>
-                                    删除数据
-                                </span>
-                                <span ng-controller="modalCtrl" class="chatIconButton" ng-click="open('createFuncPointsAdddata','lg')">
-                                    <i class="iconfont icon-addition_fill"></i>
-                                    批量添加数据
-                                </span>
-                            </div>
-                            <div class="searchBox floatright">                               
-                                <input type="text" name="" class="inputSearch" placeholder="输入搜索条件回车搜索">
-                                <i class="iconfont icon-search"></i>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="tablePanel marginb_15" style="max-height: 280px;overflow-y: auto;overflow-x: hidden;">
-                            <table class="table-fullborder">
-                                <tr>
-                                    <th><input type="checkbox" name=""></th>
-                                    <th width="80">序号</th>
-                                    <th>公司名称</th>
-                                    <th>公司地址</th>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name=""></td>
-                                    <td>1</td>
-                                    <td>公司名称</td>
-                                    <td>公司地址</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name=""></td>
-                                    <td>1</td>
-                                    <td>公司名称</td>
-                                    <td>公司地址</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name=""></td>
-                                    <td>1</td>
-                                    <td>公司名称</td>
-                                    <td>公司地址</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" name=""></td>
-                                    <td>1</td>
-                                    <td>公司名称</td>
-                                    <td>公司地址</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <li class="">
-                        <button class="btndefault btn_blue" ng-click="ok()">保存</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="modal-body modalBody createFuncPoints">
+
+	<div class=" modalRightContent">
+		<!-- 基本信息 -->
+		<ul class="titleUl">
+			<li>
+				<h1>场景名称：</h1>
+				<input type="text" name="" id="" value="" class="inputText" />
+			</li>
+			<li>
+				<h1>选择规则：</h1>
+				<div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
+					<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false">
+						<input type="text" name="" id="" value="" class="inputText" readonly="readonly" />
+						<i class="iconfont icon-unfold" style="position:absolute;right:10px;top:7px"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu">
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">
+							<span class="ruleWidth">规则1</span>
+						</li>
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">
+							<span class="ruleWidth">规则1</span>
+						</li>
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">
+							<span class="ruleWidth">规则1</span>
+						</li>
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">
+							<span class="ruleWidth">规则1</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="funcBox" ng-show="showModule==1">
+				<button class="btndefault btn_blue" ng-click="ok()" ui-sref="index.demand2.ruleScene">创建</button>
+			</li>
+		</ul>
+
+	</div>
+</div>
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
 </div>

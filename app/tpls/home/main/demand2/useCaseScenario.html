@@ -1,0 +1,43 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox">
+    <div class="projectBodyTitle" style="text-align: center;">
+        <div class="floatleft">需求名字2</div>
+        <div class="personalNav" style="display: inline-block;">
+            <ul>
+                <li ui-sref="index.demand2">
+                    <a href="" class="cursor_p">需求内容</a>
+                </li>
+                <li class="current">
+                    <a href="" class="cursor_p">用例场景</a>
+                </li>
+                <li ui-sref="index.demand2.usecaseHistory">
+                    <a href="" class="cursor_p">需求历史</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </div>       
+    </div>
+    <div class="projectBodyContent">
+        <div class="projectBodyBox" ng-controller="demandCtrl">            
+            <div class="projectBodyContent" style="top: 0;left: 0;">
+                <div class="useCaseList" ng-style="useCaseListStyle">
+                    <div class="useCaseListfunction">
+                        <span class="floatleft selectNum">已选中2项：</span>                                                                   
+                        <span class="chatIconButton floatleft" ng-click="open('createFuncPoints','lg')">
+		                    <i class="iconfont icon-add"></i>新增场景
+		                </span>
+		                 <span class="chatIconButton">
+		                    <i class="iconfont icon-delete_fill"></i>删除
+		                </span>  
+                        <div class="clear"></div>
+                    </div>
+                    <div class="userCaseListTable">
+                        <div style="" ui-grid="gridOptionsCaseScene" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

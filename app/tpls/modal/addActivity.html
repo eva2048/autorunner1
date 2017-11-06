@@ -1,0 +1,46 @@
+<style type="text/css">
+	.activityName{
+		width: 100%;
+	} 
+	.activityName li{
+		margin-bottom: 10px;
+	}
+	.activityName .iconfont{
+		margin-left: 20px;
+		cursor:pointer;
+	}
+	.activityName .iconfont:hover{
+		color:#48a1ff;
+	}
+	.addItem{
+		width: 100px;
+		cursor: pointer;
+	}
+	.addItem .iconfont{
+		float: left;
+		margin-top: -3px;
+	}
+</style>
+<div class="modal-header">
+	<h3>添加功能点
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody" ng-controller="addActivityCtrl">
+	<ul class="activityName">
+		<li ng-repeat="x in addActivity">
+			<input type="text" maxlength="10" name="" class="inputText" id="" value="{{x.name}}" placeholder="功能点名称"/>
+			<i class="iconfont icon-empty_fill" ng-click="remove($index)"></i>
+		</li>
+	</ul>
+	<div ng-click="addItem()" class="addItem">
+		<i class="iconfont icon-addition" style="cursor: pointer;color:#48a1ff;"></i>
+		添加功能点
+	</div>
+	
+	
+</div>
+<div class="modal-footer">
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

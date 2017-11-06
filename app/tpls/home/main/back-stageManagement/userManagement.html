@@ -41,11 +41,7 @@
 	</div>
 	<div class="projectBodyContent">
 		<div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
-			<div class="useCaseListfunction">
-				<span class="searchUser floatleft">
-            		<input type="text" name="" id="" value="" placeholder="根据账号或姓名搜索"/>
-            		<i class="iconfont icon-search"></i>
-            	</span>
+			<div class="useCaseListfunction">				
 				<div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
 					<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false">
 						<span class="dropdowntoggletext">账户类型</span>
@@ -58,7 +54,6 @@
 						<li class="dropdownList" ng-click="$event.stopPropagation()">
 							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">管理员
 						</li>
-
 					</ul>
 				</div>
 				<span class="chatIconButton floatleft" ng-click="open('addUserBack-stage')">
@@ -67,7 +62,10 @@
 				<span class="chatIconButton floatleft" ng-click="open('importUser')">
                     <i class="iconfont icon-import"></i>导入用户
                 </span>
-
+				 <div class="floatright searchBox marginl_5">
+                    <input type="text" name="" class="inputSearch" placeholder="根据账号或姓名搜索">
+                    <i class="iconfont icon-search"></i>
+                </div> 
 				<div class="clear"></div>
 			</div>
 			<div class="userCaseListTable">

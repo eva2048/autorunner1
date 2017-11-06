@@ -1,0 +1,151 @@
+<style type="text/css">
+	.dropdown-menu {
+		top: 25px;
+	}
+	
+	.dropdown-menu li {
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 20px;
+	}
+	
+	.dropdown-menu li input.dropdowncheckbox {
+		float: left;
+		margin: 8px 10px 0 0;
+	}
+	
+	.listFooter {
+		margin: 20px;
+	}
+	
+	.dropdowntoggle {
+		height: 35px;
+		line-height: 35px;
+	}
+	
+	.dropdowntoggle span {
+		font-size: 14px;
+		color: #6E6E6E;
+	}
+	
+	.module {
+		display: inline-block;
+		margin: 5px 10px 0px 5px;
+		height: 24px;
+		line-height: 24px;
+		position: relative;
+		border-radius: 3px;
+		font-size: 13px;
+		color: #666;
+		background: #eee;
+		float: left;
+	}
+	
+	.module .moduleItems {
+		width: 100%;
+		padding: 0px 15px 0px 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+	}
+	
+	.module .icon-delete_fill {
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		display: none;
+	}
+	
+	.module:hover .icon-delete_fill {
+		display: block;
+	}
+	
+	.cicleicon {
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		text-align: center;
+		background: #008bff;
+		color: #fff;
+		border-radius: 11px;
+		margin-right: 5px;
+		float: left;
+		margin-top: 5px;
+		cursor: pointer;
+	}
+</style>
+<div class="modal-content newDemand" ng-controller="modalCtrl">
+	<div class="modal-header">
+		<h3>提需求
+		<i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+		</h3>
+	</div>
+	<div class="modal-body">
+		<ul class="titleUl">
+			<li>
+				<h1>需求名称：</h1>
+				<input type="text" name="" id="" value="" class="inputText" required="required" />
+			</li>
+			<div class="clear"></div>
+			<li>
+				<h1>需求编号：</h1>
+				<input type="text" name="" id="" value="" class="inputText" />
+			</li>
+			<div class="clear"></div>
+			<li class="floatleft">
+				<h1>需求状态：</h1>
+				<select class="selectNormal">
+					<option>状态1</option>
+					<option>状态2</option>
+					<option>状态3</option>
+				</select>
+			</li>
+			<li class="floatleft">
+				<h1>优先级：</h1>
+				<select class="selectNormal">
+					<option>低</option>
+					<option>中</option>
+					<option>高</option>
+				</select>
+			</li>
+			<div class="clear"></div>
+			<li class="floatleft">
+				<h1>需求来源：</h1>
+				<select name="" class="selectNormal">
+					<option value="">自创建</option>
+					<option value="">案例库</option>
+				</select>
+			</li>
+			<li class="floatleft">
+				<h1>需求类型：</h1>
+				<select name="" class="selectNormal">
+					<option value="">测试需求</option>
+					<option value="">普通需求</option>
+				</select>
+			</li>
+			<div class="clear"></div>
+			<li class="clearfix">
+				<h1>所属目录：</h1>
+				<div class="inputSelect floatleft" ng-click="open('catalogue')">
+					<input type="text" class="inputText" disabled="disabled" placeholder="">
+					<span class="inputSelectBtn">
+                    	<i class="iconfont icon-trees"></i>
+               	 	</span>
+				</div>
+			</li>
+			<div class="clear"></div>
+			<li class="clearfix">
+				<h1>需求负责人：</h1>
+				<input type="text" class="inputText" readonly="readonly" placeholder="" style="width: 460px;">
+				<i class="iconfont icon-addpeople_fill" ng-click="open('addReqManager')" style="cursor: pointer;color:#48A1FF"></i>
+			</li>			
+		</ul>
+	</div>
+	<div class="modal-footer">
+		<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+		<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+		<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+	</div>
+</div>

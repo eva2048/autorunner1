@@ -1,4 +1,12 @@
 <style type="text/css">
+	.dropdownList{
+		height: 30px;
+		line-height: 30px;
+	} 
+	.dropdowncheckbox {
+		float: left;
+		margin:8px 10px !important;		
+	}
 </style>
 <div class="projectBodyBox" ng-controller="projectManagementCtrl">
     <div class="projectBodyTitle">
@@ -9,12 +17,42 @@
     </div>
     <div class="projectBodyContent" style="top: 56px;left: 0px;">
         <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle" ng-controller="modalCtrl">
-            <div class="useCaseListfunction">
-                <span class="floatleft selectNum">我创建的项目</span>   
-                <span class="chatIconButton floatleft"  ng-click="open('tableColumn')">
-                    <i class="iconfont icon-liebiao"></i>自定义列                   
-                </span>
-                <span class="chatIconButton floatleft"  ng-click="open('mubanCreateproject')">
+            <div class="useCaseListfunction">                  
+               <div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
+					<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false">
+						<span class="dropdowntoggletext">项目类型</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu">
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">界面
+						</li>
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">接口
+						</li>		
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">APP
+						</li>
+					</ul>
+				</div>
+				<div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
+					<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false">
+						<span class="dropdowntoggletext">项目状态</span>
+						<i class="iconfont icon-unfold"></i>
+					</div>
+					<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu">
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">未执行
+						</li>
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">执行中
+						</li>		
+						<li class="dropdownList" ng-click="$event.stopPropagation()">
+							<input class="dropdowncheckbox" type="checkbox" name="" id="" value="">已执行
+						</li>
+					</ul>
+				</div>
+                <span class="chatIconButton floatleft">
                     <i class="iconfont icon-moban"></i>模板创建项目               
                 </span> 
                 <div class="floatright searchBox marginl_5">
@@ -24,7 +62,7 @@
                 <div class="clear"></div>
             </div>
             <div class="userCaseListTable">
-                <div style="" ui-grid="gridOptionsTask"  ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+                <div style="" ui-grid="gridOptionsProjectManagement"  ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
             </div>            
         </div>
     </div>

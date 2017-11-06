@@ -9,20 +9,16 @@
             <li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
                 <i class="iconfont icon-shaixuan i_color6 filterIcon"></i>
                 <span class="filtername">全部项目</span>
-            </li>
-            <li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
-                <i class="iconfont icon-shaixuan i_color7 filterIcon"></i>
-                <span class="filtername">我创建的项目</span>
-            </li>
+            </li>            
         </ul>
     </div>
-    <div class="leftNavList projectNavList " style="top: 120px;">
+    <div class="leftNavList projectNavList " style="top: 80px;">
         <div class="title">
             自定义过滤器
             <span ng-click="open('filterManage')" class="chatIconButton floatright treefunicon" data-tip="过滤器管理">
                 <i class="iconfont icon-guanli"></i>
             </span>
-            <span class="chatIconButton floatright treefunicon" data-tip="存储为新的过滤器">
+            <span ng-click="open('editFilter')" class="chatIconButton floatright treefunicon" data-tip="存储为新的过滤器">
                 <i class="iconfont icon-add"></i>
             </span>
         </div>
@@ -125,7 +121,7 @@
                 </li>
             </ul>
             <div class="customFilterBtn">
-                <a class="customFilterSave" href="">保存当前筛选项</a>
+                <a class="customFilterSave">保存当前筛选项</a>
             </div>
         </div>
     </div>
