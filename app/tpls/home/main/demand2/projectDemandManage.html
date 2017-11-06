@@ -1,0 +1,39 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="demandCtrl">
+    <div class="projectBodyTitle">
+        需求管理2
+         <div class="floatright">
+           <i class="iconfont icon-fanhuishangyiye" style="margin-left: 20px;cursor: pointer;color: #48a1ff;" ng-click="back()" title="返回树结构"></i>
+        </div>
+        <div class="floatright btn_add" ng-click="open('newDemand2','lg')">
+            <span class="cicleicon"><i class="iconfont icon-add"></i></span> 提需求
+        </div>
+       
+    </div>
+    <div class="projectBodyContent" style="top: 56px;">
+        <div class="useCaseList " style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
+            <div class="useCaseListfunction">
+                <span class="floatleft selectNum">已选中2项：</span>                                                    
+                <span class="chatIconButton" ng-click="open('import','')">
+                    <i class="iconfont icon-import"></i>导入
+                </span>
+                <span class="chatIconButton">
+                    <i class="iconfont icon-daochu2"></i>导出
+                </span> 
+                <span class="chatIconButton" ng-click="open('customRow','')">
+                    <i class="iconfont icon-zidingyilie"></i>自定义列
+                </span>
+                <div class="floatright searchBox">
+                    <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+                    <i class="iconfont icon-search"></i>
+                </div>              
+                <div class="clear"></div>
+            </div>
+            <div class="userCaseListTable">
+                <div ui-grid="gridOptionsDemand" ui-grid-autoResize  ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>

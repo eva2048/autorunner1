@@ -1,0 +1,27 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox" ng-controller="demandCtrl">
+    <div class="projectBodyTitle" style="text-align: center;">
+        <div class="floatleft ">需求历史2</div>
+        <div class="personalNav" style="display: inline-block;">
+            <ul>
+                <li ui-sref="index.demand2">
+                    <a href="" class="cursor_p">需求内容</a>
+                </li>
+                <li ui-sref="index.demand2.usecaseScenario">
+                    <a href="" class="cursor_p">用例场景</a>
+                </li>
+                <li class="current">
+                    <a href="" class="cursor_p">需求历史</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+        </div>       
+    </div>
+    <div class="projectBodyContent">
+        <div class="userCaseListTable">
+            <div style="" ui-grid="gridOptionsHistory" ui-grid-autoResize ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+        </div>
+    </div>
+</div>

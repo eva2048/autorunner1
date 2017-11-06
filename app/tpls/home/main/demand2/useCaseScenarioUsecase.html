@@ -1,0 +1,121 @@
+<style type="text/css">
+</style>
+<div class="projectBodyBox">
+	<div class="projectBodyTitle " style="text-align: center;">
+		<div class="floatleft ">需求名字2</div>
+		<div class=" personalNav" style="display: inline-block;">
+			<ul>
+				<li ui-sref="index.demand2">
+					<a class="cursor_p">需求内容</a>
+				</li>
+				<li class="current">
+					<a class="cursor_p">用例场景</a>
+				</li>
+				<li ui-sref="index.demand2.usecaseHistory">
+					<a class="cursor_p">需求历史</a>
+				</li>
+				<div class="clear"></div>
+			</ul>
+			<div class="clear"></div>
+		</div>		
+	</div>
+	<div class="projectBodyContent">
+		<div class="projectBodyBox" ng-controller="demandCtrl">
+			<div class="projectBodyTitle flexRow">
+				<div class="floatleft flexRow flex"></div>
+				<div class="floatleft personalNav">
+					<ul>
+						<li ui-sref="index.demand2.usecaseScenario">
+							<a href="" class="cursor_p">功能点</a>
+						</li>
+						<li class="current">
+							<a href="" class="cursor_p">测试用例</a>
+						</li>
+						<div class="clear"></div>
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div class="flex"></div>
+			</div>
+			<div class="projectBodyContent projectBodyContent2">
+				<div class="useCaseListfunction" style="line-height: 43px;">
+						<span class="floatleft selectNum">已选中2项：</span>
+						<span class="chatIconButton">
+                            <i class="iconfont icon-moban"></i>合并同类项
+                        </span>
+						<span class="chatIconButton">
+                            <i class="iconfont icon-empty_fill"></i>删除
+                       </span>												
+						<div class="floatright searchBox" style="margin-left:10px ;">
+							<input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
+							<i class="iconfont icon-search"></i>
+						</div>
+						<div class="dropdownDefault floatright" dropdown style="margin-left:10px ;">
+							<div dropdown-toggle class="dropdowntoggle">
+								<span class="dropdowntoggletext">类型</span>
+								<i class="iconfont icon-unfold"></i>
+							</div>
+							<ul class="dropdown-menu transition" dropdown-menu role="menu">
+								<span class="triangle"></span>
+								<li class="current"><i class="iconfont icon-clock"></i><span>默认</span></li>
+								<li><i class="iconfont icon-editor"></i><span>最新创建</span></li>
+								<li><i class="iconfont icon-activity"></i><span>最近操作</span></li>
+							</ul>
+						</div>						
+						<div class="dropdownBox floatright dateBoxClear" dropdown style="margin-left:10px ;">
+							<div dropdown-toggle class="dropdowntoggle">
+								<span class="dropdowntoggletext">时间范围</span>
+								<i class="iconfont icon-unfold"></i>
+							</div>
+							<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu role="menu">
+								<li class="datetimePicker">
+									<a>开始时间：
+										<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format}}" ng-model="dat1" is-open="popup1.opened" alt-input-formats="altInputFormats" ng-click="$event.stopPropagation();open1()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+										<div class="clear"></div>
+									</a>
+								</li>
+								<li class="datetimePicker">
+									<a>结束时间：
+										<input type="text" class="inputText inputTextl_250" datepicker-popup="{{format1}}" ng-model="dat1" is-open="popup2.opened" alt-input-formats="altInputFormats1" ng-click="$event.stopPropagation();open2()" close-text="关闭" min-date="dat" clear-text="清空" current-text="今天" />
+										<div class="clear"></div>
+									</a>
+								</li>
+								<li class="marginb_10">
+									<a>
+										<input type="button" class="btn btn-sm btn-success" value="确认">
+										<input type="button" class="btn btn-sm btn-info" value="清空">、
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdownDefault floatright" dropdown >
+							<div dropdown-toggle class="dropdowntoggle">
+								<span class="dropdowntoggletext">关联组件</span>
+								<i class="iconfont icon-unfold"></i>
+							</div>
+							<ul class="dropdown-menu transition" dropdown-menu role="menu">
+								<span class="triangle"></span>
+								<li class="current"><i class="iconfont icon-clock"></i><span>默认</span></li>
+								<li><i class="iconfont icon-editor"></i><span>最新创建</span></li>
+								<li><i class="iconfont icon-activity"></i><span>最近操作</span></li>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</div>
+				<div class=" usecaseListPanel floatleft" style="width: 60%;border-right: 5px solid #e4e6f1" ng-style="useCaseListStyle">										
+					<div class="userCaseListTable" style="top: 0px;">
+						<div ui-grid="gridOptionsUsecase" ui-grid-autoResize ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+					</div>
+				</div>
+				<div class=" usecaseListPanel floatright" style="width: 40%" ng-style="useCaseListStyle">					
+					<div class="userCaseListTable" style="top: 0px;">
+						<div style="width: 100%;font-size: 14px;color: #313131;margin-bottom: 10px;">
+							用例名称用例名称
+						</div>
+						<div ui-grid="gridOptionsUsecaseData" ui-grid-autoResize ui-grid-selection ui-grid-resize-columns ui-grid-edit class="gridTableBox margint-20"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

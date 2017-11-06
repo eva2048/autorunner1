@@ -1,0 +1,172 @@
+<style type="text/css">
+	.bodyLeft {
+		width: 35%;
+		float: left;
+	}
+	
+	.parameterItems {
+		width: 100%;
+		height: 200px;
+		border: 1px solid #C3C4C9;
+		margin-top: 10px;
+	}
+	
+	.parameterItems h5 {
+		width: 100%;
+		height: 35px;
+		font-size: 14px;
+		border-bottom: 1px solid #C3C4C9;
+		padding: 10px;
+	}
+	
+	.parameterItems ul {
+		width: 100%;
+		overflow-y: auto;
+		height: 165px;
+	}
+	
+	.parameterItems ul li {
+		font-size: 14px;
+		line-height: 25px;
+		width: 100%;
+		color: #6E6E6E;
+		padding: 0 10px;
+		border-bottom: 1px solid #C3C4C9;
+		cursor: pointer;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	.parameterItems ul li.active {
+		background: #C4E3F3;
+	}
+	
+	.parameterItems ul li input[type=checkbox] {
+		float: right;
+		margin-top: 6px;
+	}
+	
+	.bodyRight {
+		width: 63%;
+		float: right;
+	}
+	
+	.bodyRight .btndefault {
+		margin-right: 20px;
+		margin-bottom: 4px;
+	}
+	
+	.passResult{
+		width:100%;
+		height: 250px;
+		overflow-y: auto;
+		padding: 0 15px;
+		margin-bottom: 20px;
+	}	
+	.goal{
+		position: relative;
+		float: left;
+		height: 30px;
+		line-height: 30px;
+		padding:0px 15px;
+		margin-right: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border:1px solid #c3c4c9;
+	}
+	.goal .iconfont{
+		position: absolute;
+		right:-7px;
+		top:-14px;
+		font-size: 14px;
+		cursor: pointer;
+		display: none;
+	}
+	.goal:hover .iconfont{
+		display: block;
+	}
+</style>
+<div class="modal-header">
+	<h3>参数传递
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody clearfix">
+	<div class="bodyLeft">
+		<select name="" class="selectBox" style="width: 100%;">
+			<option value="">组件1</option>
+			<option value="">组件2</option>
+			<option value="">组件3</option>
+		</select>
+		<div class="parameterItems">
+			<h5>参数项</h5>
+			<ul>
+				<li class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
+					参数1111
+				</li>
+				<li class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
+					参数1111
+				</li>
+				<li class="{{projectNavNow==3?'active':''}}" ng-click="projectNavNow=3">
+					参数1111
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="bodyRight" ng-controller="modalCtrl">
+		<input type="button" class="btndefault" name="" id="" value="智能匹配" />
+		<input type="button" class="btndefault" name="" id="" value="添加参数项" ng-click="open('addParameterItem')" />
+		<input type="button" class="btn btn-danger floatright" name="" id="" value="保存" />
+		<div class="parameterItems">
+			<h5>参数传递
+    		<input type="checkbox" name="" id="" value="" class="floatright"/>
+    		</h5>
+			<ul>
+				<li>
+					组件1.参数2
+					<input type="checkbox" name="" id="" value="" />
+				</li>
+				<li>
+					组件2.参数2
+					<input type="checkbox" name="" id="" value="" />
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+<div class="passResult">
+	<table class="table-fullborder table-fullborder2">
+		<tr>
+			<th style="width:30%">数据源</th>
+			<th>目标数据源</th>
+		</tr>
+		<tr>
+			<td>
+				<i class="iconfont icon-weibiaoti102 f_red cursor_p"></i> 组件1.参数1
+			</td>
+			<td>
+				<div class="goal">
+					<span>组件3.参数1</span>
+					<i class="iconfont icon-delete_fill"></i>
+				</div>
+				<div class="goal">
+					<span>组件3.参数1</span>
+					<i class="iconfont icon-delete_fill"></i>
+				</div>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<i class="iconfont icon-weibiaoti102 f_red cursor_p"></i> 组件2.参数1
+			</td>
+			<td>
+				<div class="goal">
+					<span>组件3.参数1</span>
+					<i class="iconfont icon-delete_fill"></i>
+				</div>
+			</td>
+		</tr>		
+	</table>
+</div>

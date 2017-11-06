@@ -1,0 +1,23 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+    <h3>添加活动图
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody">
+	<ul class="titleUl">          	
+       <li class="clearfix">  
+       		<h1>上传文件：</h1>
+            <input type="text" class="inputText floatleft" style="width: 265px; margin-right: 7px;">
+            <div class="floatleft" style="position: relative;">
+                <input type="button" name="" value="选择文件" readonly="readonly" class="btndefault btndefault_blue">
+                <input style="opacity: 0;position: absolute;left: 0px;top: 0px;width: 108px;bottom: 0px;" type="file" name="" value="选择文件" class="">
+            </div>         	
+        </li>          
+    </ul>
+</div>
+<div class="modal-footer">   
+    <input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+    <input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>

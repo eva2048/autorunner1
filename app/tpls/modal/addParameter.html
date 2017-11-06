@@ -1,0 +1,46 @@
+<style type="text/css">
+</style>
+<div class="modal-header">
+	<h3>添加参数
+    <i class="floatright iconfont icon-close modalCloseIcon" ng-click="cancel()"></i>
+    </h3>
+</div>
+<div class="modal-body modalBody">
+	<ul class="titleUl">
+        <li>
+            <h1>参数名称：</h1>
+            <input type="text" class="inputText">
+        </li>       
+        <div class="clear"></div>
+        <li>
+            <h1>参数值：</h1>
+            <input type="text" class="inputText">
+        </li>       
+        <div class="clear"></div>
+        <li>
+            <h1>是否只读：</h1>
+            <select class="selectNormal selectNormal_480">
+                <option value="111111">是</option>
+                <option value="222222">否</option>
+               
+            </select>
+        </li>         
+        <li>
+            <h1>参数类型：</h1>
+            <select class="selectNormal selectNormal_480">
+                <option value="111111">111111</option>
+                <option value="222222">222222</option>
+                <option value="333333">333333</option>
+            </select>
+        </li>                      
+        <li>
+            <h1>详细描述：</h1>
+            <textarea class="projectTextarea"></textarea>
+        </li>        
+    </ul>		
+</div>
+<div class="modal-footer">
+	<div class="floatleft defaultcheckBox"><input class="floatleft" type="checkbox" name=""><em>是否连续添加</em></div>
+	<input type="button" name="" value="确认" class="btndefault btndefault_blue" ng-click="ok()">
+	<input type="button" name="" value="取消" class="btndefault btndefault_gray" ng-click="cancel()">
+</div>
