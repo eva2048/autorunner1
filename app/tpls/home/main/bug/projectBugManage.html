@@ -12,18 +12,12 @@
         <div class="useCaseList" style="bottom:0px;overflow-y: auto;" ng-style="useCaseListStyle">
             <div class="useCaseListfunction">
                 <span class="floatleft selectNum">已选中2项：</span>
-                <span class="chatIconButton">
+                <span class="chatIconButton" ng-click="open('associatedUsecases')">
                     <i class="iconfont icon-guanlian"></i>关联用例
-                </span>
-                <span class="chatIconButton">
-                    <i class="iconfont icon-import"></i>导入
-                </span>
+                </span>               
                 <span class="chatIconButton">
                     <i class="iconfont icon-daochu2"></i>导出
-                </span>
-                <span class="chatIconButton">
-                    <i class="iconfont icon-brush_fill"></i>修改处理人
-                </span>
+                </span>              
                 <div class="floatright searchBox">
                     <input type="text" name="" class="inputSearch" placeholder="输入关键词按回车搜索">
                     <i class="iconfont icon-search"></i>

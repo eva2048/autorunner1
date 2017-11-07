@@ -47,11 +47,6 @@ define(['app'], function(app) {
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                         },
                         {
-                            field: "creater",
-                            displayName: '项目模块',
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                        },
-                        {
                             field: "createTime",
                             displayName: '创建时间',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
