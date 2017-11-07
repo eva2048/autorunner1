@@ -94,7 +94,12 @@
                                 <span  ng-repeat="n in turnArray('关,联,用,例')">{{n}}</span>
                                 <em class="f_red">*</em>
                                 </span>
-                                <input type="text" class="inputText" name="">
+                              	<div class="inputSelect floatleft" ng-click="open('relevanceUsecase')">
+									<input type="text" class="inputText" disabled="disabled" placeholder="">
+									<span class="inputSelectBtn">
+				                    	<i class="iconfont icon-trees"></i>
+				               	 	</span>
+								</div>
                             </li>
                             <div class="clear"></div>
                         </ul>

@@ -7,13 +7,48 @@
         <input type="button" class="btndefault btndefault_blue floatright" name="" value="保存">
     </div>
     <div class="bugDetailBox" ng-init="isAttribute=1">
-        <div class="tab">
+    	<div style="margin-top:20px;margin-left:20px;">
+    		<ul class="attributeList attributeList1 attributeList2 attributeList4">
+    			 <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('缺,陷,状,态')">{{n}}</span>
+                    </span>
+                    <select class="selectBox">
+                        <option>低</option>
+                        <option>中</option>
+                        <option>高</option>
+                    </select>
+                </li>
+                <div class="clear"></div>
+                 <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('角,色')">{{n}}</span>
+                    </span>
+                    <select class="selectBox">
+                        <option>测试</option>
+                        <option>开发</option>
+                        <option>经理</option>
+                    </select>
+                </li>
+                <li>
+                    <span class="attributeLeft">
+                        <span  ng-repeat="n in turnArray('处,理,人')">{{n}}</span>
+                    </span>
+                    <select class="selectBox">
+                        <option>测试</option>
+                        <option>开发</option>
+                        <option>经理</option>
+                    </select>
+                </li>
+    		</ul>
+    	</div>
+        <div class="tab" style="top:100px">
             <span ng-class="{current:isAttribute==1}" ng-click="isAttribute=1">缺陷描述</span>
             <span ng-class="{current:isAttribute==2}" ng-click="isAttribute=2">缺陷属性</span>
             <span ng-class="{current:isAttribute==3}" ng-click="isAttribute=3">操作历史</span>
         </div>
         <!-- 缺陷描述 -->
-        <div class="detailAttribute" ng-show="isAttribute==1" bn-document-click="addDescribe=false">
+        <div class="detailAttribute" ng-show="isAttribute==1" bn-document-click="addDescribe=false" style="top:149px">
             <div class="addDescribe" ng-class="{addDescribeopen:addDescribe}" ng-click="$event.stopPropagation();addDescribe=true">
                 <textarea placeholder="追加描述"></textarea>
                 <i class="iconfont icon-bianji"></i>
@@ -76,7 +111,7 @@
             </div>
         </div>
         <!-- 缺陷属性 -->
-        <div class="detailAttribute" ng-show="isAttribute==2">
+        <div class="detailAttribute" ng-show="isAttribute==2" style="top:149px">
             <ul class="attributeList attributeList1 attributeList2 attributeList4">
                 <li>
                     <span class="attributeLeft">
@@ -140,14 +175,11 @@
                     <span class="attributeLeft">
                         <span  ng-repeat="n in turnArray('关,联,用,例')">{{n}}</span>
                     </span>
-                    <select class="selectBox">
-                        <option>经常</option>
-                        <option>偶尔</option>
-                    </select>
+                    <a ui-sref="index.usecase({num:3})" class="f_blue" style="display:inline-block;height:30px;line-height:30px">3</a>
                 </li>
             </ul>
         </div>
-        <div class="detailAttribute" ng-show="isAttribute==3">
+        <div class="detailAttribute" ng-show="isAttribute==3" style="top:149px">
             <table class="table-fullborder">
                 <tr>
                     <th>操作人</th>
