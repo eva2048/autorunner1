@@ -38,7 +38,7 @@
 
 .case {
     padding: 5px 10px;
-    width: 260px;
+    width: 65%;
     min-height: 200px;
     border-left: 1px solid #C3C4C9;
     font-size: 14px;
@@ -110,6 +110,7 @@
 }
 .titleUl{
 	margin-left: 45px;
+    width: 750px;
 }
 .titleUl>li h1{
 	width:auto;
@@ -139,14 +140,21 @@
 </div>
 <div class="modal-body modalBody" ng-controller="modalCtrl">
     <ul class="titleUl titleUlAuto">
-        <li class="">
+        <li class="floatleft">
             <h1>测试集名称：</h1>
-            <input type="text" class="inputText">
+            <input type="text" class="inputText" style="width: 250px">
+        </li>
+        <li class="floatright" style="margin-left: 40px">
+            <h1>所属目录：</h1>
+            <div class="catalog" title="目录1>目录1.1>目录1.1.1">
+                所属目录：目录1>目录1.1>目录1.1.1
+            </div>
+            <i class="iconfont icon-bianji" ng-click="open('createTaskTestset')"></i>
         </li>
         <div class="clear"></div>
         <li class="">
             <h1>测试集描述：</h1>
-            <input type="text" class="inputText">
+            <input type="text" class="inputText" style="width: 655px">
         </li>
         <li style="margin-bottom: 5px;">
             <h1>已&nbsp;选&nbsp;用&nbsp;例&nbsp;：</h1>
@@ -165,12 +173,7 @@
                 <input type="text" name="" class="inputSearch" placeholder="输入用例名搜索" style="width: 200px;">
                 <i class="iconfont icon-search"></i>
             </div>
-            <div class="floatright">
-	            <div class="catalog" title="目录1>目录1.1>目录1.1.1">
-	                所属目录：目录1>目录1.1>目录1.1.1
-	            </div>
-	            <i class="iconfont icon-bianji" ng-click="open('createTaskTestset')"></i>
-            </div>
+            
             <div class="clear"></div>
         </div>
         <div class="groupLeft">

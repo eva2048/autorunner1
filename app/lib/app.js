@@ -528,9 +528,6 @@ define(['angular', 'router'], function() {
 						},
 						'projectBody@index': {
 							templateUrl: '../tpls/home/main/testset/testsetManage.html'
-						},
-						'projectDetail@index': {
-							templateUrl: '../tpls/home/main/testset/testsetDetail.html'
 						}
 					},
 					resolve: {
