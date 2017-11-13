@@ -17,7 +17,7 @@
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background-color: hsla(0, 0%, 59%, .5)
+	background-color: hsla(0, 0%, 59%, .5);
 }
 
 

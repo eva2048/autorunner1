@@ -55,7 +55,7 @@
 					<a class="treeToggle" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="iconfont" ng-class="collapsed?'icon-unfold-copy':'icon-unfold'"></i></a>	
 					<input type="checkbox" name="" id="" value="" />
 					<span ng-show="!this.isEdit" class="treeText">
-                            {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
+                        {{node.title | limitTo:10}}{{node.title.length>10?'...':''}}
                     </span>
                     
 				</div>

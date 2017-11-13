@@ -18,14 +18,31 @@ define(['app'], function(app) {
                     enableHorizontalScrollbar: 0, //grid水平滚动条是否显示, 0-不显示  1-显示
                     enableVerticalScrollbar: 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
                     columnDefs: [{
+                            field: 'taskID',
+                            displayName: '任务ID',                                                      
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮                      
+                        },
+                        {
                             field: 'taskName',
-                            displayName: '任务名称',
-                            editableCellTemplate: 'ui-grid/dropdownEditor',
-                            editDropdownRowEntityOptionsArrayPath: 'foo.bar[0].options', 
-                            editDropdownIdLabel: 'value',
+                            displayName: '任务名称',                                                      
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
 //                          cellTemplate: '<div class="f_blue ui-grid-cell-contents cursor_p"  ng-click="grid.appScope.fadeIn();$event.stopPropagation();">{{row.entity.num}}</div>',
                         },
+                         {
+                            field: "state",
+                            displayName: '状态',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+//                          enableCellEdit: true, // 是否可编辑
+                        },
+                          {
+                            field: "executeState",
+                            displayName: '关联测试集',
+                            enableSorting: false,
+                            enableColumnMenu: false, // 是否显示列头部菜单按钮
+                            cellTemplate:'<div class="ui-grid-cell-contents"><i ng-click="grid.appScope.open(\'testsetManage\')" title="测试集管理" class="iconfont icon-createtask_fill f_blue cursor_p"></i><span class="marginl_10">0</span></div>'
+//                          enableCellEdit: true, // 是否可编辑
+                        }, 
                         {
                             field: "createName",
                             displayName: '创建人',
@@ -46,19 +63,11 @@ define(['app'], function(app) {
                             enableSorting: false,
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
 //                          enableCellEdit: true, // 是否可编辑
-                        },
-                        {
-                            field: "executeState",
-                            displayName: '关联测试集',
-                            enableSorting: false,
-                            enableColumnMenu: false, // 是否显示列头部菜单按钮
-                            cellTemplate:'<div class="ui-grid-cell-contents"><i ng-click="grid.appScope.open(\'testsetManage\')" title="测试集管理" class="iconfont icon-createtask_fill f_blue cursor_p"></i><span class="marginl_10">0</span></div>'
-//                          enableCellEdit: true, // 是否可编辑
-                        },                        
+                        },                                            
                         {
                             field: "action",
                             displayName: '操作处理',
-                            minWidth:350,
+                            minWidth:300,
                             cellTemplate: '<div class="ui-grid-cell-contents tablecellfunc"><a class="f_blue cursor_p" ng-click="grid.appScope.open(\'runningDevice\',\'lg\')">立即执行</a><a class="f_blue" ng-click="grid.appScope.open(\'appointmentRunningDevice\',\'lg\')">预约执行</a><a class="f_blue" ui-sref="chartDetail">查看最新报表</a></div>',
                             enableColumnMenu: false, // 是否显示列头部菜单按钮
                             enableColumnResizing: false,

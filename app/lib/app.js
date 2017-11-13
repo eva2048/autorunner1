@@ -307,7 +307,7 @@ define(['angular', 'router'], function() {
 						}]
 					}
 				})				
-				/*需求详情-用例场景-功能点2*/
+				/*需求详情-用例场景*/
 				.state("index.demand2.usecaseScenario", {
 					url: "/useCaseScenario2",
 					views: {

@@ -3,6 +3,9 @@
 	cursor: pointer;
 	background: #bbdefb;
 }
+.table-fullborder tr td.active{
+	background: #bbdefb;
+}
 </style>
 <div class="modal-header">
 	<h3>添加需求负责人
@@ -12,12 +15,12 @@
 <div class="modal-body modalBody">
 	<table border="" cellspacing="" cellpadding="" class="table-fullborder">
 		<tr>
-			<td>
+			<td class="{{projectNavNow==1?'active':''}}" ng-click="projectNavNow=1">
 				humqqqqqqqqqqq（胡明琪）
 			</td>			
 		</tr>
 		<tr>
-			<td>
+			<td class="{{projectNavNow==2?'active':''}}" ng-click="projectNavNow=2">
 				humq11111111111（胡明琪）
 			</td>
 		</tr>
