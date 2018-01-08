@@ -77,6 +77,9 @@
 	.list:hover {
 		color: #48a1ff;
 	}
+	.hoverFF:hover{
+		color: #FFFFFF;
+	}
 </style>
 <div class="projectBodyBox" ng-controller="modalCtrl">
 	<div class="projectBodyTitle " style="text-align: center;">
@@ -101,7 +104,7 @@
 		<div class="attributeBox">
 			<div class="">
 				<div class="attribute fix">
-					<div class="demandContent floatleft">
+					<div class="demandContent floatleft" style="padding-bottom:50px">
 						<div class="attributeTitle">
 							需求信息
 							<i class="iconfont icon-bianji" style="margin-left: 5px;cursor: pointer;" ng-click="open('newDemand2','lg')"></i>
@@ -142,7 +145,7 @@
 							<li class="clearfix">
 								<div class="left">
 									需求描述
-									<i class="iconfont icon-bianji" style="margin-left: 5px;cursor: pointer;color: #48a1ff;" ng-click="open('description','lg')"></i>
+									<i class="iconfont icon-bianji" style="margin-left: 5px;cursor: pointer;color: #48a1ff;" ng-click="open('description','lg')"></i>										
 								</div>
 								<div class="right">
 									关联用例数：
@@ -155,9 +158,10 @@
 							功能点设计
 						</div>
 						<div class="clearfix">
-							<div style="position: relative;" class="floatleft">
+							<div style="position: relative;" class="floatleft">								
 								<input type="button" name="" value="上传活动图" readonly="readonly" class="btndefault btndefault_blue">
 								<input style="opacity: 0;position: absolute;left: 0px;top: 0px;width: 108px;bottom: 0px;" type="file" name="" value="选择文件" class="">
+								<a href="#/activityGraph" ui-sref="activityGraph" target="_blank" class="btndefault btndefault_blue hoverFF" style="display: inline-block;">画活动图</a>
 							</div>
 							<div class="dropdownBox floatleft dateBoxClear" dropdown="" style="margin-right: 10px;">
 								<div dropdown-toggle="" class="dropdowntoggle" aria-haspopup="true" aria-expanded="false" style="position: relative;">
@@ -165,6 +169,7 @@
 									<i class="glyphicon glyphicon-triangle-bottom" style="position: absolute;right: 20px;top: 10px;color: #fff;"></i>
 								</div>
 								<ul class="dropdown-menu dropdown-menu1 tableDropdownMenu" dropdown-menu="" role="menu" style="left: 10px">
+									
 									<li class="dropdownList">
 										<span class="list" ng-click="open('ruleBank')">引用功能点库</span>
 									</li>

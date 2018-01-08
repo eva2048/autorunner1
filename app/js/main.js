@@ -19,7 +19,11 @@ require.config({
 		//富文本编辑器
 		'umeditor':'umeditor/umeditor.config',
 		'umeditor1':'umeditor/umeditor',
-		'umeditor2':'umeditor/metaUmeditor'
+		'umeditor2':'umeditor/metaUmeditor',
+		//画活动图
+		'goofunc':'gooflow0.8/js/GooFunc',
+		'gooflow':'gooflow0.8/js/GooFlow'
+		
 	},
 	shim: {
 		'angular': {
@@ -58,6 +62,12 @@ require.config({
 		'umeditor1':{
 			deps:['jquery']
 		},
+		'goofunc':{
+			deps:['jquery']
+		},
+		'gooflow':{
+			deps:['jquery']
+		},
 		'exporting':{
 			deps:['highstock']
 		},
@@ -66,6 +76,6 @@ require.config({
 	}
 })
 // 初始化myModule模块
-require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','highchartmore','exporting','highcharts-ng','umeditor','umeditor1','umeditor2'],function(){
+require(['angular','app','jquery','polyfill','bootstrap','ui-bootstrap-tpls','angular-animate','angular-ui-tree','angular-resizable','bootstrap-datetimepicker','time-ng','ui-grid','polyfill','es5-sham','es5-shim','highstock','highchartmore','exporting','highcharts-ng','umeditor','umeditor1','umeditor2','goofunc','gooflow'],function(){
 	angular.bootstrap(document, ['myModule']);
 })

@@ -204,6 +204,22 @@ define(['angular', 'router'], function() {
 						}]
 					}
 				})
+//				画活动图
+				.state("activityGraph", {
+					url: "/activityGraph",
+					templateUrl: '../tpls/home/main/activityGraph/activityGraph.html',
+					resolve: {
+						loadCtrl: ["$q", function($q) {
+							var deferred = $q.defer();
+							//异步加载controller／directive/filter/service
+							require([												
+							], function(controller) {
+								deferred.resolve();
+							});
+							return deferred.promise;
+						}]
+					}
+				})
 				/*首页用例管理*/
 				.state("index.usecase", {
 					url: "/usecase",
