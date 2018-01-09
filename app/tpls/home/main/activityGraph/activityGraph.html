@@ -7,10 +7,28 @@
 		<?import namespace="v" implementation="#default#VML" ?>
 		<![endif]-->
 		<style>
-			.cont{
-				width: 100%;				
+			.cont {
+				width: 100%;
 			}
-			.correlation {
+			
+			.title {
+				width: 100%;
+				padding: 0px 15px 0px 22px;
+				height: 46px;
+				line-height: 46px;
+				border-bottom: 1px solid #e5e5e5;
+				font-size: 18px;
+				color: #212121;
+				background: #fff;
+				box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+				position: fixed;
+				z-index: 102;
+				top:0;
+				left:0;
+				
+			}
+			
+			.demandAttribute {
 				display: none;
 				padding: 0 10px;
 				font-size: 14px;
@@ -20,19 +38,22 @@
 				float: right;
 			}
 			
-			.correlation h4 {
+			.demandAttribute h4 {
 				font-size: 16px;
 				padding: 10px;
 				color: #000000;
 			}
 			
-			.correlation td input {
-				width: 100px;
+			.demandAttribute td input {
+				width: 100%;
 				outline: none;
+			}
+			.btndefault{
+				margin-top:30px;
 			}
 		</style>
 		<script type="text/javascript">
-			var w=($(window).width())*0.7;
+			var w = ($('.demandContent').width()) * 0.9;
 			var property = {
 				width: w,
 				height: 600,
@@ -75,10 +96,8 @@
 					var obj;
 					if(model == "node") {
 						obj = this.$nodeData[id];
-						$(".correlation").show();
-
+						$(".demandAttribute").show();
 					}
-
 					return true;
 				};
 				//				demo.onItemBlur = function(id, model) {
@@ -96,41 +115,49 @@
 
 	<body style="background:#EEEEEE">
 		<div class="cont">
-			<div class="modal-header">
-				<h3>绘制活动图</h3>
+			<div class="title">
+				<div class="floatleft">绘制活动图</div>
 			</div>
-			<div id="demo" style="margin:5px;float:left"></div>
-			<div class="correlation">
-				<h4>关联关系</h4>
-				<table class="table-fullborder table-fullborder2">
-					<tbody>
-						<tr>
-							<th>ID</th>
-							<th>标识</th>
-							<th>备注</th>
-						</tr>
-						<tr>
-							<td>
-								<input type="text" name="" id="" value="" />
-							</td>
-							<td>
-								<select name="">
-									<option value="">输入</option>
-									<option value="">输出</option>
-									<option value="">忽略</option>
-								</select>
-							</td>
-							<td>
-								<input type="text" name="" id="" value="" />
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div style="clear:both">
-				<input id="submit" type="button" value='导出结果' onclick="Export()" />
-				<textarea id="result" row="6"></textarea>
-			</div>
+			<div class="attributeBox" style="margin-top:40px">
+				<div class="attribute fix">
+					<div class="demandContent floatleft">
+						<div class="attributeTitle">活动图</div>
+						<div id="demo"></div>
+						<input id="submit" type="button" value='导出结果' class="btndefault btndefault_blue" onclick="Export()" />
+						<textarea id="result" row="6"></textarea>
+					</div>
+					<div class="floatright demandAttribute">
+						<div class="attributeTitle">关联关系</div>
+						<table class="table-fullborder table-fullborder2">
+							<tbody>
+								<tr>
+									<th>ID</th>
+									<th>标识</th>
+									<th>备注</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" name="" id="" value="" />
+									</td>
+									<td>
+										<select name="">
+											<option value="">输入</option>
+											<option value="">输出</option>
+											<option value="">忽略</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" name="" id="" value="" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="btn_add" style="margin-top:20px">
+							<span class="cicleicon"><i class="iconfont icon-add"></i></span> 增加
+						</div>
+					</div>
+				</div>
+			</div>			
 		</div>
 
 	</body>
